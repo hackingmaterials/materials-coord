@@ -4,10 +4,17 @@ Outline for the benchmarking infrastructure
 import abc
 import os
 import glob
+import pandas as pd
 from pymatgen.core.structure import Structure
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 from collections import OrderedDict
-import pandas as pd
+from copy import deepcopy
+
+
+# TODO 1: Add a method to analyze statistics of variation in CN predictions
+# TODO 2: Implement new CN methods
+# TODO 3: Add more test_structures (survey underway)
+
 
 module_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)))
 
@@ -86,10 +93,25 @@ class Benchmark(object):
                     cns.append( (v[j].species_string, tmpcn) )
                 m._cns[k]=cns
 
-    def report(self):
+    def report(self, totals=False):
+        """
+        Reports the benchmark as a pandas DataFrame
+        :param totals: (bool) option to report only total CNs of a site. Defaults to False, meaning element-wise CN
+            is listed.
+        :return: pd.DataFrame
+        """
         data = {}
         for m in self.methods:
-            data[m.__class__.__name__] = m._cns
+            if totals:
+                s_dict = {}
+                for k in m._cns:
+                    rev_cns = []
+                    for i,j in m._cns[k]:
+                        rev_cns.append((i, {"Total": sum(j.values())}))
+                    s_dict[k]=rev_cns
+                data[m.__class__.__name__] = s_dict
+            else:
+                data[m.__class__.__name__] = m._cns
         index = self.test_structures.keys()
         return pd.DataFrame(data=data, index=index)
 
