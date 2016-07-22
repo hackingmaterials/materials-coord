@@ -1,0 +1,55 @@
+# generated using pymatgen
+data_Mn
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   7.46383781
+_cell_length_b   7.46383781
+_cell_length_c   7.46383781
+_cell_angle_alpha   109.47122063
+_cell_angle_beta   109.47122063
+_cell_angle_gamma   109.47122063
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Mn
+_chemical_formula_sum   Mn29
+_cell_volume   320.084533606
+_cell_formula_units_Z   29
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Mn  Mn1  1  0.000000  0.000000  0.000000  1
+  Mn  Mn2  1  0.362427  0.000000  1.000000  1
+  Mn  Mn3  1  1.000000  0.362427  0.000000  1
+  Mn  Mn4  1  0.637573  0.637573  0.637573  1
+  Mn  Mn5  1  0.000000  0.000000  0.362427  1
+  Mn  Mn6  1  0.608328  1.000000  0.320736  1
+  Mn  Mn7  1  0.679264  0.287592  0.679264  1
+  Mn  Mn8  1  0.391672  0.712408  0.391672  1
+  Mn  Mn9  1  0.679264  0.679264  0.287592  1
+  Mn  Mn10  1  0.320736  0.608328  0.000000  1
+  Mn  Mn11  1  0.712408  0.391672  0.391672  1
+  Mn  Mn12  1  0.000000  0.320736  0.608328  1
+  Mn  Mn13  1  0.000000  0.608328  0.320736  1
+  Mn  Mn14  1  0.391672  0.391672  0.712408  1
+  Mn  Mn15  1  0.608328  0.320736  0.000000  1
+  Mn  Mn16  1  0.287592  0.679264  0.679264  1
+  Mn  Mn17  1  0.320736  1.000000  0.608328  1
+  Mn  Mn18  1  0.628396  1.000000  0.806515  1
+  Mn  Mn19  1  0.193485  0.821881  0.193485  1
+  Mn  Mn20  1  0.371604  0.178119  0.371604  1
+  Mn  Mn21  1  0.193485  0.193485  0.821881  1
+  Mn  Mn22  1  0.806515  0.628396  1.000000  1
+  Mn  Mn23  1  0.178119  0.371604  0.371604  1
+  Mn  Mn24  1  0.000000  0.806515  0.628396  1
+  Mn  Mn25  1  0.000000  0.628396  0.806515  1
+  Mn  Mn26  1  0.371604  0.371604  0.178119  1
+  Mn  Mn27  1  0.628396  0.806515  0.000000  1
+  Mn  Mn28  1  0.821881  0.193485  0.193485  1
+  Mn  Mn29  1  0.806515  1.000000  0.628396  1
