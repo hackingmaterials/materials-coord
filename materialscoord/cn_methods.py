@@ -1,6 +1,6 @@
 from pymatgen.analysis.structure_analyzer import VoronoiCoordFinder
-from cn.core import CNBase
-from cn.external_src.imported import EffectiveCoordFinder_modified
+from materialscoord.core import CNBase
+from materialscoord.external_src.imported import EffectiveCoordFinder_modified
 
 
 # Sample implementation of pymatgens VoronoiCoordFinder
