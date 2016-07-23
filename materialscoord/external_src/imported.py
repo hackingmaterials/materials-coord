@@ -8,33 +8,33 @@ See each class for the original authors.
 """
 
 
-class VoronoiCoordFinder_edited(object):
+class VoronoiCoordFinder_modified(object):
     """
-    author: S. Bajaj (LBL)
+    Author: S. Bajaj (LBL)
+    Modified: M. Aykol (LBL)
     """
-    def __init__(self, structure):
+    def __init__(self, structure, n):
         self._structure = structure
+        self.n = n
 
     def get_cns(self):
-        species = []
-        species_coord_dictlst = defaultdict(list)
-        struct_dict = self._structure.as_dict()
-        no_of_sites = len(struct_dict['sites'])
-        for specie in struct_dict['sites']:
-            species.append(specie['label'])
-        for siteno in range(no_of_sites):
-            coordination = 0
-            try:
-                weights = VoronoiCoordFinder(self._structure).get_voronoi_polyhedra(siteno).values()
-            except RuntimeError as e:
-                print e
-                continue
-            max_weight = max(weights)
-            for weight in weights:
-                if weight > 0.50 * max_weight:
-                    coordination += 1
-            species_coord_dictlst[species[siteno]].append(coordination)
-        return species_coord_dictlst
+        siteno = self.n
+        try:
+            vor = VoronoiCoordFinder(self._structure).get_voronoi_polyhedra(siteno)
+            weights = VoronoiCoordFinder(self._structure).get_voronoi_polyhedra(siteno).values()
+        except RuntimeError as e:
+            print e
+
+        coordination = {}
+        max_weight = max(weights)
+        for v in vor:
+            el = v.species_string
+            if vor[v] > 0.50 * max_weight:
+                if el in coordination:
+                    coordination[el]+=1
+                else:
+                    coordination[el] = 1
+        return coordination
 
 
 

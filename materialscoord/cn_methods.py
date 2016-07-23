@@ -1,6 +1,7 @@
 from pymatgen.analysis.structure_analyzer import VoronoiCoordFinder
 from materialscoord.core import CNBase
-from materialscoord.external_src.imported import EffectiveCoordFinder_modified
+from materialscoord.external_src.imported import EffectiveCoordFinder_modified, \
+    VoronoiCoordFinder_modified
 
 
 # Sample implementation of pymatgens VoronoiCoordFinder
@@ -33,4 +34,15 @@ class TestECoN(CNBase):
     def compute(self, structure, n):
         params = self._params
         x = EffectiveCoordFinder_modified(structure, n)
+        return x.get_cns(**params)
+
+
+class TestVoronoiCoordFinder_mod(CNBase):
+    """
+    Modified VoronoiCoordFinder that considers only neighbors
+    with at least 50% weight of max(weight).
+    """
+    def compute(self, structure, n):
+        params = self._params
+        x = VoronoiCoordFinder_modified(structure, n)
         return x.get_cns(**params)
