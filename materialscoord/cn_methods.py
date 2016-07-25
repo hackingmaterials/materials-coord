@@ -4,7 +4,8 @@ from materialscoord.external_src.imported import EffectiveCoordFinder_modified, 
     VoronoiCoordFinder_modified
 
 
-# Sample implementation of pymatgens VoronoiCoordFinder
+# Sample implementations of pymatgens VoronoiCoordFinder (O'Keeffe's method), a modification
+# of that method, and Hoppe's ECoN method.
 
 class TestVoronoiCoordFinder(CNBase):
     """

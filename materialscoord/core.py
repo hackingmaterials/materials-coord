@@ -1,6 +1,3 @@
-"""
-Outline for the benchmarking infrastructure
-"""
 import abc
 import os
 import glob
@@ -8,12 +5,11 @@ import pandas as pd
 from pymatgen.core.structure import Structure
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 from collections import OrderedDict
-from copy import deepcopy
 
 
 # TODO 1: Add a method to analyze statistics of variation in CN predictions
 # TODO 2: Implement new CN methods
-# TODO 3: Add more test_structures (survey underway)
+# TODO 3: Add more test_structures (underway)
 
 
 module_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)))
@@ -22,9 +18,10 @@ module_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)))
 class CNBase:
     __metaclass__ = abc.ABCMeta
     """
-    This is an abstract base class for implementation of CN algorithms.
+    This is an abstract base class for implementation of CN algorithms. All CN methods
+    must be subclassed from this class, and have a compute method that returns CNs as
+    a dict.
     """
-
     def __init__(self, params=None):
         """
         :param params: (dict) of parameters to pass to compute method.
@@ -43,15 +40,16 @@ class CNBase:
 
 
 class Benchmark(object):
+    """
+    Class for performing CN benchmarks on a set of structures using the selected set of methods.
+    :param methods: (list) CN methods. All methods must be subclassed from CNBase.
+    :param structure_groups: (str) or (list) groups of test structures. Defaults to "elemental"
+            Current options include "elemental", "common_binaries", "laves", but will be
+            significantly expanded in future.
+    :param unique_sites: (bool) Only calculate CNs of symmetrically unique sites in structures.
+            This is essential to get a cleaner output. Defaults to True.
+    """
     def __init__(self, methods, structure_groups="elemental", unique_sites=True, round=3):
-        """
-        Class for performing CN benchmarks on a set of structures
-
-        :param methods: (list) CN methods.
-        :param structure_groups: (str) or (list) groups of test structures. Defaults to "elemental"
-        :param unique_sites: (bool) Only calculate symmetrically unique sites.
-
-        """
         self.methods = methods
         self.structure_groups = structure_groups if isinstance(structure_groups, list) else [structure_groups]
         self.test_structures = OrderedDict()
@@ -78,6 +76,9 @@ class Benchmark(object):
             self.test_structures[name] = Structure.from_file(s)
 
     def benchmark(self):
+        """
+        Performs the benchmark calculations.
+        """
         for m in self.methods:
             for k,v in self.test_structures.items():
                 cns = []
@@ -95,7 +96,8 @@ class Benchmark(object):
 
     def report(self, totals=False):
         """
-        Reports the benchmark as a pandas DataFrame
+        Reports the benchmark as a pandas DataFrame. This is the recommended method for pulling the
+        CNs obtained by each method.
         :param totals: (bool) option to report only total CNs of a site. Defaults to False, meaning element-wise CN
             is listed.
         :return: pd.DataFrame
