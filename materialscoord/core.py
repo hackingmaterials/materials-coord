@@ -33,8 +33,9 @@ class CNBase:
     def compute(self, structure, n):
         """
         :param structure: (Structure) a pymatgen Structure
-        :param n: (int) index of central atom in structure
-        :return: Dict of CN's. e.g. {'O': 4.4, 'F': 2.1}
+        :param n: (int) index of the atom in structure that the CN will be calculated
+            for.
+        :return: Dict of CN's for the site n. (e.g. {'O': 4.4, 'F': 2.1})
         """
         pass
 
