@@ -116,7 +116,7 @@ class Benchmark(object):
                 for k in m._cns: # for a structure in the methods._cns
                     rev_cns = []
                     for i,j in m._cns[k]:
-                        rev_cns.append((i, {"Total": sum(j.values())}))
+                        rev_cns.append((i, sum(j.values())))
                     s_dict[k]=rev_cns
 
                 if separate_columns:
@@ -127,9 +127,9 @@ class Benchmark(object):
                         l = len(kv)
                         if l < max_sites:
                             for i in range(max_sites - l):
-                                kv.append(("null", {"Total": 0}))
+                                kv.append(("null", 0))
                         for i in range(max_sites):
-                            data[m.__class__.__name__ + str(i)][kc] = kv[i][1]["Total"]
+                            data[m.__class__.__name__ + str(i)][kc] = kv[i][1]
                 else:
                     data[m.__class__.__name__] = s_dict
 
