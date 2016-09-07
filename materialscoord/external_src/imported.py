@@ -3,7 +3,7 @@ from collections import defaultdict
 import math
 
 """
-This paackage contains CN methods imported from external sources.
+This module contains CN methods imported from external sources.
 See each class for the original authors.
 """
 
@@ -62,8 +62,7 @@ class EffectiveCoordFinder_modified(object):
         """
         Get a specie-centered polyhedra for a structure
         :param radius: (float) distance in Angstroms for bond cutoff
-        :return: (dict) A default dictionary with keys corresponding to different cations and the values to the cation's
-            ECoN coordination numbers
+        :return: (dict) A dictionary with keys corresponding to different ECoN coordination numbers for site n.
         """
         site = self._structure.sites[self.n]
 
@@ -84,6 +83,7 @@ class EffectiveCoordFinder_modified(object):
             bond_weight = math.exp(1-(all_bond_lengths[bond]/weighted_avg)**6)
             cns[ neighbor_list[bond]]+=bond_weight
         return cns
+
 
 def calculate_weighted_avg(bonds):
     """
