@@ -97,27 +97,48 @@ class Benchmark(object):
                     cns.append( (v[j].species_string, tmpcn) )
                 m._cns[k]=cns
 
-    def report(self, totals=False):
+    def report(self, totals=False, separate_columns=False, max_sites=5):
         """
         Reports the benchmark as a pandas DataFrame. This is the recommended method for pulling the
         CNs obtained by each method.
         :param totals: (bool) option to report only total CNs of a site. Defaults to False, meaning element-wise CN
             is listed.
-        :return: pd.DataFrame
+        :param separate_columns: (bool) option to format the data-frame such that each total CN is in a separate column.
+            totals must be set True.
+        :param max_sites: (int) maximum number of unique sites to have in report for each method. Only used if totals
+            and separate_columns are set True. Defaults to 5
+
         """
         data = {}
         for m in self.methods:
             if totals:
                 s_dict = {}
-                for k in m._cns:
+                for k in m._cns: # for a structure in the methods._cns
                     rev_cns = []
                     for i,j in m._cns[k]:
                         rev_cns.append((i, {"Total": sum(j.values())}))
                     s_dict[k]=rev_cns
-                data[m.__class__.__name__] = s_dict
+
+                if separate_columns:
+                    for i in range(max_sites):
+                        data[m.__class__.__name__ + str(i)] = {}
+
+                    for kc, kv in s_dict.items():
+                        l = len(kv)
+                        if l < max_sites:
+                            for i in range(max_sites - l):
+                                kv.append(("null", {"Total": 0}))
+                        for i in range(max_sites):
+                            data[m.__class__.__name__ + str(i)][kc] = kv[i][1]["Total"]
+                else:
+                    data[m.__class__.__name__] = s_dict
+
             else:
                 data[m.__class__.__name__] = m._cns
+
+
         index = self.test_structures.keys()
+
         return pd.DataFrame(data=data, index=index)
 
     @staticmethod
