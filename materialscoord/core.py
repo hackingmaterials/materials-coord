@@ -83,9 +83,12 @@ class Benchmark(object):
         if self.structure_groups:
             p = os.path.join(module_dir, "..", "test_structures", group, "*")
         else:
-            p = os.path.join(self.custom, "*")
-        cif_files = glob.glob(p)
-        for s in cif_files:
+            if os.path.isdir(self.custom):
+                p = os.path.join(self.custom, "*")
+            else:
+                p = self.custom
+        str_files = glob.glob(p)
+        for s in str_files:
             name = os.path.basename(s).split(".")[0]
             self.test_structures[name] = Structure.from_file(s)
 
