@@ -63,13 +63,20 @@ class HumanInterpreter(CNBase):
 
         p = os.path.join(module_dir, "..", "test_structures", "human_interpreter.yaml")
         t = os.path.join(module_dir, "..", "test_structures")
-        interpreter =  custom_interpreter if custom_interpreter else p
+        interpreter = custom_interpreter if custom_interpreter else p
         test_structures = custom_test_structures if custom_test_structures else t
 
         with open(interpreter) as f:
             hi = yaml.load(f)
+
         for k in hi.keys():
-            find_structure = glob.glob(os.path.join(test_structures, "*", k+".cif"))
+            if custom_test_structures:
+                find_structure = glob.glob(os.path.join(test_structures, k + "*"))
+            else:
+                find_structure = glob.glob(os.path.join(test_structures, "*", k+"*"))
+            if len(find_structure)==0:
+                continue
+
             s = Structure.from_file(find_structure[0])
             hi[k].append(s)
 

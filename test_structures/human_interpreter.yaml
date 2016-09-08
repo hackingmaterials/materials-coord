@@ -80,3 +80,42 @@ CaF2_fluorite:
     - F:
         F: 0.0
         Ca: 4.0
+
+Cu5Zn8_gamma_brass:
+    - Zn:
+        Zn: 6.0
+        Cu: 6.0
+    - Zn:
+        Zn: 5.0
+        Cu: 6.0
+    - Cu:
+        Zn: 9.0
+        Cu: 3.0
+    - Cu:
+        Zn: 10.0
+        Cu: 3.0
+
+_Cu5Zn8_gamma_brass:
+    - Zn1:
+        Zn1: 3.0
+        Cu1: 3.0
+        Cu2: 3.0
+        Zn2: 3.0
+    - Zn2:
+        Zn1: 1.0
+        Zn2: 4.0
+        Cu1: 2.0
+        Cu2: 4.0
+    - Cu1:
+        Zn1: 3.0
+        Cu1: 0.0
+        Cu2: 3.0
+        Zn2: 6.0
+    - Cu2:
+        Zn1: 2.0
+        Cu1: 2.0
+        Cu2: 1.0
+        Zn2: 8.0
+
+
+
