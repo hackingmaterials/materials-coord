@@ -17,8 +17,24 @@ human interpretations of CN environments to be incorporated into benchmarking (i
 <a name="how_do_i_benchmark_cn_algos"/>
 ## How do I benchmark Coordination Number algorithms with MaterialsCoord?
 
-Examples of how MaterialsCoord benchmarking is performed can be found in [tests.ipynb](https://github.com/aykol/MaterialsCoord/blob/master/tests.ipynb)
-file.
+Simply put:
+* `Benchmark` class provides the necessary infrastructure to perform the comparison of CN algorithms. When being initialized, 
+it takes the group of test structures (or your own structures) and a list of `CNBase` methods (CN calculation methods) as arguments.
+* `Benchmark.benchmark()` performs the CN calculations on the selected test structures
+* `Benchmark.report()` provides different types of reports that summarizes the results of the benchmarking.
+
+For example, we can compare the Effective Coordination Number (ECoN) and O'Keeffe's Voronoi CN method using a set of unique elemental
+crystal structures:
+
+```python
+from materialscoord.cn_methods import TestECoN, TestVoronoiCoordFinder
+from materialscoord.core import Benchmark
+bm = Benchmark( [TestECoN(), TestVoronoiCoordFinder()], "elemental")
+bm.benchmark()
+bm.report()
+```
+
+Further details can be found in examples provided in [tests.ipynb](https://github.com/aykol/MaterialsCoord/blob/master/tests.ipynb).
 
 <a name="how_do_i_implement_cn_algos"/>
 ## How do I implement a new Coordination Number algorithm in MaterialsCoord?
