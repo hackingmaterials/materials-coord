@@ -29,7 +29,7 @@ crystal structures:
 ```python
 from materialscoord.cn_methods import TestECoN, TestVoronoiCoordFinder
 from materialscoord.core import Benchmark
-bm = Benchmark( [TestECoN(), TestVoronoiCoordFinder()], "elemental")
+bm = Benchmark([TestECoN(), TestVoronoiCoordFinder()], "elemental")
 bm.benchmark()
 bm.report()
 ```
