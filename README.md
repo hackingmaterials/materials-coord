@@ -6,7 +6,7 @@ approaches against a benchmark set of material structures.
 Atomic coordination numbers (CNs) are one of the most important descriptors for the local environments in condensed materials, but they
 have no universal definition. Therefore, researchers have come up with a wide range of algorithms, performance of which are often
 unknown outside the chemical domain they were particularly designed for. MaterialsCoord aims at providing the necessary infrastructure
-to host, compare and benchmark different CN algorithms against a selected set of crystal structures. It further allows
+to host, interface, compare and benchmark different CN algorithms against a selected set of crystal structures. It further allows
 human interpretations of CN environments to be incorporated into benchmarking (in progress).
 
 [1. How do I benchmark Coordination Number algorithms with MaterialsCoord?](#how_do_i_benchmark_cn_algos)  
