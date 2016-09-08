@@ -51,3 +51,13 @@ This is not recommended as external dependencies will restrict portability,
 but maybe unavoidable if the external algorithm is part of another python package,
 or is written in some other language such as Java. In that case `compute` can simply serve as a wrapper that calls
 and post processes the output of the external code.
+
+## How can I use MaterialsCoord on my own structures?
+There are different ways of how one can do this.
+* Add a new "group" folder that includes your structures into the test_structures folder. Then you can initialize Benchmark with
+your `structure_groups = group_name` (i.e. the name of your folder). You can then call your new structure group any time you want.
+* If you don't want to permanently add the structures to MaterialsCoord but rather run CN methods on some external structures,
+you can use the `custom_set` argument of `Benchmark` to provide the path to a set of structure files. If `custom_set` is given,
+`Benchmark` will ignore any `structure_group` provided.
+
+Note that in any case, the structures provided can be of any type that pymatgen can automatically interpret (cif, POSCAR, etc.)
