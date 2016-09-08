@@ -41,7 +41,7 @@ Further details can be found in examples provided in [tests.ipynb](https://githu
 
 This is fairly simple:
 
-1. Define a new class that is subclassed from materialscoord.core.CNBase.
+1. Define a new class that is subclassed from `materialscoord.core.CNBase`.
 2. The class must have a method named `compute` which takes a pymatgen Structure and site-index as input,
 and returns a dictionary of CNs for that site; e.g. `{'O': 4.4, 'F': 2.1}`.
 
@@ -61,7 +61,7 @@ class MyCoordinationNumberAlgorithm(CNBase):
 ```
 
 Any parameters the algorithm needs can be passed to the class when initializing using the params keyword as a dictionary. These can later
-be accessed from `compute` method as _params property of the class.
+be accessed from `compute` method as the `_params` attribute of the class.
 
 In method `compute` you can do whatever is necessary to interface the algorithm with MaterialsCoord. Options include:
 * Simplest: Implementing the entire algorithm within the `compute` method.
