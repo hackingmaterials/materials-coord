@@ -3,23 +3,16 @@
 MaterialsCoord provides an infrastructure for comparing coordination numbers produced by different
 approaches against a benchmark set of structures.
 
-##### Table of Contents
-[1. Why is MaterialsCoord useful](#why_is_materials_coord_useful)
-
-[2. How do I benchmark Coordination Number algorithms with MaterialsCoord?](#how_do_i_benchmark_cn_algos)
-
-[3. How do I implement a new Coordination Number algorithm in MaterialsCoord?](#how_do_i_implement_cn_algos)
-
-[4. How can I use MaterialsCoord on my own structures?](#how_can_i_use_my_own_structures)
-
-<a name="why_is_materials_coord_useful"/>
-## Why is MaterialsCoord useful?
-
 Atomic coordination numbers (CNs) are one of the most important descriptors for the local environments in condensed materials, but they
 have no universal definition. Therefore, researchers have come up with a wide range of algorithms, performance of which are often
 unknown outside the chemical domain they were particularly designed for. MaterialsCoord aims at providing the necessary infrastructure
 to host, compare and benchmark different CN algorithms against a selected set of crystal structures. It further allows
 human interpretations of CN environments to be incorporated into benchmarking (in progress).
+
+[1. How do I benchmark Coordination Number algorithms with MaterialsCoord?](#how_do_i_benchmark_cn_algos)
+[2. How do I implement a new Coordination Number algorithm in MaterialsCoord?](#how_do_i_implement_cn_algos)
+[3. How can I use MaterialsCoord on my own structures?](#how_can_i_use_my_own_structures)
+[4. Installation and requirements](#install)
 
 <a name="how_do_i_benchmark_cn_algos"/>
 ## How do I benchmark Coordination Number algorithms with MaterialsCoord?
@@ -74,3 +67,7 @@ you can use the `custom_set` argument of `Benchmark` to provide the path to a se
 `Benchmark` will ignore any `structure_group` provided.
 
 Note that in any case, the structures provided can be of any type that pymatgen can automatically interpret (cif, POSCAR, etc.)
+
+<a name="instal"/>
+## Installation and requirements
+Coming soon.
