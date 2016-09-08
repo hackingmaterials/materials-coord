@@ -63,6 +63,7 @@ class Benchmark(object):
         if custom_set:
             self.structure_groups = None
             self.custom = custom_set
+            self._load_test_structures(None)
         else:
             for g in self.structure_groups:
                 self._load_test_structures(g)
