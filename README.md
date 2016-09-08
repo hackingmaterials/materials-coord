@@ -87,7 +87,9 @@ There are different ways of how one can do this.
 your `structure_groups = group_name` (i.e. the name of your folder). You can then call your new structure group any time you want.
 * If you don't want to permanently add the structures to MaterialsCoord but rather run CN methods on some external structures,
 you can use the `custom_set` argument of `Benchmark` to provide the path to a set of structure files. If `custom_set` is given,
-`Benchmark` will ignore any `structure_group` provided.
+`Benchmark` will ignore any `structure_group` provided. 
+
+An example can be found in the [custom_tests](https://github.com/aykol/MaterialsCoord/blob/master/examples/custom_tests.ipynb) notebook.
 
 Note that in any case, the structures provided can be of any type that pymatgen can automatically interpret (cif, POSCAR, etc.)
 
