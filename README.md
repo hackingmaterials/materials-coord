@@ -85,7 +85,7 @@ you can use the `custom_set` argument of `Benchmark` to provide the path to a se
 
 Note that in any case, the structures provided can be of any type that pymatgen can automatically interpret (cif, POSCAR, etc.)
 
-<a name="instal"/>
+<a name="human_interpreter"/>
 ## What is HumanInterpreter?
 `HumanInterpreter` is a special CN method that provides CNs from the "human" interpreted coordination environments stored in the
 human_interpreter.yaml file. It can be added as a CN method along with other CN methods. Currently only the `common_binaries` structure group
