@@ -9,10 +9,10 @@ unknown outside the chemical domain they were particularly designed for. Materia
 to host, compare and benchmark different CN algorithms against a selected set of crystal structures. It further allows
 human interpretations of CN environments to be incorporated into benchmarking (in progress).
 
-[1. How do I benchmark Coordination Number algorithms with MaterialsCoord?](#how_do_i_benchmark_cn_algos)
-[2. How do I implement a new Coordination Number algorithm in MaterialsCoord?](#how_do_i_implement_cn_algos)
-[3. How can I use MaterialsCoord on my own structures?](#how_can_i_use_my_own_structures)
-[4. Installation and requirements](#install)
+[1. How do I benchmark Coordination Number algorithms with MaterialsCoord?](#how_do_i_benchmark_cn_algos)  
+[2. How do I implement a new Coordination Number algorithm in MaterialsCoord?](#how_do_i_implement_cn_algos)    
+[3. How can I use MaterialsCoord on my own structures?](#how_can_i_use_my_own_structures)  
+[4. Installation and requirements](#install)  
 
 <a name="how_do_i_benchmark_cn_algos"/>
 ## How do I benchmark Coordination Number algorithms with MaterialsCoord?
