@@ -54,6 +54,34 @@ class TestVoronoiCoordFinder_mod(CNBase):
         return x.get_cns(**params)
 
 
+class TestBrunnerReciprocal(CNBase):
+    """
+    Brunner's CN described as counting the atoms that are within the largest reciprocal interatomic distance.
+
+    From the paper: G.O. Brunner, A definition of coordination and its relevance in structure types AlB2 and NiAs.
+        Acta Crys. A33 (1977) 226.
+
+    """
+    def compute(self, structure, n):
+        params = self._params
+        tol = params.get("tol", 1.0e-4)
+        r = params.get("radius", 8.0)
+        nl = structure.get_neighbors(structure.sites[n], r)
+        ds = [i[-1] for i in nl]
+        ds.sort()
+        ns = [1.0/ds[i] - 1.0/ds[i+1] for i in range(len(ds) - 1)]
+        d_max = ds[ ns.index(max(ns)) ]
+        cn = {}
+        for i in nl:
+            if i[-1] < d_max + tol:
+                el = i[0].species_string
+                if el in cn:
+                    cn[el] += 1.0
+                else:
+                    cn[el] = 1.0
+        return cn
+
+
 class HumanInterpreter(CNBase):
     """
     This is a special CN method that reads a yaml file where "human interpretations" of coordination
