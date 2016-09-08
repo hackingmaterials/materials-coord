@@ -12,7 +12,8 @@ human interpretations of CN environments to be incorporated into benchmarking (i
 [1. How do I benchmark Coordination Number algorithms with MaterialsCoord?](#how_do_i_benchmark_cn_algos)  
 [2. How do I implement a new Coordination Number algorithm in MaterialsCoord?](#how_do_i_implement_cn_algos)    
 [3. How can I use MaterialsCoord on my own structures?](#how_can_i_use_my_own_structures)  
-[4. Installation and requirements](#install)  
+[4. What is HumanInterpreter?](#humaninterpreter)  
+[5. Installation and requirements](#install)  
 
 <a name="how_do_i_benchmark_cn_algos"/>
 ## How do I benchmark Coordination Number algorithms with MaterialsCoord?
@@ -83,6 +84,13 @@ you can use the `custom_set` argument of `Benchmark` to provide the path to a se
 `Benchmark` will ignore any `structure_group` provided.
 
 Note that in any case, the structures provided can be of any type that pymatgen can automatically interpret (cif, POSCAR, etc.)
+
+<a name="instal"/>
+## What is HumanInterpreter?
+`HumanInterpreter` is a special CN method that provides CNs from the "human" interpreted coordination environments stored in the
+human_interpreter.yaml file. It can be added as a CN method along with other CN methods. Currently only the `common_binaries` structure group
+has human interpreted CNs, but more will be added soon.
+
 
 <a name="instal"/>
 ## Installation and requirements
