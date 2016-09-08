@@ -38,7 +38,7 @@ bm.report()
 
 Further details can be found in [examples](https://github.com/aykol/MaterialsCoord/tree/master/examples) provided in [tests.ipynb](https://github.com/aykol/MaterialsCoord/blob/master/examples/tests.ipynb).
 
-<a name="#cn_algos"/>
+<a name="cn_algos"/>
 ## Which coordination number algorithms are currently available?
 
 You can see the available algorithms [here](https://github.com/aykol/MaterialsCoord/blob/master/materialscoord/cn_methods.py). New algorithms are welcome; simply submit a pull request on github.
