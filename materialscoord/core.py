@@ -47,21 +47,28 @@ class Benchmark(object):
     :param structure_groups: (str) or (list) groups of test structures. Defaults to "elemental"
             Current options include "elemental", "common_binaries", "laves", but will be
             significantly expanded in future.
+    :param custom_set (str): Full path to custom set of external structures to be loaded. Can be used to
+            apply CN methods on user specified structures.
     :param unique_sites: (bool) Only calculate CNs of symmetrically unique sites in structures.
             This is essential to get a cleaner output. Defaults to True.
     :param nround: (int) Rounds CNs to given number of decimals. Defaults to 3. nround=0 means
             no rounding.
     """
-    def __init__(self, methods, structure_groups="elemental", unique_sites=True, nround=3):
+    def __init__(self, methods, structure_groups="elemental", custom_set=None, unique_sites=True, nround=3):
         self.methods = methods
         self.structure_groups = structure_groups if isinstance(structure_groups, list) else [structure_groups]
+
         self.test_structures = OrderedDict()
+
+        if custom_set:
+            self.structure_groups = None
+            self.custom = custom_set
+        else:
+            for g in self.structure_groups:
+                self._load_test_structures(g)
 
         self.unique_sites = unique_sites
         self.nround = nround
-
-        for g in self.structure_groups:
-            self._load_test_structures(g)
 
         for m in self.methods:
             assert isinstance(m, CNBase)
@@ -72,7 +79,10 @@ class Benchmark(object):
         Loads the structure group from test_structures
         :param group: (str) group name, options: "elemental". Defaults to "elemental"
         """
-        p = os.path.join(module_dir, "..", "test_structures", group, "*.cif")
+        if self.structure_groups:
+            p = os.path.join(module_dir, "..", "test_structures", group, "*")
+        else:
+            p = os.path.join(self.custom, "*")
         cif_files = glob.glob(p)
         for s in cif_files:
             name = os.path.basename(s).split(".")[0]
@@ -92,6 +102,8 @@ class Benchmark(object):
                     sites = range(len(v))
                 for j in sites:
                     tmpcn = m.compute(v,j)
+                    if tmpcn == "null":
+                        continue
                     if self.nround:
                         self._roundcns(tmpcn, self.nround)
                     cns.append( (v[j].species_string, tmpcn) )
