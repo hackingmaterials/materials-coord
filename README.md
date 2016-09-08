@@ -1,7 +1,7 @@
 # MaterialsCoord
 
 MaterialsCoord provides an infrastructure for comparing coordination numbers produced by different
-approaches against a benchmark set of structures.
+approaches against a benchmark set of material structures.
 
 Atomic coordination numbers (CNs) are one of the most important descriptors for the local environments in condensed materials, but they
 have no universal definition. Therefore, researchers have come up with a wide range of algorithms, performance of which are often
