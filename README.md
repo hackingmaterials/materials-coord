@@ -127,6 +127,7 @@ Fe3O4_spinel:
 
 
 
-<a name="instal"/>
+<a name="install"/>
 ## Installation and requirements
-Coming soon.
+For now, cloning the repo and executing `pyhton setup.py develop` should work fine. MaterialsCoord requires a number of other pyhton packages installed, such as pymatgen. Successfully
+installing pymatgen with all of its dependencies, should also satisfy the dependencies of MaterialsCoord.
