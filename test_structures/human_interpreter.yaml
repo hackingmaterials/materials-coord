@@ -1,0 +1,82 @@
+# Human interpreted coordination numbers in structures:
+
+Al2O3_corundum:
+    - Al:
+        Al: 0.0
+        O: 6.0
+    - O:
+        Al: 3.0
+        O: 0.0
+
+Fe3O4_spinel:
+    - Fe:
+        Fe: 0.0
+        O: 6.0
+    - Fe:
+        Fe: 0.0
+        O: 4.0
+    - O:
+        Fe: 4.0
+        O: 0.0
+
+MgAl2O4_spinel:
+    - Mg:
+        Mg: 0.0
+        Al: 0.0
+        O: 4.0
+    - Al:
+        Mg: 0.0
+        Al: 0.0
+        O: 6.0
+    - O:
+        Mg: 1.0
+        Al: 3.0
+        O: 0.0
+
+NaCl_rocksalt:
+    - Na:
+        Cl: 4.0
+        Na: 0.0
+    - Cl:
+        Cl: 0.0
+        Na: 6.0
+
+CsCl:
+    - Cs:
+        Cs: 0.0
+        Cl: 8.0
+    - Cl:
+        Cs: 8.0
+        Cl: 0.0
+
+TiO2_anatase:
+    - Ti:
+        O: 6.0
+        Ti: 0.0
+    - O:
+        Ti: 3.0
+        O: 0.0
+
+ZnS_wurtzite:
+    - Zn:
+        S: 4.0
+        Zn: 0.0
+    - S:
+        S: 0.0
+        Zn: 4.0
+
+ZnS_zincblende:
+    - Zn:
+        S: 4.0
+        Zn: 0.0
+    - S:
+        S: 0.0
+        Zn: 4.0
+
+CaF2_fluorite:
+    - Ca:
+        F: 8.0
+        Ca: 0.0
+    - F:
+        F: 0.0
+        Ca: 4.0
