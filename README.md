@@ -36,7 +36,7 @@ bm.benchmark()
 bm.report()
 ```
 
-Further details can be found in [examples](https://github.com/aykol/MaterialsCoord/tree/master/examples) provided in [tests.ipynb](https://github.com/aykol/MaterialsCoord/blob/master/examples/tests.ipynb).
+Further details can be found in [examples](https://github.com/aykol/MaterialsCoord/tree/master/examples) provided in [benchmark_examples.ipynb](https://github.com/aykol/MaterialsCoord/blob/master/examples/benchmark_examples.ipynb).
 
 <a name="cn_algos"/>
 ## Which coordination number algorithms are currently available?
