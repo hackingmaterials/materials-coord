@@ -91,7 +91,7 @@ Note that in any case, the structures provided can be of any type that pymatgen 
 human_interpreter.yaml file. It can be added as a CN method along with other CN methods. Currently only the `common_binaries` structure group
 has human interpreted CNs, but more will be added soon.
 
-If you interpret the CN environment in a structure and you want to added it to MaterialsCoord, you can basically add the CN numbers to the human_interpreter.yaml as a dictionary that matches
+If you interpret the CN environment in a structure and you want to add it to MaterialsCoord to compare against availble CN methods, you can basically add the CN numbers to the human_interpreter.yaml as a dictionary that matches
 the name of the structure file in `test_structures` or `custom_set` you provided (without the file extension, if it has any). For example:
 ```yaml
 Fe3O4_spinel:
@@ -106,9 +106,10 @@ Fe3O4_spinel:
         O: 0.0
 ```
 describes the CN environment in the spinel Fe3O4 spinel structure, where there are two different unique Fe sites, and one O site. Sites are given as a list. And for each site a dictionary
-of neighboring elements are provided. As you can see above, these neighboring elements do not differentiate between sites and gives a total CN number (i.e. there is one Fe in each) opposite to the unique sites list (where we had two Fe sites).
-Since it is not always easy to interpret the exact coordination number, MaterialsCoord will accept a range as well. Let's assume hypthetically we aren't sure how many Fe neighbors O site has,
-but we guess it's between 3.0 and 5.0:
+of neighboring elements are provided. In this sub-dictionary of surroundings of a given site, we do not differentiate between sites and only list the total CN number for each chemical element (i.e. there is one Fe in each) opposite to the unique sites list (where we had two Fe sites).
+
+Since it is not always easy to interpret the exact coordination number, MaterialsCoord will accept a range. Let's assume hypothetically we aren't sure how many Fe neighbors the O site has,
+but we guess it's between 3.0 and 5.0, we can write:
 ```yaml
 Fe3O4_spinel:
     - Fe:
