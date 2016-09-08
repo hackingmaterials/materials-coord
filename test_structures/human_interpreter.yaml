@@ -35,7 +35,7 @@ MgAl2O4_spinel:
 
 NaCl_rocksalt:
     - Na:
-        Cl: 4.0
+        Cl: 6.0
         Na: 0.0
     - Cl:
         Cl: 0.0
