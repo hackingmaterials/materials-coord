@@ -10,10 +10,11 @@ to host, interface, compare and benchmark different CN algorithms against a sele
 human interpretations of CN environments to be incorporated into benchmarking (in progress).
 
 [1. How do I benchmark Coordination Number algorithms with MaterialsCoord?](#how_do_i_benchmark_cn_algos)  
-[2. How do I implement a new Coordination Number algorithm in MaterialsCoord?](#how_do_i_implement_cn_algos)    
-[3. How can I use MaterialsCoord on my own structures?](#how_can_i_use_my_own_structures)  
-[4. What is HumanInterpreter?](#humaninterpreter)  
-[5. Installation and requirements](#install)  
+[2. Which coordination number algorithms are currently available?](#cn_algos)    
+[3. How do I implement a new Coordination Number algorithm?](#how_do_i_implement_cn_algos)    
+[4. How can I use MaterialsCoord on my own structures?](#how_can_i_use_my_own_structures)  
+[5. What is the HumanInterpreter?](#humaninterpreter)  
+[6. Installation and requirements](#install)  
 
 <a name="how_do_i_benchmark_cn_algos"/>
 ## How do I benchmark Coordination Number algorithms with MaterialsCoord?
@@ -37,8 +38,13 @@ bm.report()
 
 Further details can be found in [examples](https://github.com/aykol/MaterialsCoord/tree/master/examples) provided in [tests.ipynb](https://github.com/aykol/MaterialsCoord/blob/master/examples/tests.ipynb).
 
+<a name="#cn_algos"/>
+## Which coordination number algorithms are currently available?
+
+You can see the available algorithms [here](https://github.com/aykol/MaterialsCoord/blob/master/materialscoord/cn_methods.py). New algorithms are welcome; simply submit a pull request on github.
+
 <a name="how_do_i_implement_cn_algos"/>
-## How do I implement a new Coordination Number algorithm in MaterialsCoord?
+## How do I implement a new Coordination Number algorithm?
 
 This is fairly simple:
 
@@ -86,7 +92,7 @@ you can use the `custom_set` argument of `Benchmark` to provide the path to a se
 Note that in any case, the structures provided can be of any type that pymatgen can automatically interpret (cif, POSCAR, etc.)
 
 <a name="humaninterpreter"/>
-## What is HumanInterpreter?
+## What is the HumanInterpreter?
 `HumanInterpreter` is a special CN method that provides CNs from the "human" interpreted coordination environments stored in the
 human_interpreter.yaml file. It can be added as a CN method along with other CN methods. Currently only the `common_binaries` structure group
 has human interpreted CNs, but more will be added soon.
