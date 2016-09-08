@@ -24,6 +24,21 @@ This is fairly simple:
 2. The class must have a method named `compute` which takes a pymatgen Structure and site-index as input,
 and returns a dictionary of CNs for that site; e.g. `{'O': 4.4, 'F': 2.1}`.
 
+For example:
+```python
+class MyCoordinationNumberAlgorithm(CNBase):
+    """
+    My new algorithm
+    """
+    def compute(self, structure, n):
+        params = self._params
+
+        # ... here your algorithm finds CNs of site n.
+        # e.g. cns = my_algorithm(structure, n, **params)
+
+        return cns
+```
+
 Any parameters the algorithm needs can be passed to the class when initializing using the params keyword as a dictionary. These can later
 be accessed from `compute` method as _params property of the class.
 
