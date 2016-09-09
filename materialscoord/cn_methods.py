@@ -2,10 +2,12 @@ import yaml
 import os
 import glob
 from pymatgen.analysis.structure_analyzer import VoronoiCoordFinder
+from pymatgen.core.structure import Structure
 from materialscoord.core import CNBase
 from materialscoord.external_src.imported import EffectiveCoordFinder_modified, \
     VoronoiCoordFinder_modified
-from pymatgen.core.structure import Structure
+from materialscoord.external_src.supplement import Brunner
+
 
 module_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)))
 
@@ -35,7 +37,7 @@ class TestVoronoiCoordFinder(CNBase):
 
 class TestECoN(CNBase):
     """
-    ECoN
+    Effective Coordination Number (ECON) of Hoppe.
     """
     def compute(self, structure, n):
         params = self._params
@@ -54,32 +56,59 @@ class TestVoronoiCoordFinder_mod(CNBase):
         return x.get_cns(**params)
 
 
+class TestVoronoiLegacy(CNBase):
+    """
+    Plain Voronoi coordination numbers (i.e. number of facets of Voronoi polyhedra)
+    Should not be used on its own, implemented only for comparison purposes.
+    Base line for any Voronoi based CN algorithm.
+    """
+    def compute(self, structure, n):
+        pass
+
+
 class TestBrunnerReciprocal(CNBase):
     """
-    Brunner's CN described as counting the atoms that are within the largest reciprocal interatomic distance.
-
-    From the paper: G.O. Brunner, A definition of coordination and its relevance in structure types AlB2 and NiAs.
+    Brunner's CN described as counting the atoms that are within the largest gap in
+    differences in reciprocal interatomic distances.
+    Ref:
+        G.O. Brunner, A definition of coordination and its relevance in structure types AlB2 and NiAs.
         Acta Crys. A33 (1977) 226.
-
     """
     def compute(self, structure, n):
         params = self._params
-        tol = params.get("tol", 1.0e-4)
-        r = params.get("radius", 8.0)
-        nl = structure.get_neighbors(structure.sites[n], r)
-        ds = [i[-1] for i in nl]
-        ds.sort()
-        ns = [1.0/ds[i] - 1.0/ds[i+1] for i in range(len(ds) - 1)]
-        d_max = ds[ ns.index(max(ns)) ]
-        cn = {}
-        for i in nl:
-            if i[-1] < d_max + tol:
-                el = i[0].species_string
-                if el in cn:
-                    cn[el] += 1.0
-                else:
-                    cn[el] = 1.0
-        return cn
+        return Brunner(structure, n, mode="reciprocal", **params)
+
+
+class TestBrunnerRelative(CNBase):
+    """
+    Brunner's CN described as counting the atoms that are within the largest gap in
+    differences in real space interatomic distances.
+
+    Note: Might be higly inaccurate in certain cases.
+
+    Ref:
+        G.O. Brunner, A definition of coordination and its relevance in structure types AlB2 and NiAs.
+        Acta Crys. A33 (1977) 226.
+    """
+    def compute(self, structure, n):
+        params = self._params
+        return Brunner(structure, n, mode="relative", **params)
+
+
+class TestBrunnerReal(CNBase):
+    """
+    Brunner's CN described as counting the atoms that are within the largest gap in
+    differences in real space interatomic distances.
+
+    Note: Might be higly inaccurate in certain cases.
+
+    Ref:
+        G.O. Brunner, A definition of coordination and its relevance in structure types AlB2 and NiAs.
+        Acta Crys. A33 (1977) 226.
+    """
+    def compute(self, structure, n):
+        params = self._params
+        return Brunner(structure, n, mode="real", **params)
 
 
 class HumanInterpreter(CNBase):
