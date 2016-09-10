@@ -29,3 +29,19 @@ def Brunner(structure, n, mode="reciprocal", tol=1.0e-4, radius=8.0):
             else:
                 cn[el] = 1.0
     return cn
+
+
+def getDict(stringIn):
+    """
+    Helper function for Delaunay CNs by David Mrdjenovich et al. (LBL)
+    """
+    if stringIn[0] == '{' :
+        stringIn = stringIn[1:len(stringIn)]
+    if stringIn[len(stringIn) - 1] == '}' :
+        stringIn = stringIn[0:len(stringIn) - 1]
+    entries = stringIn.split(",")
+    toReturn = {}
+    for s in entries :
+        keyVal = s.split(":")
+        toReturn[keyVal[0]] = int(keyVal[1])
+    return toReturn

@@ -6,7 +6,7 @@ from pymatgen.core.structure import Structure
 from materialscoord.core import CNBase
 from materialscoord.external_src.imported import EffectiveCoordFinder_modified, \
     VoronoiCoordFinder_modified
-from materialscoord.external_src.supplement import Brunner
+from materialscoord.external_src.supplement import Brunner, getDict
 
 
 module_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)))
@@ -109,6 +109,46 @@ class TestBrunnerReal(CNBase):
     def compute(self, structure, n):
         params = self._params
         return Brunner(structure, n, mode="real", **params)
+
+
+class TestDelaunay(CNBase):
+    """
+    Delaunay CNs by David Mrdjenovich et al. (LBL)
+    """
+
+    def compute(self, structure, site):
+        if not isinstance(site, int):
+            raise Exception("Expected site input as integer.")
+        if not isinstance(structure, Structure):
+            raise Exception("Expected structure input as Structure object.")
+        if site < 0 or site >= len(structure.sites):
+            raise Exception("Site input out of range.")
+        uniqueSite = structure.sites[site]
+        info = "basis:"
+        basisCache = {}
+        for s in structure.sites:
+            species = s.species_string
+            loc = s.coords.tolist()
+            if basisCache.has_key(species):
+                basisCache.get(species).append(loc)
+            else:
+                basisCache[species] = [loc]
+        for s in basisCache.keys():
+            info += s + str(basisCache.get(s))
+        latticeVecs = structure.lattice.matrix
+        info += "|a:" + str(latticeVecs[0].tolist())
+        info += "|b:" + str(latticeVecs[1].tolist())
+        info += "|c:" + str(latticeVecs[2].tolist())
+        # print str(uniqueSite.coords.tolist()) + " " + info
+
+        # importing subprocess here to avoid global dependence on it.
+        import subprocess
+        jexec_path = os.path.join(module_dir, "external_src", "Coord.jar")
+        output = subprocess.Popen(["java", "-jar", jexec_path, str(uniqueSite.coords.tolist()), info],
+                                  stdout=subprocess.PIPE).communicate()
+        if output[0] == "None":
+            return None
+        return getDict(output[0])
 
 
 class HumanInterpreter(CNBase):
