@@ -42,7 +42,7 @@ Further details can be found in [examples](https://github.com/aykol/MaterialsCoo
 ## Which coordination number algorithms are currently available?
 Currently, MaterialsCoord has the following coordination number algorithms implemented in `materialscoord.cn_methods`:
 - `TestVoronoiCoordFinder`: Weighted Voronoi CNs (O'Keeffe's method).
-- `TestECoN`: Effective Coordination Numbers, ECoN, (Hoppe's method.
+- `TestECoN`: Effective Coordination Numbers, ECoN, (Hoppe's method).
 - `TestVoronoiCoordFinder_mod`: A modified version of `TestVoronoiCoordFinder`.
 - `TestVoronoiLegacy`: Basic Voronoi facet counting.
 - `TestBrunnerReciprocal`: Brunner's method of largest reciprocal gap in interactomic distances.
