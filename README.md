@@ -40,8 +40,17 @@ Further details can be found in [examples](https://github.com/aykol/MaterialsCoo
 
 <a name="cn_algos"/>
 ## Which coordination number algorithms are currently available?
+Currently, MaterialsCoord has the following coordination number algorithms implemented in `materialscoord.cn_methods`:
+- `TestVoronoiCoordFinder`: Weighted Voronoi CNs (O'Keeffe's method).
+- `TestECoN`: Effective Coordination Numbers, ECoN, (Hoppe's method.
+- `TestVoronoiCoordFinder_mod`: A modified version of `TestVoronoiCoordFinder`.
+- `TestVoronoiLegacy`: Basic Voronoi facet counting.
+- `TestBrunnerReciprocal`: Brunner's method of largest reciprocal gap in interactomic distances.
+- `TestBrunnerRelative`: Brunner's method of largest relative gap in interactomic distances.
+- `TestBrunnerReal`: Brunner's method of largest gap in interactomic distances.
+- `TestDelaunay`: David Mrdjenovich et al.'s Delaunay triangulation based algorithm (under development at LBNL).
 
-You can see the available algorithms [here](https://github.com/aykol/MaterialsCoord/blob/master/materialscoord/cn_methods.py). New algorithms are welcome; simply submit a pull request on github.
+You can see the details of the available algorithms [here](https://github.com/aykol/MaterialsCoord/blob/master/materialscoord/cn_methods.py). New algorithms are welcome; simply submit a pull request on github.
 
 <a name="how_do_i_implement_cn_algos"/>
 ## How do I implement a new Coordination Number algorithm?
