@@ -121,7 +121,9 @@ Ga_mp-140_primitive:
 
 Hg_mp-121_primitive:
     - Hg:
-        Hg: 2.0
+        Hg:
+           - 2.0
+           - 8.0
 
 La_mp-26_primitive:
     - La:
