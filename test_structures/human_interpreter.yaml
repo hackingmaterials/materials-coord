@@ -101,9 +101,9 @@ As_mp-11_primitive:
 
 C_mp-48_primitive:
     - C:
-        C: 6.0
+        C: 3.0
     - C:
-        C: 6.0
+        C: 3.0
 
 C_mp-66_primitive:
     - C:
