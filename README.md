@@ -17,7 +17,7 @@ human interpretations of CN environments to be incorporated into benchmarking (i
 [6. Installation and requirements](#install)  
 
 <a name="how_do_i_benchmark_cn_algos"/>
-## How do I benchmark Coordination Number algorithms with MaterialsCoord?
+##How do I benchmark Coordination Number algorithms with MaterialsCoord?
 
 Simply put:
 * `Benchmark` class provides the necessary infrastructure to perform the comparison of CN algorithms. When being initialized, 
@@ -39,7 +39,7 @@ bm.report()
 Further details can be found in [examples](https://github.com/aykol/MaterialsCoord/tree/master/examples) provided in [benchmark_examples.ipynb](https://github.com/aykol/MaterialsCoord/blob/master/examples/benchmark_examples.ipynb).
 
 <a name="cn_algos"/>
-## Which coordination number algorithms are currently available?
+##Which coordination number algorithms are currently available?
 Currently, MaterialsCoord has the following coordination number algorithms implemented in `materialscoord.cn_methods`:
 - `TestVoronoiCoordFinder`: Weighted Voronoi CNs (O'Keeffe's method).
 - `TestECoN`: Effective Coordination Numbers, ECoN, (Hoppe's method).
@@ -53,7 +53,7 @@ Currently, MaterialsCoord has the following coordination number algorithms imple
 You can see the details of the available algorithms [here](https://github.com/aykol/MaterialsCoord/blob/master/materialscoord/cn_methods.py). New algorithms are welcome; simply submit a pull request on github.
 
 <a name="how_do_i_implement_cn_algos"/>
-## How do I implement a new Coordination Number algorithm?
+##How do I implement a new Coordination Number algorithm?
 
 This is fairly simple:
 
@@ -90,7 +90,7 @@ or is written in some other language such as Java. In that case `compute` can si
 and post processes the output of the external code.
 
 <a name="how_can_i_use_my_own_structures"/>
-## How can I use MaterialsCoord on my own structures?
+##How can I use MaterialsCoord on my own structures?
 There are different ways of how one can do this.
 * Add a new "group" folder that includes your structures into the test_structures folder. Then you can initialize Benchmark with
 your `structure_groups = group_name` (i.e. the name of your folder). You can then call your new structure group any time you want.
@@ -103,7 +103,7 @@ An example can be found in the [custom_tests](https://github.com/aykol/Materials
 Note that in any case, the structures provided can be of any type that pymatgen can automatically interpret (cif, POSCAR, etc.)
 
 <a name="humaninterpreter"/>
-## What is the HumanInterpreter?
+##What is the HumanInterpreter?
 `HumanInterpreter` is a special CN method that provides CNs from the "human" interpreted coordination environments stored in the
 human_interpreter.yaml file. It can be added as a CN method along with other CN methods. Currently only the `common_binaries` structure group
 has human interpreted CNs, but more will be added soon.
@@ -145,6 +145,6 @@ Fe3O4_spinel:
 
 
 <a name="install"/>
-## Installation and requirements
+##Installation and requirements
 For now, cloning the repo and executing `pyhton setup.py develop` should work fine. MaterialsCoord requires a number of other pyhton packages installed, such as pymatgen. Successfully
 installing [pymatgen](http://pymatgen.org) with all of its dependencies, should also satisfy the dependencies of MaterialsCoord.
