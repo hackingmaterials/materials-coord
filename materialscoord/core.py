@@ -5,7 +5,7 @@ import pandas as pd
 from pymatgen.core.structure import Structure
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 from collections import OrderedDict
-
+from pymatgen.analysis.local_env import NearNeighbors, EconNN
 
 # TODO 1: Add a method to analyze statistics of variation in CN predictions
 # TODO 2: Implement new CN methods
@@ -22,6 +22,7 @@ class CNBase:
     must be subclassed from this class, and have a compute method that returns CNs as
     a dict.
     """
+
     def __init__(self, params=None):
         """
         :param params: (dict) of parameters to pass to compute method.
@@ -54,7 +55,8 @@ class Benchmark(object):
     :param nround: (int) Rounds CNs to given number of decimals. Defaults to 3. nround=0 means
             no rounding.
     """
-    def __init__(self, methods, structure_groups="elemental", custom_set=None, unique_sites=True, nround=3):
+
+    def __init__(self, methods, structure_groups="elemental", custom_set=None, unique_sites=True):
         self.methods = methods
         self.structure_groups = structure_groups if isinstance(structure_groups, list) else [structure_groups]
 
@@ -69,10 +71,9 @@ class Benchmark(object):
                 self._load_test_structures(g)
 
         self.unique_sites = unique_sites
-        self.nround = nround
 
         for m in self.methods:
-            assert isinstance(m, CNBase)
+            assert isinstance(m, (NearNeighbors, CNBase))
         print "Initialization successful."
 
     def _load_test_structures(self, group):
@@ -97,7 +98,7 @@ class Benchmark(object):
         Performs the benchmark calculations.
         """
         for m in self.methods:
-            for k,v in self.test_structures.items():
+            for k, v in self.test_structures.items():
                 cns = []
                 if self.unique_sites:
                     es = SpacegroupAnalyzer(v).get_symmetrized_structure().equivalent_sites
@@ -105,15 +106,19 @@ class Benchmark(object):
                 else:
                     sites = range(len(v))
                 for j in sites:
-                    tmpcn = m.compute(v,j)
-                    if tmpcn == "null":
-                        continue
-                    if self.nround:
-                        self._roundcns(tmpcn, self.nround)
-                    cns.append( (v[j].species_string, tmpcn) )
-                m._cns[k]=cns
+                    if isinstance(m, NearNeighbors):
+                        if isinstance(m, EconNN):
+                            tmpcn = m.get_cn(v, j, use_weights=True)
+                        else:
+                            tmpcn = m.get_cn(v, j, use_weights=False)
+                    else:
+                        tmpcn = m.compute(v, j)
+                        if tmpcn == "null":
+                            continue
+                    cns.append((v[j].species_string, tmpcn))
+                m._cns[k] = cns
 
-    def report(self, totals=False, separate_columns=False, max_sites=5):
+    def report(self, totals=False, separate_columns=False, max_sites=5, ndigits=1):
         """
         Reports the benchmark as a pandas DataFrame. This is the recommended method for pulling the
         CNs obtained by each method.
@@ -129,11 +134,14 @@ class Benchmark(object):
         for m in self.methods:
             if totals:
                 s_dict = {}
-                for k in m._cns: # for a structure in the methods._cns
+                for k in m._cns:  # for a structure in the methods._cns
                     rev_cns = []
-                    for i,j in m._cns[k]:
-                        rev_cns.append((i, sum(j.values())))
-                    s_dict[k]=rev_cns
+                    for i, j in m._cns[k]:
+                        if isinstance(j, dict):
+                            rev_cns.append((i, round(sum(j.values()), ndigits)))
+                        else:
+                            rev_cns.append((i, round(j, ndigits)))
+                    s_dict[k] = rev_cns
 
                 if separate_columns:
                     for i in range(max_sites):
@@ -152,15 +160,6 @@ class Benchmark(object):
             else:
                 data[m.__class__.__name__] = m._cns
 
-
         index = self.test_structures.keys()
 
         return pd.DataFrame(data=data, index=index)
-
-    @staticmethod
-    def _roundcns(d, ndigits):
-        """
-        rounds all values in a dict to ndigits
-        """
-        for k,v in d.items():
-            d[k]=round(v,ndigits)

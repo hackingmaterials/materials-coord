@@ -1,11 +1,11 @@
 import yaml
 import os
 import glob
-from pymatgen.analysis.structure_analyzer import VoronoiCoordFinder
+#from pymatgen.analysis.structure_analyzer import VoronoiCoordFinder
 from pymatgen.core.structure import Structure
 from materialscoord.core import CNBase
-from materialscoord.external_src.imported import EffectiveCoordFinder_modified, \
-    VoronoiCoordFinder_modified
+from materialscoord.external_src.imported import EffectiveCoordFinder_modified
+#    VoronoiCoordFinder_modified
 from materialscoord.external_src.supplement import Brunner, getDict
 
 
@@ -17,7 +17,6 @@ module_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)))
 class TestVoronoiCoordFinder(CNBase):
     """
     O'Keefe's CN's as implemented in pymatgen.
-
     Note: We only need to define the compute method using the CNBase class
         that returns a dict object.
         params can be accessed via ._params and passed to actual function.
@@ -83,9 +82,7 @@ class TestBrunnerRelative(CNBase):
     """
     Brunner's CN described as counting the atoms that are within the largest gap in
     differences in real space interatomic distances.
-
     Note: Might be higly inaccurate in certain cases.
-
     Ref:
         G.O. Brunner, A definition of coordination and its relevance in structure types AlB2 and NiAs.
         Acta Crys. A33 (1977) 226.
@@ -99,9 +96,7 @@ class TestBrunnerReal(CNBase):
     """
     Brunner's CN described as counting the atoms that are within the largest gap in
     differences in real space interatomic distances.
-
     Note: Might be higly inaccurate in certain cases.
-
     Ref:
         G.O. Brunner, A definition of coordination and its relevance in structure types AlB2 and NiAs.
         Acta Crys. A33 (1977) 226.
