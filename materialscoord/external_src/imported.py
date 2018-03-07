@@ -1,4 +1,4 @@
-from pymatgen.analysis.structure_analyzer import VoronoiCoordFinder
+from pymatgen.analysis.local_env import VoronoiNN
 from collections import defaultdict
 import math
 
@@ -20,8 +20,8 @@ class VoronoiCoordFinder_modified(object):
     def get_cns(self):
         siteno = self.n
         try:
-            vor = VoronoiCoordFinder(self._structure).get_voronoi_polyhedra(siteno)
-            weights = VoronoiCoordFinder(self._structure).get_voronoi_polyhedra(siteno).values()
+            vor = VoronoiNN(self._structure).get_voronoi_polyhedra(self._structure, siteno)
+            weights = VoronoiNN(self._structure).get_voronoi_polyhedra(self._structure, siteno).values()
         except RuntimeError as e:
             print e
 

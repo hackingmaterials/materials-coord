@@ -2,10 +2,11 @@ import yaml
 import os
 import glob
 #from pymatgen.analysis.structure_analyzer import VoronoiCoordFinder
+from pymatgen.analysis.local_env import VoronoiNN
 from pymatgen.core.structure import Structure
 from materialscoord.core import CNBase
-from materialscoord.external_src.imported import EffectiveCoordFinder_modified
-#    VoronoiCoordFinder_modified
+from materialscoord.external_src.imported import EffectiveCoordFinder_modified, \
+    VoronoiCoordFinder_modified
 from materialscoord.external_src.supplement import Brunner, getDict
 
 
@@ -23,8 +24,8 @@ class TestVoronoiCoordFinder(CNBase):
     """
     def compute(self, structure, n):
         params = self._params
-        vor = VoronoiCoordFinder(structure, **params)
-        vorp = vor.get_voronoi_polyhedra(n)
+        vor = VoronoiNN(structure, **params)
+        vorp = vor.get_voronoi_polyhedra(structure, n)
         cdict = {}
         for i in vorp:
             if i.species_string not in cdict:

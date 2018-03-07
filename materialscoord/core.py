@@ -5,7 +5,7 @@ import pandas as pd
 from pymatgen.core.structure import Structure
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 from collections import OrderedDict
-from pymatgen.analysis.local_env import NearNeighbors, EconNN
+from pymatgen.analysis.local_env import NearNeighbors, VoronoiNN_modified
 
 # TODO 1: Add a method to analyze statistics of variation in CN predictions
 # TODO 2: Implement new CN methods
@@ -107,10 +107,10 @@ class Benchmark(object):
                     sites = range(len(v))
                 for j in sites:
                     if isinstance(m, NearNeighbors):
-                        if isinstance(m, EconNN):
-                            tmpcn = m.get_cn(v, j, use_weights=True)
-                        else:
+                        if isinstance(m, (VoronoiNN_modified)):
                             tmpcn = m.get_cn(v, j, use_weights=False)
+                        else:
+                            tmpcn = m.get_cn(v, j, use_weights=True)
                     else:
                         tmpcn = m.compute(v, j)
                         if tmpcn == "null":
