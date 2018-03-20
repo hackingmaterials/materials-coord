@@ -56,7 +56,7 @@ class Benchmark(object):
             no rounding.
     """
 
-    def __init__(self, methods, structure_groups="elemental", custom_set=None, unique_sites=True):
+    def __init__(self, methods, structure_groups="elemental", custom_set=None, unique_sites=True, nround=3):
         self.methods = methods
         self.structure_groups = structure_groups if isinstance(structure_groups, list) else [structure_groups]
 
@@ -71,6 +71,7 @@ class Benchmark(object):
                 self._load_test_structures(g)
 
         self.unique_sites = unique_sites
+        self.nround = nround
 
         for m in self.methods:
             assert isinstance(m, (NearNeighbors, CNBase))
@@ -107,18 +108,17 @@ class Benchmark(object):
                     sites = range(len(v))
                 for j in sites:
                     if isinstance(m, NearNeighbors):
-                        if isinstance(m, (VoronoiNN_modified)):
-                            tmpcn = m.get_cn(v, j, use_weights=False)
-                        else:
-                            tmpcn = m.get_cn(v, j, use_weights=True)
+                        tmpcn = m.get_cn_dict(v, j, use_weights=False)
                     else:
                         tmpcn = m.compute(v, j)
                         if tmpcn == "null":
                             continue
+                    if self.nround:
+                        self._roundcns(tmpcn, self.nround)
                     cns.append((v[j].species_string, tmpcn))
                 m._cns[k] = cns
 
-    def report(self, totals=False, separate_columns=False, max_sites=5, ndigits=1):
+    def report(self, totals=False, separate_columns=False, max_sites=5):
         """
         Reports the benchmark as a pandas DataFrame. This is the recommended method for pulling the
         CNs obtained by each method.
@@ -134,13 +134,10 @@ class Benchmark(object):
         for m in self.methods:
             if totals:
                 s_dict = {}
-                for k in m._cns:  # for a structure in the methods._cns
+                for k in m._cns:
                     rev_cns = []
                     for i, j in m._cns[k]:
-                        if isinstance(j, dict):
-                            rev_cns.append((i, round(sum(j.values()), ndigits)))
-                        else:
-                            rev_cns.append((i, round(j, ndigits)))
+                        rev_cns.append((i, sum(j.values())))
                     s_dict[k] = rev_cns
 
                 if separate_columns:
@@ -158,8 +155,36 @@ class Benchmark(object):
                     data[m.__class__.__name__] = s_dict
 
             else:
-                data[m.__class__.__name__] = m._cns
+                if separate_columns:
+                    s_dict = {}
+                    for i in range(max_sites):
+                        data[m.__class__.__name__ + str(i)] = {}
+                    for j in m._cns:
+                        temp = []
+                        for s, t in m._cns[j]:
+                            if isinstance(t, dict):
+                                temp.append((s, t))
+                        s_dict[j] = temp
+
+                        for a, b in s_dict.items():
+                            l = len(b)
+                            if l < max_sites:
+                                for i in range(max_sites - l):
+                                    b.append(("null", 0))
+                            for z in range(max_sites):
+                                data[m.__class__.__name__ + str(z)][a] = b[z][1]
+
+                else:
+                    data[m.__class__.__name__] = m._cns
 
         index = self.test_structures.keys()
 
         return pd.DataFrame(data=data, index=index)
+
+    @staticmethod
+    def _roundcns(d, ndigits):
+        """
+        rounds all values in a dict to ndigits
+        """
+        for k,v in d.items():
+            d[k]=round(v,ndigits)
