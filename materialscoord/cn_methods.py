@@ -1,7 +1,6 @@
 import yaml
 import os
 import glob
-#from pymatgen.analysis.structure_analyzer import VoronoiCoordFinder
 from pymatgen.analysis.local_env import VoronoiNN
 from pymatgen.core.structure import Structure
 from materialscoord.core import CNBase
@@ -189,6 +188,7 @@ class HumanInterpreter(CNBase):
                     sites = [structure.index(x[0]) for x in es]
                     n = sites.index(n)
                 cn = v[n].values()[0]
+                # need to change this part
                 for i,j in cn.items():
                     if isinstance(j,list) and self._average_ranges:
                         cn[i] = sum(j) / float(len(j))
