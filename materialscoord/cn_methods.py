@@ -185,7 +185,9 @@ class HumanInterpreter(CNBase):
                     # index in the list of unique sites
                     from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
                     es = SpacegroupAnalyzer(structure).get_symmetrized_structure().equivalent_sites
+                    print [x[0] for x in es]
                     sites = [structure.index(x[0]) for x in es]
+                    print sites
                     n = sites.index(n)
                 cn = v[n].values()[0]
                 # need to change this part
