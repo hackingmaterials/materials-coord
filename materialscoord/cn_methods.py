@@ -151,7 +151,7 @@ class HumanInterpreter(CNBase):
     This is a special CN method that reads a yaml file where "human interpretations" of coordination
     numbers are given.
     """
-    def __init__(self, custom_interpreter=None, custom_test_structures=None, average_ranges=True):
+    def __init__(self, custom_interpreter=None, custom_test_structures=None, average_ranges=False):
 
         p = os.path.join(module_dir, "..", "test_structures", "human_interpreter.yaml")
         t = os.path.join(module_dir, "..", "test_structures")

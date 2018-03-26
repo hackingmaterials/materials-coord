@@ -170,7 +170,7 @@ class Benchmark(object):
                             l = len(b)
                             if l < max_sites:
                                 for i in range(max_sites - l):
-                                    b.append(("null", 0))
+                                    b.append(("null", {}))
                             for z in range(max_sites):
                                 data[m.__class__.__name__ + str(z)][a] = b[z][1]
 
