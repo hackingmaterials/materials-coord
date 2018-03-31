@@ -56,7 +56,7 @@ class Benchmark(object):
             no rounding.
     """
 
-    def __init__(self, methods, structure_groups="elemental", custom_set=None, unique_sites=True, nround=3):
+    def __init__(self, methods, structure_groups="elemental", custom_set=None, unique_sites=True, nround=3, use_weights=False):
         self.methods = methods
         self.structure_groups = structure_groups if isinstance(structure_groups, list) else [structure_groups]
 
@@ -72,6 +72,7 @@ class Benchmark(object):
 
         self.unique_sites = unique_sites
         self.nround = nround
+        self.use_weights = use_weights
 
         for m in self.methods:
             assert isinstance(m, (NearNeighbors, CNBase))
@@ -108,7 +109,7 @@ class Benchmark(object):
                     sites = range(len(v))
                 for j in sites:
                     if isinstance(m, NearNeighbors):
-                        tmpcn = m.get_cn_dict(v, j, use_weights=False)
+                        tmpcn = m.get_cn_dict(v, j, self.use_weights)
                     else:
                         tmpcn = m.compute(v, j)
                         if tmpcn == "null":
