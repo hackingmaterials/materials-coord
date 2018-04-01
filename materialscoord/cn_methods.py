@@ -151,9 +151,13 @@ class HumanInterpreter(CNBase):
     This is a special CN method that reads a yaml file where "human interpretations" of coordination
     numbers are given.
     """
-    def __init__(self, custom_interpreter=None, custom_test_structures=None, average_ranges=True):
+    def __init__(self, custom_interpreter=None, custom_test_structures=None, average_ranges=True, cations=True):
 
-        p = os.path.join(module_dir, "..", "test_structures", "human_interpreter.yaml")
+        if cations == True:
+            p = os.path.join(module_dir, "..", "test_structures", "hi_cations.yaml")
+        else:
+            p = os.path.join(module_dir, "..", "test_structures", "human_interpreter.yaml")
+
         t = os.path.join(module_dir, "..", "test_structures")
         interpreter = custom_interpreter if custom_interpreter else p
         test_structures = custom_test_structures if custom_test_structures else t
@@ -162,6 +166,9 @@ class HumanInterpreter(CNBase):
             hi = yaml.load(f)
 
         for k in hi.keys():
+
+            hi[k].append(len(hi[k]))
+
             if custom_test_structures:
                 find_structure = glob.glob(os.path.join(test_structures, k + "*"))
             else:
@@ -185,13 +192,12 @@ class HumanInterpreter(CNBase):
                     # index in the list of unique sites
                     from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
                     es = SpacegroupAnalyzer(structure).get_symmetrized_structure().equivalent_sites
-                    #print [x[0] for x in es]
                     sites = [structure.index(x[0]) for x in es]
                     n = sites.index(n)
-                cn = v[n].values()[0]
-                # need to change this part
-                for i,j in cn.items():
-                    if isinstance(j,list) and self._average_ranges:
-                        cn[i] = sum(j) / float(len(j))
-                return cn
+                if n < v[-2]:
+                    cn = v[n].values()[0]
+                    for i, j in cn.items():
+                        if isinstance(j, list) and self._average_ranges:
+                            cn[i] = sum(j) / float(len(j))
+                    return cn
         return "null"

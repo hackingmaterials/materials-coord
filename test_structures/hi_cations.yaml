@@ -1,0 +1,328 @@
+# Human interpreted coordination numbers in structures:
+
+Al2O3_corundum:
+    - Al:
+        Al: 0.0
+        O: 6.0
+
+Fe3O4_spinel:
+    - Fe:
+        Fe: 0.0
+        O: 6.0
+    - Fe:
+        Fe: 0.0
+        O: 4.0
+
+MgAl2O4_spinel:
+    - Mg:
+        Mg: 0.0
+        Al: 0.0
+        O: 4.0
+    - Al:
+        Mg: 0.0
+        Al: 0.0
+        O: 6.0
+
+NaCl_rocksalt:
+    - Na:
+        Cl: 6.0
+        Na: 0.0
+
+CsCl:
+    - Cs:
+        Cs: 0.0
+        Cl: 8.0
+
+TiO2_anatase:
+    - Ti:
+        O: 6.0
+        Ti: 0.0
+
+ZnS_wurtzite:
+    - Zn:
+        S: 4.0
+        Zn: 0.0
+
+ZnS_zincblende:
+    - Zn:
+        S: 4.0
+        Zn: 0.0
+
+CaF2_fluorite:
+    - Ca:
+        F: 8.0
+        Ca: 0.0
+
+Cu5Zn8_gamma_brass:
+    - Zn:
+        Zn: 6.0
+        Cu: 6.0
+    - Zn:
+        Zn: 5.0
+        Cu: 6.0
+    - Cu:
+        Zn: 9.0
+        Cu: 3.0
+    - Cu:
+        Zn: 10.0
+        Cu: 3.0
+
+As_mp-11_primitive:
+    - As:
+        As: 6.0
+
+C_mp-48_primitive:
+    - C:
+        C: 3.0
+    - C:
+        C: 3.0
+
+C_mp-66_primitive:
+    - C:
+        C: 4.0
+
+Cu_mp-30_primitive:
+    - Cu:
+        Cu: 12.0
+
+Ga_mp-140_primitive:
+    - Ga:
+        Ga:
+            - 4.0
+            - 12.0
+
+Hg_mp-121_primitive:
+    - Hg:
+        Hg:
+           - 2.0
+           - 8.0
+
+La_mp-26_primitive:
+    - La:
+        La: 12.0
+    - La:
+        La: 12.0
+
+Mg_mp-153_primitive:
+    - Mg:
+        Mg: 12.0
+
+Mn_mp-35_primitive:
+    - Mn:
+        Mn: 16.0
+    - Mn:
+        Mn: 16.0
+    - Mn:
+        Mn: 13.0
+    - Mn:
+        Mn: 12.0
+
+Mn_mp-542909_primitive:
+    - Mn:
+        Mn: 12.0
+    - Mn:
+        Mn: 12.0
+
+P_black:
+    - P:
+        P: 3.0
+
+Se_mp-14_primitive:
+    - Se:
+        Se: 2.0
+
+Sm_mp-86_conventional_standard:
+    - Sm:
+        Sm: 12.0
+    - Sm:
+        Sm: 12.0
+
+Sn_mp-84_primitive:
+    - Sn:
+        Sn: 8.0
+
+U_mp-44_primitive:
+    - U:
+        U: 12.0
+
+W_mp-91_primitive:
+    - W:
+        W: 8.0
+
+Ba2SiO4_mp-17612_computed:
+    - Ba:
+        Ba: 0.0
+        Si: 0.0
+        O: 9.0
+    - Ba:
+        Ba: 0.0
+        Si: 0.0
+        O: 10.0
+    - Si:
+        Ba: 0.0
+        Si: 0.0
+        O: 4.0
+
+Ca2MgSi2O7_mp-6094_computed:
+    - Ca:
+        Ca: 0.0
+        Mg: 0.0
+        Si: 0.0
+        O: 8.0
+    - Mg:
+        Ca: 0.0
+        Mg: 0.0
+        Si: 0.0
+        O: 4.0
+    - Si:
+        Ca: 0.0
+        Mg: 0.0
+        Si: 0.0
+        O: 4.0
+
+Ca5V3O12F_mp-565819_computed:
+    - Ca:
+        Ca: 0.0
+        V: 0.0
+        O: 6.0
+        F: 1.0
+    - Ca:
+        Ca: 0.0
+        V: 0.0
+        O: 9.0
+        F: 0.0
+    - Ca:
+        Ca: 0.0
+        V: 0.0
+        O: 6.0
+        F: 1.0
+    - Ca:
+        Ca: 0.0
+        V: 0.0
+        O: 9.0
+        F: 0.0
+    - Ca:
+        Ca: 0.0
+        V: 0.0
+        O: 6.0
+        F: 1.0
+    - V:
+        Ca: 0.0
+        V: 0.0
+        O: 4.0
+        F: 0.0
+    - V:
+        Ca: 0.0
+        V: 0.0
+        O: 4.0
+        F: 0.0
+    - V:
+        Ca: 0.0
+        V: 0.0
+        O: 4.0
+        F: 0.0
+
+CuSbPbS3_mp-649774_computed:
+    - Cu:
+        Cu: 0.0
+        Sb: 0.0
+        Pb: 0.0
+        S: 4.0
+    - Cu:
+        Cu: 0.0
+        Sb: 0.0
+        Pb: 0.0
+        S: 4.0
+    - Cu:
+        Cu: 0.0
+        Sb: 0.0
+        Pb: 0.0
+        S: 4.0
+    - Cu:
+        Cu: 0.0
+        Sb: 0.0
+        Pb: 0.0
+        S: 4.0
+    - Sb:
+        Cu: 0.0
+        Sb: 0.0
+        Pb: 0.0
+        S: 3.0
+    - Sb:
+        Cu: 0.0
+        Sb: 0.0
+        Pb: 0.0
+        S: 3.0
+    - Sb:
+        Cu: 0.0
+        Sb: 0.0
+        Pb: 0.0
+        S: 3.0
+    - Sb:
+        Cu: 0.0
+        Sb: 0.0
+        Pb: 0.0
+        S: 3.0
+    - Pb:
+        Cu: 0.0
+        Sb: 0.0
+        Pb: 0.0
+        S: 6.0
+    - Pb:
+        Cu: 0.0
+        Sb: 0.0
+        Pb: 0.0
+        S: 6.0
+    - Pb:
+        Cu: 0.0
+        Sb: 0.0
+        Pb: 0.0
+        S: 7.0
+    - Pb:
+        Cu: 0.0
+        Sb: 0.0
+        Pb: 0.0
+        S: 7.0
+
+Y3Al5O12_mp-3050_primitive:
+    - Y:
+        Y: 0.0
+        Al: 0.0
+        O: 8.0
+    - Al:
+        Y: 0.0
+        Al: 0.0
+        O: 4.0
+    - Al:
+        Y: 0.0
+        Al: 0.0
+        O: 6.0
+
+AlPO4_mp-5859_computed:
+    - Al:
+        Al: 0.0
+        P: 0.0
+        O: 4.0
+    - P:
+        Al: 0.0
+        P: 0.0
+        O: 4.0
+
+SiO2_mp-555235_computed:
+    - Si:
+        Si: 0.0
+        O: 4.0
+    - Si:
+        Si: 0.0
+        O: 4.0
+
+SiO2_mp-600003_computed:
+    - Si:
+        Si: 0.0
+        O: 4.0
+
+SiO2_mp-639478_computed:
+    - Si:
+        Si: 0.0
+        O: 4.0
+

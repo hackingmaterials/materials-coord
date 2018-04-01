@@ -1,3 +1,4 @@
+import yaml
 import abc
 import os
 import glob
@@ -56,7 +57,7 @@ class Benchmark(object):
             no rounding.
     """
 
-    def __init__(self, methods, structure_groups="elemental", custom_set=None, unique_sites=True, nround=3, use_weights=False):
+    def __init__(self, methods, structure_groups="elemental", custom_set=None, unique_sites=True, nround=3, use_weights=False, cations=True):
         self.methods = methods
         self.structure_groups = structure_groups if isinstance(structure_groups, list) else [structure_groups]
 
@@ -78,6 +79,16 @@ class Benchmark(object):
             assert isinstance(m, (NearNeighbors, CNBase))
         print "Initialization successful."
 
+        if cations == True:
+            p = os.path.join(module_dir, "..", "test_structures", "hi_cations.yaml")
+        else:
+            p = os.path.join(module_dir, "..", "test_structures", "human_interpreter.yaml")
+
+        with open(p) as f:
+            hi = yaml.load(f)
+
+        self.hi = hi
+
     def _load_test_structures(self, group):
         """
         Loads the structure group from test_structures
@@ -95,7 +106,36 @@ class Benchmark(object):
             name = os.path.basename(s).split(".")[0]
             self.test_structures[name] = Structure.from_file(s)
 
-    def benchmark(self):
+    def benchmark(self, cations=True):
+        """
+        Performs the benchmark calculations.
+        """
+        for m in self.methods:
+            for k, v in self.test_structures.items():
+                cns = []
+                if self.unique_sites:
+                    es = SpacegroupAnalyzer(v).get_symmetrized_structure().equivalent_sites
+                    sites = [v.index(x[0]) for x in es]
+                else:
+                    sites = range(len(v))
+
+                for key, val in self.hi.iteritems():
+                    if k == key:
+                        for j in sites:
+                            if isinstance(m, NearNeighbors):
+                                tmpcn = m.get_cn_dict(v, j, self.use_weights)
+                            else:
+                                tmpcn = m.compute(v, j)
+                                if tmpcn == "null":
+                                    continue
+                            if self.nround:
+                                self._roundcns(tmpcn, self.nround)
+                            cns.append((v[j].species_string, tmpcn))
+                        if cations == True:
+                            cns = cns[:len(val)]
+                    m._cns[k] = cns
+
+    def other_benchmark(self, cation=True):
         """
         Performs the benchmark calculations.
         """
