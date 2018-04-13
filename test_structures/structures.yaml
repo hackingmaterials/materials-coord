@@ -1,0 +1,237 @@
+Na2SO4_mp-4770_computed.cif:
+    - Na:
+        Na: 0.0
+        S: 0.0
+        O: 6.0
+    - Na:
+        Na: 0.0
+        S: 0.0
+        O: 6.0
+    - S:
+        Na: 0.0
+        S: 0.0
+        O: 4.0
+    - O:
+        Na:
+        S:
+        O:
+    - O:
+        Na:
+        S:
+        O:
+    - O:
+        Na:
+        S:
+        O:
+    - O:
+        Na:
+        S:
+        O:
+
+K2NiF4_mp-556546_computed:
+    - K:
+        - K: 0.0
+        - Ni:
+        - F:
+    - K:
+        - K:
+        - Ni:
+        - F:
+    - Ni:
+        - K:
+        - Ni:
+        - F:
+    - F:
+        - K:
+        - Ni:
+        - F:
+    - F:
+        - K:
+        - Ni:
+        - F:
+    - F:
+        - K:
+        - Ni:
+        - F:
+    - F:
+        - K:
+        - Ni:
+        - F:
+
+Sr2PbO4_mp-20944_computed:
+    - Sr:
+        - Sr:
+        - Pb:
+        - O:
+    - Sr:
+        - Sr:
+        - Pb:
+        - O:
+    - Pb:
+        - Sr:
+        - Pb:
+        - O:
+    - O:
+        - Sr:
+        - Pb:
+        - O:
+    - O:
+        - Sr:
+        - Pb:
+        - O:
+    - O:
+        - Sr:
+        - Pb:
+        - O:
+    - O:
+        - Sr:
+        - Pb:
+        - O:
+
+
+
+
+data:
+  A2BX4:
+    structures:
+      beta-K2SO4:
+        "altname":
+        "formula": K2SO4
+        "crystal system": orthorhombic
+        "spacegroup": Pnam
+        "spacegroup number": 62
+        "unit cell constants": [7.483, 10.072, 5.772]
+        "Z": 4
+        "coordination numbers": [[K, 10], [K, 9], [S, 4], [O, 6], [O, 6], [O, 6], [O, 5]]
+        "coordination geometries": [[S, "tetrahedral", [O, O, O, O]]]
+        "main related structures": [Na2So4I]
+        "notes": ["tetrahedra are held together by K+ ions"]
+        "MPID": mp-4529
+        "equivalent sites": [['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['S', 'S', 'S', 'S'], ['K', 'K', 'K', 'K'], ['K', 'K', 'K', 'K']]
+      thenardite:
+        "altname": Na2SO4V
+        "formula": Na2SO4
+        "crystal system": orthorhombic
+        "spacegroup": Fddd
+        "spacegroup number": 70
+        "unit cell constants": [5.863, 12.304, 9.821]
+        "Z": 8
+        "coordination numbers": [[Na, 6], [Na, 6], [S, 4], [O, 4], [O, 4], [O, 4], [O, 4]]
+        "coordination geometries": [[S, "tetrahedral", [O, O, O, O]]]
+        "main related structures":
+        "notes": ["nearly regular and isolated tetrahedra are held together by irregular NaO6 polyhedra", "each SO4 tetrahedron shares opposite edges with 2 NaO6 polyhedra"]
+        "MPID": mp-4770
+        "equivalent sites": [['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['Na', 'Na', 'Na', 'Na'], ['S', 'S']]
+      K2NiF4:
+        "altname":
+        "formula": K2NiF4
+        "crystal system": tetragonal
+        "spacegroup": I4/mmm
+        "spacegroup number": 139
+        "unit cell constants": [4.006, 4.006, 13.076]
+        "Z": 2
+        "coordination numbers": [[K, 9], [K, 9], [Ni, 6], [F, 6], [F, 6], [F, 6], [F, 6]]
+        "coordination geometries": [[Ni, "octahedral", [F, F, F, F, F, F]]]
+        "main related structures":
+        "notes": ['NiF octahedra share corners to form 2D perovskite-like array which are interleaved with KF rocksalt layers in c-direction']
+        "MPID": mp-556546
+        "equivalent sites": [['K', 'K'], ['Ni'], ['F', 'F'], ['F', 'F']]
+      Sr2PbO4:
+        "altname":
+        "formula": Sr2PbO4
+        "crystal system": orthorhombic
+        "spacegroup": Pbam
+        "spacegroup number": 55
+        "unit cell constants": [6.159, 10.078, 3.502]
+        "Z": 2
+        "coordination numbers": [[Sr, 7], [Sr, 7], [Pb, 6], [O, 5], [O, 5], [O, 5], [O, 5]]
+        "coordination geometries": [Pb, octahedral, [O, O, O, O, O , O]]
+        "main related structures": [Na2CuF4, Ca2IrO4]
+        "notes": ["Pb octahedra are edge-sharing extending in chains in c-direction and held together by SrO6 polyhedra"]
+        "MPID": mp-20944
+        "equivalent sites": 
+      olivine:
+        "altname":
+        "formula": Fe2SiO4
+        "crystal system": orthorhombic
+        "spacegroup": Pbnm
+        "spacegroup number": 62
+        "unit cell constants": [4.82, 10.485, 6.093]
+        "Z": 4
+        "coordination numbers": [[Fe, 6], [Fe, 6], [Si, 4], [O, 4], [O, 4], [O, 4], [O, 4]]
+        "coordination geometries": [[Si, tetrahedral, [O, O, O, O]], [Fe, octahedral, [O, O, O, O, O, O]]]
+        "main related structures": [Mg2SiO4]
+        "notes": ['Olivine is actually a mineral/solid solution (Mg,Fe)2SiO4.']
+        "MPID": mp-510587
+        "equivalent sites": [['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['Sr', 'Sr', 'Sr', 'Sr'], ['Pb', 'Pb']]
+      phenacite:
+        "altname":
+        "formula":
+        "crystal system":
+        "spacegroup":
+        "spacegroup number":
+        "unit cell constants":
+        "Z":
+        "coordination numbers":
+        "coordination geometries":
+        "main related structures":
+        "notes":
+        "MPID":
+        "equivalent sites": 
+      spinel:
+        "altname":
+        "formula":
+        "crystal system":
+        "spacegroup":
+        "spacegroup number":
+        "unit cell constants":
+        "Z":
+        "coordination numbers":
+        "coordination geometries":
+        "main related structures":
+        "notes":
+        "MPID":
+        "equivalent sites": 
+      CaFe2O4:
+      BaAl2O4:
+      MB2O4:
+      Pb3O4:
+      Th3P4:
+      NaCl:
+      NiAs:
+      wurtzite:
+      sphalerite:
+    interrealationships:
+  ABX4:
+    structures:
+      zircon:
+      scheelite:
+      "trigonal BiPO4":
+      monazite:
+      barite:
+      NaCl:
+      TlAlF4:
+      BaZnF4:
+      NaNdF4:
+      fluorite:
+      rutile:
+      alpha-PbO2:
+      wolframite:
+      alpha-MnMoO4:
+      CrVO4:
+      ZnSO4:
+      quartz:
+      tridymite:
+      cristobalite:
+    interrealationships:
+  ABX3:
+    structures:
+      CaCO3:
+      perovskites:
+      pyroxenes:
+      corundum:
+    interrealationships:
+  Others:
+notes:
+  - "The spacegroup number was taken from the material that I found on the MP website"
+  - "import sys\nif len(sys.argv) != 2:\n    raise RuntimeError('expected exactly 1 argument: MPID')\nfrom pymatgen.ext.matproj import MPRester\nfrom pymatgen.symmetry.analyzer import SpacegroupAnalyzer\nwith MPRester() as mpr:\n    struct = mpr.get_structure_by_material_id(sys.argv[1])\n    es = SpacegroupAnalyzer(struct).get_symmetrized_structure().equivalent_sites\n    eq_site_list = []\n    for i, slist in enumerate(es):\n        eq_site_list.append([])\n        for s in slist:\n            eq_site_list[i].append(s.species_string)\n    print(eq_site_list)"

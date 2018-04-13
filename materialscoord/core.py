@@ -57,7 +57,9 @@ class Benchmark(object):
             no rounding.
     """
 
-    def __init__(self, methods, structure_groups="elemental", custom_set=None, unique_sites=True, nround=3, use_weights=False, cations=True):
+    def __init__(self, methods, structure_groups="elemental", custom_set=None,
+                 unique_sites=True, nround=3, use_weights=False, cations=True):
+
         self.methods = methods
         self.structure_groups = structure_groups if isinstance(structure_groups, list) else [structure_groups]
 
@@ -84,6 +86,13 @@ class Benchmark(object):
         else:
             p = os.path.join(module_dir, "..", "test_structures", "human_interpreter.yaml")
 
+        test = os.path.join(module_dir, "..", "test_structures", "cat_an.yaml")
+
+        with open(test) as t:
+            cat_an = yaml.load(t)
+
+        self.cat_an = cat_an
+
         with open(p) as f:
             hi = yaml.load(f)
 
@@ -106,7 +115,7 @@ class Benchmark(object):
             name = os.path.basename(s).split(".")[0]
             self.test_structures[name] = Structure.from_file(s)
 
-    def benchmark(self, cations=True):
+    def benchmark(self, cations=True, cat_an=True):
         """
         Performs the benchmark calculations.
         """
@@ -115,6 +124,7 @@ class Benchmark(object):
                 cns = []
                 if self.unique_sites:
                     es = SpacegroupAnalyzer(v).get_symmetrized_structure().equivalent_sites
+                    #print [x[0] for x in es]
                     sites = [v.index(x[0]) for x in es]
                 else:
                     sites = range(len(v))
@@ -133,6 +143,13 @@ class Benchmark(object):
                             cns.append((v[j].species_string, tmpcn))
                         if cations == True:
                             cns = cns[:len(val)]
+                        if cat_an == True:
+                           for mat, cat in self.cat_an.iteritems():
+                               if k == mat:
+                                    for w, x in cns:
+                                        for key in x.keys():
+                                            if key in cat:
+                                                del x[key]
                     m._cns[k] = cns
 
     def other_benchmark(self, cation=True):
@@ -228,4 +245,7 @@ class Benchmark(object):
         rounds all values in a dict to ndigits
         """
         for k,v in d.items():
-            d[k]=round(v,ndigits)
+            if isinstance(v, list):
+                pass
+            else:
+                d[k]=round(v,ndigits)

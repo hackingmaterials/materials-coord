@@ -1,0 +1,65 @@
+# Human interpreted coordination numbers in structures:
+
+Al2O3_corundum:
+    - Al
+
+Fe3O4_spinel:
+    - Fe
+
+MgAl2O4_spinel:
+    - Mg
+    - Al
+
+NaCl_rocksalt:
+    - Na
+
+CsCl:
+    - Cs
+
+TiO2_anatase:
+    - Ti
+
+ZnS_wurtzite:
+    - Zn
+
+ZnS_zincblende:
+    - Zn
+
+CaF2_fluorite:
+    - Ca
+
+Ba2SiO4_mp-17612_computed:
+    - Ba
+    - Si
+
+Ca2MgSi2O7_mp-6094_computed:
+    - Ca
+    - Mg
+    - Si
+
+Ca5V3O12F_mp-565819_computed:
+    - Ca
+    - V
+
+CuSbPbS3_mp-649774_computed:
+    - Cu
+    - Sb
+    - Pb
+
+Y3Al5O12_mp-3050_primitive:
+    - Y
+    - Al
+
+AlPO4_mp-5859_computed:
+    - Al
+    - P
+
+SiO2_mp-555235_computed:
+    - Si
+
+SiO2_mp-600003_computed:
+    - Si
+
+SiO2_mp-639478_computed:
+    - Si
+

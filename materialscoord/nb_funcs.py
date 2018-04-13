@@ -1,6 +1,7 @@
 import pandas as pd
 from collections import Counter
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
+import yaml
 import glob
 import os
 from pymatgen.core.structure import Structure
@@ -11,11 +12,19 @@ module_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)))
 
 class nb_funcs(object):
 
-    def __init__(self, df, algo_names, unique_sites=24):
+    def __init__(self, df, algo_names, unique_sites=24, cat_an=True):
 
         self.df = df
         self.algo_names = algo_names
         self.unique_sites = unique_sites
+
+        if cat_an == True:
+            test = os.path.join(module_dir, "..", "test_structures", "cat_an.yaml")
+
+        with open(test) as t:
+            cat_an = yaml.load(t)
+
+        self.cat_an = cat_an
 
     def order_cols(self, hi=True):
 
@@ -40,6 +49,24 @@ class nb_funcs(object):
             all_cols.extend(ones_cols)
         return all_cols
 
+    def mv(self):
+
+        for key, val in self.df.iteritems():
+            for i in range(self.unique_sites):
+                if key == "MinimumVIRENN" + str(i):
+                    site = self.df["MinimumVIRENN" + str(i)]
+                    for mv_key, mv_val in site.iteritems():
+                        ndict = {}
+                        for x, y in mv_val.iteritems():
+                            x = ''.join(a for a in x if not a.isdigit())
+                            x = ''.join(b for b in x if b != "-")
+                            x = ''.join(c for c in x if c != "+")
+                            ndict[x] = y
+                        val[mv_key] = dict(ndict)
+            self.df[key] = val
+
+        return self.df
+
     def sub_hi(self):
         """
         element-wise subtraction of human interpreted cn
@@ -53,15 +80,27 @@ class nb_funcs(object):
                 site = self.df[self.algo_names[i]+str(j)]
                 hi_site = self.df["HumanInterpreter"+str(j)]
                 for k in range(len(site)):
-                    temp = Counter(site[k])
-                    temp.subtract(hi_site[k])
-                    cn_dict[site.keys()[k]] = dict(temp)
+                    ifli = [z for z in hi_site[k].values()]
+                    if all(isinstance(z, float) for z in ifli) or len(ifli) == 0:
+                        temp = Counter(site[k])
+                        temp.subtract(hi_site[k])
+                        cn_dict[site.keys()[k]] = dict(temp)
+                    else:
+                        t = site[k].values()[0]
+                        lsub = []
+                        dsub = {}
+                        for coord in hi_site[k].values()[0]:
+                            tsub = t - coord
+                            lsub.append(tsub)
+                        min_sub = min(map(abs, lsub))
+                        dsub[hi_site[k].keys()[0]] = min_sub
+                        cn_dict[site.keys()[k]] = dict(dsub)
                 sub_hi[self.algo_names[i]+str(j)] = dict(cn_dict)
 
         sub_hi = pd.DataFrame(sub_hi)
         ordered_cols = self.order_cols(hi=False)
         sub_hi = sub_hi[ordered_cols]
-        sub_hi.reindex(self.df.index.tolist())
+        sub_hi = sub_hi.reindex(self.df.index.tolist())
 
         return sub_hi
 
@@ -102,7 +141,11 @@ class nb_funcs(object):
                 sites.extend([0] * (self.unique_sites - len(sites)))
             num_us_list.append(sites)
 
+        abs_df['num equiv site atoms'] = num_us_list
+
+        mat_dict = {}
         mat_list = []
+        counter = 0
         for mat in struc:
             cn_dict = {}
             for line in mat:
@@ -111,10 +154,20 @@ class nb_funcs(object):
                     cn_dict[element] = 1
                 else:
                     cn_dict[element] += 1
+            mat_dict[abs_df.index[counter]] = dict(cn_dict)
+            counter += 1
             mat_list.append(dict(cn_dict))
 
-        abs_df['num unit cell atoms'] = mat_list
-        abs_df['num equiv site atoms'] = num_us_list
+        for key, val in mat_dict.iteritems():
+            for mat, cat in self.cat_an.iteritems():
+                if key == mat:
+                    for w in val.keys():
+                        if w in cat:
+                            del val[w]
+
+        mat_dict = pd.Series(mat_dict)
+
+        abs_df['num unit cell atoms'] = mat_dict
 
         cs_df = abs_df
         return cs_df

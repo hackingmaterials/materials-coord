@@ -151,7 +151,7 @@ class HumanInterpreter(CNBase):
     This is a special CN method that reads a yaml file where "human interpretations" of coordination
     numbers are given.
     """
-    def __init__(self, custom_interpreter=None, custom_test_structures=None, average_ranges=True, cations=True):
+    def __init__(self, custom_interpreter=None, custom_test_structures=None, cations=True):
 
         if cations == True:
             p = os.path.join(module_dir, "..", "test_structures", "hi_cations.yaml")
@@ -179,7 +179,6 @@ class HumanInterpreter(CNBase):
             s = Structure.from_file(find_structure[0])
             hi[k].append(s)
 
-        self._average_ranges = average_ranges
         super(HumanInterpreter, self).__init__(params=hi)
 
     def compute(self, structure, n):
@@ -192,12 +191,10 @@ class HumanInterpreter(CNBase):
                     # index in the list of unique sites
                     from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
                     es = SpacegroupAnalyzer(structure).get_symmetrized_structure().equivalent_sites
+                    #print [x[0] for x in es]
                     sites = [structure.index(x[0]) for x in es]
                     n = sites.index(n)
                 if n < v[-2]:
                     cn = v[n].values()[0]
-                    for i, j in cn.items():
-                        if isinstance(j, list) and self._average_ranges:
-                            cn[i] = sum(j) / float(len(j))
                     return cn
         return "null"
