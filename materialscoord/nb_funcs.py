@@ -49,8 +49,9 @@ class nb_funcs(object):
             all_cols.extend(ones_cols)
         return all_cols
 
-    def mv(self):
+    def mv_df(self):
 
+        mv_df = {}
         for key, val in self.df.iteritems():
             for i in range(self.unique_sites):
                 if key == "MinimumVIRENN" + str(i):
@@ -63,9 +64,9 @@ class nb_funcs(object):
                             x = ''.join(c for c in x if c != "+")
                             ndict[x] = y
                         val[mv_key] = dict(ndict)
-            self.df[key] = val
+            mv_df[key] = val
 
-        return self.df
+        return mv_df
 
     def sub_hi(self):
         """
@@ -73,12 +74,14 @@ class nb_funcs(object):
         from nn algo calculated nn = error in nn algo-calculated cn
         """
 
+        mv_df = self.mv_df()
+
         sub_hi = {} # initializing dict for diff between element-wise cn and human interpreter
         for i in range(len(self.algo_names)):
             cn_dict = {}
             for j in range(self.unique_sites):
-                site = self.df[self.algo_names[i]+str(j)]
-                hi_site = self.df["HumanInterpreter"+str(j)]
+                site = mv_df[self.algo_names[i]+str(j)]
+                hi_site = mv_df["HumanInterpreter"+str(j)]
                 for k in range(len(site)):
                     ifli = [z for z in hi_site[k].values()]
                     if all(isinstance(z, float) for z in ifli) or len(ifli) == 0:
