@@ -195,6 +195,6 @@ class HumanInterpreter(CNBase):
                     sites = [structure.index(x[0]) for x in es]
                     n = sites.index(n)
                 if n < v[-2]:
-                    cn = v[n].values()[0]
+                    cn = list(v[n].values())[0]
                     return cn
         return "null"

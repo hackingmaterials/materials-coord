@@ -12,19 +12,20 @@ module_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)))
 
 class nb_funcs(object):
 
-    def __init__(self, df, algo_names, unique_sites=24, cat_an=True):
+    def __init__(self, df, algo_names, unique_sites=24, cations=True):
 
         self.df = df
-        self.algo_names = algo_names
+        self.algo_names = sorted(algo_names)
         self.unique_sites = unique_sites
+        self.cations = cations
 
-        if cat_an == True:
-            test = os.path.join(module_dir, "..", "test_structures", "cat_an.yaml")
+        test = os.path.join(module_dir, "..", "test_structures", "cat_an.yaml")
 
         with open(test) as t:
-            cat_an = yaml.load(t)
+            cats = yaml.load(t)
 
-        self.cat_an = cat_an
+        self.cats = cats
+
 
     def order_cols(self, hi=True):
 
@@ -52,13 +53,13 @@ class nb_funcs(object):
     def mv_df(self):
 
         mv_df = {}
-        for key, val in self.df.iteritems():
+        for key, val in self.df.items():
             for i in range(self.unique_sites):
                 if key == "MinimumVIRENN" + str(i):
                     site = self.df["MinimumVIRENN" + str(i)]
-                    for mv_key, mv_val in site.iteritems():
+                    for mv_key, mv_val in site.items():
                         ndict = {}
-                        for x, y in mv_val.iteritems():
+                        for x, y in mv_val.items():
                             x = ''.join(a for a in x if not a.isdigit())
                             x = ''.join(b for b in x if b != "-")
                             x = ''.join(c for c in x if c != "+")
@@ -66,6 +67,7 @@ class nb_funcs(object):
                         val[mv_key] = dict(ndict)
             mv_df[key] = val
 
+        mv_df = pd.DataFrame(mv_df)
         return mv_df
 
     def sub_hi(self):
@@ -89,14 +91,14 @@ class nb_funcs(object):
                         temp.subtract(hi_site[k])
                         cn_dict[site.keys()[k]] = dict(temp)
                     else:
-                        t = site[k].values()[0]
+                        t = list(site[k].values())[0]
                         lsub = []
                         dsub = {}
-                        for coord in hi_site[k].values()[0]:
+                        for coord in list(hi_site[k].values())[0]:
                             tsub = t - coord
                             lsub.append(tsub)
                         min_sub = min(map(abs, lsub))
-                        dsub[hi_site[k].keys()[0]] = min_sub
+                        dsub[list(hi_site[k].keys())[0]] = min_sub
                         cn_dict[site.keys()[k]] = dict(dsub)
                 sub_hi[self.algo_names[i]+str(j)] = dict(cn_dict)
 
@@ -113,8 +115,8 @@ class nb_funcs(object):
         """
         sub_hi = self.sub_hi()
 
-        for key, val in sub_hi.iteritems():
-            for i, j in val.iteritems():
+        for key, val in sub_hi.items():
+            for i, j in val.items():
                 if j != {}:
                     abs_val = map(abs, j.values())
                 zip_abs_val = dict(zip(j.keys(), abs_val))
@@ -161,12 +163,26 @@ class nb_funcs(object):
             counter += 1
             mat_list.append(dict(cn_dict))
 
-        for key, val in mat_dict.iteritems():
-            for mat, cat in self.cat_an.iteritems():
-                if key == mat:
-                    for w in val.keys():
-                        if w in cat:
-                            del val[w]
+        if self.cations == True:
+            for key, val in mat_dict.items():
+                for mat, cat in self.cats.items():
+                    if key == mat:
+                        for w in list(val):
+                            if w in cat:
+                                del val[w]
+        else:
+            cns = cns[:len(val)]
+            for mat, cat in self.cats.items():
+                # print(mat) Al2O3_corundum, name of material
+                # print(cat) ['Al'], cation
+                if k == mat:
+                    for w, x in cns:
+                        # print(w) Si, site
+                        # print(x) {'Si': 0.0, 'O': 4.0}, coordination
+                        for ke in list(x):
+                            # print(ke) Si, O (elements coordinated to)
+                            if ke == w:
+                                del x[ke]
 
         mat_dict = pd.Series(mat_dict)
 
@@ -209,7 +225,10 @@ class nb_funcs(object):
                 for i in range(len(each_algo.keys())):
                     if d[i] != {}:
                         l.append(d[i])
+                #print(l)
+                #print(l[0])
                 summed = {k: sum(di[k] for di in l) for k in l[0]}
+                #print(summed)
                 sum_each_algo[each_algo.index[count]] = summed
                 count += 1
             algo_sum[self.algo_names[a]] = dict(sum_each_algo)

@@ -23,7 +23,7 @@ class VoronoiCoordFinder_modified(object):
             vor = VoronoiNN(self._structure).get_voronoi_polyhedra(self._structure, siteno)
             weights = VoronoiNN(self._structure).get_voronoi_polyhedra(self._structure, siteno).values()
         except RuntimeError as e:
-            print e
+            print(e)
 
         coordination = {}
         max_weight = max(weights)

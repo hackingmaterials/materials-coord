@@ -76,27 +76,28 @@ class Benchmark(object):
         self.unique_sites = unique_sites
         self.nround = nround
         self.use_weights = use_weights
+        self.cations = cations
 
         for m in self.methods:
             assert isinstance(m, (NearNeighbors, CNBase))
-        print "Initialization successful."
+        print("Initialization successful.")
 
         if cations == True:
             p = os.path.join(module_dir, "..", "test_structures", "hi_cations.yaml")
         else:
             p = os.path.join(module_dir, "..", "test_structures", "human_interpreter.yaml")
 
-        test = os.path.join(module_dir, "..", "test_structures", "cat_an.yaml")
-
-        with open(test) as t:
-            cat_an = yaml.load(t)
-
-        self.cat_an = cat_an
-
         with open(p) as f:
             hi = yaml.load(f)
 
         self.hi = hi
+
+        cat_an = os.path.join(module_dir, "..", "test_structures", "cat_an.yaml")
+
+        with open(cat_an) as t:
+            cat_an = yaml.load(t)
+
+        self.cat_an = cat_an
 
     def _load_test_structures(self, group):
         """
@@ -115,7 +116,7 @@ class Benchmark(object):
             name = os.path.basename(s).split(".")[0]
             self.test_structures[name] = Structure.from_file(s)
 
-    def benchmark(self, cations=True, cat_an=True):
+    def benchmark(self):
         """
         Performs the benchmark calculations.
         """
@@ -129,7 +130,7 @@ class Benchmark(object):
                 else:
                     sites = range(len(v))
 
-                for key, val in self.hi.iteritems():
+                for key, val in self.hi.items():
                     if k == key:
                         for j in sites:
                             if isinstance(m, NearNeighbors):
@@ -141,15 +142,28 @@ class Benchmark(object):
                             if self.nround:
                                 self._roundcns(tmpcn, self.nround)
                             cns.append((v[j].species_string, tmpcn))
-                        if cations == True:
+                        if self.cations == True:
                             cns = cns[:len(val)]
-                        if cat_an == True:
-                           for mat, cat in self.cat_an.iteritems():
-                               if k == mat:
+                            for mat, cat in self.cat_an.items():
+                                if k == mat:
                                     for w, x in cns:
-                                        for key in x.keys():
-                                            if key in cat:
-                                                del x[key]
+                                        for ke in list(x):
+                                            if ke in cat:
+                                                del x[ke]
+                        else:
+                            cns = cns[:len(val)]
+                            for mat, cat in self.cat_an.items():
+                                #print(mat) Al2O3_corundum, name of material
+                                #print(cat) ['Al'], cation
+                                if k == mat:
+                                    for w, x in cns:
+                                        #print(w) Si, site
+                                        #print(x) {'Si': 0.0, 'O': 4.0}, coordination
+                                        for ke in list(x):
+                                            #print(ke) Si, O (elements coordinated to)
+                                            if ke == w:
+                                                del x[ke]
+
                     m._cns[k] = cns
 
     def other_benchmark(self, cation=True):
