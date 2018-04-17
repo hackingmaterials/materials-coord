@@ -167,7 +167,9 @@ Sm_mp-86_conventional_standard:
 
 Sn_mp-84_primitive:
     - Sn:
-        Sn: 8.0
+        Sn:
+          - 6.0
+          - 10.0
 
 U_mp-44_primitive:
     - U:
