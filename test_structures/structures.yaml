@@ -1,96 +1,3 @@
-Na2SO4_mp-4770_computed.cif:
-    - Na:
-        Na: 0.0
-        S: 0.0
-        O: 6.0
-    - Na:
-        Na: 0.0
-        S: 0.0
-        O: 6.0
-    - S:
-        Na: 0.0
-        S: 0.0
-        O: 4.0
-    - O:
-        Na:
-        S:
-        O:
-    - O:
-        Na:
-        S:
-        O:
-    - O:
-        Na:
-        S:
-        O:
-    - O:
-        Na:
-        S:
-        O:
-
-K2NiF4_mp-556546_computed:
-    - K:
-        - K: 0.0
-        - Ni:
-        - F:
-    - K:
-        - K:
-        - Ni:
-        - F:
-    - Ni:
-        - K:
-        - Ni:
-        - F:
-    - F:
-        - K:
-        - Ni:
-        - F:
-    - F:
-        - K:
-        - Ni:
-        - F:
-    - F:
-        - K:
-        - Ni:
-        - F:
-    - F:
-        - K:
-        - Ni:
-        - F:
-
-Sr2PbO4_mp-20944_computed:
-    - Sr:
-        - Sr:
-        - Pb:
-        - O:
-    - Sr:
-        - Sr:
-        - Pb:
-        - O:
-    - Pb:
-        - Sr:
-        - Pb:
-        - O:
-    - O:
-        - Sr:
-        - Pb:
-        - O:
-    - O:
-        - Sr:
-        - Pb:
-        - O:
-    - O:
-        - Sr:
-        - Pb:
-        - O:
-    - O:
-        - Sr:
-        - Pb:
-        - O:
-
-
-
-
 data:
   A2BX4:
     structures:
@@ -145,11 +52,11 @@ data:
         "unit cell constants": [6.159, 10.078, 3.502]
         "Z": 2
         "coordination numbers": [[Sr, 7], [Sr, 7], [Pb, 6], [O, 5], [O, 5], [O, 5], [O, 5]]
-        "coordination geometries": [Pb, octahedral, [O, O, O, O, O , O]]
+        "coordination geometries": [[Pb, octahedral, [O, O, O, O, O , O]]]
         "main related structures": [Na2CuF4, Ca2IrO4]
         "notes": ["Pb octahedra are edge-sharing extending in chains in c-direction and held together by SrO6 polyhedra"]
         "MPID": mp-20944
-        "equivalent sites": 
+        "equivalent sites":
       olivine:
         "altname":
         "formula": Fe2SiO4
@@ -166,72 +73,407 @@ data:
         "equivalent sites": [['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['Sr', 'Sr', 'Sr', 'Sr'], ['Pb', 'Pb']]
       phenacite:
         "altname":
-        "formula":
-        "crystal system":
-        "spacegroup":
-        "spacegroup number":
-        "unit cell constants":
-        "Z":
-        "coordination numbers":
-        "coordination geometries":
-        "main related structures":
-        "notes":
-        "MPID":
-        "equivalent sites": 
+        "formula": Be2SiO4
+        "crystal system": rhombohedral
+        "spacegroup": R-3
+        "spacegroup number": 148
+        "unit cell constants": [12.472, 12.472, 8.252]
+        "Z": 18
+        "coordination numbers": [[Be, 4], [Be, 4], [Si, 4], [O, 3], [O, 3], [O, 3], [O, 3]]
+        "coordination geometries": [[Be, tetrahedral, [O, O, O, O]], [Be, tetrahedral, [O, O, O, O]], [Si, tetrahedral, [O, O, O, O]]]
+        "main related structures": [beta-Si3N4]
+        "notes": ["tetrahedra are corner-sharing."]
+        "MPID": mp-3347
+        "equivalent sites": [['Be', 'Be', 'Be', 'Be', 'Be', 'Be'], ['Be', 'Be', 'Be', 'Be', 'Be', 'Be'], ['O', 'O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O', 'O', 'O'], ['Si', 'Si', 'Si', 'Si', 'Si', 'Si']]
       spinel:
         "altname":
-        "formula":
-        "crystal system":
-        "spacegroup":
-        "spacegroup number":
-        "unit cell constants":
-        "Z":
-        "coordination numbers":
-        "coordination geometries":
-        "main related structures":
-        "notes":
-        "MPID":
-        "equivalent sites": 
+        "formula": MgAl2O4
+        "crystal system": cubic
+        "spacegroup": Fd3m
+        "spacegroup number": 227
+        "unit cell constants": [8.083, 8.083, 8.083]
+        "Z": 8
+        "coordination numbers": [[Mg, 4], [Al, 6], [Al, 6], [O, 4], [O, 4], [O, 4], [O, 4]]
+        "coordination geometries": [[Mg, tetrahedral, [O, O, O, O]], [Al, octahedral, [O, O, O, O, O, O]], [Al, octahedral, [O, O, O, O, O, O]]]
+        "main related structures": ["hausmannite (Mn3O4)", CuCr2O4, K2Zn(CN)4, beta-Mn2GeO4]
+        "notes": ["slightly distorted AlO6 octahedra", "octahedra linked together in 3D with adjacent octahedra by sharing edges, and with adjacent tetrahedra by sharing corners"]
+        "MPID": mp-3536
+        "equivalent sites": [['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['Mg', 'Mg'], ['Al', 'Al', 'Al', 'Al']]
       CaFe2O4:
+        "altname":
+        "formula": CaFe2O4
+        "crystal system": orthorhombic
+        "spacegroup": Pnam
+        "spacegroup number": 62
+        "unit cell constants": [9.217, 10.702, 3.018]
+        "Z": 4
+        "coordination numbers": [[Ca, 8], [Fe, 6], [Fe, 6], [O, 5], [O, 5], [O, 5], [O, 5]]
+        "coordination geometries": [[Fe, octahedral, [O, O, O, O, O, O]]]
+        "main related structures": [CaTi2O4, "marokite (CaMn2O4)", Yb3S4, MnY2S4]
+        "notes": ["FeO6 octahedra are distorted; octahedra form 3D network by sharing edges and corners with neighboring octahedra", "hollow channels along c-axis, where Ca2+ is located"]
+        "MPID": mp-25690
+        "equivalent sites": [['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['Ca', 'Ca', 'Ca', 'Ca'], ['Fe', 'Fe', 'Fe', 'Fe'], ['Fe', 'Fe', 'Fe', 'Fe']]
       BaAl2O4:
+        "altname": "stuffed tridymite"
+        "formula": BaAl2O4
+        "crystal system": hexagonal
+        "spacegroup": P6_{3}22
+        "spacegroup number": 182
+        "unit cell constants": [5.227, 5.227, 8.802]
+        "Z": 4
+        "coordination numbers": [[Ba, 9], [Al, 4], [Al, 4], [O, 2], [O, 2], [O, 2], [O, 2]]
+        "coordination geometries": [[Al, tetrahedral, [O, O, O, O]]]
+        "main related structures":
+        "notes": ["SiO2 (high-tridymite) is the 'parent' structure, where Si is substitute by Al and Ba inserted into the channels"]
+        "MPID": mp-619456
+        "equivalent sites": [['Ba', 'Ba'], ['Al', 'Al', 'Al', 'Al'], ['O', 'O', 'O', 'O', 'O', 'O'], ['O', 'O']]
       MB2O4:
+        "altname": CaB2O4-I
+        "formula": CaB2O4
+        "crystal system": orthorhombic
+        "spacegroup": Pnca
+        "spacegroup number": 60
+        "unit cell constants": [6.214, 11.604, 4.285]
+        "Z": 4
+        "coordination numbers": [[Ca, 8], [B, 3], [B, 3], [O, -1], [O, -1], [O, -1], [O, -1]]
+        "coordination geometries": [[B, "trigonal planar", [O, O, O]]]
+        "main related structures":
+        "notes": ["From the structure, it looks like 1/2 Os are CN=2 and 1/2 Os are CN=1", "3 more polymorphs well-known and described in the book, but focussing on one only at this point"]
+        "MPID": mp-3417
+        "equivalent sites": [['B', 'B', 'B', 'B', 'B', 'B', 'B', 'B'], ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['Ca', 'Ca', 'Ca', 'Ca']]
       Pb3O4:
+        "altname":
+        "formula": Pb3O4
+        "crystal system": tetragonal
+        "spacegroup": P4_{2}/mbc
+        "spacegroup number": 135
+        "unit cell constants": [8.815, 8.815, 6.565]
+        "Z":
+        "coordination numbers": [[Pb, 3], [Pb, 3], [Pb, 6], [O, 3], [O, 3], [O, 3], [O, 3]]
+        "coordination geometries": [[Pb, octahedral, [O, O, O, O, O, O]], [Pb, "trigonal noncoplanar", [O, O, O]], [Pb, "trigonal noncoplanar", [O, O, O]]]
+        "main related structures":
+        "notes": ["strings of edge-shared octahedra in c-direction with tetravalen Pb in center", "divalent Pb covalently bonded to O and located in the apex of a trigonal pyramid", "Sb and As also form this structure; s^2p^0 outer electronic config is apperently necessary for stabilization"]
+        "MPID": mp-22633
+        "equivalent sites": [['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['Pb', 'Pb', 'Pb', 'Pb'], ['Pb', 'Pb', 'Pb', 'Pb'], ['Pb', 'Pb', 'Pb', 'Pb']]
       Th3P4:
-      NaCl:
-      NiAs:
-      wurtzite:
-      sphalerite:
-    interrealationships:
+        "altname":
+        "formula": Th3P4
+        "crystal system": cubic
+        "spacegroup": I-43d
+        "spacegroup number": 220
+        "unit cell constants": [8.6, 8.6, 8.6]
+        "Z": 4
+        "coordination numbers": [[Th, 8], [Th, 8], [Th, 8], [P, 6], [P, 6], [P, 6], [P, 6]]
+        "coordination geometries":
+        "main related structures": [Pu2C3]
+        "notes": ["In La3Se4, 2 interpenetrated tetrahedra form the La coordination polyhedron"]
+        "MPID": mp-1347
+        "equivalent sites": [['P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'], ['Th', 'Th', 'Th', 'Th', 'Th', 'Th']]
   ABX4:
     structures:
       zircon:
+        "altname":
+        "formula": ZrSiO4
+        "crystal system": tetragonal
+        "spacegroup": I4_{1}/amd
+        "spacegroup number": 141
+        "unit cell constants": [6.607, 6.607, 5.982]
+        "Z": 4
+        "coordination numbers": [[Zr, 8], [Si, 4], [O, 3], [O, 3], [O, 3], [O, 3]]
+        "coordination geometries": [[Si, tetrahedral, [O, O, O, O]]]
+        "main related structures": [CaSO4]
+        "notes": ['SiO4 tetrahedra are distorted.']
+        "MPID": mp-4820
+        "equivalent sites": [['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['Si', 'Si'], ['Zr', 'Zr']]
       scheelite:
-      "trigonal BiPO4":
+        "altname":
+        "formula": CaWO4
+        "crystal system": tetragonal
+        "spacegroup": I4_{1}/a
+        "spacegroup number": 88
+        "unit cell constants": [5.243, 5.243, 11.376]
+        "Z": 4
+        "coordination numbers": [[Ca, 8], [W, 4], [O, 3], [O, 3], [O, 3], [O, 3]]
+        "coordination geometries": [[W, tetrahedral, [O, O, O, O]]]
+        "main related structures": [Fergusonite, CsReO4]
+        "notes": ['WO4 tetrahedra nearly perfect.']
+        "MPID": mp-19426
+        "equivalent sites": [['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['Ca', 'Ca'], ['W', 'W']]
       monazite:
+        "altname":
+        "formula": CePO4
+        "crystal system": monoclinic
+        "spacegroup": P2_{1}/n
+        "spacegroup number": 14
+        "unit cell constants": [6.76, 7.0, 6.44]
+        "Z": 4
+        "coordination numbers": [[Ce, 8], [P, 4], [O, 3], [O, 3], [O, 3], [O, 3]]
+        "coordination geometries": [[P, tetrahedral, [O, O, O, O]]]
+        "main related structures": [crocoite]
+        "notes": ['PO4 tetrahedra are irregular']
+        "MPID": mp-4136
+        "equivalent sites": [['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['P', 'P', 'P', 'P'], ['Ce', 'Ce', 'Ce', 'Ce']]
       barite:
-      NaCl:
+        "altname":
+        "formula": BaSO4
+        "crystal system": orthorhombic
+        "spacegroup": Pnma
+        "spacegroup number": 62
+        "unit cell constants": [8.884, 5.458, 7.153]
+        "Z": 4
+        "coordination numbers": [[Ba, 12], [S, 4], [O, 4], [O, 4], [O, 4], [O, 4]]
+        "coordination geometries": [[S, tetrahedral, [O, O, O, O]]]
+        "main related structures":
+        "notes": ['Bonds in SO4 tetrahedra have slightly varying lengths.']
+        "MPID": mp-3164
+        "equivalent sites": [['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['S', 'S', 'S', 'S'], ['Ba', 'Ba', 'Ba', 'Ba']]
       TlAlF4:
+        "altname":
+        "formula": AlTlF4
+        "crystal system": tetragonal
+        "spacegroup": P4/mmm
+        "spacegroup number": 123
+        "unit cell constants": [3.607, 3.607, 6.367]
+        "Z": 1
+        "coordination numbers": [[Tl, 8], [Al, 6], [F, 2], [F, 2], [F, 5], [F, 5]]
+        "coordination geometries": [[Al, octahedral, [F, F, F, F, F, F]]]
+        "main related structures": [alpha-RbFeF4]
+        "notes": ['beta-RbFeF4 is isotypic.']
+        "MPID": mp-5606
+        "equivalent sites": [['F', 'F'], ['F', 'F'], ['Al'], ['Tl']]
       BaZnF4:
-      NaNdF4:
-      fluorite:
+        "altname":
+        "formula": BaZnF4
+        "crystal system": orthorhombic
+        "spacegroup": Cmc2_{1}
+        "spacegroup number": 36
+        "unit cell constants": [4.206, 14.563, 5.841]
+        "Z": 4
+        "coordination numbers": [[Ba, 9], [Zn, 6], [F, 4], [F, 4], [F, 4], [F, 3]]
+        "coordination geometries": [[Zn, octahedral, [O, O, O, O, O, O]]]
+        "main related structures":
+        "notes": ['ZnO6 octahedra are corner-sharing.', 'BaMnF4 is isotypic.']
+        "MPID": mp-3881
+        "equivalent sites": [['F', 'F'], ['F', 'F'], ['F', 'F'], ['F', 'F'], ['Zn', 'Zn'], ['Ba', 'Ba']]
       rutile:
-      alpha-PbO2:
+        "altname":
+        "formula": RhNbO4
+        "crystal system": tetragonal
+        "spacegroup": I4_{1}md
+        "spacegroup number": 109
+        "unit cell constants": [4.7, 4.7, 3.019]
+        "Z":
+        "coordination numbers": [[Rh, 6], [Nb, 6], [O, 3], [O, 3], [O, 3], [O, 3]]
+        "coordination geometries": [[Rh, octahedral, [O, O, O, O, O, O]], [Nb, octahedral, [O, O, O, O, O, O]]]
+        "main related structures":
+        "notes": ['RhO6 and NbO6 are edge-sharing along one direction (c) and these strings are connected via corner-sharing.', 'Determined partly by using structure similarity tool on MP website.']
+        "MPID": mp-756638
+        "equivalent sites": [['Nb', 'Nb'], ['Rh', 'Rh'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O']]
       wolframite:
+        "altname": ferberite
+        "formula": FeWO4
+        "crystal system": monoclinic
+        "spacegroup": P2/c
+        "spacegroup number": 13
+        "unit cell constants": [4.73, 5.703, 4.952]
+        "Z": 2
+        "coordination numbers": [[Fe, 6], [W, 6], [O, 3], [O, 3], [O, 3], [O, 3]]
+        "coordination geometries": [[Fe, octahedral, [O, O, O, O, O, O]], [W, octahedral, [O, O, O, O, O, O]]]
+        "main related structures":
+        "notes": ['FeO6 and WO6 octahedra form zigzag chains, where each chain only contains one cation type and the octahedra are considerably distorted.']
+        "MPID": mp-19421
+        "equivalent sites": [['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['Fe', 'Fe'], ['W', 'W']]
       alpha-MnMoO4:
+        "altname":
+        "formula": MnMoO4
+        "crystal system": monoclinic
+        "spacegroup": C2/m
+        "spacegroup number": 12
+        "unit cell constants": [10.469, 9.516, 7.143]
+        "Z": 8
+        "coordination numbers": [[Mn, 6], [Mn, 6], [Mo, 4], [Mo, 4], [O, 4], [O, 3], [O, 3], [O, 2], [O, 2], [O, 2], [O, 2], [O, 2]]
+        "coordination geometries": [[Mn, octahedral, [O, O, O, O, O, O]], [Mo, tetrahedral, [O, O, O, O]]]
+        "main related structures":
+        "notes": ['MnO6 octahedra are strongly distorted', 'MoO4 tetrahedra are strongly distorted.', 'Tetrahedra are interlinked with octahedra in a complex pattern.']
+        "MPID": mp-19081
+        "equivalent sites": [['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O'], ['O', 'O'], ['O', 'O', 'O', 'O'], ['Mn', 'Mn'], ['Mn', 'Mn'], ['Mo', 'Mo'], ['Mo', 'Mo']]
       CrVO4:
+        "altname":
+        "formula": CrVO4
+        "crystal system": orthorhombic
+        "spacegroup": Cmcm
+        "spacegroup number": 63
+        "unit cell constants": [5.568, 8.208, 5.977]
+        "Z": 4
+        "coordination numbers": [[Cr, 6], [V, 4], [O, 2], [O, 2], [O, 3], [O, 3]]
+        "coordination geometries": [[Cr, octahedral, [O, O, O, O, O, O]], [V, tetrahedral, [O, O, O, O]]]
+        "main related structures":
+        "notes": ['CrO6 octahedra form edge-sharing chains parallel to c-axis, which are linked together by VO4 tetrahedra.', 'NiSeO4 is isotypic']
+        "MPID": mp-19418
+        "equivalent sites": [['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['V', 'V'], ['Cr', 'Cr']]
       ZnSO4:
-      quartz:
-      tridymite:
-      cristobalite:
-    interrealationships:
+        "altname":
+        "formula": ZnSO4
+        "crystal system": orthorhombic
+        "spacegroup": Pnma
+        "spacegroup number": 62
+        "unit cell constants": [4.767, 8.584, 6.728]
+        "Z": 4
+        "coordination numbers": [[Zn, 6], [S, 4], [O, 3], [O, 3], [O, 2], [O, 2]]
+        "coordination geometries": [[Zn, octahedral, [O, O, O, O, O, O]], [S, tetrahedral, [O, O, O, O]]]
+        "main related structures":
+        "notes": ['ZnO6 octahedra form edge-sharing chains parallel to c-axis, which are linked together by SO4 tetrahedra.', 'Very similar to CrVO4, but orientations of polyhedra are different and site symmetry of octahedra and tetrahedra is lower.']
+        "MPID": mp-5126
+        "equivalent sites": [['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['S', 'S', 'S', 'S'], ['Zn', 'Zn', 'Zn', 'Zn']]
+      low-quartz:
+        "altname":
+        "formula": AlAsO4
+        "crystal system": trigonal
+        "spacegroup": P3_{1}21
+        "spacegroup number": 152
+        "unit cell constants": [5.031, 5.031, 11.234]
+        "Z": 3
+        "coordination numbers": [[Al, 4], [As, 4], [O, 2], [O, 2], [O, 2], [O, 2]]
+        "coordination geometries": [[Al, tetrahedral, [O, O, O, O]], [As, tetrahedral, [O, O, O, O]]]
+        "main related structures":
+        "notes": ['For AlPO4, the tetrahedra are slightly distorted and O-T-O angles are significantly different from 180 degrees (<113 degrees).']
+        "MPID": mp-5189
+        "equivalent sites": [['O', 'O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O', 'O', 'O'], ['Al', 'Al', 'Al'], ['As', 'As', 'As']]
+      low-cristobalite:
+        "altname":
+        "formula": GaPO4
+        "crystal system": orthorhombic
+        "spacegroup": C222_{1}
+        "spacegroup number": 20
+        "unit cell constants": [6.967, 6.967, 6.866]
+        "Z": 4
+        "coordination numbers": [[Ga, 4], [P, 4], [O, 2], [O, 2], [O, 2], [O, 2]]
+        "coordination geometries": [[Ga, tetrahedral, [O, O, O, O]], [P, tetrahedral, [O, O, O, O]]]
+        "main related structures":
+        "notes":
+        "MPID": mp-553932
+        "equivalent sites": [['Ga', 'Ga'], ['P', 'P'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O']]
+      high-cristobalite:
+        "altname":
+        "formula": BAsO4
+        "crystal system": tetragonal
+        "spacegroup": I-4
+        "spacegroup number": 82
+        "unit cell constants": [4.458, 4.458, 6.796]
+        "Z": 2
+        "coordination numbers": [[B, 4], [As, 4], [O, 2], [O, 2], [O, 2], [O, 2]]
+        "coordination geometries": [[B, tetrahedral, [O, O, O, O]], [As, tetrahedral, [O, O, O, O]]]
+        "main related structures":
+        "notes":
+        "MPID": mp-3277
+        "equivalent sites": [['B'], ['O', 'O', 'O', 'O'], ['As']]
+      MgUO4:
+        "altname":
+        "formula": MgUO4
+        "crystal system": orthorhombic
+        "spacegroup": Imma
+        "spacegroup number": 74
+        "unit cell constants": [6.52, 6.595, 6.924]
+        "Z": 4
+        "coordination numbers": [[Mg, 6], [U, 6], [O, 3], [O, 3], [O, 3], [O, 3]]
+        "coordination geometries": [[U, octahedral, [O, O, O, O, O, O]], [Mg, octahedral, [O, O, O, O, O, O]]]
+        "main related structures":
+        "notes": ['UO6 and MgO6 octahedra form separate chains of edge-sharing chains that are, however, connected via corner-sharing.']
+        "MPID": mp-7858
+        "equivalent sites": [['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['Mg', 'Mg'], ['U', 'U']]
+      SbNbO4:
+        "altname": "stibiotantalite (SbTaO4)"
+        "formula": SbNbO4
+        "crystal system": orthorhombic
+        "spacegroup": Pna2_{1}
+        "spacegroup number": 33
+        "unit cell constants": [5.559, 4.929, 11.797]
+        "Z": 4
+        "coordination numbers": [[Sb, 5], [Nb, 6]]
+        "coordination geometries": [[Nb, octahedral, [O, O, O, O, O, O]]]
+        "main related structures":
+        "notes": ['NbO6 octahedra are corner-sharing and forming infitite sheets parallel to (001).']
+        "MPID": mp-3491
+        "equivalent sites": [['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['Nb', 'Nb', 'Nb', 'Nb'], ['Sb', 'Sb', 'Sb', 'Sb']]
   ABX3:
     structures:
-      CaCO3:
+      calcite:
+        "altname":
+        "formula": CaCO3
+        "crystal system": rhombohedral
+        "spacegroup": R-3c
+        "spacegroup number": 167
+        "unit cell constants": [4.99, 4.99, 17.062]
+        "Z": 6
+        "coordination numbers": [[Ca, 6], [C, 3], [O, 3], [O, 3], [O, 3]]
+        "coordination geometries": [[C, "trigonal planar", [O, O, O]]]
+        "main related structures":
+        "notes":
+        "MPID": mp-3953
+        "equivalent sites": [['C', 'C'], ['O', 'O', 'O', 'O', 'O', 'O'], ['Ca', 'Ca']]
+      aragonite:
+        "altname":
+        "formula": CaCO3
+        "crystal system": orthorhombic
+        "spacegroup": Pmcn
+        "spacegroup number": 62
+        "unit cell constants": [4.959, 7.968, 5.741]
+        "Z": 4
+        "coordination numbers": [[Ca, 9], [C, 3], [O, 4], [O, 4], [O, 4]]
+        "coordination geometries": [[C, "trigonal planar", [O, O, O]]]
+        "main related structures":
+        "notes":
+        "MPID": mp-4626
+        "equivalent sites": [['C', 'C', 'C', 'C'], ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['Ca', 'Ca', 'Ca', 'Ca']]
       perovskites:
-      pyroxenes:
-      corundum:
-    interrealationships:
-  Others:
+        "altname":
+        "formula": SrTiO3
+        "crystal system": cubic
+        "spacegroup": Pm3m
+        "spacegroup number": 221
+        "unit cell constants": [3.905, 3.905, 3.905]
+        "Z": 1
+        "coordination numbers": [[Sr, 12], [Ti, 6], [O, 6], [O, 6], [O, 6]]
+        "coordination geometries": [[Ti, octahedral, [O, O, O, O, O, O]]]
+        "main related structures":
+        "notes": ['TiO6 octahedra are corner-sharing and forming and extend infinitely in 3D']
+        "MPID": mp-5229
+        "equivalent sites": [['O', 'O', 'O'], ['Ti'], ['Sr']]
+      "Tetragonal BaTiO3":
+        "altname": 
+        "formula": BaTiO3
+        "crystal system": tetragonal
+        "spacegroup": P4mm
+        "spacegroup number": 99
+        "unit cell constants": [3.994, 3.994, 4.038]
+        "Z": 1
+        "coordination numbers": [[Ba, 12], [Ti, 6], [O, 6], [O, 6], [O, 6]]
+        "coordination geometries": [[Ti, octahedral, [O, O, O, O, O, O]]]
+        "main related structures":
+        "notes": ['Distorted TiO6 octahedra']
+        "MPID": mp-5986
+        "equivalent sites": [['O', 'O'], ['O'], ['Ti'], ['Ba']]
+      ilmenite:
+        "altname":
+        "formula": FeTiO3
+        "crystal system": rhombohedral
+        "spacegroup": R-3
+        "spacegroup number": 148
+        "unit cell constants": [5.088, 5.088, 14.073]
+        "Z": 6
+        "coordination numbers": [[Fe, 6], [Ti, 6], [O, 4], [O, 4], [O, 4]]
+        "coordination geometries": [[Fe, octahedral, [O, O, O, O, O, O]], [Ti, octahedral, [O, O, O, O, O, O]]]
+        "main related structures":
+        "notes": ["FeO6 octahedra are distorted, but TiO6 octahedra even more."]
+        "MPID": mp-19417
+        "equivalent sites": [['O', 'O', 'O', 'O', 'O', 'O'], ['Ti', 'Ti'], ['Fe', 'Fe']]
 notes:
+  - "A negative integer for any coordination number means that this was not retrievable."
   - "The spacegroup number was taken from the material that I found on the MP website"
   - "import sys\nif len(sys.argv) != 2:\n    raise RuntimeError('expected exactly 1 argument: MPID')\nfrom pymatgen.ext.matproj import MPRester\nfrom pymatgen.symmetry.analyzer import SpacegroupAnalyzer\nwith MPRester() as mpr:\n    struct = mpr.get_structure_by_material_id(sys.argv[1])\n    es = SpacegroupAnalyzer(struct).get_symmetrized_structure().equivalent_sites\n    eq_site_list = []\n    for i, slist in enumerate(es):\n        eq_site_list.append([])\n        for s in slist:\n            eq_site_list[i].append(s.species_string)\n    print(eq_site_list)"
+  - "Didn't include A2BX4 and ABX4 structures based on NaCl because hard to identify and rare. Similar with A2BX4 structutes that are NiAs-related, wurtzite- and sphalerite-related. All/many of these seem to include vacancies, which complicates quick identification, for which reason we leave those out for the time being."
+  - "Didn't find a trigonal BiPO4 (ABX4) in MP; only monoclinc. Also, don't include NaNdF4 because contains vacancy, which is hard to handle quickly at this point. Similariy, didn't find a matching fluorite-like ABX4 (e.g., PbUO4)."
+  - "Didn't include alpha-PbO2-like structure such as HfTiO4 because the (probable) MP entry (mp-753197) is not orthorhombic but trigonal (subtle changes in the cell angles though).  Focused here on the very similar wolframite."
+  - "Didn't include high-quartz b/c no spacegroup; similarly, low- and high-tridymite."
+  - "Only included 1 uranyl type so far"
+  - "Not pyroxenes because discussed in another volume"

@@ -12,11 +12,12 @@ module_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)))
 
 class nb_funcs(object):
 
-    def __init__(self, df, algo_names, unique_sites=24, cations=True):
+    def __init__(self, df, algo_names, unique_sites=24, elemental=False, cations=True):
 
         self.df = df
         self.algo_names = sorted(algo_names)
         self.unique_sites = unique_sites
+        self.elemental = elemental
         self.cations = cations
 
         test = os.path.join(module_dir, "..", "test_structures", "cat_an.yaml")
@@ -26,10 +27,9 @@ class nb_funcs(object):
 
         self.cats = cats
 
-
     def order_cols(self, hi=True):
 
-        if hi == False:
+        if not hi:
             try:
                 self.algo_names.remove("HumanInterpreter")
             except:
@@ -124,6 +124,7 @@ class nb_funcs(object):
             sub_hi[key] = val
 
         abs_df = sub_hi
+        abs_df = abs_df.reindex(self.df.index.tolist())
         return abs_df
 
     def cif_stats(self):
@@ -163,32 +164,28 @@ class nb_funcs(object):
             counter += 1
             mat_list.append(dict(cn_dict))
 
-        if self.cations == True:
+        if self.cations:
+            test = {}
             for key, val in mat_dict.items():
-                for mat, cat in self.cats.items():
-                    if key == mat:
-                        for w in list(val):
-                            if w in cat:
-                                del val[w]
-        else:
-            cns = cns[:len(val)]
-            for mat, cat in self.cats.items():
-                # print(mat) Al2O3_corundum, name of material
-                # print(cat) ['Al'], cation
-                if k == mat:
-                    for w, x in cns:
-                        # print(w) Si, site
-                        # print(x) {'Si': 0.0, 'O': 4.0}, coordination
-                        for ke in list(x):
-                            # print(ke) Si, O (elements coordinated to)
-                            if ke == w:
-                                del x[ke]
+                if self.elemental:
+                    for i, j in val.items():
+                        test[key] = j
+                else:
+                    for mat, cat in self.cats.items():
+                        if key == mat:
+                            for w in list(val):
+                                if self.elemental:
+                                    test[mat] = val[w]
+                                else:
+                                    if w in cat:
+                                        test[mat] = val[w]
+                                        del val[w]
 
-        mat_dict = pd.Series(mat_dict)
-
-        abs_df['num unit cell atoms'] = mat_dict
+        test = pd.Series(test)
+        abs_df['num unit cell atoms'] = test
 
         cs_df = abs_df
+        cs_df = cs_df.reindex(self.df.index.tolist())
         return cs_df
 
     def mult_equiv(self):
@@ -209,6 +206,7 @@ class nb_funcs(object):
                 counter = 0
 
         me_df = cs_df
+        me_df = me_df.reindex(self.df.index.tolist())
         return me_df
 
     def tot_algo_sum(self):
@@ -221,19 +219,33 @@ class nb_funcs(object):
             sum_each_algo = {}
             count = 0
             for d in each_algo[:len(each_algo.index)].values:
-                l = []
-                for i in range(len(each_algo.keys())):
-                    if d[i] != {}:
-                        l.append(d[i])
-                #print(l)
-                #print(l[0])
-                summed = {k: sum(di[k] for di in l) for k in l[0]}
-                #print(summed)
+                if self.cations:
+                    l = []
+                    for i in range(len(each_algo.keys())):
+                        if d[i] != {}:
+                            l.append(d[i])
+                    summed = {k: sum(di[k] for di in l) for k in l[0]}
+                else:
+                    for i in range(len(each_algo.keys())):
+                        if d[i] != {}:
+                            test = Counter(d[i])
+                    summed = {k: sum(di[k] for di in l) for k in l}
                 sum_each_algo[each_algo.index[count]] = summed
                 count += 1
             algo_sum[self.algo_names[a]] = dict(sum_each_algo)
-        tas_df = pd.DataFrame(algo_sum)
+
+        totsum = {}
+        for mat, su in algo_sum.items():
+            new_sum = {}
+            for k, v in su.items():
+                for i, j in v.items():
+                    new_sum[k] = j
+            totsum[mat] = dict(new_sum)
+
+        tas_df = pd.DataFrame(totsum)
         tas_df['num unit cell atoms'] = me_df['num unit cell atoms']
+
+        tas_df = tas_df.reindex(self.df.index.tolist())
 
         return tas_df
 
@@ -241,47 +253,22 @@ class nb_funcs(object):
 
         tas_df = self.tot_algo_sum()
 
-        div = {}
-        for i in range(len(tas_df.columns) - 1):
+        for i in range(len(tas_df.columns)-1):
             mat = tas_df[self.algo_names[i]]
             hi_mat = tas_df["num unit cell atoms"]
-            cn_dict = {}
-            for j in range(len(mat)):
-                temp_mat = Counter(mat[j])
-                temp_hi_mat = Counter(hi_mat[j])
-                cn_dict[mat.keys()[j]] = dict(zip(temp_mat.keys(),
-                                                  [round(x / y, 2) for x, y in
-                                                   zip(temp_mat.values(), temp_hi_mat.values())]))
-            div[tas_df.columns[i]] = dict(cn_dict)
-        div_df = pd.DataFrame(div)
+            c = mat.divide(hi_mat)
 
+            tas_df[self.algo_names[i]] = c
+
+        div_df = tas_df
+        div_df = div_df.reindex(self.df.index.tolist())
         return div_df
 
     def final(self):
 
         div_df = self.div_df()
 
-        final = {}
-        for i in range(len(self.algo_names)):
-            algo_col = div_df.loc[:, self.algo_names[i]]
-            li = []
-            for j in algo_col:
-                z = sum(j.values())
-                li.append(z)
-            m = dict(zip(div_df.index, li))
-            final[self.algo_names[i]] = dict(m)
-        final_df = pd.DataFrame(final)
-        final_df = final_df.reindex(self.sub_hi().index.tolist())
+        final_df = div_df.drop('num unit cell atoms', axis=1)
+        final_df = final_df.reindex(self.df.index.tolist())
 
         return final_df
-
-def hm(df):
-
-    fig, ax = plt.subplots(figsize=(20, 10))
-
-    hm = sns.heatmap(df, annot=True, cmap="BuPu")
-
-    ax.hlines([10, 14, 19], *hm.get_xlim())
-    ax.set_xticklabels(df.columns.tolist(), rotation=45)
-
-    return hm

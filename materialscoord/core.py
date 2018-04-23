@@ -58,7 +58,7 @@ class Benchmark(object):
     """
 
     def __init__(self, methods, structure_groups="elemental", custom_set=None,
-                 unique_sites=True, nround=3, use_weights=False, cations=True):
+                 unique_sites=True, nround=3, use_weights=False, cations=False, anions=False):
 
         self.methods = methods
         self.structure_groups = structure_groups if isinstance(structure_groups, list) else [structure_groups]
@@ -77,27 +77,33 @@ class Benchmark(object):
         self.nround = nround
         self.use_weights = use_weights
         self.cations = cations
+        self.anions = anions
 
         for m in self.methods:
             assert isinstance(m, (NearNeighbors, CNBase))
+            m._cns = {}
         print("Initialization successful.")
 
-        if cations == True:
+        if cations:
             p = os.path.join(module_dir, "..", "test_structures", "hi_cations.yaml")
+            cat_an = os.path.join(module_dir, "..", "test_structures", "cat_an.yaml")
+            with open(cat_an) as t:
+                cat_an = yaml.load(t)
+            self.cat_an = cat_an
+
+        elif anions:
+            p = os.path.join(module_dir, "..", "test_structures", "hi_anions.yaml")
+            an_cat = os.path.join(module_dir, "..", "test_structures", "an_cat.yaml")
+            with open(an_cat) as t:
+                an_cat = yaml.load(t)
+            self.an_cat = an_cat
+
         else:
             p = os.path.join(module_dir, "..", "test_structures", "human_interpreter.yaml")
 
         with open(p) as f:
             hi = yaml.load(f)
-
         self.hi = hi
-
-        cat_an = os.path.join(module_dir, "..", "test_structures", "cat_an.yaml")
-
-        with open(cat_an) as t:
-            cat_an = yaml.load(t)
-
-        self.cat_an = cat_an
 
     def _load_test_structures(self, group):
         """
@@ -125,16 +131,19 @@ class Benchmark(object):
                 cns = []
                 if self.unique_sites:
                     es = SpacegroupAnalyzer(v).get_symmetrized_structure().equivalent_sites
-                    #print [x[0] for x in es]
+                    #print([x[0] for x in es])
                     sites = [v.index(x[0]) for x in es]
                 else:
                     sites = range(len(v))
+
+
 
                 for key, val in self.hi.items():
                     if k == key:
                         for j in sites:
                             if isinstance(m, NearNeighbors):
                                 tmpcn = m.get_cn_dict(v, j, self.use_weights)
+                                #print(tmpcn)
                             else:
                                 tmpcn = m.compute(v, j)
                                 if tmpcn == "null":
@@ -142,16 +151,24 @@ class Benchmark(object):
                             if self.nround:
                                 self._roundcns(tmpcn, self.nround)
                             cns.append((v[j].species_string, tmpcn))
-                        if self.cations == True:
-                            cns = cns[:len(val)]
+                        print(cns)
+                        if self.cations:
                             for mat, cat in self.cat_an.items():
                                 if k == mat:
                                     for w, x in cns:
                                         for ke in list(x):
                                             if ke in cat:
                                                 del x[ke]
+                        elif self.anions:
+                            for mat, an in self.an_cat.items():
+                                if k == mat:
+                                    for w, x in cns:
+                                        #print(x)
+                                        for ke in list(x):
+                                            if ke in an:
+                                                del x[ke]
+
                         else:
-                            cns = cns[:len(val)]
                             for mat, cat in self.cat_an.items():
                                 #print(mat) Al2O3_corundum, name of material
                                 #print(cat) ['Al'], cation
@@ -163,6 +180,7 @@ class Benchmark(object):
                                             #print(ke) Si, O (elements coordinated to)
                                             if ke == w:
                                                 del x[ke]
+                    #print(cns)
 
                     m._cns[k] = cns
 

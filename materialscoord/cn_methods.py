@@ -151,10 +151,12 @@ class HumanInterpreter(CNBase):
     This is a special CN method that reads a yaml file where "human interpretations" of coordination
     numbers are given.
     """
-    def __init__(self, custom_interpreter=None, custom_test_structures=None, cations=True):
+    def __init__(self, custom_interpreter=None, custom_test_structures=None, cations=False, anions=False):
 
-        if cations == True:
+        if cations:
             p = os.path.join(module_dir, "..", "test_structures", "hi_cations.yaml")
+        elif anions:
+            p = os.path.join(module_dir, "..", "test_structures", "hi_anions.yaml")
         else:
             p = os.path.join(module_dir, "..", "test_structures", "human_interpreter.yaml")
 
@@ -184,6 +186,11 @@ class HumanInterpreter(CNBase):
     def compute(self, structure, n):
 
         for v in self._params.values():
+            #print(v)
+            #print("--------TESTING------")
+            #print(v[-1])
+            #print("------HERE------")
+            #print(structure)
             if structure == v[-1]:
                 if len(v[:-1]) != len(v[-1]):
                     # means possibly reduced structure is used by human interpreter
