@@ -12,7 +12,7 @@ module_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)))
 
 class nb_funcs(object):
 
-    def __init__(self, df, algo_names, unique_sites=24, elemental=False, cations=True):
+    def __init__(self, df, algo_names, unique_sites=24, elemental=False, cations=True, anions=False):
 
         self.df = df
         self.algo_names = sorted(algo_names)
@@ -20,12 +20,14 @@ class nb_funcs(object):
         self.elemental = elemental
         self.cations = cations
 
-        test = os.path.join(module_dir, "..", "test_structures", "cat_an.yaml")
+        c = os.path.join(module_dir, "..", "test_structures", "cat_an.yaml")
 
-        with open(test) as t:
+        with open(c) as t:
             cats = yaml.load(t)
 
         self.cats = cats
+
+
 
     def order_cols(self, hi=True):
 
@@ -224,7 +226,11 @@ class nb_funcs(object):
                     for i in range(len(each_algo.keys())):
                         if d[i] != {}:
                             l.append(d[i])
+                        #print(l[0])
+                        #for k in l[0]:
+                        #    print(k)
                     summed = {k: sum(di[k] for di in l) for k in l[0]}
+                    #summed = {k: sum(di for di in l[1]) for k in l[0]}
                 else:
                     for i in range(len(each_algo.keys())):
                         if d[i] != {}:

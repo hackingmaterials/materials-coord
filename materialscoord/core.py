@@ -151,7 +151,7 @@ class Benchmark(object):
                             if self.nround:
                                 self._roundcns(tmpcn, self.nround)
                             cns.append((v[j].species_string, tmpcn))
-                        print(cns)
+                        #print(cns)
                         if self.cations:
                             for mat, cat in self.cat_an.items():
                                 if k == mat:
@@ -180,9 +180,13 @@ class Benchmark(object):
                                             #print(ke) Si, O (elements coordinated to)
                                             if ke == w:
                                                 del x[ke]
-                    #print(cns)
-
                     m._cns[k] = cns
+            if self.anions:
+                new = {}
+                for mat, val in m._cns.items():
+                    val = [i for i in val if i[1] != {}]
+                    new[mat] = val
+                m._cns = new
 
     def other_benchmark(self, cation=True):
         """
