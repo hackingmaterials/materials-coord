@@ -8,39 +8,7 @@ from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 from collections import OrderedDict
 from pymatgen.analysis.local_env import NearNeighbors, VoronoiNN_modified
 
-# TODO 1: Add a method to analyze statistics of variation in CN predictions
-# TODO 2: Implement new CN methods
-# TODO 3: Add more test_structures (underway)
-
-
 module_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)))
-
-
-class CNBase:
-    __metaclass__ = abc.ABCMeta
-    """
-    This is an abstract base class for implementation of CN algorithms. All CN methods
-    must be subclassed from this class, and have a compute method that returns CNs as
-    a dict.
-    """
-
-    def __init__(self, params=None):
-        """
-        :param params: (dict) of parameters to pass to compute method.
-        """
-        self._params = params if params else {}
-        self._cns = {}
-
-    @abc.abstractmethod
-    def compute(self, structure, n):
-        """
-        :param structure: (Structure) a pymatgen Structure
-        :param n: (int) index of the atom in structure that the CN will be calculated
-            for.
-        :return: Dict of CN's for the site n. (e.g. {'O': 4.4, 'F': 2.1})
-        """
-        pass
-
 
 class Benchmark(object):
     """
@@ -58,7 +26,7 @@ class Benchmark(object):
     """
 
     def __init__(self, methods, structure_groups="elemental", custom_set=None,
-                 unique_sites=True, nround=3, use_weights=False, cations=False, anions=False):
+                 unique_sites=True, nround=3, use_weights=False, cations=False):
 
         self.methods = methods
         self.structure_groups = structure_groups if isinstance(structure_groups, list) else [structure_groups]
@@ -77,7 +45,6 @@ class Benchmark(object):
         self.nround = nround
         self.use_weights = use_weights
         self.cations = cations
-        self.anions = anions
 
         for m in self.methods:
             assert isinstance(m, (NearNeighbors, CNBase))
@@ -90,13 +57,6 @@ class Benchmark(object):
             with open(cat_an) as t:
                 cat_an = yaml.load(t)
             self.cat_an = cat_an
-
-        elif anions:
-            p = os.path.join(module_dir, "..", "test_structures", "hi_anions.yaml")
-            an_cat = os.path.join(module_dir, "..", "test_structures", "an_cat.yaml")
-            with open(an_cat) as t:
-                an_cat = yaml.load(t)
-            self.an_cat = an_cat
 
         else:
             p = os.path.join(module_dir, "..", "test_structures", "human_interpreter.yaml")
@@ -159,15 +119,6 @@ class Benchmark(object):
                                         for ke in list(x):
                                             if ke in cat:
                                                 del x[ke]
-                        elif self.anions:
-                            for mat, an in self.an_cat.items():
-                                if k == mat:
-                                    for w, x in cns:
-                                        #print(x)
-                                        for ke in list(x):
-                                            if ke in an:
-                                                del x[ke]
-
                         else:
                             for mat, cat in self.cat_an.items():
                                 #print(mat) Al2O3_corundum, name of material
@@ -181,36 +132,6 @@ class Benchmark(object):
                                             if ke == w:
                                                 del x[ke]
                     m._cns[k] = cns
-            if self.anions:
-                new = {}
-                for mat, val in m._cns.items():
-                    val = [i for i in val if i[1] != {}]
-                    new[mat] = val
-                m._cns = new
-
-    def other_benchmark(self, cation=True):
-        """
-        Performs the benchmark calculations.
-        """
-        for m in self.methods:
-            for k, v in self.test_structures.items():
-                cns = []
-                if self.unique_sites:
-                    es = SpacegroupAnalyzer(v).get_symmetrized_structure().equivalent_sites
-                    sites = [v.index(x[0]) for x in es]
-                else:
-                    sites = range(len(v))
-                for j in sites:
-                    if isinstance(m, NearNeighbors):
-                        tmpcn = m.get_cn_dict(v, j, self.use_weights)
-                    else:
-                        tmpcn = m.compute(v, j)
-                        if tmpcn == "null":
-                            continue
-                    if self.nround:
-                        self._roundcns(tmpcn, self.nround)
-                    cns.append((v[j].species_string, tmpcn))
-                m._cns[k] = cns
 
     def report(self, totals=False, separate_columns=False, max_sites=5):
         """
@@ -285,3 +206,88 @@ class Benchmark(object):
                 pass
             else:
                 d[k]=round(v,ndigits)
+
+class CNBase:
+    __metaclass__ = abc.ABCMeta
+    """
+    This is an abstract base class for implementation of CN algorithms. All CN methods
+    must be subclassed from this class, and have a compute method that returns CNs as
+    a dict.
+    """
+
+    def __init__(self, params=None):
+        """
+        :param params: (dict) of parameters to pass to compute method.
+        """
+        self._params = params if params else {}
+        self._cns = {}
+
+    @abc.abstractmethod
+    def compute(self, structure, n):
+        """
+        :param structure: (Structure) a pymatgen Structure
+        :param n: (int) index of the atom in structure that the CN will be calculated
+            for.
+        :return: Dict of CN's for the site n. (e.g. {'O': 4.4, 'F': 2.1})
+        """
+        pass
+
+class HumanInterpreter(CNBase):
+    """
+    This is a special CN method that reads a yaml file where "human interpretations" of coordination
+    numbers are given.
+    """
+    def __init__(self, cations=True, custom_interpreter=None, custom_test_structures=None, anions=False):
+
+        if cations:
+            p = os.path.join(module_dir, "..", "test_structures", "hi_cations.yaml")
+        elif anions:
+            p = os.path.join(module_dir, "..", "test_structures", "hi_anions.yaml")
+        else:
+            p = os.path.join(module_dir, "..", "test_structures", "human_interpreter.yaml")
+
+        t = os.path.join(module_dir, "..", "test_structures")
+        interpreter = custom_interpreter if custom_interpreter else p
+        test_structures = custom_test_structures if custom_test_structures else t
+
+        with open(interpreter) as f:
+            hi = yaml.load(f)
+
+        for k in hi.keys():
+
+            hi[k].append(len(hi[k]))
+
+            if custom_test_structures:
+                find_structure = glob.glob(os.path.join(test_structures, k + "*"))
+            else:
+                find_structure = glob.glob(os.path.join(test_structures, "*", k+"*"))
+            if len(find_structure)==0:
+                continue
+
+            s = Structure.from_file(find_structure[0])
+            hi[k].append(s)
+
+        super(HumanInterpreter, self).__init__(params=hi)
+
+    def compute(self, structure, n):
+
+        for v in self._params.values():
+            #print(v)
+            #print("--------TESTING------")
+            #print(v[-1])
+            #print("------HERE------")
+            #print(structure)
+            if structure == v[-1]:
+                if len(v[:-1]) != len(v[-1]):
+                    # means possibly reduced structure is used by human interpreter
+                    # therefore get the equivalent sites and replace n with its
+                    # index in the list of unique sites
+                    from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
+                    es = SpacegroupAnalyzer(structure).get_symmetrized_structure().equivalent_sites
+                    #print [x[0] for x in es]
+                    sites = [structure.index(x[0]) for x in es]
+                    n = sites.index(n)
+                if n < v[-2]:
+                    cn = list(v[n].values())[0]
+                    return cn
+        return "null"

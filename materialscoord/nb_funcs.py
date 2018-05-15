@@ -12,7 +12,7 @@ module_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)))
 
 class nb_funcs(object):
 
-    def __init__(self, df, algo_names, unique_sites=24, elemental=False, cations=True, anions=False):
+    def __init__(self, df, algo_names, unique_sites=24, elemental=False, cations=True):
 
         self.df = df
         self.algo_names = sorted(algo_names)
@@ -26,8 +26,6 @@ class nb_funcs(object):
             cats = yaml.load(t)
 
         self.cats = cats
-
-
 
     def order_cols(self, hi=True):
 
@@ -190,6 +188,26 @@ class nb_funcs(object):
         cs_df = cs_df.reindex(self.df.index.tolist())
         return cs_df
 
+    def test(self):
+
+        cs_df = self.cif_stats()
+
+        counter = 0
+        for nn in cs_df.keys()[:-2]:
+            num_equiv = [[num for num in equiv] for equiv in cs_df['num equiv site atoms']]
+            other_counter = 0
+            for j in cs_df[nn]:
+                j = j.update((x, [y]*num_equiv[other_counter][counter]) for x, y in j.items())
+                other_counter += 1
+                if other_counter == int(len(cs_df.index)):
+                    other_counter = 0
+            counter += 1
+            if counter == self.unique_sites:
+                counter = 0
+
+        test_df = cs_df
+        return test_df
+
     def mult_equiv(self):
 
         cs_df = self.cif_stats()
@@ -254,6 +272,33 @@ class nb_funcs(object):
         tas_df = tas_df.reindex(self.df.index.tolist())
 
         return tas_df
+
+    def next_test(self):
+
+        test_df = self.test()
+
+        extended = {}
+        for a in range(len(self.algo_names)):
+            each_algo = test_df.loc[:, self.algo_names[a] + str(0): self.algo_names[a] + str(self.unique_sites - 1)]
+            extend = {}
+            count = 0
+            for d in each_algo[:len(each_algo.index)].values:
+                merged = {}
+                for i in d:
+                    for key, val in i.items():
+                        if key in merged.keys():
+                            merged[key].extend(val)
+                        else:
+                            merged[key] = val
+                extend[each_algo.index[count]] = merged
+                count += 1
+            extended[self.algo_names[a]] = dict(extend)
+        print(extended)
+
+        next_df = pd.DataFrame(extended)
+        next_df = next_df.reindex(self.df.index.tolist())
+
+        return next_df
 
     def div_df(self):
 
