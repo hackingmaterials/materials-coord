@@ -12,12 +12,11 @@ module_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)))
 
 class nb_funcs(object):
 
-    def __init__(self, df, algo_names, unique_sites=24, elemental=False, cations=True):
+    def __init__(self, df, algo_names, unique_sites=24, cations=True):
 
         self.df = df
         self.algo_names = sorted(algo_names)
         self.unique_sites = unique_sites
-        self.elemental = elemental
         self.cations = cations
 
         c = os.path.join(module_dir, "..", "test_structures", "cat_an.yaml")
@@ -167,28 +166,29 @@ class nb_funcs(object):
         if self.cations:
             test = {}
             for key, val in mat_dict.items():
-                if self.elemental:
-                    for i, j in val.items():
-                        test[key] = j
-                else:
-                    for mat, cat in self.cats.items():
-                        if key == mat:
-                            for w in list(val):
-                                if self.elemental:
-                                    test[mat] = val[w]
-                                else:
-                                    if w in cat:
-                                        test[mat] = val[w]
-                                        del val[w]
+                for mat, cat in self.cats.items():
+                    if key == mat:
+                        for w in list(val):
+                            if w in cat:
+                                test[mat] = val[w]
+                                del val[w]
+                    else:
+                        for i, j in val.items():
+                            test[key] = j
 
-        test = pd.Series(test)
-        abs_df['num unit cell atoms'] = test
+            test = pd.Series(test)
+            abs_df['num cations'] = test
+        else:
+            summed = []
+            for i in num_us_list:
+                summed.append(sum(i))
+            abs_df['total num atoms'] = summed
 
         cs_df = abs_df
         cs_df = cs_df.reindex(self.df.index.tolist())
         return cs_df
 
-    def test(self):
+    def mult_equiv(self):
 
         cs_df = self.cif_stats()
 
@@ -205,81 +205,16 @@ class nb_funcs(object):
             if counter == self.unique_sites:
                 counter = 0
 
-        test_df = cs_df
-        return test_df
-
-    def mult_equiv(self):
-
-        cs_df = self.cif_stats()
-
-        counter = 0
-        for nn in cs_df.keys()[:-2]:
-            num_equiv = [[num for num in equiv] for equiv in cs_df['num equiv site atoms']]
-            other_counter = 0
-            for j in cs_df[nn]:
-                j = j.update((x, y*num_equiv[other_counter][counter]) for x, y in j.items())
-                other_counter += 1
-                if other_counter == int(len(cs_df.index)):
-                    other_counter = 0
-            counter += 1
-            if counter == self.unique_sites:
-                counter = 0
-
         me_df = cs_df
-        me_df = me_df.reindex(self.df.index.tolist())
         return me_df
 
-    def tot_algo_sum(self):
+    def merge_me(self):
 
-        me_df = self.mult_equiv()
-
-        algo_sum = {}
-        for a in range(len(self.algo_names)):
-            each_algo = me_df.loc[:, self.algo_names[a] + str(0): self.algo_names[a] + str(self.unique_sites - 1)]
-            sum_each_algo = {}
-            count = 0
-            for d in each_algo[:len(each_algo.index)].values:
-                if self.cations:
-                    l = []
-                    for i in range(len(each_algo.keys())):
-                        if d[i] != {}:
-                            l.append(d[i])
-                        #print(l[0])
-                        #for k in l[0]:
-                        #    print(k)
-                    summed = {k: sum(di[k] for di in l) for k in l[0]}
-                    #summed = {k: sum(di for di in l[1]) for k in l[0]}
-                else:
-                    for i in range(len(each_algo.keys())):
-                        if d[i] != {}:
-                            test = Counter(d[i])
-                    summed = {k: sum(di[k] for di in l) for k in l}
-                sum_each_algo[each_algo.index[count]] = summed
-                count += 1
-            algo_sum[self.algo_names[a]] = dict(sum_each_algo)
-
-        totsum = {}
-        for mat, su in algo_sum.items():
-            new_sum = {}
-            for k, v in su.items():
-                for i, j in v.items():
-                    new_sum[k] = j
-            totsum[mat] = dict(new_sum)
-
-        tas_df = pd.DataFrame(totsum)
-        tas_df['num unit cell atoms'] = me_df['num unit cell atoms']
-
-        tas_df = tas_df.reindex(self.df.index.tolist())
-
-        return tas_df
-
-    def next_test(self):
-
-        test_df = self.test()
+        mult_equiv = self.mult_equiv()
 
         extended = {}
         for a in range(len(self.algo_names)):
-            each_algo = test_df.loc[:, self.algo_names[a] + str(0): self.algo_names[a] + str(self.unique_sites - 1)]
+            each_algo = mult_equiv.loc[:, self.algo_names[a] + str(0): self.algo_names[a] + str(self.unique_sites - 1)]
             extend = {}
             count = 0
             for d in each_algo[:len(each_algo.index)].values:
@@ -293,25 +228,71 @@ class nb_funcs(object):
                 extend[each_algo.index[count]] = merged
                 count += 1
             extended[self.algo_names[a]] = dict(extend)
-        print(extended)
 
-        next_df = pd.DataFrame(extended)
-        next_df = next_df.reindex(self.df.index.tolist())
+        merge_df = pd.DataFrame(extended)
+        merge_df = merge_df.reindex(self.df.index.tolist())
 
-        return next_df
+        return merge_df
+
+    def tot(self):
+
+        merge_me = self.merge_me()
+
+        cs_df = self.cif_stats()
+
+        if not self.cations:
+            totsum = {}
+            count = 0
+            for i in self.algo_names:
+                eachalgo = merge_me[i]
+                algo_dict = {}
+                for key, val in eachalgo.items():
+                    new_dict = {}
+                    for el, coord in val.items():
+                        new_dict[el] = sum(coord)
+                    algo_dict[key] = dict(new_dict)
+                print(algo_dict)
+                for x, y in algo_dict.items():
+                    summed = sum(y.values())
+                    algo_dict[x] = summed
+                totsum[i] = dict(algo_dict)
+                count += 1
+        else:
+            totsum = {}
+            for algo, mats in merge_me.items():
+                matsum = {}
+                for mat, coord in mats.items():
+                    for coords, li in coord.items():
+                        sum_li = sum(li)
+                        matsum[mat] = sum_li
+                totsum[algo] = dict(matsum)
+
+        tot_df = pd.DataFrame(totsum)
+
+        if self.cations:
+            tot_df['num cations'] = cs_df['num cations']
+        else:
+            tot_df['total num atoms'] = cs_df['total num atoms']
+
+        tot_df = tot_df.reindex(self.df.index.tolist())
+
+        return tot_df
 
     def div_df(self):
 
-        tas_df = self.tot_algo_sum()
+        tot_df = self.tot()
 
-        for i in range(len(tas_df.columns)-1):
-            mat = tas_df[self.algo_names[i]]
-            hi_mat = tas_df["num unit cell atoms"]
+        for i in range(len(tot_df.columns)-1):
+            mat = tot_df[self.algo_names[i]]
+            if self.cations:
+                hi_mat = tot_df["num cations"]
+            else:
+                hi_mat = tot_df['total num atoms']
             c = mat.divide(hi_mat)
 
-            tas_df[self.algo_names[i]] = c
+            tot_df[self.algo_names[i]] = c
 
-        div_df = tas_df
+        div_df = tot_df
         div_df = div_df.reindex(self.df.index.tolist())
         return div_df
 
@@ -319,7 +300,10 @@ class nb_funcs(object):
 
         div_df = self.div_df()
 
-        final_df = div_df.drop('num unit cell atoms', axis=1)
+        if self.cations:
+            final_df = div_df.drop('num cations', axis=1)
+        else:
+            final_df = div_df.drop('total num atoms', axis=1)
         final_df = final_df.reindex(self.df.index.tolist())
 
         return final_df

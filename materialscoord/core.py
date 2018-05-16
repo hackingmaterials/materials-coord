@@ -96,8 +96,6 @@ class Benchmark(object):
                 else:
                     sites = range(len(v))
 
-
-
                 for key, val in self.hi.items():
                     if k == key:
                         for j in sites:
@@ -119,6 +117,7 @@ class Benchmark(object):
                                         for ke in list(x):
                                             if ke in cat:
                                                 del x[ke]
+                        """
                         else:
                             for mat, cat in self.cat_an.items():
                                 #print(mat) Al2O3_corundum, name of material
@@ -131,6 +130,7 @@ class Benchmark(object):
                                             #print(ke) Si, O (elements coordinated to)
                                             if ke == w:
                                                 del x[ke]
+                        """
                     m._cns[k] = cns
 
     def report(self, totals=False, separate_columns=False, max_sites=5):
