@@ -15,6 +15,8 @@ data:
         "notes": ["tetrahedra are held together by K+ ions"]
         "MPID": mp-4529
         "equivalent sites": [['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['S', 'S', 'S', 'S'], ['K', 'K', 'K', 'K'], ['K', 'K', 'K', 'K']]
+        "ICSD": 2827
+        "reference": 'Acta Crystallographica B (24,1968-38,1982) (1972) 28, (*) p2845-p2852'
       thenardite:
         "altname": Na2SO4V
         "formula": Na2SO4
@@ -29,6 +31,8 @@ data:
         "notes": ["nearly regular and isolated tetrahedra are held together by irregular NaO6 polyhedra", "each SO4 tetrahedron shares opposite edges with 2 NaO6 polyhedra"]
         "MPID": mp-4770
         "equivalent sites": [['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['Na', 'Na', 'Na', 'Na'], ['S', 'S']]
+        "ICSD": 2895
+        "reference": 'Acta Chemica Scandinavica (1-27,1973-42,1988) (1973) 27, (*) p814-p822'
       K2NiF4:
         "altname":
         "formula": K2NiF4
@@ -43,6 +47,8 @@ data:
         "notes": ['NiF octahedra share corners to form 2D perovskite-like array which are interleaved with KF rocksalt layers in c-direction']
         "MPID": mp-556546
         "equivalent sites": [['K', 'K'], ['Ni'], ['F', 'F'], ['F', 'F']]
+        "ICSD": 73450
+        "reference": 'Acta Crystallographica, Section B: Structural Science (1993) 49, (*) p806-p811'
       Sr2PbO4:
         "altname":
         "formula": Sr2PbO4
@@ -54,9 +60,11 @@ data:
         "coordination numbers": [[Sr, 7], [Sr, 7], [Pb, 6], [O, 5], [O, 5], [O, 5], [O, 5]]
         "coordination geometries": [[Pb, octahedral, [O, O, O, O, O , O]]]
         "main related structures": [Na2CuF4, Ca2IrO4]
-        "notes": ["Pb octahedra are edge-sharing extending in chains in c-direction and held together by SrO6 polyhedra"]
+        "notes": ["Pb octahedra are edge-sharing extending in chains in c-direction and held together by SrO6 polyhedra", 'no high quality ICSD data']
         "MPID": mp-20944
         "equivalent sites":
+        "ICSD": 16806
+        "reference": 'Naturwissenschaften (1965) 52, (*) p492-p493'
       olivine:
         "altname":
         "formula": Fe2SiO4
@@ -71,7 +79,9 @@ data:
         "notes": ['Olivine is actually a mineral/solid solution (Mg,Fe)2SiO4.']
         "MPID": mp-510587
         "equivalent sites": [['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['Sr', 'Sr', 'Sr', 'Sr'], ['Pb', 'Pb']]
-      phenacite:
+        "ICSD": 4353
+        "reference": 'American Mineralogist (1975) 60, (*) p1092-p1097'
+      phenakite:
         "altname":
         "formula": Be2SiO4
         "crystal system": rhombohedral
@@ -85,6 +95,8 @@ data:
         "notes": ["tetrahedra are corner-sharing."]
         "MPID": mp-3347
         "equivalent sites": [['Be', 'Be', 'Be', 'Be', 'Be', 'Be'], ['Be', 'Be', 'Be', 'Be', 'Be', 'Be'], ['O', 'O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O', 'O', 'O'], ['Si', 'Si', 'Si', 'Si', 'Si', 'Si']]
+        "ICSD": 64942
+        "reference": 'Physics and Chemistry of Minerals (1986) 13, (*) p69-p78'
       spinel:
         "altname":
         "formula": MgAl2O4
@@ -99,6 +111,8 @@ data:
         "notes": ["slightly distorted AlO6 octahedra", "octahedra linked together in 3D with adjacent octahedra by sharing edges, and with adjacent tetrahedra by sharing corners"]
         "MPID": mp-3536
         "equivalent sites": [['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['Mg', 'Mg'], ['Al', 'Al', 'Al', 'Al']]
+        "ICSD": 31373
+        "reference": 'Zeitschrift fuer Kristallographie (1979-2010) (1983) 165, (*) p65-p78'
       CaFe2O4:
         "altname":
         "formula": CaFe2O4
@@ -110,9 +124,11 @@ data:
         "coordination numbers": [[Ca, 8], [Fe, 6], [Fe, 6], [O, 5], [O, 5], [O, 5], [O, 5]]
         "coordination geometries": [[Fe, octahedral, [O, O, O, O, O, O]]]
         "main related structures": [CaTi2O4, "marokite (CaMn2O4)", Yb3S4, MnY2S4]
-        "notes": ["FeO6 octahedra are distorted; octahedra form 3D network by sharing edges and corners with neighboring octahedra", "hollow channels along c-axis, where Ca2+ is located"]
+        "notes": ["FeO6 octahedra are distorted; octahedra form 3D network by sharing edges and corners with neighboring octahedra", "hollow channels along c-axis, where Ca2+ is located", "no high quality ICSD data"]
         "MPID": mp-25690
         "equivalent sites": [['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['Ca', 'Ca', 'Ca', 'Ca'], ['Fe', 'Fe', 'Fe', 'Fe'], ['Fe', 'Fe', 'Fe', 'Fe']]
+        "ICSD": 161973
+        "reference": 'American Mineralogist (2008) 93, (*) p1874-p1881'
       BaAl2O4:
         "altname": "stuffed tridymite"
         "formula": BaAl2O4
@@ -127,6 +143,8 @@ data:
         "notes": ["SiO2 (high-tridymite) is the 'parent' structure, where Si is substitute by Al and Ba inserted into the channels"]
         "MPID": mp-619456
         "equivalent sites": [['Ba', 'Ba'], ['Al', 'Al', 'Al', 'Al'], ['O', 'O', 'O', 'O', 'O', 'O'], ['O', 'O']]
+        "ICSD": 15728
+        "reference": 'Bulletin de la Societe Francaise de Mineralogie et de Cristallographie (72,1949-100,1977) (1968) 91, (*) p85-p87'
       MB2O4:
         "altname": CaB2O4-I
         "formula": CaB2O4
@@ -141,6 +159,8 @@ data:
         "notes": ["From the structure, it looks like 1/2 Os are CN=2 and 1/2 Os are CN=1", "3 more polymorphs well-known and described in the book, but focussing on one only at this point"]
         "MPID": mp-3417
         "equivalent sites": [['B', 'B', 'B', 'B', 'B', 'B', 'B', 'B'], ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['Ca', 'Ca', 'Ca', 'Ca']]
+        "ICSD": 34641
+        "reference": 'Acta Crystallographica (1,1948-23,1967) (1963) 16, (*) p390-p392'
       Pb3O4:
         "altname":
         "formula": Pb3O4
@@ -155,6 +175,8 @@ data:
         "notes": ["strings of edge-shared octahedra in c-direction with tetravalen Pb in center", "divalent Pb covalently bonded to O and located in the apex of a trigonal pyramid", "Sb and As also form this structure; s^2p^0 outer electronic config is apperently necessary for stabilization"]
         "MPID": mp-22633
         "equivalent sites": [['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['Pb', 'Pb', 'Pb', 'Pb'], ['Pb', 'Pb', 'Pb', 'Pb'], ['Pb', 'Pb', 'Pb', 'Pb']]
+        "ICSD": 42484
+        "reference": "Comptes Rendus Hebdomadaires des Seances de l'Academie des Sciences, Serie C, Sciences Chimiques (1966-) (1972) 275, (*) p1267-p1270"
       Th3P4:
         "altname":
         "formula": Th3P4
@@ -169,6 +191,8 @@ data:
         "notes": ["In La3Se4, 2 interpenetrated tetrahedra form the La coordination polyhedron"]
         "MPID": mp-1347
         "equivalent sites": [['P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'], ['Th', 'Th', 'Th', 'Th', 'Th', 'Th']]
+        "ICSD": 197221
+        "reference": 'Journal of Nuclear Materials (1967) 24, (1) p74-p79'
   ABX4:
     structures:
       zircon:
@@ -185,6 +209,8 @@ data:
         "notes": ['SiO4 tetrahedra are distorted.']
         "MPID": mp-4820
         "equivalent sites": [['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['Si', 'Si'], ['Zr', 'Zr']]
+        "ICSD": 15759
+        "reference": 'American Mineralogist (1971) 56, (*) p782-p789'
       scheelite:
         "altname":
         "formula": CaWO4
@@ -199,6 +225,8 @@ data:
         "notes": ['WO4 tetrahedra nearly perfect.']
         "MPID": mp-19426
         "equivalent sites": [['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['Ca', 'Ca'], ['W', 'W']]
+        "ICSD": 15586
+        "reference": 'Journal of Chemical Physics (1964) 40, (*) p501-p504'
       monazite:
         "altname":
         "formula": CePO4
@@ -213,6 +241,8 @@ data:
         "notes": ['PO4 tetrahedra are irregular']
         "MPID": mp-4136
         "equivalent sites": [['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['P', 'P', 'P', 'P'], ['Ce', 'Ce', 'Ce', 'Ce']]
+        "ICSD": 79746
+        "reference": 'American Mineralogist (1995) 80, (*) p21-p26'
       barite:
         "altname":
         "formula": BaSO4
@@ -227,6 +257,8 @@ data:
         "notes": ['Bonds in SO4 tetrahedra have slightly varying lengths.']
         "MPID": mp-3164
         "equivalent sites": [['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['S', 'S', 'S', 'S'], ['Ba', 'Ba', 'Ba', 'Ba']]
+        "ICSD": 16904
+        "reference": 'American Mineralogist (1967) 52, (*) p1877-p1880'
       TlAlF4:
         "altname":
         "formula": AlTlF4
@@ -241,6 +273,8 @@ data:
         "notes": ['beta-RbFeF4 is isotypic.']
         "MPID": mp-5606
         "equivalent sites": [['F', 'F'], ['F', 'F'], ['Al'], ['Tl']]
+        "ICSD": 200637
+        "reference": 'Revue de Chimie Minerale (1979) 16, (*) p490-p500'
       BaZnF4:
         "altname":
         "formula": BaZnF4
@@ -255,6 +289,8 @@ data:
         "notes": ['ZnO6 octahedra are corner-sharing.', 'BaMnF4 is isotypic.']
         "MPID": mp-3881
         "equivalent sites": [['F', 'F'], ['F', 'F'], ['F', 'F'], ['F', 'F'], ['Zn', 'Zn'], ['Ba', 'Ba']]
+        "ICSD": 182604
+        "reference": 'Journal of Physics: Condensed Matter (2011) 23, (*) p215401-1-p215401-13'
       rutile:
         "altname":
         "formula": RhNbO4
@@ -266,9 +302,11 @@ data:
         "coordination numbers": [[Rh, 6], [Nb, 6], [O, 3], [O, 3], [O, 3], [O, 3]]
         "coordination geometries": [[Rh, octahedral, [O, O, O, O, O, O]], [Nb, octahedral, [O, O, O, O, O, O]]]
         "main related structures":
-        "notes": ['RhO6 and NbO6 are edge-sharing along one direction (c) and these strings are connected via corner-sharing.', 'Determined partly by using structure similarity tool on MP website.']
+        "notes": ['RhO6 and NbO6 are edge-sharing along one direction (c) and these strings are connected via corner-sharing.', 'Determined partly by using structure similarity tool on MP website.', "ICSD space group is P42/mnn"]
         "MPID": mp-756638
         "equivalent sites": [['Nb', 'Nb'], ['Rh', 'Rh'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O']]
+        "ICSD": 86826
+        "reference": 'Materials Science Forum (1998) 278, (*) p714-p719'
       wolframite:
         "altname": ferberite
         "formula": FeWO4
@@ -280,9 +318,11 @@ data:
         "coordination numbers": [[Fe, 6], [W, 6], [O, 3], [O, 3], [O, 3], [O, 3]]
         "coordination geometries": [[Fe, octahedral, [O, O, O, O, O, O]], [W, octahedral, [O, O, O, O, O, O]]]
         "main related structures":
-        "notes": ['FeO6 and WO6 octahedra form zigzag chains, where each chain only contains one cation type and the octahedra are considerably distorted.']
+        "notes": ['FeO6 and WO6 octahedra form zigzag chains, where each chain only contains one cation type and the octahedra are considerably distorted.', 'ICSD space group is P 1 2/c 1']
         "MPID": mp-19421
         "equivalent sites": [['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['Fe', 'Fe'], ['W', 'W']]
+        "ICSD": 26843
+        "reference": 'Zeitschrift fuer Kristallographie, Kristallgeometrie, Kristallphysik, Kristallchemie (-144,1977) (1967) 124, (*) p192-p219'
       alpha-MnMoO4:
         "altname":
         "formula": MnMoO4
@@ -297,6 +337,8 @@ data:
         "notes": ['MnO6 octahedra are strongly distorted', 'MoO4 tetrahedra are strongly distorted.', 'Tetrahedra are interlinked with octahedra in a complex pattern.']
         "MPID": mp-19081
         "equivalent sites": [['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O'], ['O', 'O'], ['O', 'O', 'O', 'O'], ['Mn', 'Mn'], ['Mn', 'Mn'], ['Mo', 'Mo'], ['Mo', 'Mo']]
+        "ICSD": 15615
+        "reference": 'Journal of Chemical Physics (1965) 43, (*) p2533-p2543'
       CrVO4:
         "altname":
         "formula": CrVO4
@@ -311,6 +353,8 @@ data:
         "notes": ['CrO6 octahedra form edge-sharing chains parallel to c-axis, which are linked together by VO4 tetrahedra.', 'NiSeO4 is isotypic']
         "MPID": mp-19418
         "equivalent sites": [['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['V', 'V'], ['Cr', 'Cr']]
+        "ICSD": 78965
+        "reference": 'European Journal of Solid State Inorganic Chemistry (1995) 32, (*) p577-p588'
       ZnSO4:
         "altname":
         "formula": ZnSO4
@@ -325,6 +369,8 @@ data:
         "notes": ['ZnO6 octahedra form edge-sharing chains parallel to c-axis, which are linked together by SO4 tetrahedra.', 'Very similar to CrVO4, but orientations of polyhedra are different and site symmetry of octahedra and tetrahedra is lower.']
         "MPID": mp-5126
         "equivalent sites": [['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['S', 'S', 'S', 'S'], ['Zn', 'Zn', 'Zn', 'Zn']]
+        "ICSD": 71018
+        "reference": 'Mineralogy and Petrology (1988) 39, (*) p201-p209'
       low-quartz:
         "altname":
         "formula": AlAsO4
@@ -336,9 +382,11 @@ data:
         "coordination numbers": [[Al, 4], [As, 4], [O, 2], [O, 2], [O, 2], [O, 2]]
         "coordination geometries": [[Al, tetrahedral, [O, O, O, O]], [As, tetrahedral, [O, O, O, O]]]
         "main related structures":
-        "notes": ['For AlPO4, the tetrahedra are slightly distorted and O-T-O angles are significantly different from 180 degrees (<113 degrees).']
+        "notes": ['For AlPO4, the tetrahedra are slightly distorted and O-T-O angles are significantly different from 180 degrees (<113 degrees).', 'ICSD calls it berlinite']
         "MPID": mp-5189
         "equivalent sites": [['O', 'O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O', 'O', 'O'], ['Al', 'Al', 'Al'], ['As', 'As', 'As']]
+        "ICSD": 9641
+        "reference": 'Canadian Journal of Physics (1976) 54, (*) p638-p647'
       low-cristobalite:
         "altname":
         "formula": GaPO4
@@ -353,6 +401,8 @@ data:
         "notes":
         "MPID": mp-553932
         "equivalent sites": [['Ga', 'Ga'], ['P', 'P'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O']]
+        "ICSD": 97550
+        "reference": 'Journal of Solid State Chemistry (2003) 176, (*) p37-p46'
       high-cristobalite:
         "altname":
         "formula": BAsO4
@@ -364,9 +414,11 @@ data:
         "coordination numbers": [[B, 4], [As, 4], [O, 2], [O, 2], [O, 2], [O, 2]]
         "coordination geometries": [[B, tetrahedral, [O, O, O, O]], [As, tetrahedral, [O, O, O, O]]]
         "main related structures":
-        "notes":
+        "notes": ['ICSD only has BPO4']
         "MPID": mp-3277
         "equivalent sites": [['B'], ['O', 'O', 'O', 'O'], ['As']]
+        "ICSD": 55082
+        "reference": 'Zeitschrift fuer Anorganische und Allgemeine Chemie (1950) (DE) (2004) 630, (*) p655-p662'
       MgUO4:
         "altname":
         "formula": MgUO4
@@ -378,9 +430,11 @@ data:
         "coordination numbers": [[Mg, 6], [U, 6], [O, 3], [O, 3], [O, 3], [O, 3]]
         "coordination geometries": [[U, octahedral, [O, O, O, O, O, O]], [Mg, octahedral, [O, O, O, O, O, O]]]
         "main related structures":
-        "notes": ['UO6 and MgO6 octahedra form separate chains of edge-sharing chains that are, however, connected via corner-sharing.']
+        "notes": ['UO6 and MgO6 octahedra form separate chains of edge-sharing chains that are, however, connected via corner-sharing.', 'ICSD not high quality']
         "MPID": mp-7858
         "equivalent sites": [['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['Mg', 'Mg'], ['U', 'U']]
+        "ICSD": 24725
+        "reference": 'Acta Crystallographica (1,1948-23,1967) (1954) 7, (*) p788-p791'
       SbNbO4:
         "altname": "stibiotantalite (SbTaO4)"
         "formula": SbNbO4
@@ -395,6 +449,24 @@ data:
         "notes": ['NbO6 octahedra are corner-sharing and forming infitite sheets parallel to (001).']
         "MPID": mp-3491
         "equivalent sites": [['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['Nb', 'Nb', 'Nb', 'Nb'], ['Sb', 'Sb', 'Sb', 'Sb']]
+        "ICSD": 20344
+        "reference": 'Kristallografiya (1981) 26, (*) p341-p348'
+      monazite:
+        "altname":
+        "formula": BiPO4
+        "crystal system": trigonal
+        "spacegroup": P 1 21/n 1
+        "spacegroup number": 14
+        "unit cell constants": [6.7626, 6.9516, 6.4822]
+        "Z": 4
+        "coordination numbers":
+        "coordination geometries":
+        "main related structures":
+        "notes":
+        "MPID":
+        "equivalent sites":
+        "ICSD": 67987
+        "reference": 'Inorganic Chemistry (1994) 33, (*) p1869-p1874'
   ABX3:
     structures:
       calcite:
@@ -411,6 +483,8 @@ data:
         "notes":
         "MPID": mp-3953
         "equivalent sites": [['C', 'C'], ['O', 'O', 'O', 'O', 'O', 'O'], ['Ca', 'Ca']]
+        "ICSD": 18164
+        "reference": 'Acta Crystallographica (1,1948-23,1967) (1965) 18, (*) p689-p693'
       aragonite:
         "altname":
         "formula": CaCO3
@@ -425,6 +499,8 @@ data:
         "notes":
         "MPID": mp-4626
         "equivalent sites": [['C', 'C', 'C', 'C'], ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['Ca', 'Ca', 'Ca', 'Ca']]
+        "ICSD": 15194
+        "reference": 'American Mineralogist (1971) 56, (*) p758-p766'
       perovskites:
         "altname":
         "formula": SrTiO3
@@ -439,6 +515,8 @@ data:
         "notes": ['TiO6 octahedra are corner-sharing and forming and extend infinitely in 3D']
         "MPID": mp-5229
         "equivalent sites": [['O', 'O', 'O'], ['Ti'], ['Sr']]
+        "ICSD": 80871
+        "reference": 'Acta Crystallographica, Section B: Structural Science (1995) 51, (*) p942-p951'
       "Tetragonal BaTiO3":
         "altname": 
         "formula": BaTiO3
@@ -453,6 +531,8 @@ data:
         "notes": ['Distorted TiO6 octahedra']
         "MPID": mp-5986
         "equivalent sites": [['O', 'O'], ['O'], ['Ti'], ['Ba']]
+        "ICSD": 67520
+        "reference": 'Acta Crystallographica, Section B: Structural Science (1992) 48, (*) p764-p769'
       ilmenite:
         "altname":
         "formula": FeTiO3
@@ -467,6 +547,8 @@ data:
         "notes": ["FeO6 octahedra are distorted, but TiO6 octahedra even more."]
         "MPID": mp-19417
         "equivalent sites": [['O', 'O', 'O', 'O', 'O', 'O'], ['Ti', 'Ti'], ['Fe', 'Fe']]
+        "ICSD": 9805
+        "reference": 'Journal of Applied Crystallography (1978) 11, (*) p121-p124'
 notes:
   - "A negative integer for any coordination number means that this was not retrievable."
   - "The spacegroup number was taken from the material that I found on the MP website"
@@ -477,3 +559,5 @@ notes:
   - "Didn't include high-quartz b/c no spacegroup; similarly, low- and high-tridymite."
   - "Only included 1 uranyl type so far"
   - "Not pyroxenes because discussed in another volume"
+hillary notes:
+  - "Found BiPO4 in ICSD, included in ABX4"

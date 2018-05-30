@@ -12,12 +12,14 @@ module_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)))
 
 class nb_funcs(object):
 
-    def __init__(self, df, algo_names, unique_sites=24, cations=True):
+    def __init__(self, df, algo_names, unique_sites=24, cations=False, anions=False):
 
         self.df = df
         self.algo_names = sorted(algo_names)
         self.unique_sites = unique_sites
+
         self.cations = cations
+        self.anions = anions
 
         c = os.path.join(module_dir, "..", "test_structures", "cat_an.yaml")
 
@@ -25,6 +27,13 @@ class nb_funcs(object):
             cats = yaml.load(t)
 
         self.cats = cats
+
+        a = os.path.join(module_dir, "..", "test_structures", "an_cat.yaml")
+
+        with open(a) as z:
+            ans = yaml.load(z)
+
+        self.ans = ans
 
     def order_cols(self, hi=True):
 
@@ -118,6 +127,8 @@ class nb_funcs(object):
             for i, j in val.items():
                 if j != {}:
                     abs_val = map(abs, j.values())
+                else:
+                    abs_val = {}
                 zip_abs_val = dict(zip(j.keys(), abs_val))
                 val[i] = zip_abs_val
             sub_hi[key] = val
@@ -178,6 +189,20 @@ class nb_funcs(object):
 
             test = pd.Series(test)
             abs_df['num cations'] = test
+        #elif self.anions:
+        #    test = {}
+        #    for key, val in mat_dict.items():
+        #        for mat, an in self.ans.items():
+        #            if key == mat:
+        #                for w in list(val):
+        #                    if w in an:
+        #                        test[mat] = val[w]
+        #                        del val[w]
+        #            else:
+        #                for i, j in val.items():
+        #                    test[key] = j
+        #    test = pd.Series(test)
+        #    abs_df['num anions'] = test
         else:
             summed = []
             for i in num_us_list:
@@ -251,7 +276,6 @@ class nb_funcs(object):
                     for el, coord in val.items():
                         new_dict[el] = sum(coord)
                     algo_dict[key] = dict(new_dict)
-                print(algo_dict)
                 for x, y in algo_dict.items():
                     summed = sum(y.values())
                     algo_dict[x] = summed

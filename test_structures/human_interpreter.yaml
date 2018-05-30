@@ -660,8 +660,25 @@ Sr2PbO4_mp-20944:
         - Pb: 2.0
         - O: 0.0
 
+Na2SO4_thenardite_2895:
+"""
+Nord, A.G. (1973) Refinement of the crystal structure of thenardite, Na2 S O4 (V).
+Acta Chemica Scandinavica (1-27,1973-42,1988) 27:814 - 822.
 
-
+Crystal structure may be described in terms of distorted NaO6 octahedra and nearly regular SO4 tetrahedra.
+"""
+    - Na:
+        - Na: 0.0
+        - S: 0.0
+        - O: 6.0
+    - S:
+        - Na: 5.0
+        - S: 0.0
+        - O: 0.0
+    - O:
+        - Na:
+        - S:
+        - O: 0.0
 
 
 

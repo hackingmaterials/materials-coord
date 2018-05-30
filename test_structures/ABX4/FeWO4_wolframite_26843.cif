@@ -1,0 +1,75 @@
+
+#(C) 2017 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_26843-ICSD
+_database_code_ICSD 26843
+_audit_creation_date 1980-01-01
+_audit_update_record 2000-07-15
+_chemical_name_systematic 'Iron tungstate'
+_chemical_formula_structural 'Fe (W O4)'
+_chemical_formula_sum 'Fe1 O4 W1'
+_chemical_name_structure_type Wolframite-NiWO4
+_chemical_name_mineral Ferberite
+_exptl_crystal_density_diffrn 7.55
+_publ_section_title
+
+;
+Untersuchungen zur Kristallstruktur und magnetischen Struktur des Ferberits Fe
+W O4
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary
+
+;
+Zeitschrift fuer Kristallographie, Kristallgeometrie, Kristallphysik,
+Kristallchemie (-144,1977)
+; 1967 124 192 219 ZEKGAX
+loop_
+_publ_author_name
+'Ulku, D.'
+_cell_length_a 4.730(3)
+_cell_length_b 5.703(2)
+_cell_length_c 4.952(2)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 90.
+_cell_volume 133.58
+_cell_formula_units_Z 2
+_symmetry_space_group_name_H-M 'P 1 2/c 1'
+_symmetry_Int_Tables_number 13
+_refine_ls_R_factor_all 0.043
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x, -y, z+1/2'
+2 '-x, -y, -z'
+3 '-x, y, -z+1/2'
+4 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Fe2+ 2
+W6+ 6
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Fe1 Fe2+ 2 f 0.5 0.6744(7) 0.25 0.470(37) 1. 0
+W1 W6+ 2 e 0 0.1799(1) 0.25 0.140(23) 1. 0
+O1 O2- 4 g 0.2159(23) 0.1050(24) 0.5660(16) 0.57(14) 1. 0
+O2 O2- 4 g 0.2538(26) 0.3744(24) 0.1096(18) 0.57(14) 1. 0
+#End of TTdata_26843-ICSD

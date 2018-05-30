@@ -26,7 +26,7 @@ class Benchmark(object):
     """
 
     def __init__(self, methods, structure_groups="elemental", custom_set=None,
-                 unique_sites=True, nround=3, use_weights=False, cations=False):
+                 unique_sites=True, nround=3, use_weights=False, cations=False, anions=False):
 
         self.methods = methods
         self.structure_groups = structure_groups if isinstance(structure_groups, list) else [structure_groups]
@@ -45,6 +45,7 @@ class Benchmark(object):
         self.nround = nround
         self.use_weights = use_weights
         self.cations = cations
+        self.anions = anions
 
         for m in self.methods:
             assert isinstance(m, (NearNeighbors, CNBase))
@@ -53,13 +54,20 @@ class Benchmark(object):
 
         if cations:
             p = os.path.join(module_dir, "..", "test_structures", "hi_cations.yaml")
-            cat_an = os.path.join(module_dir, "..", "test_structures", "cat_an.yaml")
-            with open(cat_an) as t:
-                cat_an = yaml.load(t)
-            self.cat_an = cat_an
-
+        elif anions:
+            p = os.path.join(module_dir, "..", "test_structures", "hi_anions.yaml")
         else:
             p = os.path.join(module_dir, "..", "test_structures", "human_interpreter.yaml")
+
+        cat_an = os.path.join(module_dir, "..", "test_structures", "cat_an.yaml")
+        with open(cat_an) as t:
+            cat_an = yaml.load(t)
+        self.cat_an = cat_an
+
+        an_cat = os.path.join(module_dir, "..", "test_structures", "an_cat.yaml")
+        with open(an_cat) as t:
+            an_cat = yaml.load(t)
+        self.an_cat = an_cat
 
         with open(p) as f:
             hi = yaml.load(f)
@@ -109,7 +117,6 @@ class Benchmark(object):
                             if self.nround:
                                 self._roundcns(tmpcn, self.nround)
                             cns.append((v[j].species_string, tmpcn))
-                        #print(cns)
                         if self.cations:
                             for mat, cat in self.cat_an.items():
                                 if k == mat:
@@ -117,20 +124,29 @@ class Benchmark(object):
                                         for ke in list(x):
                                             if ke in cat:
                                                 del x[ke]
-                        """
+                            for mat, an in self.an_cat.items():
+                                if k == mat:
+                                    new_cn = []
+                                    for tup in cns:
+                                        if tup[0] in an:
+                                            tup = (tup[0], {})
+                                        new_cn.append(tup)
+                                    cns = new_cn
                         else:
-                            for mat, cat in self.cat_an.items():
-                                #print(mat) Al2O3_corundum, name of material
-                                #print(cat) ['Al'], cation
+                            for mat, an in self.an_cat.items():
                                 if k == mat:
                                     for w, x in cns:
-                                        #print(w) Si, site
-                                        #print(x) {'Si': 0.0, 'O': 4.0}, coordination
                                         for ke in list(x):
-                                            #print(ke) Si, O (elements coordinated to)
-                                            if ke == w:
+                                            if ke in an:
                                                 del x[ke]
-                        """
+                            for mat, cat in self.cat_an.items():
+                                if k == mat:
+                                    new_cn = []
+                                    for tup in cns:
+                                        if tup[0] in cat:
+                                            tup = (tup[0], {})
+                                        new_cn.append(tup)
+                                    cns = new_cn
                     m._cns[k] = cns
 
     def report(self, totals=False, separate_columns=False, max_sites=5):
@@ -237,14 +253,9 @@ class HumanInterpreter(CNBase):
     This is a special CN method that reads a yaml file where "human interpretations" of coordination
     numbers are given.
     """
-    def __init__(self, cations=True, custom_interpreter=None, custom_test_structures=None, anions=False):
+    def __init__(self, custom_interpreter=None, custom_test_structures=None):
 
-        if cations:
-            p = os.path.join(module_dir, "..", "test_structures", "hi_cations.yaml")
-        elif anions:
-            p = os.path.join(module_dir, "..", "test_structures", "hi_anions.yaml")
-        else:
-            p = os.path.join(module_dir, "..", "test_structures", "human_interpreter.yaml")
+        p = os.path.join(module_dir, "..", "test_structures", "human_interpreter.yaml")
 
         t = os.path.join(module_dir, "..", "test_structures")
         interpreter = custom_interpreter if custom_interpreter else p
@@ -272,11 +283,6 @@ class HumanInterpreter(CNBase):
     def compute(self, structure, n):
 
         for v in self._params.values():
-            #print(v)
-            #print("--------TESTING------")
-            #print(v[-1])
-            #print("------HERE------")
-            #print(structure)
             if structure == v[-1]:
                 if len(v[:-1]) != len(v[-1]):
                     # means possibly reduced structure is used by human interpreter

@@ -1,0 +1,103 @@
+
+#(C) 2017 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_64942-ICSD
+_database_code_ICSD 64942
+_audit_creation_date 1998-06-26
+_chemical_name_systematic 'Diberyllium silicate'
+_chemical_formula_structural 'Be2 (Si O4)'
+_chemical_formula_sum 'Be2 O4 Si1'
+_chemical_name_structure_type Be2SiO4
+_chemical_name_mineral Phenakite
+_exptl_crystal_density_diffrn 2.96
+_publ_section_title
+
+;
+High-pressure crystal chemistry of phenakite (Be2 Si O4) and bertrandite (Be4
+Si2 O7 (O H)2)
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Physics and Chemistry of Minerals' 1986 13 69 78 PCMIDU
+loop_
+_publ_author_name
+'Hazen, R.M.'
+'Au, A.Y.'
+_cell_length_a 12.4704(9)
+_cell_length_b 12.4704(9)
+_cell_length_c 8.2504(6)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 120.
+_cell_volume 1111.13
+_cell_formula_units_Z 18
+_symmetry_space_group_name_H-M 'R -3 H'
+_symmetry_Int_Tables_number 148
+_refine_ls_R_factor_all 0.027
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x-y, x, -z'
+2 'y, -x+y, -z'
+3 '-x, -y, -z'
+4 '-x+y, -x, z'
+5 '-y, x-y, z'
+6 'x, y, z'
+7 'x-y+2/3, x+1/3, -z+1/3'
+8 'y+2/3, -x+y+1/3, -z+1/3'
+9 '-x+2/3, -y+1/3, -z+1/3'
+10 '-x+y+2/3, -x+1/3, z+1/3'
+11 '-y+2/3, x-y+1/3, z+1/3'
+12 'x+2/3, y+1/3, z+1/3'
+13 'x-y+1/3, x+2/3, -z+2/3'
+14 'y+1/3, -x+y+2/3, -z+2/3'
+15 '-x+1/3, -y+2/3, -z+2/3'
+16 '-x+y+1/3, -x+2/3, z+2/3'
+17 '-y+1/3, x-y+2/3, z+2/3'
+18 'x+1/3, y+2/3, z+2/3'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Si4+ 4
+Be2+ 2
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Si1 Si4+ 18 f 0.19550(4) 0.21155(4) 0.74996(6) . 1. 0
+Be1 Be2+ 18 f 0.1941(2) 0.2104(2) 0.4155(2) . 1. 0
+Be2 Be2+ 18 f 0.1941(2) 0.2118(2) 0.0841(2) . 1. 0
+O1 O2- 18 f 0.2095(1) 0.0884(1) 0.7503(1) . 1. 0
+O2 O2- 18 f 0.3336(1) 0.3332(1) 0.7501(2) . 1. 0
+O3 O2- 18 f 0.1220(1) 0.2100(1) 0.9146(1) . 1. 0
+O4 O2- 18 f 0.1225(1) 0.2090(1) 0.5850(1) . 1. 0
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_beta_11
+_atom_site_aniso_beta_22
+_atom_site_aniso_beta_33
+_atom_site_aniso_beta_12
+_atom_site_aniso_beta_13
+_atom_site_aniso_beta_23
+Si1 Si4+ 0.00032(4) 0.00040(4) 0.00039(4) 0.00021(3) 0.00004(4) 0.00005(4)
+Be1 Be2+ 0.00095(15) 0.00083(16) 0.00097(27) 0.00045(14) -.00011(17) 0.00007(17)
+Be2 Be2+ 0.00089(16) 0.00107(16) 0.00117(27) 0.00055(15) 0.00001(18) -.00003(18)
+O1 O2- 0.00099(9) 0.00054(9) 0.00086(16) 0.00049(8) -.00007(9) 0.00004(9)
+O2 O2- 0.00048(9) 0.00054(9) 0.00109(16) 0.00025(7) -.00005(9) -.00008(9)
+O3 O2- 0.00061(9) 0.00089(9) 0.00059(15) 0.00049(7) 0.00006(9) 0.00004(10)
+O4 O2- 0.00054(9) 0.00099(10) 0.00057(16) 0.00045(8) 0.00001(9) 0.00006(9)
+#End of TTdata_64942-ICSD
