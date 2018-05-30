@@ -1,6 +1,12 @@
 # Human interpreted coordination numbers in structures:
 
-Al2O3_corundum:
+Al2O3_corundum_9770:
+"""
+Finger, L.W., Hazen, R.M. (1978) Crystal structure and compression of ruby to 46 kbar.
+Journal of Applied Physics (Melville, NY, United States) 49:5823 - 5826.
+
+Aluminum has octahedral coordination with O. See Table III.
+"""
     - Al:
         Al: 0.0
         O: 6.0
