@@ -16,7 +16,7 @@ data:
         "MPID": mp-4529
         "equivalent sites": [['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['S', 'S', 'S', 'S'], ['K', 'K', 'K', 'K'], ['K', 'K', 'K', 'K']]
         "ICSD": 2827
-        "reference": 'Acta Crystallographica B (24,1968-38,1982) (1972) 28, (*) p2845-p2852'
+        "reference": [['McGinnety, J.A.'], ['1972'], ['Redetermination of the structures of potassium sulphate and potassium chromate: the effect of electrostatic crystal forces upon observed bond lengths'], ['Acta Crystallographica B (24,1968-38,1982) 28:2845 - 2852']]
       thenardite:
         "altname": Na2SO4V
         "formula": Na2SO4
@@ -48,7 +48,7 @@ data:
         "MPID": mp-556546
         "equivalent sites": [['K', 'K'], ['Ni'], ['F', 'F'], ['F', 'F']]
         "ICSD": 73450
-        "reference": 'Acta Crystallographica, Section B: Structural Science (1993) 49, (*) p806-p811'
+        "reference": [['Yeh, S.K., Wu, S.Y., Lee, C.-S., Wang, Y.'], ['1993'], ['Electron-density distribution in a crystal of Dipotassium tetrafluoronickelate, K2NiF4'], ['Acta Crystallographica, Section B: Structural Science 49:806 - 811']]
       Sr2PbO4:
         "altname":
         "formula": Sr2PbO4
@@ -64,7 +64,7 @@ data:
         "MPID": mp-20944
         "equivalent sites":
         "ICSD": 16806
-        "reference": 'Naturwissenschaften (1965) 52, (*) p492-p493'
+        "reference": [['Troemel, M.'], ['1965'], ['Zur Struktur der Verbindungen vom Sr2 Pb O4-Typ'], ['Naturwissenschaften 52:492 - 493']]
       olivine:
         "altname":
         "formula": Fe2SiO4
@@ -80,11 +80,11 @@ data:
         "MPID": mp-510587
         "equivalent sites": [['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['Sr', 'Sr', 'Sr', 'Sr'], ['Pb', 'Pb']]
         "ICSD": 4353
-        "reference": 'American Mineralogist (1975) 60, (*) p1092-p1097'
+        "reference": [['Smyth, J.R.'], ['1975'], ['High temperature crystal chemistry of fayalite'], ['American Mineralogist 60:1092 - 1097']]
       phenakite:
         "altname":
         "formula": Be2SiO4
-        "crystal system": rhombohedral
+        "crystal system": rhombohedral (ICSD trigonal)
         "spacegroup": R-3
         "spacegroup number": 148
         "unit cell constants": [12.472, 12.472, 8.252]
@@ -96,7 +96,7 @@ data:
         "MPID": mp-3347
         "equivalent sites": [['Be', 'Be', 'Be', 'Be', 'Be', 'Be'], ['Be', 'Be', 'Be', 'Be', 'Be', 'Be'], ['O', 'O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O', 'O', 'O'], ['Si', 'Si', 'Si', 'Si', 'Si', 'Si']]
         "ICSD": 64942
-        "reference": 'Physics and Chemistry of Minerals (1986) 13, (*) p69-p78'
+        "reference": [['Hazen, R.M., Au, A.Y.'], ['1986'], ['High-pressure crystal chemistry of phenakite (Be2 Si O4) and bertrandite (Be4 Si2 O7 (O H)2)'], ['Physics and Chemistry of Minerals 13:69 - 78.']]
       spinel:
         "altname":
         "formula": MgAl2O4
@@ -111,8 +111,8 @@ data:
         "notes": ["slightly distorted AlO6 octahedra", "octahedra linked together in 3D with adjacent octahedra by sharing edges, and with adjacent tetrahedra by sharing corners"]
         "MPID": mp-3536
         "equivalent sites": [['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['Mg', 'Mg'], ['Al', 'Al', 'Al', 'Al']]
-        "ICSD": 31373
-        "reference": 'Zeitschrift fuer Kristallographie (1979-2010) (1983) 165, (*) p65-p78'
+        "ICSD": 77583
+        "reference": [['Finger, L.W., Hazen, R.M., Hofmeister, A.M.'], ['1986'], ['High-pressure crystal chemistry of spinel (Mg Al2 O4) and magnetite (Fe3 O4): comparison with silicate spinels'], ['Physics and Chemistry of Minerals 13:215 - 220']]
       CaFe2O4:
         "altname":
         "formula": CaFe2O4
@@ -128,7 +128,7 @@ data:
         "MPID": mp-25690
         "equivalent sites": [['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['Ca', 'Ca', 'Ca', 'Ca'], ['Fe', 'Fe', 'Fe', 'Fe'], ['Fe', 'Fe', 'Fe', 'Fe']]
         "ICSD": 161973
-        "reference": 'American Mineralogist (2008) 93, (*) p1874-p1881'
+        "reference": [['Yamanaka, T., Uchida, a., Nakamoto, Y.'], ['2008'], ['Structural transition of post-spinel phases Ca Mn2 O4, Ca Fe2 O4 and Ca Ti2 O4 under high pressures up to 80 GPa'], ['American Mineralogist 93:1874 - 1881']]
       BaAl2O4:
         "altname": "stuffed tridymite"
         "formula": BaAl2O4
@@ -160,7 +160,7 @@ data:
         "MPID": mp-3417
         "equivalent sites": [['B', 'B', 'B', 'B', 'B', 'B', 'B', 'B'], ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['Ca', 'Ca', 'Ca', 'Ca']]
         "ICSD": 34641
-        "reference": 'Acta Crystallographica (1,1948-23,1967) (1963) 16, (*) p390-p392'
+        "reference": [['Marezio, M., Plettinger, H.A., Zachariasen, W.H.'], ['1963'], ['Refinement of the calcium metaborate structure'], ['Acta Crystallographica (1,1948-23,1967) 16:390 - 392']]
       Pb3O4:
         "altname":
         "formula": Pb3O4
@@ -175,8 +175,8 @@ data:
         "notes": ["strings of edge-shared octahedra in c-direction with tetravalen Pb in center", "divalent Pb covalently bonded to O and located in the apex of a trigonal pyramid", "Sb and As also form this structure; s^2p^0 outer electronic config is apperently necessary for stabilization"]
         "MPID": mp-22633
         "equivalent sites": [['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['Pb', 'Pb', 'Pb', 'Pb'], ['Pb', 'Pb', 'Pb', 'Pb'], ['Pb', 'Pb', 'Pb', 'Pb']]
-        "ICSD": 42484
-        "reference": "Comptes Rendus Hebdomadaires des Seances de l'Academie des Sciences, Serie C, Sciences Chimiques (1966-) (1972) 275, (*) p1267-p1270"
+        "ICSD": 22325
+        "reference": [['Fayek, M.K., Leciejewicz, J.'], ['1965'], ['Neutron diffraction study of Pb3 O4'], ['Zeitschrift fuer Anorganische und Allgemeine Chemie (1950) (DE) 336:104 - 109']]
       Th3P4:
         "altname":
         "formula": Th3P4
@@ -192,7 +192,7 @@ data:
         "MPID": mp-1347
         "equivalent sites": [['P', 'P', 'P', 'P', 'P', 'P', 'P', 'P'], ['Th', 'Th', 'Th', 'Th', 'Th', 'Th']]
         "ICSD": 197221
-        "reference": 'Journal of Nuclear Materials (1967) 24, (1) p74-p79'
+        "reference": [['Aronson, S., Ingraham, A.'], ['1967'], ['Characteristic temperatures and entropies of some refractory thorium compounds'], ['Journal of Nuclear Materials 24:74 - 79']]
   ABX4:
     structures:
       zircon:
@@ -210,7 +210,7 @@ data:
         "MPID": mp-4820
         "equivalent sites": [['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['Si', 'Si'], ['Zr', 'Zr']]
         "ICSD": 15759
-        "reference": 'American Mineralogist (1971) 56, (*) p782-p789'
+        "reference": [['Robinson, K., Gibbs, G.V., Ribbe, P.H.'], ['1971'], ['The structure of zircon: A comparison with garnet. American Mineralogist 56:782 - 789']]
       scheelite:
         "altname":
         "formula": CaWO4
@@ -226,7 +226,7 @@ data:
         "MPID": mp-19426
         "equivalent sites": [['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['Ca', 'Ca'], ['W', 'W']]
         "ICSD": 15586
-        "reference": 'Journal of Chemical Physics (1964) 40, (*) p501-p504'
+        "reference": [['Zalkin, A., Templeton, D.H.'], ['1964'], ['X-ray diffraction refinement of the calcium tungstate structure'], ['Journal of Chemical Physics 40:501 - 504']]
       monazite:
         "altname":
         "formula": CePO4
@@ -242,7 +242,7 @@ data:
         "MPID": mp-4136
         "equivalent sites": [['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['P', 'P', 'P', 'P'], ['Ce', 'Ce', 'Ce', 'Ce']]
         "ICSD": 79746
-        "reference": 'American Mineralogist (1995) 80, (*) p21-p26'
+        "reference": [['Ni, Y.-X., Hughes, J.M., Mariano, A.N.'], ['1995'], ['Crystal chemistry of the monazite and xenotime structures'], ['American Mineralogist 80:21 - 26']]
       barite:
         "altname":
         "formula": BaSO4
@@ -257,8 +257,8 @@ data:
         "notes": ['Bonds in SO4 tetrahedra have slightly varying lengths.']
         "MPID": mp-3164
         "equivalent sites": [['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['S', 'S', 'S', 'S'], ['Ba', 'Ba', 'Ba', 'Ba']]
-        "ICSD": 16904
-        "reference": 'American Mineralogist (1967) 52, (*) p1877-p1880'
+        "ICSD": 200112
+        "reference": [['Hill, R.J.'], ['1977'], ['A further refinement of the barite structure.'], ['Canadian Mineralogist 15:522 - 526']]
       TlAlF4:
         "altname":
         "formula": AlTlF4
@@ -273,8 +273,8 @@ data:
         "notes": ['beta-RbFeF4 is isotypic.']
         "MPID": mp-5606
         "equivalent sites": [['F', 'F'], ['F', 'F'], ['Al'], ['Tl']]
-        "ICSD": 200637
-        "reference": 'Revue de Chimie Minerale (1979) 16, (*) p490-p500'
+        "ICSD": 202453
+        "reference": [['Bulou, A., Nouet, J.'], ['1987'], ['Structural phase transitions in ferroelastic Tl Al F4: DSC investigations and structures determinations by neutron powder profile refinement'], ['Journal of Physics C: Solid State Physics 20:2885 - 2900']]
       BaZnF4:
         "altname":
         "formula": BaZnF4
@@ -290,7 +290,7 @@ data:
         "MPID": mp-3881
         "equivalent sites": [['F', 'F'], ['F', 'F'], ['F', 'F'], ['F', 'F'], ['Zn', 'Zn'], ['Ba', 'Ba']]
         "ICSD": 182604
-        "reference": 'Journal of Physics: Condensed Matter (2011) 23, (*) p215401-1-p215401-13'
+        "reference": [['Posse, J.M., Friese, K., Grzechnik, A.'], ['2011'], ['Structural stability of Ba M F4 (M = Mg, Zn and Mn) at high pressures'], ['Journal of Physics: Condensed Matter 23:215401-1 - 215401-13']]
       rutile:
         "altname":
         "formula": RhNbO4
@@ -305,8 +305,8 @@ data:
         "notes": ['RhO6 and NbO6 are edge-sharing along one direction (c) and these strings are connected via corner-sharing.', 'Determined partly by using structure similarity tool on MP website.', "ICSD space group is P42/mnn"]
         "MPID": mp-756638
         "equivalent sites": [['Nb', 'Nb'], ['Rh', 'Rh'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O']]
-        "ICSD": 86826
-        "reference": 'Materials Science Forum (1998) 278, (*) p714-p719'
+        "ICSD": CANT FIND
+        "reference": CANT FIND
       wolframite:
         "altname": ferberite
         "formula": FeWO4
@@ -321,8 +321,8 @@ data:
         "notes": ['FeO6 and WO6 octahedra form zigzag chains, where each chain only contains one cation type and the octahedra are considerably distorted.', 'ICSD space group is P 1 2/c 1']
         "MPID": mp-19421
         "equivalent sites": [['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['Fe', 'Fe'], ['W', 'W']]
-        "ICSD": 26843
-        "reference": 'Zeitschrift fuer Kristallographie, Kristallgeometrie, Kristallphysik, Kristallchemie (-144,1977) (1967) 124, (*) p192-p219'
+        "ICSD": 26811
+        "reference": [['Cid-Dresdner, H., Escobar, C.'], ['1968'], ['The Crystal Structure of Ferberite, Fe W O4'], ['Zeitschrift fuer Kristallographie, Kristallgeometrie, Kristallphysik, Kristallchemie (-144,1977)  127:61 - 72']]
       alpha-MnMoO4:
         "altname":
         "formula": MnMoO4
@@ -338,7 +338,7 @@ data:
         "MPID": mp-19081
         "equivalent sites": [['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O'], ['O', 'O'], ['O', 'O', 'O', 'O'], ['Mn', 'Mn'], ['Mn', 'Mn'], ['Mo', 'Mo'], ['Mo', 'Mo']]
         "ICSD": 15615
-        "reference": 'Journal of Chemical Physics (1965) 43, (*) p2533-p2543'
+        "reference": [['Abrahams, S.C., Reddy, J.M.'], ['1965'], ['Crystal structure of the transition-metal molybdates. I. Para magnetic alpha Mn Mo O4'], ['Journal of Chemical Physics 43:2533 - 2543']]
       CrVO4:
         "altname":
         "formula": CrVO4
@@ -353,8 +353,8 @@ data:
         "notes": ['CrO6 octahedra form edge-sharing chains parallel to c-axis, which are linked together by VO4 tetrahedra.', 'NiSeO4 is isotypic']
         "MPID": mp-19418
         "equivalent sites": [['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['V', 'V'], ['Cr', 'Cr']]
-        "ICSD": 78965
-        "reference": 'European Journal of Solid State Inorganic Chemistry (1995) 32, (*) p577-p588'
+        "ICSD": 27508
+        "reference": [['Frazer, B.C., Brown, P.J.'], ['1962'], ['Antiferromagnetic structure of Cr V O4 and the anhydrous sulfates of divalent Fe, Ni, and Co'], ['Physical Review, Section A (133,1964-188,1969) 125:1283 - 1291']]
       ZnSO4:
         "altname":
         "formula": ZnSO4
@@ -370,10 +370,10 @@ data:
         "MPID": mp-5126
         "equivalent sites": [['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['S', 'S', 'S', 'S'], ['Zn', 'Zn', 'Zn', 'Zn']]
         "ICSD": 71018
-        "reference": 'Mineralogy and Petrology (1988) 39, (*) p201-p209'
+        "reference": [['Wildner, M., Giester, G.'], ['1988'], ['Crystal structure refinements of synthetic chalcocyanite (Cu S O4) and zincosite (Zn S O4)'], [' Mineralogy and Petrology 39:201 - 209']]
       low-quartz:
         "altname":
-        "formula": AlAsO4
+        "formula": AlAsO4 (ICDS is AlPO4... in notes it also says AlPO4)
         "crystal system": trigonal
         "spacegroup": P3_{1}21
         "spacegroup number": 152
@@ -386,7 +386,7 @@ data:
         "MPID": mp-5189
         "equivalent sites": [['O', 'O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O', 'O', 'O'], ['Al', 'Al', 'Al'], ['As', 'As', 'As']]
         "ICSD": 9641
-        "reference": 'Canadian Journal of Physics (1976) 54, (*) p638-p647'
+        "reference": [['Ng, H.N., Calvo, C.'], ['1976'], ['X-ray study of the alpha-beta transformation of Berlinite Al P O4'], ['Canadian Journal of Physics 54:638 - 647']]
       low-cristobalite:
         "altname":
         "formula": GaPO4
@@ -402,7 +402,7 @@ data:
         "MPID": mp-553932
         "equivalent sites": [['Ga', 'Ga'], ['P', 'P'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O']]
         "ICSD": 97550
-        "reference": 'Journal of Solid State Chemistry (2003) 176, (*) p37-p46'
+        "reference": [['Achary, S.N., Jayakumar, O.D., Tyagi, A.K., Kulshreshtha, S.K.'], ['2003'], ['Preparation, phase transition and thermal expansion studies on low-cristobalite type Al1-x Gax P O4 (x = 0.0, 0.20, 0.50, 0.80 and1.00)'], ['Journal of Solid State Chemistry 176:37 - 46']]
       high-cristobalite:
         "altname":
         "formula": BAsO4
@@ -418,7 +418,7 @@ data:
         "MPID": mp-3277
         "equivalent sites": [['B'], ['O', 'O', 'O', 'O'], ['As']]
         "ICSD": 55082
-        "reference": 'Zeitschrift fuer Anorganische und Allgemeine Chemie (1950) (DE) (2004) 630, (*) p655-p662'
+        "reference": [["Schmidt, M., Ewald, B., Prots', Yu., Cardoso-Gil, R., Armbruester, M., Loa, I., Zhang, L., Huang Ya Xi, Schwarz, U., Kniep, R."], ['2004'], ['Growth and characterization of B P O4 single crystals'], ['Zeitschrift fuer Anorganische und Allgemeine Chemie (1950) (DE) 630:655 - 662']]
       MgUO4:
         "altname":
         "formula": MgUO4
@@ -434,7 +434,7 @@ data:
         "MPID": mp-7858
         "equivalent sites": [['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['Mg', 'Mg'], ['U', 'U']]
         "ICSD": 24725
-        "reference": 'Acta Crystallographica (1,1948-23,1967) (1954) 7, (*) p788-p791'
+        "reference": [['Zachariasen, W.H.'], ['1954'], ['Crystal chemical studies of the 5f-series of elements. XXI. The crystal structure of magnesium orthouranate'], ['Acta Crystallographica (1,1948-23,1967) 7:788 - 791']]
       SbNbO4:
         "altname": "stibiotantalite (SbTaO4)"
         "formula": SbNbO4
@@ -472,7 +472,7 @@ data:
       calcite:
         "altname":
         "formula": CaCO3
-        "crystal system": rhombohedral
+        "crystal system": rhombohedral (ICSD says trigonal)
         "spacegroup": R-3c
         "spacegroup number": 167
         "unit cell constants": [4.99, 4.99, 17.062]
@@ -484,7 +484,7 @@ data:
         "MPID": mp-3953
         "equivalent sites": [['C', 'C'], ['O', 'O', 'O', 'O', 'O', 'O'], ['Ca', 'Ca']]
         "ICSD": 18164
-        "reference": 'Acta Crystallographica (1,1948-23,1967) (1965) 18, (*) p689-p693'
+        "reference": [['Chessin, H., Hamilton, W.C., Post, B.'], ['1965'], ['Position and thermal parameters of oxygen atoms in calcite'], ['Acta Crystallographica (1,1948-23,1967) 18:689 - 693']]
       aragonite:
         "altname":
         "formula": CaCO3
@@ -500,7 +500,7 @@ data:
         "MPID": mp-4626
         "equivalent sites": [['C', 'C', 'C', 'C'], ['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['Ca', 'Ca', 'Ca', 'Ca']]
         "ICSD": 15194
-        "reference": 'American Mineralogist (1971) 56, (*) p758-p766'
+        "reference": [['de Villiers, J.P.R.'], ['1971'], ['Crystal structures of aragonite, strontianite, and witherite'], ['American Mineralogist 56:758 - 766']]
       perovskites:
         "altname":
         "formula": SrTiO3
@@ -516,7 +516,7 @@ data:
         "MPID": mp-5229
         "equivalent sites": [['O', 'O', 'O'], ['Ti'], ['Sr']]
         "ICSD": 80871
-        "reference": 'Acta Crystallographica, Section B: Structural Science (1995) 51, (*) p942-p951'
+        "reference": [["Abramov, Yu.A., Tsirel'son, V.G., Zavodnik, V.E., Ivanov, S.A., Brown, I.D."], ['1995'], ['The chemical bond and atomic displacements in Sr Ti O3 from x-ray diffraction analysis'], ['Acta Crystallographica, Section B: Structural Science 51:942 - 951']]
       "Tetragonal BaTiO3":
         "altname": 
         "formula": BaTiO3
@@ -532,11 +532,11 @@ data:
         "MPID": mp-5986
         "equivalent sites": [['O', 'O'], ['O'], ['Ti'], ['Ba']]
         "ICSD": 67520
-        "reference": 'Acta Crystallographica, Section B: Structural Science (1992) 48, (*) p764-p769'
+        "reference": [['Buttner, R.H., Maslen, E.N.'], ['1992'], ['Structural Parameters and Electron Difference density in BaTiO3'], ['Acta Crystallographica, Section B: Structural Science 48:764 - 769']]
       ilmenite:
         "altname":
         "formula": FeTiO3
-        "crystal system": rhombohedral
+        "crystal system": rhombohedral (ICSD says trigonal)
         "spacegroup": R-3
         "spacegroup number": 148
         "unit cell constants": [5.088, 5.088, 14.073]
@@ -548,7 +548,8 @@ data:
         "MPID": mp-19417
         "equivalent sites": [['O', 'O', 'O', 'O', 'O', 'O'], ['Ti', 'Ti'], ['Fe', 'Fe']]
         "ICSD": 9805
-        "reference": 'Journal of Applied Crystallography (1978) 11, (*) p121-p124'
+        "reference": [['Morosin, B., Baughman, R.J., Ginley, D.S., Butler, M.A.'], ['1978'], ['The Influence of Crystal Structure on the Photoresponse of Iron-Titanium Oxide Electrodes'], ['Journal of Applied Crystallography 11:121 - 124']]
+
 notes:
   - "A negative integer for any coordination number means that this was not retrievable."
   - "The spacegroup number was taken from the material that I found on the MP website"

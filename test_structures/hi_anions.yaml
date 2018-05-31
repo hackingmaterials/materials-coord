@@ -10,12 +10,6 @@ Fe3O4_spinel:
         Fe: 4.0
         O: 0.0
 
-MgAl2O4_spinel:
-    - O:
-        Mg: 1.0
-        Al: 3.0
-        O: 0.0
-
 NaCl_rocksalt:
     - Cl:
         Cl: 0.0

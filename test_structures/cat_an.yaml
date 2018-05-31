@@ -6,10 +6,6 @@ Al2O3_corundum:
 Fe3O4_spinel:
     - Fe
 
-MgAl2O4_spinel:
-    - Mg
-    - Al
-
 NaCl_rocksalt:
     - Na
 

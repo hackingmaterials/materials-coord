@@ -1,21 +1,16 @@
 
-#(C) 2017 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
-data_42484-ICSD
-_database_code_ICSD 42484
-_audit_creation_date 2000-07-15
+#(C) 2018 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_22325-ICSD
+_database_code_ICSD 22325
+_audit_creation_date 1980-01-01
 _audit_update_record 2007-04-01
 _chemical_name_systematic 'Dilead lead(IV) oxide'
 _chemical_formula_structural 'Pb3 O4'
 _chemical_formula_sum 'O4 Pb3'
 _chemical_name_structure_type Minium-Pb3O4
 _chemical_name_mineral Minium
-_exptl_crystal_density_diffrn 8.94
-_publ_section_title
-
-;
-Analyses structurales du minium Pb3 O4 a temperature ambiante et a basse
-temperature par diffraction des neutrons
-;
+_exptl_crystal_density_diffrn 8.88
+_publ_section_title 'Neutron diffraction study of Pb3 O4'
 loop_
 _citation_id
 _citation_journal_full
@@ -24,27 +19,23 @@ _citation_journal_volume
 _citation_page_first
 _citation_page_last
 _citation_journal_id_ASTM
-primary
-
-;
-Comptes Rendus Hebdomadaires des Seances de l'Academie des Sciences, Serie C,
-Sciences Chimiques (1966-)
-; 1972 275 1267 1270 CHDCAQ
+primary 'Zeitschrift fuer Anorganische und Allgemeine Chemie (1950) (DE)' 1965
+336 104 109 ZAACAB
 loop_
 _publ_author_name
-'Gavarri, J.R.'
-'Weigel, D.'
-_cell_length_a 8.811(5)
-_cell_length_b 8.811
-_cell_length_c 6.563(5)
+'Fayek, M.K.'
+'Leciejewicz, J.'
+_cell_length_a 8.82
+_cell_length_b 8.82
+_cell_length_c 6.59
 _cell_angle_alpha 90.
 _cell_angle_beta 90.
 _cell_angle_gamma 90.
-_cell_volume 509.51
+_cell_volume 512.65
 _cell_formula_units_Z 4
 _symmetry_space_group_name_H-M 'P 42/m b c'
 _symmetry_Int_Tables_number 135
-_refine_ls_R_factor_all 0.067
+_refine_ls_R_factor_all 0.081
 loop_
 _symmetry_equiv_pos_site_id
 _symmetry_equiv_pos_as_xyz
@@ -81,8 +72,8 @@ _atom_site_fract_z
 _atom_site_B_iso_or_equiv
 _atom_site_occupancy
 _atom_site_attached_hydrogens
-Pb1 Pb4+ 4 d 0 0.5 0.25 0. 1. 0
-Pb2 Pb2+ 8 h 0.141 0.161 0 0. 1. 0
-O1 O2- 8 g 0.672 0.172 0.25 0. 1. 0
-O2 O2- 8 h 0.095 0.635 0 0. 1. 0
-#End of TTdata_42484-ICSD
+Pb1 Pb4+ 4 d 0 0.5 0.25 0 1. 0
+Pb2 Pb2+ 8 h 0.143(3) 0.161(3) 0 0 1. 0
+O1 O2- 8 g 0.672 0.172 0.25 0 1. 0
+O2 O2- 8 h 0.114 0.614 0 0 1. 0
+#End of TTdata_22325-ICSD
