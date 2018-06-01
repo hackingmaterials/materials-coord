@@ -1,9 +1,14 @@
 # Human interpreted coordination numbers in structures:
 
-Al2O3_corundum:
-    - Al:
+Al2O3_corundum_9770:
+    - Al3+:
         Al: 0.0
         O: 6.0
+
+CaF2_fluorite_60559:
+    - Ca2+:
+        F: 8.0
+        Ca: 0.0
 
 Fe3O4_spinel:
     - Fe:
@@ -37,11 +42,6 @@ ZnS_zincblende:
     - Zn:
         S: 4.0
         Zn: 0.0
-
-CaF2_fluorite:
-    - Ca:
-        F: 8.0
-        Ca: 0.0
 
 #Cu5Zn8_gamma_brass:
 #    - Zn:

@@ -88,7 +88,9 @@ class Benchmark(object):
         str_files = glob.glob(p)
         for s in str_files:
             name = os.path.basename(s).split(".")[0]
-            self.test_structures[name] = Structure.from_file(s)
+            structure = Structure.from_file(s)
+            self.test_structures[name] = structure.remove_oxidation_states
+            print(self.test_structures)
 
     def benchmark(self):
         """
@@ -210,7 +212,8 @@ class Benchmark(object):
 
         index = self.test_structures.keys()
 
-        return pd.DataFrame(data=data, index=index)
+        return pd.DataFrame(data=data)
+        #return pd.DataFrame(data=data, index=list(index)) <-- doesn't work for some reason???
 
     @staticmethod
     def _roundcns(d, ndigits):
