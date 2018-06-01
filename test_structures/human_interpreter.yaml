@@ -14,6 +14,22 @@ Aluminum has octahedral coordination with O. See Table III.
         Al: 4.0
         O: 0.0
 
+CaF2_fluorite:
+    - Ca:
+        F: 8.0
+        Ca: 0.0
+    - F:
+        F: 0.0
+        Ca: 4.0
+
+CsCl:
+    - Cs:
+        Cs: 0.0
+        Cl: 8.0
+    - Cl:
+        Cs: 8.0
+        Cl: 0.0
+
 Fe3O4_spinel:
     - Fe:
         Fe: 0.0
@@ -47,14 +63,6 @@ NaCl_rocksalt:
         Cl: 0.0
         Na: 6.0
 
-CsCl:
-    - Cs:
-        Cs: 0.0
-        Cl: 8.0
-    - Cl:
-        Cs: 8.0
-        Cl: 0.0
-
 TiO2_anatase:
     - Ti:
         O: 6.0
@@ -79,13 +87,7 @@ ZnS_zincblende:
         S: 0.0
         Zn: 4.0
 
-CaF2_fluorite:
-    - Ca:
-        F: 8.0
-        Ca: 0.0
-    - F:
-        F: 0.0
-        Ca: 4.0
+
 
 #Cu5Zn8_gamma_brass:
 #    - Zn:
