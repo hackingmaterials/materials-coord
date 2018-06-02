@@ -89,8 +89,8 @@ class Benchmark(object):
         for s in str_files:
             name = os.path.basename(s).split(".")[0]
             structure = Structure.from_file(s)
-            self.test_structures[name] = structure.remove_oxidation_states
-            print(self.test_structures)
+            structure.remove_oxidation_states()
+            self.test_structures[name] = structure
 
     def benchmark(self):
         """
@@ -111,7 +111,6 @@ class Benchmark(object):
                         for j in sites:
                             if isinstance(m, NearNeighbors):
                                 tmpcn = m.get_cn_dict(v, j, self.use_weights)
-                                #print(tmpcn)
                             else:
                                 tmpcn = m.compute(v, j)
                                 if tmpcn == "null":
@@ -279,6 +278,7 @@ class HumanInterpreter(CNBase):
                 continue
 
             s = Structure.from_file(find_structure[0])
+            s.remove_oxidation_states()
             hi[k].append(s)
 
         super(HumanInterpreter, self).__init__(params=hi)
@@ -286,6 +286,7 @@ class HumanInterpreter(CNBase):
     def compute(self, structure, n):
 
         for v in self._params.values():
+            print(v)
             if structure == v[-1]:
                 if len(v[:-1]) != len(v[-1]):
                     # means possibly reduced structure is used by human interpreter

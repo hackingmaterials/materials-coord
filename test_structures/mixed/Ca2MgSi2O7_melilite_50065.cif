@@ -1,0 +1,95 @@
+
+#(C) 2018 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_50065-ICSD
+_database_code_ICSD 50065
+_audit_creation_date 1999-01-19
+_audit_update_record 2005-10-01
+_chemical_name_systematic 'Dicalcium magnesium disilicate'
+_chemical_formula_structural 'Ca2 Mg (Si2 O7)'
+_chemical_formula_sum 'Ca2 Mg1 O7 Si2'
+_chemical_name_structure_type Melilite-Ca2MgSi2O7
+_chemical_name_mineral Akermanite
+_exptl_crystal_density_diffrn 2.95
+_publ_section_title
+
+;
+Structural change associated with the incommensurate-normal phase transition
+in akermanite, Ca2 Mg Si2 O7, at high pressure
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Physics and Chemistry of Minerals' 1997 24 510 519 PCMIDU
+loop_
+_publ_author_name
+'Yang, H.'
+'Hazen, R.M.'
+'Downs, R.T.'
+'Finger, L.W.'
+_cell_length_a 7.8338(6)
+_cell_length_b 7.8338(6)
+_cell_length_c 5.0082(5)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 90.
+_cell_volume 307.35
+_cell_formula_units_Z 2
+_symmetry_space_group_name_H-M 'P -4 21 m'
+_symmetry_Int_Tables_number 113
+_refine_ls_R_factor_all 0.041
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 '-y+1/2, -x+1/2, z'
+2 'y, -x, -z'
+3 'y+1/2, x+1/2, z'
+4 '-y, x, -z'
+5 'x+1/2, -y+1/2, -z'
+6 '-x, -y, z'
+7 '-x+1/2, y+1/2, -z'
+8 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Ca2+ 2
+Mg2+ 2
+Si4+ 4
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Ca1 Ca2+ 4 e 0.3324(2) 0.1676(2) 0.5065(5) . 1. 0
+Mg1 Mg2+ 2 a 0 0 0 . 1. 0
+Si1 Si4+ 4 e 0.1396(2) 0.3604(2) 0.9358(5) . 1. 0
+O1 O2- 2 c 0.5 0 0.1799(23) . 1. 0
+O2 O2- 4 e 0.1407(6) 0.3593(5) 0.2529(17) . 1. 0
+O3 O2- 8 f 0.0798(7) 0.1862(6) 0.7856(11) . 1. 0
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_beta_11
+_atom_site_aniso_beta_22
+_atom_site_aniso_beta_33
+_atom_site_aniso_beta_12
+_atom_site_aniso_beta_13
+_atom_site_aniso_beta_23
+Ca1 Ca2+ 0.0081(2) 0.0081(2) 0.0141(9) 0.0049(2) 0.0008(3) 0.0008(3)
+Mg1 Mg2+ 0.0037(4) 0.0037(4) 0.0200(21) 0 0 0
+Si1 Si4+ 0.0032(3) 0.0032(3) 0.0122(12) 0.0005(3) 0.0006(3) 0.0006(3)
+O1 O2- 0.0104(11) 0.0104(11) 0.0130(53) -.0072(15) 0 0
+O2 O2- 0.0090(8) 0.0090(8) 0.0197(40) 0.0054(11) -.0011(12) -.0011(12)
+O3 O2- 0.0152(9) 0.0057(7) 0.0164(26) -.0012(8) 0.0032(12) -.0014(11)
+#End of TTdata_50065-ICSD

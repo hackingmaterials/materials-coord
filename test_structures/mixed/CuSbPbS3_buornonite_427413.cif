@@ -1,0 +1,80 @@
+
+#(C) 2018 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_427413-ICSD
+_database_code_ICSD 427413
+_audit_creation_date 2016-02-01
+_chemical_name_systematic 'Copper(I) lead(II) trithioantimonate(III)'
+_chemical_formula_structural 'Pb Cu Sb S3'
+_chemical_formula_sum 'Cu1 Pb1 S3 Sb1'
+_chemical_name_mineral Bournonite
+_exptl_crystal_density_diffrn 5.86
+_cell_measurement_temperature 298.
+_publ_section_title
+
+;
+Bournonite PbCuSbS3: Stereochemically active lone-pair electrons that induce
+low thermal conductivity
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary ChemPhysChem 2015 16 3264 3270 CPCHFT
+loop_
+_publ_author_name
+'Dong, Yongkwan'
+'Khabibullin, Artem R.'
+'Wei, Kaya'
+'Salvador, James R.'
+'Nolas, George S.'
+'Woods, Lilia M.'
+_cell_length_a 7.81006(22)
+_cell_length_b 8.15035(23)
+_cell_length_c 8.70092(28)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 90.
+_cell_volume 553.85
+_cell_formula_units_Z 4
+_symmetry_space_group_name_H-M 'P m n 21'
+_symmetry_Int_Tables_number 31
+_refine_ls_R_factor_all 0.0519
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x+1/2, -y, z+1/2'
+2 '-x+1/2, -y, z+1/2'
+3 '-x, y, z'
+4 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Pb2+ 2
+Sb3+ 3
+Cu1+ 1
+S2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Pb1 Pb2+ 2 a 0. 0.0728(7) 0.9898(6) 0.01331 1. 0
+Pb2 Pb2+ 2 a 0. 0.4404(6) 0.6745(6) 0.0184 1. 0
+Sb1 Sb3+ 2 a 0. 0.9309(11) 0.5406(7) 0.01472 1. 0
+Sb2 Sb3+ 2 a 0. 0.5162(7) 0.1491(9) 0.01503 1. 0
+Cu1 Cu1+ 4 b 0.2410(17) 0.2734(11) 0.4081(9) 0.01107 1. 0
+S1 S2- 2 a 0. 0.235(4) 0.2784(25) 0.01064 1. 0
+S2 S2- 2 a 0. 0.7775(35) 0.7807(28) 0.01275 1. 0
+S3 S2- 4 b 0.2439(27) 0.1008(18) 0.6227(14) 0.01016 1. 0
+S4 S2- 4 b 0.2775(24) 0.5567(20) 0.4753(16) 0.01744 1. 0
+#End of TTdata_427413-ICSD

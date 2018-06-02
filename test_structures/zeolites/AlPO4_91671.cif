@@ -1,0 +1,98 @@
+
+#(C) 2018 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_91671-ICSD
+_database_code_ICSD 91671
+_audit_creation_date 2002-10-01
+_audit_update_record 2007-08-01
+_chemical_name_systematic 'Aluminium phosphate(V) - 5'
+_chemical_formula_structural 'Al (P O4)'
+_chemical_formula_sum 'Al1 O4 P1'
+_chemical_name_structure_type Zeolite-AlPO-5-frame
+_chemical_name_mineral 'Zeolite AlPO-5'
+_exptl_crystal_density_diffrn 1.76
+_publ_section_title
+
+;
+Absolute configuration and domain structure of (Al P O4)-5 studied by
+single-crystal X-ray diffraction
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Microporous and Mesoporous Materials' 2000 38 403 412 MIMMFJ
+loop_
+_publ_author_name
+'Klap, G.J.'
+'van Koningsveld, H.'
+'Graafsma, H.'
+'Schreurs, A.M.M.'
+_cell_length_a 13.718(1)
+_cell_length_b 13.718(1)
+_cell_length_c 8.4526(5)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 120.
+_cell_volume 1377.53
+_cell_formula_units_Z 12
+_symmetry_space_group_name_H-M 'P 6 c c'
+_symmetry_Int_Tables_number 184
+_refine_ls_R_factor_all 0.081
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x, x-y, z+1/2'
+2 '-x+y, y, z+1/2'
+3 '-y, -x, z+1/2'
+4 '-x, -x+y, z+1/2'
+5 'x-y, -y, z+1/2'
+6 'y, x, z+1/2'
+7 'x-y, x, z'
+8 'y, -x+y, z'
+9 '-x, -y, z'
+10 '-x+y, -x, z'
+11 '-y, x-y, z'
+12 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+P5+ 5
+Al3+ 3
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+P1 P5+ 12 d 0.45250(8) 0.32952(5) 0.05386 . 1. 0
+Al1 Al3+ 12 d 0.45652(9) 0.33599(6) 0.4264(1) . 1. 0
+O1 O2- 12 d 0.4200(1) 0.2069(1) -.0026(8) . 1. 0
+O2 O2- 12 d 0.4519(2) 0.3295(2) 0.2246(4) . 1. 0
+O3 O2- 12 d 0.3610(2) 0.3629(2) -.0087(8) . 1. 0
+O4 O2- 12 d 0.5737(2) 0.4199(2) -.0134(7) . 1. 0
+loop_
+_atom_site_aniso_label
+_atom_site_aniso_type_symbol
+_atom_site_aniso_U_11
+_atom_site_aniso_U_22
+_atom_site_aniso_U_33
+_atom_site_aniso_U_12
+_atom_site_aniso_U_13
+_atom_site_aniso_U_23
+P1 P5+ 0.0400(8) 0.0219(6) 0.078(1) 0.0199(5) -.0072(9) 0.0018(5)
+Al1 Al3+ 0.0259(8) 0.0296(9) 0.068(1) 0.0166(6) -.0147(8) -.0059(5)
+O1 O2- 0.044(1) 0.025(1) 0.142(2) 0.0193(9) 0.004(3) -.027(2)
+O2 O2- 0.140(2) 0.167(2) 0.019(2) 0.087(2) -.001(2) 0.011(2)
+O3 O2- 0.049(1) 0.065(1) 0.142(2) 0.044(1) 0.007(3) 0.029(3)
+O4 O2- 0.039(1) 0.047(1) 0.154(2) 0.018(1) 0.032(2) 0.020(2)
+#End of TTdata_91671-ICSD
