@@ -16,7 +16,6 @@ CaF2_fluorite_60559:
 # Cheetham, A.K., Fender, B.E.F., Cooper, M.J. (1971)
 # Defect structure of calcium fluoride containing excess anions: I. Bragg scattering.
 # Journal of Physics C: Solid State Physics 4:3107 - 3121.
-# notes:
     - Ca:
         Ca: 0.0
         F: 8.0
@@ -28,7 +27,6 @@ CsCl_257256:
 # Sist, Mattia, Faerch Fischer, Karl Frederik, Kasai, Hidetaka, Brummerstedt Iversen, Bo (2017)
 # Low-temperature anharmonicity in cesium chloride (CsCl).
 # Angewandte Chemie, International Edition 56:3625 - 3629.
-# notes:
     - Cs:
         Cs: 0.0
         Cl: 8.0
@@ -40,7 +38,6 @@ Cu5Zn8_gamma_brass:
 # Brandon, J.K., Brizard, R.Y., Chieh, P.C., McMillan, R.K., Pearson, W.B. (1974)
 # New refinement of the gamma brass type structures Cu5 Zn8, Cu5 Cd8 and F E Zn10 .
 # Acta Crystallographica, Section B: Structural Crystallography and Crystal Chemistry  30:1412 - 1417.
-# notes: metal -- no ionic states
     - Zn:
         Zn: 6.0
         Cu: 6.0
@@ -57,7 +54,6 @@ Cu5Zn8_gamma_brass:
 Fe3O4_spinel_26410:
 # Fleet, M.E. (1981) The Structure of Magnetite.
 # Acta Crystallographica, Section B: Structural Crystallography and Crystal Chemistry  37:917 - 920.
-# notes:
     - Fe:
         Fe: 0.0
         O: 4.0
@@ -72,7 +68,6 @@ NaCl_rocksalt_100633:
 # Finger, L.W., King, H. (1978)
 # A revised method of operation of the single-crystal diamond cell and refinement of the structure of Na Cl at 32 kbar .
 # American Mineralogist 63:337 - 342.
-# notes:
     - Na:
         Na: 0.0
         Cl: 6.0
@@ -83,7 +78,6 @@ NaCl_rocksalt_100633:
 TiO2_anatase_9852:
 # Horn, M., Schwerdtfeger, C.F., Meagher, E.P. (1972) Refinement of the structure of anatase at several temperatures.
 # Zeitschrift fuer Kristallographie, Kristallgeometrie, Kristallphysik, Kristallchemie (-144,1977)  136:273 - 281.
-# notes:
     - Ti:
         Ti: 0.0
         O: 6.0
@@ -95,7 +89,6 @@ ZnS_wurtzite_67453:
 # Kisi, E.H., Elcombe, M.M. (1989)
 # U parameters for the wurtzite structure of Zn S and Zn O using powder neutron diffraction .
 # Acta Crystallographica, Section C: Crystal Structure Communications 45:1867 - 1870.
-# notes:
     - Zn:
         Zn: 0.0
         S: 4.0
@@ -107,7 +100,6 @@ ZnS_zincblende_291064:
 # Desgreniers, Serge, Beaulieu, Luc, Lepage, Ian (2000)
 # Pressure-induced structural changes in Zn S.
 # Physical Review, Serie 3. B - Condensed Matter (18,1978-) 61:8726 - 8733.
-# notes:
     - Zn:
         S: 4.0
         Zn: 0.0
