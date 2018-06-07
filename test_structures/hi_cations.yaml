@@ -290,6 +290,19 @@ Y3Al5O12_mp-3050_primitive:
         Al: 0.0
         O: 6.0
 
+AlPO4_91671:
+# Klap, G.J., van Koningsveld, H., Graafsma, H., Schreurs, A.M.M. (2000)
+# Absolute configuration and domain structure of (Al P O4)-5 studied by single-crystal X-ray diffraction .
+# Microporous and Mesoporous Materials 38:403 - 412.
+    - Al:
+        Al: 0.0
+        P: 0.0
+        O: 4.0
+    - P:
+        Al: 0.0
+        P: 0.0
+        O: 4.0
+
 AlPO4_mp-5859_computed:
     - Al:
         Al: 0.0
@@ -300,15 +313,21 @@ AlPO4_mp-5859_computed:
         P: 0.0
         O: 4.0
 
-SiO2_mp-555235_computed:
-    - Si:
-        Si: 0.0
-        O: 4.0
+SiO2_tridymite_40896:
+# Kihara, K., Matsumoto, T., Imamura, M. (1986)
+# High-order thermal-motion tensor analyses of tridymite.
+# Zeitschrift fuer Kristallographie (1979-2010) 177:39 - 52.
     - Si:
         Si: 0.0
         O: 4.0
 
-SiO2_mp-600003_computed:
+SiO2_157744:
+# Wragg, D.S., Morris, R., Burton, A.W., Zones, S.I., Ong, K., Lee, G. (2007)
+# The synthesis and structure of SSZ-73: an all-silica zeolite with an unusual framework topology .
+# Chemistry of Materials 19:3924 - 3932.
+    - Si:
+        Si: 0.0
+        O: 4.0
     - Si:
         Si: 0.0
         O: 4.0

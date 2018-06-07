@@ -26,13 +26,16 @@ class Benchmark(object):
     """
 
     def __init__(self, methods, structure_groups="elemental", custom_set=None,
-                 unique_sites=True, nround=3, use_weights=False, cations=False, anions=False):
+                 unique_sites=True, nround=3, use_weights=False,
+                 cation_anion=False, anion_cation=False):
 
         self.methods = methods
         self.structure_groups = structure_groups if isinstance(structure_groups, list) else [structure_groups]
 
         self.test_structures = OrderedDict()
-
+        self.cations = OrderedDict()
+        self.anions = OrderedDict()
+        self.metals = OrderedDict()
         if custom_set:
             self.structure_groups = None
             self.custom = custom_set
@@ -44,30 +47,15 @@ class Benchmark(object):
         self.unique_sites = unique_sites
         self.nround = nround
         self.use_weights = use_weights
-        self.cations = cations
-        self.anions = anions
+        self.cation_anion = cation_anion
+        self.anion_cation = anion_cation
 
         for m in self.methods:
             assert isinstance(m, (NearNeighbors, CNBase))
             m._cns = {}
         print("Initialization successful.")
 
-        if cations:
-            p = os.path.join(module_dir, "..", "test_structures", "hi_cations.yaml")
-        elif anions:
-            p = os.path.join(module_dir, "..", "test_structures", "hi_anions.yaml")
-        else:
-            p = os.path.join(module_dir, "..", "test_structures", "human_interpreter.yaml")
-
-        cat_an = os.path.join(module_dir, "..", "test_structures", "cat_an.yaml")
-        with open(cat_an) as t:
-            cat_an = yaml.load(t)
-        self.cat_an = cat_an
-
-        an_cat = os.path.join(module_dir, "..", "test_structures", "an_cat.yaml")
-        with open(an_cat) as t:
-            an_cat = yaml.load(t)
-        self.an_cat = an_cat
+        p = os.path.join(module_dir, "..", "test_structures", "human_interpreter.yaml")
 
         with open(p) as f:
             hi = yaml.load(f)
@@ -89,6 +77,25 @@ class Benchmark(object):
         for s in str_files:
             name = os.path.basename(s).split(".")[0]
             structure = Structure.from_file(s)
+
+            cations = []
+            anions = []
+            for i in structure:
+                i = str(i).split(']', 1)[1]
+                if i.endswith('+'):
+                    if '0' in i: # metals
+                        pass
+                    else:
+                        el = ''.join(x for x in str(i) if x.isalpha())
+                        if el not in cations:
+                            cations.append(el)
+                if str(i).endswith('-'):
+                    el = ''.join(x for x in str(i) if x.isalpha())
+                    if el not in anions:
+                        anions.append(el)
+            self.cations[name] = cations
+            self.anions[name] = anions
+
             structure.remove_oxidation_states()
             self.test_structures[name] = structure
 
@@ -97,58 +104,44 @@ class Benchmark(object):
         Performs the benchmark calculations.
         """
         for m in self.methods:
-            for k, v in self.test_structures.items():
+            for name, structure in self.test_structures.items():
                 cns = []
                 if self.unique_sites:
-                    es = SpacegroupAnalyzer(v).get_symmetrized_structure().equivalent_sites
-                    #print([x[0] for x in es])
-                    sites = [v.index(x[0]) for x in es]
+                    es = SpacegroupAnalyzer(structure).get_symmetrized_structure().equivalent_sites
+                    sites = [structure.index(x[0]) for x in es]
                 else:
-                    sites = range(len(v))
+                    sites = range(len(structure))
 
                 for key, val in self.hi.items():
-                    if k == key:
+                    if name == key:
                         for j in sites:
                             if isinstance(m, NearNeighbors):
-                                tmpcn = m.get_cn_dict(v, j, self.use_weights)
+                                tmpcn = m.get_cn_dict(structure, j, self.use_weights)
                             else:
-                                tmpcn = m.compute(v, j)
+                                tmpcn = m.compute(structure, j)
                                 if tmpcn == "null":
                                     continue
                             if self.nround:
                                 self._roundcns(tmpcn, self.nround)
-                            cns.append((v[j].species_string, tmpcn))
-                        if self.cations:
-                            for mat, cat in self.cat_an.items():
-                                if k == mat:
-                                    for w, x in cns:
-                                        for ke in list(x):
-                                            if ke in cat:
-                                                del x[ke]
-                            for mat, an in self.an_cat.items():
-                                if k == mat:
-                                    new_cn = []
+                            cns.append((structure[j].species_string, tmpcn))
+                        if self.cation_anion:
+                            for mat, cat in self.cations.items():
+                                if name == mat:
+                                    if not cat: # metals
+                                        pass
+                                    else:
+                                        cns = [i for i in cns if i[0] in cat]
+                                        for tup in cns:
+                                            if tup[0] in tup[1].keys():
+                                                tup[1].pop(tup[0])
+                        if self.anion_cation:
+                            for mat, an in self.anions.items():
+                                if name == mat:
+                                    cns = [i for i in cns if i[0] in an]
                                     for tup in cns:
-                                        if tup[0] in an:
-                                            tup = (tup[0], {})
-                                        new_cn.append(tup)
-                                    cns = new_cn
-                        else:
-                            for mat, an in self.an_cat.items():
-                                if k == mat:
-                                    for w, x in cns:
-                                        for ke in list(x):
-                                            if ke in an:
-                                                del x[ke]
-                            for mat, cat in self.cat_an.items():
-                                if k == mat:
-                                    new_cn = []
-                                    for tup in cns:
-                                        if tup[0] in cat:
-                                            tup = (tup[0], {})
-                                        new_cn.append(tup)
-                                    cns = new_cn
-                    m._cns[k] = cns
+                                        if tup[0] in tup[1].keys():
+                                            tup[1].pop(tup[0])
+                    m._cns[name] = cns
 
     def report(self, totals=False, separate_columns=False, max_sites=5):
         """
@@ -284,9 +277,8 @@ class HumanInterpreter(CNBase):
         super(HumanInterpreter, self).__init__(params=hi)
 
     def compute(self, structure, n):
-
         for v in self._params.values():
-            print(v)
+            #print(v)
             if structure == v[-1]:
                 if len(v[:-1]) != len(v[-1]):
                     # means possibly reduced structure is used by human interpreter

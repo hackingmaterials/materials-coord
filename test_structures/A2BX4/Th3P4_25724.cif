@@ -1,19 +1,15 @@
 
-#(C) 2017 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
-data_197221-ICSD
-_database_code_ICSD 197221
-_audit_creation_date 2017-08-01
+#(C) 2018 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_25724-ICSD
+_database_code_ICSD 25724
+_audit_creation_date 1980-01-01
+_audit_update_record 2012-02-01
 _chemical_name_systematic 'Thorium phosphide (3/4)'
 _chemical_formula_structural 'Th3 P4'
 _chemical_formula_sum 'P4 Th3'
 _chemical_name_structure_type Th3P4
-_exptl_crystal_density_diffrn 8.51
-_publ_section_title
-
-;
-Characteristic temperatures and entropies of some refractory thorium compounds
-;
-_publ_section_comment 'Cell and Type only determined'
+_exptl_crystal_density_diffrn 8.56
+_publ_section_title 'Ueber Strukturanalogie von Uran- und Thoriumphosphiden'
 loop_
 _citation_id
 _citation_journal_full
@@ -22,18 +18,18 @@ _citation_journal_volume
 _citation_page_first
 _citation_page_last
 _citation_journal_id_ASTM
-primary 'Journal of Nuclear Materials' 1967 24 74 79 JNUMAM
+primary 'Zeitschrift fuer Anorganische und Allgemeine Chemie (1950) (DE)' 1941
+245 402 408 ZAACAB
 loop_
 _publ_author_name
-'Aronson, S.'
-'Ingraham, A.'
-_cell_length_a 8.618
-_cell_length_b 8.618
-_cell_length_c 8.618
+'Zumbusch, M.'
+_cell_length_a 8.6
+_cell_length_b 8.6
+_cell_length_c 8.6
 _cell_angle_alpha 90.
 _cell_angle_beta 90.
 _cell_angle_gamma 90.
-_cell_volume 640.06
+_cell_volume 636.06
 _cell_formula_units_Z 4
 _symmetry_space_group_name_H-M 'I -4 3 d'
 _symmetry_Int_Tables_number 220
@@ -105,5 +101,5 @@ _atom_site_B_iso_or_equiv
 _atom_site_occupancy
 _atom_site_attached_hydrogens
 Th1 Th4+ 12 a 0.375 0 0.25 . 1. 0
-P1 P3- 16 c 0.083 0.083 0.083 . 1. 0
-#End of TTdata_197221-ICSD
+P1 P3- 16 c 0.0833 0.0833 0.0833 . 1. 0
+#End of TTdata_25724-ICSD

@@ -1,15 +1,19 @@
 
-#(C) 2017 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
-data_15728-ICSD
-_database_code_ICSD 15728
+#(C) 2018 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_21080-ICSD
+_database_code_ICSD 21080
 _audit_creation_date 1980-01-01
-_audit_update_record 2012-02-01
 _chemical_name_systematic 'Barium dialuminium oxide'
-_chemical_formula_structural 'Ba (Al2 O4)'
+_chemical_formula_structural 'Ba Al2 O4'
 _chemical_formula_sum 'Al2 Ba1 O4'
 _chemical_name_structure_type BaAl2O4
-_exptl_crystal_density_diffrn 4.09
-_publ_section_title 'The crystal structure of Ba Al2 O4'
+_exptl_crystal_density_diffrn 4.07
+_publ_section_title
+
+;
+Parametres atomiques de Ba Al2 O4 et etudes des solutions solides Ba Fex Al2-x
+O4 et Ba Gax Al2-x O4
+;
 loop_
 _citation_id
 _citation_journal_full
@@ -18,27 +22,23 @@ _citation_journal_volume
 _citation_page_first
 _citation_page_last
 _citation_journal_id_ASTM
-primary
-
-;
-Bulletin de la Societe Francaise de Mineralogie et de Cristallographie
-(72,1949-100,1977)
-; 1968 91 85 87 BUFCAE
+primary 'Bulletin de la Societe Francaise de Mineralogie et de Cristallographie'
+1965 88 413 416 BUFCAE
 loop_
 _publ_author_name
-'Perrotta, A.J.'
-'Smith, J.V.'
-_cell_length_a 5.218(1)
-_cell_length_b 5.218(1)
-_cell_length_c 8.781(3)
+'Do Dinh Chieu'
+'Bertaut, C.'
+_cell_length_a 5.227(3)
+_cell_length_b 5.227(3)
+_cell_length_c 8.802(4)
 _cell_angle_alpha 90.
 _cell_angle_beta 90.
 _cell_angle_gamma 120.
-_cell_volume 207.05
+_cell_volume 208.27
 _cell_formula_units_Z 2
 _symmetry_space_group_name_H-M 'P 63 2 2'
 _symmetry_Int_Tables_number 182
-_refine_ls_R_factor_all 0.086
+_refine_ls_R_factor_all 0.05
 loop_
 _symmetry_equiv_pos_site_id
 _symmetry_equiv_pos_as_xyz
@@ -71,8 +71,8 @@ _atom_site_fract_z
 _atom_site_B_iso_or_equiv
 _atom_site_occupancy
 _atom_site_attached_hydrogens
-Ba1 Ba2+ 2 b 0 0 0.25 0.74 1. 0
-Al1 Al3+ 4 f 0.3333 0.6667 0.054(5) 0.31 1. 0
-O1 O2- 6 h 0.371(10) 0.742(20) 0.25 0.59 0.333 0
-O2 O2- 6 g 0.36(1) 0 0 0.72 1. 0
-#End of TTdata_15728-ICSD
+Ba1 Ba2+ 2 b 0 0 0.25 . 1. 0
+Al1 Al3+ 4 f 0.3333 0.6667 0.051 . 1. 0
+O1 O2- 2 c 0.3333 0.6667 0.25 . 1. 0
+O2 O2- 6 g 0.343 0 0 . 1. 0
+#End of TTdata_21080-ICSD

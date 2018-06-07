@@ -1,15 +1,15 @@
 
 #(C) 2018 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
-data_257256-ICSD
-_database_code_ICSD 257256
-_audit_creation_date 2018-02-01
-_chemical_name_systematic 'Caesium chloride'
+data_53847-ICSD
+_database_code_ICSD 53847
+_audit_creation_date 2003-04-01
+_audit_update_record 2012-02-01
+_chemical_name_systematic 'Cesium chloride'
 _chemical_formula_structural 'Cs Cl'
 _chemical_formula_sum 'Cl1 Cs1'
 _chemical_name_structure_type CsCl
-_exptl_crystal_density_diffrn 4.1
-_cell_measurement_temperature 20.
-_publ_section_title 'Low-temperature anharmonicity in cesium chloride (CsCl)'
+_exptl_crystal_density_diffrn 4.
+_publ_section_title 'Crystal structure of Cs Cl and Tl Cl'
 loop_
 _citation_id
 _citation_journal_full
@@ -18,24 +18,22 @@ _citation_journal_volume
 _citation_page_first
 _citation_page_last
 _citation_journal_id_ASTM
-primary 'Angewandte Chemie, International Edition' 2017 56 3625 3629 ACIEF5
+primary 'Physical Review (1,1893-132,1963/141,1966-188,1969)' 1921 17 403 404
+PHRVAO
 loop_
 _publ_author_name
-'Sist, Mattia'
-'Faerch Fischer, Karl Frederik'
-'Kasai, Hidetaka'
-'Brummerstedt Iversen, Bo'
-_cell_length_a 4.0848(7)
-_cell_length_b 4.0848(7)
-_cell_length_c 4.0848(7)
+'Davey, W.P.'
+'Wick, F.G.'
+_cell_length_a 4.12
+_cell_length_b 4.12
+_cell_length_c 4.12
 _cell_angle_alpha 90.
 _cell_angle_beta 90.
 _cell_angle_gamma 90.
-_cell_volume 68.15
+_cell_volume 69.93
 _cell_formula_units_Z 1
 _symmetry_space_group_name_H-M 'P m -3 m'
 _symmetry_Int_Tables_number 221
-_refine_ls_R_factor_all 0.0139
 loop_
 _symmetry_equiv_pos_site_id
 _symmetry_equiv_pos_as_xyz
@@ -103,6 +101,6 @@ _atom_site_fract_z
 _atom_site_B_iso_or_equiv
 _atom_site_occupancy
 _atom_site_attached_hydrogens
-Cs1 Cs1+ 1 a 0 0 0 0.0045446(7) 1. 0
-Cl1 Cl1- 1 b 0.5 0.5 0.5 0.006206(19) 1. 0
-#End of TTdata_257256-ICSD
+Cs1 Cs1+ 1 a 0 0 0 . 1. 0
+Cl1 Cl1- 1 b 0.5 0.5 0.5 . 1. 0
+#End of TTdata_53847-ICSD

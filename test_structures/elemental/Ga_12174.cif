@@ -1,15 +1,17 @@
 
 #(C) 2018 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
-data_198104-ICSD
-_database_code_ICSD 198104
-_audit_creation_date 2018-02-01
-_chemical_name_systematic 'Gallium - HP II'
+data_12174-ICSD
+_database_code_ICSD 12174
+_audit_creation_date 1980-01-01
+_audit_update_record 2005-10-01
+_chemical_name_systematic 'Gallium - III, HP'
 _chemical_formula_structural Ga
 _chemical_formula_sum Ga1
 _chemical_name_structure_type In
-_chemical_name_mineral Gallium
-_exptl_crystal_density_diffrn 6.59
-_publ_section_title 'On the crystal structures of Cs II and Ga II'
+_exptl_crystal_density_diffrn 6.57
+_cell_measurement_temperature 298.
+_cell_measurement_pressure 2800000.
+_publ_section_title 'Crystal structures of Ga(II) and Ga(III)'
 loop_
 _citation_id
 _citation_journal_full
@@ -18,19 +20,17 @@ _citation_journal_volume
 _citation_page_first
 _citation_page_last
 _citation_journal_id_ASTM
-primary 'Journal of Chemical Physics' 1971 54 2768 2770 JCPSA6
+primary 'Journal of Chemical Physics' 1978 68 1221 1223 JCPSA6
 loop_
 _publ_author_name
-'Weir, C.E.'
-'Piermarini, G.J.'
-'Block, S.'
-_cell_length_a 2.808(3)
-_cell_length_b 2.808(3)
-_cell_length_c 4.458(3)
+'Bosio, L.'
+_cell_length_a 2.813(3)
+_cell_length_b 2.813(3)
+_cell_length_c 4.452(5)
 _cell_angle_alpha 90.
 _cell_angle_beta 90.
 _cell_angle_gamma 90.
-_cell_volume 35.15
+_cell_volume 35.23
 _cell_formula_units_Z 2
 _symmetry_space_group_name_H-M 'I 4/m m m'
 _symmetry_Int_Tables_number 139
@@ -84,5 +84,5 @@ _atom_site_fract_z
 _atom_site_B_iso_or_equiv
 _atom_site_occupancy
 _atom_site_attached_hydrogens
-Ga1 Ga0+ 2 a 0 0 0 . 1 0
-#End of TTdata_198104-ICSD
+Ga1 Ga0+ 2 a 0 0 0 . 1. 0
+#End of TTdata_12174-ICSD
