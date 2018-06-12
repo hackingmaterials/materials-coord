@@ -3,10 +3,13 @@ import abc
 import os
 import glob
 import pandas as pd
+from collections import Counter
+from collections import OrderedDict
+import seaborn as sns
+import matplotlib.pyplot as plt
 from pymatgen.core.structure import Structure
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
-from collections import OrderedDict
-from pymatgen.analysis.local_env import NearNeighbors, VoronoiNN_modified
+from pymatgen.analysis.local_env import NearNeighbors
 
 module_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)))
 
@@ -26,7 +29,7 @@ class Benchmark(object):
     """
 
     def __init__(self, methods, structure_groups="elemental", custom_set=None,
-                 unique_sites=True, nround=3, use_weights=False,
+                 unique_sites=True, nround=2, use_weights=False,
                  cation_anion=False, anion_cation=False):
 
         self.methods = methods
@@ -35,7 +38,6 @@ class Benchmark(object):
         self.test_structures = OrderedDict()
         self.cations = OrderedDict()
         self.anions = OrderedDict()
-        self.metals = OrderedDict()
         if custom_set:
             self.structure_groups = None
             self.custom = custom_set
@@ -143,7 +145,7 @@ class Benchmark(object):
                                             tup[1].pop(tup[0])
                     m._cns[name] = cns
 
-    def report(self, totals=False, separate_columns=False, max_sites=5):
+    def report(self, totals=False, separate_columns=True, max_sites=5):
         """
         Reports the benchmark as a pandas DataFrame. This is the recommended method for pulling the
         CNs obtained by each method.
@@ -198,13 +200,12 @@ class Benchmark(object):
                                     b.append(("null", {}))
                             for z in range(max_sites):
                                 data[m.__class__.__name__ + str(z)][a] = b[z][1]
-
                 else:
                     data[m.__class__.__name__] = m._cns
 
-        index = self.test_structures.keys()
-
         return pd.DataFrame(data=data)
+
+        #index = self.test_structures.keys()
         #return pd.DataFrame(data=data, index=list(index)) <-- doesn't work for some reason???
 
     @staticmethod
@@ -217,6 +218,215 @@ class Benchmark(object):
                 pass
             else:
                 d[k]=round(v,ndigits)
+
+    #@staticmethod
+    #def _ionlist(el):
+
+
+class NbFuncs(Benchmark):
+
+    def __init__(self, Benchmark, unique_sites):
+
+        self.df = Benchmark.report()
+        self.methods = Benchmark.methods
+        self.test_structures = Benchmark.test_structures
+        self.cation_anion = Benchmark.cation_anion
+        self.anion_cation = Benchmark.anion_cation
+        self.nround = Benchmark.nround
+        self.unique_sites = unique_sites
+
+        self.nohi = [i for i in list(self.df.columns) if 'HumanInterpreter' not in i]
+        self.hi = [i for i in list(self.df.columns) if 'HumanInterpreter' in i]
+
+    def sub_hi(self):
+        """
+        element-wise subtraction of human interpreted cn
+        from nn algo calculated nn = error in nn algo-calculated cn
+        """
+
+        df = {}
+        for i in range(len(self.nohi)):
+            cndict = {}
+            for j in range(self.unique_sites):
+                if str(j) in self.nohi[i]:
+                    site = self.df[self.nohi[i]]
+                    hisite = self.df[self.hi[j]]
+                    for k in range(len(site)):
+                        coord = [z for z in hisite[k].values()]
+                        if all(isinstance(z, float) for z in coord) or not coord:
+                            temp = Counter(site[k])
+                            temp.subtract(hisite[k])
+                            cndict[site.keys()[k]] = dict(temp)
+                        else:
+                            t = list(site[k].values())[0]
+                            lsub = []
+                            dsub = {}
+                            for cn in list(hisite[k].values())[0]:
+                                tsub = t - cn
+                                lsub.append(tsub)
+                            minsub = min(map(abs, lsub))
+                            dsub[list(hisite[k].keys())[0]] = minsub
+                            cndict[site.keys()[k]] = dict(dsub)
+                    df[self.nohi[i]] = dict(cndict)
+
+        return pd.DataFrame(df)
+
+    def abs_df(self):
+        """
+        abs value of error of nn-algo calculated cn
+        """
+        df = self.sub_hi()
+
+        for key, val in df.items():
+            for i, j in val.items():
+                if j != {}:
+                    absval = map(abs, j.values())
+                else:
+                    absval = {}
+                zip_absval = dict(zip(j.keys(), absval))
+                val[i] = zip_absval
+            df[key] = val
+
+        return df
+
+    def cif_stats(self):
+
+        df = self.abs_df()
+
+        ts = os.path.join(module_dir, "..", "test_structures")
+
+        structures = []
+        for i in df.index:
+            find_structure = glob.glob(os.path.join(ts, "*", i + "*"))
+            s = Structure.from_file(find_structure[0])
+            structures.append(s)
+
+        us = []
+        for i in structures:
+            es = SpacegroupAnalyzer(i).get_symmetrized_structure().equivalent_sites
+            if self.cation_anion:
+                ces = [x for x in es if '+' in x[0].species_string]
+                sites = [len(x) for x in ces]
+            else:
+                aes = [x for x in es if '-' in x[0].species_string]
+                sites = [len(x) for x in aes]
+            if len(sites) < self.unique_sites:
+                sites.extend([0] * (self.unique_sites - len(sites)))
+            us.append(sites)
+
+        summed = []
+        for i in us:
+            summed.append(sum(i))
+
+        if self.cation_anion:
+            df['unique site cations'] = us
+            df['total cations'] = summed
+        else:
+            df['unique site anions'] = us
+            df['total anions'] = summed
+
+        return df
+
+    def mult_equiv(self):
+
+        df = self.cif_stats()
+
+        counter = 0
+        for nn in df.keys()[:-2]:
+            num_equiv = [[num for num in equiv] for equiv in df['unique site cations'
+                                                            or df['unique site anions']]]
+            other_counter = 0
+            for j in df[nn]:
+                j = j.update((x, [y]*num_equiv[other_counter][counter]) for x, y in j.items())
+                other_counter += 1
+                if other_counter == int(len(df.index)):
+                    other_counter = 0
+            counter += 1
+            if counter == self.unique_sites:
+                counter = 0
+
+        return df
+
+    def merge(self):
+
+        df = self.mult_equiv()
+
+        merged = {}
+        for m in self.methods:
+            if m.__class__.__name__ == 'HumanInterpreter':
+                pass
+            else:
+                algo = df[[i for i in list(df.columns) if m.__class__.__name__ in i]]
+                extended = {}
+                count = 0
+                for a in algo[:len(algo.index)].values:
+                    extension = {}
+                    for i in a:
+                        for key, val in i.items():
+                            if key in extension.keys():
+                                extension[key].extend(val)
+                            else:
+                                extension[key] = val
+                    extended[algo.index[count]] = extension
+                    count += 1
+                merged[m.__class__.__name__] = dict(extended)
+
+        return pd.DataFrame(merged)
+
+    def total(self):
+
+        df = self.merge()
+
+        totsum = {}
+        for algo, mats in df.items():
+            matsum = {}
+            for mat, coord in mats.items():
+                for coords, li in coord.items():
+                    sumli = sum(li)
+                    matsum[mat] = sumli
+                totsum[algo] = dict(matsum)
+
+        return pd.DataFrame(totsum)
+
+    def div(self):
+
+        df = pd.concat([self.total(), self.cif_stats()[self.cif_stats().columns[-1:]]], axis=1)
+
+        for m in self.methods:
+            if m.__class__.__name__ == "HumanInterpreter":
+                pass
+            else:
+                algo = df[m.__class__.__name__]
+                if self.cation_anion:
+                    div = algo.divide(df['total cations'])
+                else:
+                    div = algo.divide(df['total anions'])
+                df[m.__class__.__name__] = div
+
+        if self.cation_anion:
+            df = df.drop('total cations', axis=1)
+        else:
+            df = df.drop('total anions', axis=1)
+
+        df = df.round(self.nround)
+
+        return df
+
+    def final(self):
+
+        df = self.div()
+
+        fig, ax = plt.subplots(figsize=(20, 10))
+
+        sns.set(font='Times New Roman')
+        sns.set(font_scale=1)
+
+        hm = sns.heatmap(df, annot=True, cmap="BuPu", vmax=10)
+
+        ax.set_xticklabels(df.columns.tolist(), rotation=60)
+        ax.set_yticklabels(df.index.tolist())
+
+        plt.show()
 
 class CNBase:
     __metaclass__ = abc.ABCMeta
