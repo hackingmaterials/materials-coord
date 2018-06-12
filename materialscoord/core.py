@@ -333,8 +333,10 @@ class NbFuncs(Benchmark):
 
         counter = 0
         for nn in df.keys()[:-2]:
-            num_equiv = [[num for num in equiv] for equiv in df['unique site cations'
-                                                            or df['unique site anions']]]
+            if self.cation_anion:
+                num_equiv = [[num for num in equiv] for equiv in df['unique site cations']]
+            else:
+                num_equiv = [[num for num in equiv] for equiv in df['unique site anions']]
             other_counter = 0
             for j in df[nn]:
                 j = j.update((x, [y]*num_equiv[other_counter][counter]) for x, y in j.items())
