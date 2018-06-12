@@ -5,8 +5,6 @@ import glob
 import pandas as pd
 from collections import Counter
 from collections import OrderedDict
-import seaborn as sns
-import matplotlib.pyplot as plt
 from pymatgen.core.structure import Structure
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 from pymatgen.analysis.local_env import NearNeighbors
@@ -47,6 +45,7 @@ class Benchmark(object):
                 self._load_test_structures(g)
 
         self.unique_sites = unique_sites
+        self.nsites = None
         self.nround = nround
         self.use_weights = use_weights
         self.cation_anion = cation_anion
@@ -105,6 +104,7 @@ class Benchmark(object):
         """
         Performs the benchmark calculations.
         """
+        nsites = []
         for m in self.methods:
             for name, structure in self.test_structures.items():
                 cns = []
@@ -144,8 +144,10 @@ class Benchmark(object):
                                         if tup[0] in tup[1].keys():
                                             tup[1].pop(tup[0])
                     m._cns[name] = cns
+                nsites.append(len(cns))
+        self.nsites = max(nsites)
 
-    def report(self, totals=False, separate_columns=True, max_sites=5):
+    def report(self, totals=False, separate_columns=True):
         """
         Reports the benchmark as a pandas DataFrame. This is the recommended method for pulling the
         CNs obtained by each method.
@@ -168,15 +170,15 @@ class Benchmark(object):
                     s_dict[k] = rev_cns
 
                 if separate_columns:
-                    for i in range(max_sites):
+                    for i in range(self.nsites):
                         data[m.__class__.__name__ + str(i)] = {}
 
                     for kc, kv in s_dict.items():
                         l = len(kv)
-                        if l < max_sites:
-                            for i in range(max_sites - l):
+                        if l < self.nsites:
+                            for i in range(self.nsites - l):
                                 kv.append(("null", 0))
-                        for i in range(max_sites):
+                        for i in range(self.nsites):
                             data[m.__class__.__name__ + str(i)][kc] = kv[i][1]
                 else:
                     data[m.__class__.__name__] = s_dict
@@ -184,7 +186,7 @@ class Benchmark(object):
             else:
                 if separate_columns:
                     s_dict = {}
-                    for i in range(max_sites):
+                    for i in range(self.nsites):
                         data[m.__class__.__name__ + str(i)] = {}
                     for j in m._cns:
                         temp = []
@@ -195,18 +197,15 @@ class Benchmark(object):
 
                         for a, b in s_dict.items():
                             l = len(b)
-                            if l < max_sites:
-                                for i in range(max_sites - l):
+                            if l < self.nsites:
+                                for i in range(self.nsites - l):
                                     b.append(("null", {}))
-                            for z in range(max_sites):
+                            for z in range(self.nsites):
                                 data[m.__class__.__name__ + str(z)][a] = b[z][1]
                 else:
                     data[m.__class__.__name__] = m._cns
 
         return pd.DataFrame(data=data)
-
-        #index = self.test_structures.keys()
-        #return pd.DataFrame(data=data, index=list(index)) <-- doesn't work for some reason???
 
     @staticmethod
     def _roundcns(d, ndigits):
@@ -225,7 +224,7 @@ class Benchmark(object):
 
 class NbFuncs(Benchmark):
 
-    def __init__(self, Benchmark, unique_sites):
+    def __init__(self, Benchmark):
 
         self.df = Benchmark.report()
         self.methods = Benchmark.methods
@@ -233,7 +232,7 @@ class NbFuncs(Benchmark):
         self.cation_anion = Benchmark.cation_anion
         self.anion_cation = Benchmark.anion_cation
         self.nround = Benchmark.nround
-        self.unique_sites = unique_sites
+        self.nsites = Benchmark.nsites
 
         self.nohi = [i for i in list(self.df.columns) if 'HumanInterpreter' not in i]
         self.hi = [i for i in list(self.df.columns) if 'HumanInterpreter' in i]
@@ -247,7 +246,7 @@ class NbFuncs(Benchmark):
         df = {}
         for i in range(len(self.nohi)):
             cndict = {}
-            for j in range(self.unique_sites):
+            for j in range(self.nsites):
                 if str(j) in self.nohi[i]:
                     site = self.df[self.nohi[i]]
                     hisite = self.df[self.hi[j]]
@@ -310,8 +309,8 @@ class NbFuncs(Benchmark):
             else:
                 aes = [x for x in es if '-' in x[0].species_string]
                 sites = [len(x) for x in aes]
-            if len(sites) < self.unique_sites:
-                sites.extend([0] * (self.unique_sites - len(sites)))
+            if len(sites) < self.nsites:
+                sites.extend([0] * (self.nsites - len(sites)))
             us.append(sites)
 
         summed = []
@@ -344,7 +343,7 @@ class NbFuncs(Benchmark):
                 if other_counter == int(len(df.index)):
                     other_counter = 0
             counter += 1
-            if counter == self.unique_sites:
+            if counter == self.nsites:
                 counter = 0
 
         return df
@@ -410,25 +409,16 @@ class NbFuncs(Benchmark):
         else:
             df = df.drop('total anions', axis=1)
 
-        df = df.round(self.nround)
-
         return df
 
     def final(self):
 
         df = self.div()
 
-        fig, ax = plt.subplots(figsize=(20, 10))
+        df.loc['total'] = df.sum(axis=0)
+        df = df.round(self.nround)
 
-        sns.set(font='Times New Roman')
-        sns.set(font_scale=1)
-
-        hm = sns.heatmap(df, annot=True, cmap="BuPu", vmax=10)
-
-        ax.set_xticklabels(df.columns.tolist(), rotation=60)
-        ax.set_yticklabels(df.index.tolist())
-
-        plt.show()
+        return df
 
 class CNBase:
     __metaclass__ = abc.ABCMeta
@@ -490,7 +480,6 @@ class HumanInterpreter(CNBase):
 
     def compute(self, structure, n):
         for v in self._params.values():
-            #print(v)
             if structure == v[-1]:
                 if len(v[:-1]) != len(v[-1]):
                     # means possibly reduced structure is used by human interpreter
@@ -498,7 +487,6 @@ class HumanInterpreter(CNBase):
                     # index in the list of unique sites
                     from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
                     es = SpacegroupAnalyzer(structure).get_symmetrized_structure().equivalent_sites
-                    #print [x[0] for x in es]
                     sites = [structure.index(x[0]) for x in es]
                     n = sites.index(n)
                 if n < v[-2]:
