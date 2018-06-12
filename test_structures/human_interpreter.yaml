@@ -811,9 +811,11 @@ ZnS_zincblende_651455:
 As_16518:
 # Schiferl, D., Barrett, C.S. (1969) The crystal structure of arsenic at 4.2, 78 and 299 grad K.
 # Journal of Applied Crystallography 2:30 - 36.
-# notes: not as easy to see 6 coordination in crystalmaker with this cif file
+# notes: not as easy to see 6 coordination in crystalmaker with this cif file, looks like either 3 or 6-coordinated
     - As:
-        As: 6.0
+        As:
+            - 3.0
+            - 6.0
 
 C_diamond_52054:
 # Yamanaka, T., Morimoto, S. (1996)  Isotope effect on anharmonic thermal atomic vibration and k-refinemant of 12C and 13C diamond.
@@ -849,9 +851,7 @@ Hg_104296:
 # Amand, R.S., Giessen, B.C. (1978) On the metastable system mercury-thallium.
 # Journal of the Less-Common Metals 58:161 - 172.
     - Hg:
-        Hg:
-           - 2.0
-           - 8.0
+        Hg: 6.0
 
 La_43573:
 # Hanak, J.J., Daane, A.H. (1961) High temperature allotropy and thermal expansion of the rare earth metals.
