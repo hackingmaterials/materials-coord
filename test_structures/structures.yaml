@@ -621,6 +621,11 @@ data:
         "MPID": mp-1124
         "ICSD": 46006
         "reference": 'Ohba, T., Kitano, Y., Komura, Y. (1984) The charge-density study of the Laves phases, Mg Zn2 and Mg Cu2. Acta Crystallographica, Section C: Crystal Structure Communications 40:1 - 5.'
+  misc:
+    structures:
+    # these structures don't have ICSD equivalents
+      C3N_mp-1014297_computed
+      Rb3Cr_mp-975045_computed
   mixed:
     structures:
       Ca2MgSi2O7_melilite_50065:

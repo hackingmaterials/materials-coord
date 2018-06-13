@@ -5,7 +5,7 @@ from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 
 module_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)))
 
-find_structure = glob.glob(os.path.join(module_dir, "A2BX4", "CaFe2O4_166080"+"*"))
+find_structure = glob.glob(os.path.join(module_dir, "misc", "Rb3Cr_mp-975045_computed"+"*"))
 print(find_structure)
 s = Structure.from_file(find_structure[0])
 es = SpacegroupAnalyzer(s).get_symmetrized_structure().equivalent_sites

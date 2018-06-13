@@ -97,7 +97,11 @@ class Benchmark(object):
             self.cations[name] = cations
             self.anions[name] = anions
 
-            structure.remove_oxidation_states()
+            for m in self.methods:
+                if m.__class__.__name__ != 'MinimumVIRENN':
+                    structure.remove_oxidation_states()
+                else:
+                    pass
             self.test_structures[name] = structure
 
     def benchmark(self):
@@ -217,10 +221,6 @@ class Benchmark(object):
                 pass
             else:
                 d[k]=round(v,ndigits)
-
-    #@staticmethod
-    #def _ionlist(el):
-
 
 class NbFuncs(Benchmark):
 

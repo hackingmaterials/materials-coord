@@ -978,6 +978,26 @@ MgZn2_laves_46006:
         Mg: 6.0
         Zn: 6.0
 
+C3N_mp-1014297_computed:
+# mp user-submitted structure
+# for internal use
+    - C:
+        C: 2.0
+        N: 1.0
+    - N:
+        C: 3.0
+        N: 0.0
+
+Rb3Cr_mp-975045_computed:
+# mp user-submitted structure
+# for internal use
+    - Rb:
+        Rb: 8.0
+        Cr: 4.0
+    - Cr:
+        Rb: 12.0
+        Cr: 0.0
+
 Ca2MgSi2O7_melilite_50065:
 # Yang, H., Hazen, R.M., Downs, R.T., Finger, L.W. (1997)
 # Structural change associated with the incommensurate-normal phase transition in akermanite, Ca2 Mg Si2 O7, at high pressure .

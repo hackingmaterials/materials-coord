@@ -1,0 +1,78 @@
+
+#(C) 2018 by FIZ Karlsruhe - Leibniz Institute for Information Infrastructure.  All rights reserved.
+data_180025-ICSD
+_database_code_ICSD 180025
+_audit_creation_date 2011-08-01
+_chemical_name_systematic 'Hafnium titanium tetraoxide'
+_chemical_formula_structural '(Hf Ti) O4'
+_chemical_formula_sum 'Hf1 O4 Ti1'
+_chemical_name_structure_type PbO2-alpha
+_exptl_crystal_density_diffrn 7.25
+_publ_section_title
+
+;
+Electronic structure of Zr Ti O4 and Hf Ti O4: self-consistent cluster
+calculations and X-ray spectroscopy studies
+;
+loop_
+_citation_id
+_citation_journal_full
+_citation_year
+_citation_journal_volume
+_citation_page_first
+_citation_page_last
+_citation_journal_id_ASTM
+primary 'Journal of Physics and Chemistry of Solids' 2011 72 83 89 JPCSAW
+loop_
+_publ_author_name
+'Lavrentyev, A.A.'
+'Gabrelian, B.V.'
+'Shkumat, P.N.'
+'Nikiforov, I.Ya.'
+'Bondarenko, T.N.'
+'Kopylova, E.I.'
+'Khyzhun, O.Yu.'
+'Karpets, M.V.'
+'Rehr, J.J.'
+_cell_length_a 4.745(1)
+_cell_length_b 5.565(2)
+_cell_length_c 5.041(1)
+_cell_angle_alpha 90.
+_cell_angle_beta 90.
+_cell_angle_gamma 90.
+_cell_volume 133.11
+_cell_formula_units_Z 2
+_symmetry_space_group_name_H-M 'P b c n'
+_symmetry_Int_Tables_number 60
+loop_
+_symmetry_equiv_pos_site_id
+_symmetry_equiv_pos_as_xyz
+1 'x, -y, z+1/2'
+2 '-x+1/2, y+1/2, z'
+3 'x+1/2, y+1/2, -z+1/2'
+4 '-x, -y, -z'
+5 '-x, y, -z+1/2'
+6 'x+1/2, -y+1/2, -z'
+7 '-x+1/2, -y+1/2, z+1/2'
+8 'x, y, z'
+loop_
+_atom_type_symbol
+_atom_type_oxidation_number
+Hf4+ 4
+Ti4+ 4
+O2- -2
+loop_
+_atom_site_label
+_atom_site_type_symbol
+_atom_site_symmetry_multiplicity
+_atom_site_Wyckoff_symbol
+_atom_site_fract_x
+_atom_site_fract_y
+_atom_site_fract_z
+_atom_site_B_iso_or_equiv
+_atom_site_occupancy
+_atom_site_attached_hydrogens
+Hf1 Hf4+ 4 c 0 0.316 0.25 . 0.5 0
+Ti1 Ti4+ 4 c 0 0.316 0.25 . 0.5 0
+O1 O2- 8 d 0.271 0.114 0.0788 . 1. 0
+#End of TTdata_180025-ICSD
