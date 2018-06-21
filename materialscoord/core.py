@@ -152,15 +152,12 @@ class Benchmark(object):
                                         pass
                                     else:
                                         cns = self._popel(cns, cat)
-                                        print(cns)
                         if self.anion_cation:
                             for mat, an in self.anions.items():
                                 if name == mat:
                                     cns = self._popel(cns, an)
                     m._cns[name] = cns
                 nsites.append(len(cns))
-            print(m._cns)
-            print('--------')
         self.nsites = max(nsites)
 
     @staticmethod

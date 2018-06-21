@@ -407,15 +407,15 @@ BAsO4_highcristobalite_26891:
 # Zeitschrift fuer Physikalische Chemie, Abteilung B: Chemie der Elementarprozesse, Aufbau der Materie  24:215 - 240.
     - B:
         B: 0.0
-        P: 0.0
+        As: 0.0
         O: 4.0
-    - P:
+    - As:
         B: 0.0
-        P: 0.0
+        As: 0.0
         O: 4.0
     - O:
         B: 1.0
-        P: 1.0
+        As: 1.0
         O: 0.0
 
 BaZnF4_182604:
