@@ -27,6 +27,9 @@ class Benchmark(object):
     :param cation_anion (bool): Calculates only cation-anion interactions and interactions between
            atoms without oxidation states i.e. metals. Defaults to False.
     :param anion_cation (bool): Calculates only anion-cation interactions. Defaults to False.
+
+    TODO: if cation_anion and anion_cation are both True or both False... what happens? (haven't tested)
+    TODO: right now, to calculate cation_anion + anion_cation interactions, use jupyter nb to sum
     """
 
     def __init__(self, methods, structure_groups="elemental", custom_set=None,
@@ -160,6 +163,47 @@ class Benchmark(object):
                 nsites.append(len(cns))
         self.nsites = max(nsites)
 
+    def report(self):
+        """
+        :returns cn benchmarks as pandas dataframe. This is the recommended method for pulling the CNs
+                 obtained by each method. Used in NBFuncs to calculate benchmark score.
+        """
+        data = {}
+        for m in self.methods:
+            sc_dict = {}
+            for i in range(self.nsites):
+                data[m.__class__.__name__ + str(i)] = {}
+            for j in m._cns:
+                temp = []
+                for mat, ions in m._cns[j]:
+                    if isinstance(ions, dict):
+                        temp.append((mat, ions))
+                sc_dict[j] = temp
+
+                for key, val in sc_dict.items():
+                    l = len(val)
+                    if l < self.nsites:
+                        for k in range(self.nsites - l):
+                            val.append(("null", {}))
+                    for z in range(self.nsites):
+                        data[m.__class__.__name__ + str(z)][key] = val[z][1]
+        return pd.DataFrame(data=data)
+
+    @staticmethod
+    def _roundcns(d, ndigits):
+        """
+        rounds all values in a dict to ndigits. Use when use_weights = True.
+
+        :param d (dict): dictionary of values to be rounded
+        :param ndigits (int): number of digits to round to
+        :returns dict with rounded values
+        """
+        for k,v in d.items():
+            if isinstance(v, list):
+                pass
+            else:
+                d[k]=round(v,ndigits)
+
     @staticmethod
     def _popel(cns, ion):
         """
@@ -171,7 +215,7 @@ class Benchmark(object):
                Ex: [('Ca', {'O': 8.0}), ('W', {'O': 4.0}), ('O', {'W': 1.0})] for CaWO4_scheelite_15586
         :param ion (list): list of ions (cations/anions) in structure.
                Ex: ['Ca', 'W'] are cations for CaWO4_scheelite_15586
-        :return: cn dict with only cation-anion or anion-cation interactions.
+        :returns cn dict with only cation-anion or anion-cation interactions.
                Ex: [('Ca', {u'O': 8.0}), ('W', {u'O': 4.0})] for cation-anion interactions of CaWO4_scheelite_15586
         """
         cns = [i for i in cns if i[0] in ion]
@@ -180,78 +224,6 @@ class Benchmark(object):
                 if el in ion:
                     tup[1].pop(el)
         return cns
-
-    def report(self, totals=False, separate_columns=True):
-        """
-        Reports the benchmark as a pandas dataframe. This is the recommended method for pulling the
-        CNs obtained by each method.
-
-        Args:
-            totals (bool): option to report only total CNs of a ite. Defaults to False, meaning element-wise CN
-                is listed.
-            separate_columns (bool): option to format the dataframe such that each total CN is in a separate column.
-        """
-        data = {}
-        for m in self.methods:
-            if totals:
-                s_dict = {}
-                for k in m._cns:
-                    rev_cns = []
-                    for i, j in m._cns[k]:
-                        rev_cns.append((i, sum(j.values())))
-                    s_dict[k] = rev_cns
-
-                if separate_columns:
-                    for i in range(self.nsites):
-                        data[m.__class__.__name__ + str(i)] = {}
-
-                    for kc, kv in s_dict.items():
-                        l = len(kv)
-                        if l < self.nsites:
-                            for i in range(self.nsites - l):
-                                kv.append(("null", 0))
-                        for i in range(self.nsites):
-                            data[m.__class__.__name__ + str(i)][kc] = kv[i][1]
-                else:
-                    data[m.__class__.__name__] = s_dict
-
-            else:
-                if separate_columns:
-                    s_dict = {}
-                    for i in range(self.nsites):
-                        data[m.__class__.__name__ + str(i)] = {}
-                    for j in m._cns:
-                        temp = []
-                        for s, t in m._cns[j]:
-                            if isinstance(t, dict):
-                                temp.append((s, t))
-                        s_dict[j] = temp
-
-                        for a, b in s_dict.items():
-                            l = len(b)
-                            if l < self.nsites:
-                                for i in range(self.nsites - l):
-                                    b.append(("null", {}))
-                            for z in range(self.nsites):
-                                data[m.__class__.__name__ + str(z)][a] = b[z][1]
-                else:
-                    data[m.__class__.__name__] = m._cns
-
-        return pd.DataFrame(data=data)
-
-    @staticmethod
-    def _roundcns(d, ndigits):
-        """
-        rounds all values in a dict to ndigits. Use when use_weights = True.
-
-        :param d (dict): dictionary of values to be rounded
-        :param ndigits (int): number of digits to round to
-        """
-        for k,v in d.items():
-            if isinstance(v, list):
-                pass
-            else:
-                d[k]=round(v,ndigits)
 
 class NbFuncs(Benchmark):
     """
@@ -271,9 +243,6 @@ class NbFuncs(Benchmark):
         self.nround = Benchmark.nround
         self.nsites = Benchmark.nsites
 
-        self.nohi = [i for i in list(self.df.columns) if 'HumanInterpreter' not in i]
-        self.hi = [i for i in list(self.df.columns) if 'HumanInterpreter' in i]
-
     def sub_hi(self):
         """
         Element-wise subtraction of human interpreted cn from nn algo calculated nn = error in nn algo-calculated cn.
@@ -284,8 +253,10 @@ class NbFuncs(Benchmark):
         Ex: Ga can either be 4-coordinated or 12-coordinated. If an nn algo reports the coordination as being
         11-coordinated, the error is 1.
 
-        Returns pandas dataframe.
+        :returns pandas dataframe of error in nn algo-calculated cn.
         """
+        self.nohi = [i for i in list(self.df.columns) if 'HumanInterpreter' not in i]
+        self.hi = [i for i in list(self.df.columns) if 'HumanInterpreter' in i]
 
         df = {}
         for i in range(len(self.nohi)):
