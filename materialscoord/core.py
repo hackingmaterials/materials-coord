@@ -30,6 +30,7 @@ class Benchmark(object):
 
     TODO: if cation_anion and anion_cation are both True or both False... what happens? (haven't tested)
     TODO: right now, to calculate cation_anion + anion_cation interactions, use jupyter nb to sum
+    TODO: test out custom_set, see Murat's documentation
     """
 
     def __init__(self, methods, structure_groups="elemental", custom_set=None,
@@ -58,15 +59,9 @@ class Benchmark(object):
         self.anion_cation = anion_cation
 
         for m in self.methods:
-            assert isinstance(m, (NearNeighbors, CNBase))
+            assert isinstance(m, (NearNeighbors, HIBase))
             m._cns = {}
         print("Initialization successful.")
-
-        p = os.path.join(module_dir, "..", "test_structures", "human_interpreter.yaml")
-
-        with open(p) as f:
-            hi = yaml.load(f)
-        self.hi = hi
 
     def _load_test_structures(self, group):
         """
@@ -102,9 +97,7 @@ class Benchmark(object):
             for i in structure:
                 i = str(i).split(']', 1)[1]
                 if i.endswith('+'):
-                    if '0' in i: # metals
-                        pass
-                    else:
+                    if '0' not in i: # metals
                         el = ''.join(x for x in str(i) if x.isalpha())
                         if el not in cations:
                             cations.append(el)
@@ -136,57 +129,54 @@ class Benchmark(object):
                 else:
                     sites = range(len(structure))
 
-                for key, val in self.hi.items():
-                    if name == key:
-                        for j in sites:
-                            if isinstance(m, NearNeighbors):
-                                tmpcn = m.get_cn_dict(structure, j, self.use_weights)
-                            else:
-                                tmpcn = m.compute(structure, j)
-                                if tmpcn == "null":
-                                    continue
-                            if self.nround:
-                                self._roundcns(tmpcn, self.nround)
-                            cns.append((structure[j].species_string, tmpcn))
-                        if self.cation_anion:
-                            for mat, cat in self.cations.items():
-                                if name == mat:
-                                    if not cat: # metals
-                                        pass
-                                    else:
-                                        cns = self._popel(cns, cat)
-                        if self.anion_cation:
-                            for mat, an in self.anions.items():
-                                if name == mat:
-                                    cns = self._popel(cns, an)
-                    m._cns[name] = cns
-                nsites.append(len(cns))
+                for j in sites:
+                    if isinstance(m, NearNeighbors):
+                        tmpcn = m.get_cn_dict(structure, j, self.use_weights)
+                    else:
+                        tmpcn = m.compute(structure, j)
+                        if tmpcn == "null":
+                            continue
+                    if self.nround:
+                        self._roundcns(tmpcn, self.nround)
+                    cns.append((structure[j].species_string, tmpcn))
+                if self.cation_anion:
+                    for mat, cat in self.cations.items():
+                        if (name == mat) and cat:
+                            cns = self._popel(cns, cat)
+                elif self.anion_cation:
+                    for mat, an in self.anions.items():
+                        if name == mat:
+                            cns = self._popel(cns, an)
+                m._cns[name] = cns
+            nsites.append(len(cns))
         self.nsites = max(nsites)
 
     def report(self):
         """
         :returns cn benchmarks as pandas dataframe. This is the recommended method for pulling the CNs
                  obtained by each method. Used in NBFuncs to calculate benchmark score.
+
+        TODO: Perhaps it would be better to report the tuple (site, {el: coord}). Or does it matter? Will think about this.
         """
         data = {}
         for m in self.methods:
             sc_dict = {}
-            for i in range(self.nsites):
-                data[m.__class__.__name__ + str(i)] = {}
-            for j in m._cns:
+            for site in range(self.nsites):
+                data[m.__class__.__name__ + str(site)] = {}
+            for struc in m._cns:
                 temp = []
-                for mat, ions in m._cns[j]:
+                for mat, ions in m._cns[struc]:
                     if isinstance(ions, dict):
                         temp.append((mat, ions))
-                sc_dict[j] = temp
+                sc_dict[struc] = temp
 
-                for key, val in sc_dict.items():
-                    l = len(val)
+                for struc, ions in sc_dict.items():
+                    l = len(ions)
                     if l < self.nsites:
-                        for k in range(self.nsites - l):
-                            val.append(("null", {}))
-                    for z in range(self.nsites):
-                        data[m.__class__.__name__ + str(z)][key] = val[z][1]
+                        for emp_site in range(self.nsites - l):
+                            ions.append(("null", {}))
+                    for site in range(self.nsites):
+                        data[m.__class__.__name__ + str(site)][struc] = ions[site][1]
         return pd.DataFrame(data=data)
 
     @staticmethod
@@ -199,9 +189,7 @@ class Benchmark(object):
         :returns dict with rounded values
         """
         for k,v in d.items():
-            if isinstance(v, list):
-                pass
-            else:
+            if not isinstance(v, list):
                 d[k]=round(v,ndigits)
 
     @staticmethod
@@ -229,12 +217,13 @@ class NbFuncs(Benchmark):
     """
     Assigns a score for how each NN method performs on a specific structure and reports all scores in a pandas
     dataframe. The score is calculated by taking the summation of the absolute value error in CN prediction
-    (CN_observed - CN expected) multiplied by the degeneracy over the number cations for each structure. The
+    (CN_observed - CN_expected) multiplied by the degeneracy over the number cations for each structure. The
     following functions are used to calculate the scores based on information from Benchmark.
     """
 
     def __init__(self, Benchmark):
 
+        ### there's a better way to do this right?
         self.df = Benchmark.report()
         self.methods = Benchmark.methods
         self.test_structures = Benchmark.test_structures
@@ -245,26 +234,27 @@ class NbFuncs(Benchmark):
 
     def sub_hi(self):
         """
-        Element-wise subtraction of human interpreted cn from nn algo calculated nn = error in nn algo-calculated cn.
-        Ex:
+        Element-wise subtraction of human interpreted cn from nn algo calculated nn = error
+        in nn algo-calculated cn (CN_observed - CN_expected). Ex: in CaF2, Ca is coordinated
+        to 8 F atoms. If nn-algo reports the coordination as 5, the error is 3 ({F: -3})
 
         For structures with several acceptable human-interpreted cn values,
         the nn algo-calculated cn closest to the human-interpreted cn is used.
-        Ex: Ga can either be 4-coordinated or 12-coordinated. If an nn algo reports the coordination as being
-        11-coordinated, the error is 1.
+        Ex: Ga can either be 4-coordinated or 12-coordinated. If an nn algo reports
+        the coordination as being 13-coordinated, the error is 1 ({Ga: 1}).
 
         :returns pandas dataframe of error in nn algo-calculated cn.
         """
-        self.nohi = [i for i in list(self.df.columns) if 'HumanInterpreter' not in i]
-        self.hi = [i for i in list(self.df.columns) if 'HumanInterpreter' in i]
+        nohi = [i for i in list(self.df.columns) if 'HumanInterpreter' not in i]
+        hi = [i for i in list(self.df.columns) if 'HumanInterpreter' in i]
 
         df = {}
-        for i in range(len(self.nohi)):
+        for i in range(len(nohi)):
             cndict = {}
             for j in range(self.nsites):
-                if str(j) in self.nohi[i]:
-                    site = self.df[self.nohi[i]]
-                    hisite = self.df[self.hi[j]]
+                if str(j) in nohi[i]:
+                    site = self.df[nohi[i]]
+                    hisite = self.df[hi[j]]
                     for k in range(len(site)):
                         coord = [z for z in hisite[k].values()]
                         if all(isinstance(z, float) for z in coord) or not coord:
@@ -281,13 +271,14 @@ class NbFuncs(Benchmark):
                             minsub = min(map(abs, lsub))
                             dsub[list(hisite[k].keys())[0]] = minsub
                             cndict[site.keys()[k]] = dict(dsub)
-                    df[self.nohi[i]] = dict(cndict)
+                    df[nohi[i]] = dict(cndict)
 
         return pd.DataFrame(df)
 
     def abs_df(self):
         """
-        abs value of error of nn-algo calculated cn
+        :returns dataframe with abs value of errors of nn-algo
+                 calculated cn (|CN_observed - CN_expected|)
         """
         df = self.sub_hi()
 
@@ -304,6 +295,16 @@ class NbFuncs(Benchmark):
         return df
 
     def cif_stats(self):
+        """
+        Determines total number of unique site ions (cations/anions) per site in a list.
+        Also sums number of unique site ions to get a total (int). Ex: K2SO4_beta_79777 has
+        2 unique K atoms and 1 unique S atom. The 'unique site cations' would report
+        something like [4,4,4] since there are 4 of each unique atom (4 of 1st unique K,
+        4 of 2nd unique K, and 4 of unique S). The 'total cations' would report 12 since
+        there is a total of 12 cations in a K2SO4_beta unit cell.
+
+        :returns 'unique site cations/anions' and 'total cations/anions' added to dataframe.
+        """
 
         df = self.abs_df()
 
@@ -319,7 +320,7 @@ class NbFuncs(Benchmark):
         for i in structures:
             es = SpacegroupAnalyzer(i).get_symmetrized_structure().equivalent_sites
             if self.cation_anion:
-                ces = [x for x in es if '-' not in x[0].species_string]
+                ces = [x for x in es if '+' in x[0].species_string]
                 sites = [len(x) for x in ces]
             else:
                 aes = [x for x in es if '-' in x[0].species_string]
@@ -342,6 +343,14 @@ class NbFuncs(Benchmark):
         return df
 
     def mult_equiv(self):
+        """
+        Creates dictionaries of lists of errors multiplied by ion degeneracy.
+        In the K2SO4_beta_79777 example, the list would contain 4 * the error in
+        coordination calculated for each unique site, i.e. if the error in
+        calculating the coordination for S was 1, the list would be {O: [1, 1, 1, 1]}.
+
+        :returns dataframe of error multiplied by degeneracy.
+        """
 
         df = self.cif_stats()
 
@@ -364,14 +373,18 @@ class NbFuncs(Benchmark):
         return df
 
     def merge(self):
+        """
+        Merges all of the lists into one for that particular structure and nn algo. For
+        K2SO4_beta_79777, this list would contain 12 entries.
+
+        :return dataframe of merged error*degeneracy lists.
+        """
 
         df = self.mult_equiv()
 
         merged = {}
         for m in self.methods:
-            if m.__class__.__name__ == 'HumanInterpreter':
-                pass
-            else:
+            if m.__class__.__name__ != 'HumanInterpreter':
                 algo = df[[i for i in list(df.columns) if m.__class__.__name__ in i]]
                 extended = {}
                 count = 0
@@ -390,6 +403,11 @@ class NbFuncs(Benchmark):
         return pd.DataFrame(merged)
 
     def total(self):
+        """
+        sums lists from merge function.
+
+        :return: dataframe of summed error * degeneracy (ints).
+        """
 
         df = self.merge()
 
@@ -398,17 +416,18 @@ class NbFuncs(Benchmark):
             matsum = {}
             for mat, coord in mats.items():
                 for coords, li in coord.items():
-                    print(li)
                     sumli = sum(li)
-                    print(sumli)
-                    print(mat)
                     matsum[mat] = sumli
-                    print(matsum)
                 totsum[algo] = dict(matsum)
 
         return pd.DataFrame(totsum)
 
     def div(self):
+        """
+        Divides total by 'total cations/anions' to get final score.
+
+        :return: dataframe with each nn algo scored using equation mentioned in NBFuncs().
+        """
 
         df = pd.concat([self.total(), self.cif_stats()[self.cif_stats().columns[-1:]]], axis=1)
 
@@ -431,6 +450,11 @@ class NbFuncs(Benchmark):
         return df
 
     def final(self):
+        """
+        Adds a row that totals the error for all structures for each nn algo.
+
+        :return: dataframe with each nn algo scored using equation mentioned in NBFuncs() + total score.
+        """
 
         df = self.div()
 
@@ -439,12 +463,11 @@ class NbFuncs(Benchmark):
 
         return df
 
-class CNBase:
+class HIBase:
     __metaclass__ = abc.ABCMeta
     """
-    This is an abstract base class for implementation of CN algorithms. All CN methods
-    must be subclassed from this class, and have a compute method that returns CNs as
-    a dict.
+    This is an abstract base class for implementation of HumanInterpreter. 
+    Compute method returns HumanInterpreter as a dictionary. 
     """
 
     def __init__(self, params=None):
@@ -458,16 +481,14 @@ class CNBase:
     def compute(self, structure, n):
         """
         :param structure: (Structure) a pymatgen Structure
-        :param n: (int) index of the atom in structure that the CN will be calculated
-            for.
+        :param n: (int) index of the atom in structure that the CN will be calculated for.
         :return: Dict of CN's for the site n. (e.g. {'O': 4.4, 'F': 2.1})
         """
         pass
 
-class HumanInterpreter(CNBase):
+class HumanInterpreter(HIBase):
     """
-    This is a special CN method that reads a yaml file where "human interpretations" of coordination
-    numbers are given.
+    Reads a yaml file where "human interpretations" of coordination numbers are given.
     """
     def __init__(self, custom_interpreter=None, custom_test_structures=None):
 
@@ -499,6 +520,7 @@ class HumanInterpreter(CNBase):
 
     def compute(self, structure, n):
         for v in self._params.values():
+            print(v)
             if structure == v[-1]:
                 if len(v[:-1]) != len(v[-1]):
                     # means possibly reduced structure is used by human interpreter
