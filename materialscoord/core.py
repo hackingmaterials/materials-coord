@@ -150,7 +150,6 @@ class Benchmark(object):
                 m._cns[name] = cns
                 nsites.append(len(cns))
         self.nsites = max(nsites)
-        print(self.nsites)
 
     def report(self):
         """
