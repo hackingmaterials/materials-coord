@@ -339,23 +339,6 @@ FeTiO3_ilmenite_9805:
         Fe: 2.0
         O: 0.0
 
-SrTiO3_perovskite_80871:
-# Abramov, Yu.A., Tsirel'son, V.G., Zavodnik, V.E., Ivanov, S.A., Brown, I.D. (1995)
-# The chemical bond and atomic displacements in Sr Ti O3 from x-ray diffraction analysis .
-# Acta Crystallographica, Section B: Structural Science 51:942 - 951.
-    - Sr:
-        Sr: 0.0
-        Ti: 0.0
-        O: 12.0
-    - Ti:
-        Sr: 0.0
-        Ti: 0.0
-        O: 6.0
-    - O:
-        Sr: 4.0
-        Ti: 2.0
-        O: 0.0
-
 AlAsO4_33254:
 # Goiffon, A., Bayle, G., Astier, R., Jumas, J.C., Maurin, M., Philippot, E. (1983)
 # Cristallichimie des phases Ga P O4, Al As O4 et Ga As O4. Etude comparee des structures de type quartz alpha.
@@ -813,9 +796,7 @@ As_16518:
 # Journal of Applied Crystallography 2:30 - 36.
 # notes: not as easy to see 6 coordination in crystalmaker with this cif file, looks like either 3 or 6-coordinated
     - As:
-        As:
-            - 3.0
-            - 6.0
+        As: 3.0
 
 C_diamond_52054:
 # Yamanaka, T., Morimoto, S. (1996)  Isotope effect on anharmonic thermal atomic vibration and k-refinemant of 12C and 13C diamond.
@@ -843,9 +824,7 @@ Ga_12174:
 # Journal of Chemical Physics 68:1221 - 1223.
 # notes: no high quality data
     - Ga:
-        Ga:
-            - 4.0
-            - 12.0
+        Ga: 12.0
 
 Hg_104296:
 # Amand, R.S., Giessen, B.C. (1978) On the metastable system mercury-thallium.
@@ -916,9 +895,7 @@ Sn_106072:
 # X-ray investigation of thermal expansion and atomic thermal vibrations of tin, indium, and their alloys .
 # Physica Status Solidi B - Basic Solid State Physics 107:245 - 253.
     - Sn:
-        Sn:
-          - 6.0
-          - 10.0
+        Sn: 6.0
 
 U_alpha_16056:
 # Lander, G.H., Mueller, M.H. (1970) Neutron diffraction study of alpha-uranium at low temperatures.
@@ -1221,3 +1198,272 @@ SiO2_413210:
 #    - O:
 #        Si: 2.0
 #        O: 0.0
+
+# ---------------- Perovskites ---------------------
+
+SrTiO3_perovskite_80871:
+# Notes: considered archetypal cubic perovskite
+    - Sr:
+        Sr: 0.0
+        Ti: 0.0
+        O: 12.0
+    - Ti:
+        Sr: 0.0
+        Ti: 0.0
+        O: 6.0
+    - O:
+        Sr: 4.0
+        Ti: 2.0
+        O: 0.0
+
+#Pb2CuO4H4Cl2_diaboleite_81589:
+## Cooper, M.A., Hawthorne, F.C. (1995)  Diaboleite, Pb2 Cu (O H)4 Cl2,
+## a defect perovskite structure with stereoactive lone-pair behavior of Pb(2+) .
+## Canadian Mineralogist 33:1125 - 1129.
+## Notes: B-site is partially vacant
+#    - Pb:
+#        Pb: 0.0
+#        Cu: 0.0
+#        O: 4.0
+#        H: 4.0
+#        Cl: 4.0
+#    - Cu:
+#        Pb: 0.0
+#        Cu: 0.0
+#        O: 4.0
+#        H: 4.0
+#        Cl: 2.0
+#    - O:
+#        Pb: 2.0
+#        Cu: 1.0
+#        O: 0.0
+#        H: 0.0
+#        Cl: 0.0
+#    - H:
+#        Pb: 2.0
+#        Cu: 1.0
+#        O: 0.0
+#        H: 0.0
+#        Cl: 0.0
+#    - Cl:
+#        Pb: 4.0
+#        Cu: 2.0
+#        O: 0.0
+#        H: 0.0
+#        Cl: 0.0
+#    - Cl:
+#        Pb: 4.0
+#        Cu: 0.0
+#        O: 0.0
+#        H: 0.0
+#        Cl: 0.0
+#
+#YF3_waimirite-Y_257563:
+## Atencio, Daniel, Bastos Neto, Artur C., Pereira, Vitor P., Ferron, Jose T.M.M., Hoshino,
+## M., Moriyama, T., Watanabe, Y., Miyawaki, R., Coutinho, Jose M.V., Andrade, Marcelo B.,
+## Domanik, Kenneth, Chukanov, Nikita V., Momma, K., Hirano, H., Tsunematsu, M. (2015)
+## Waimirite-(Y), orthorhombic YF3, a new mineral from the Pitinga mine, Presidente Figueiredo,
+## Amazonas, Brazil and from Jabal Tawlah, Saudi Arabia: description and crystal structure .
+## Mineralogical Magazine 79:767 - 780.
+## Notes: B-site is entirely vacant
+#    - Y:
+#        Y: 0.0
+#        F: 9.0
+#    - F:
+#        Y: 3.0
+#        F: 0.0
+#    - F:
+#        Y: 3.0
+#        F: 0.0
+
+#KMgF3_perovskite_40476:
+## Muradyan, L.A., Zavodnik, V.E., Makarova, I.P., Aleksandrov, K.S., Simonov, V.I. (1984)
+## Thermal vibrations of atoms in the structure of K Mg F3 at 293 and 123 K. Kristallografiya 29:392 - 394.
+## Notes: Mitchell, R.H. et at consider this to be a better archetypal cubic perovskite
+##        unlike SrTiO3, remains cubic from 3.6 K to its melting point
+##        structure is not affected by pressure up to 50 GPa
+#    - K:
+#        K: 0.0
+#        Mg: 0.0
+#        F: 12.0
+#    - Mg:
+#        K: 0.0
+#        Mg: 0.0
+#        F: 6.0
+#    - F:
+#        K: 4.0
+#        Mg: 2.0
+#        F: 0.0
+#
+#CaTiO3_perovskite_94568:
+## Yamanaka, T., Hirai, N., Komatsu, Y. (2002) Structure change of Ca1-x Srx Ti O3 perovskite
+## with composition and pressure. American Mineralogist 87:1183 - 1189.
+## Notes: octahedron tilting
+#    - Ca:
+#        Ca: 0.0
+#        Ti: 0.0
+#        O: 12.0
+#    - Ti:
+#        Ca: 0.0
+#        Ti: 0.0
+#        O: 6.0
+#    - O:
+#        Ca: 4.0
+#        Ti: 2.0
+#        O: 0.0
+#    - O:
+#        Ca: 4.0
+#        Ti: 2.0
+#        O: 0.0
+
+#Na6ClFS2O8_sulphohalite_26914:
+## Sakamoto, Y. (1968)  The size, atomic charges, and motion of the sulfate radical of symmetry
+## 4-3m in the crystal of sulfohalite, Na6 Cl F (S O4)2 .  Journal of Science of the Hiroshima
+## University, Series A: Mathematics, Physics, Chemistry  32:101 - 108.
+## Notes: ordered double antiperovskite, anti-elpasolite 3C polytype structure
+#    - Na:
+#        Na: 0.0
+#        Cl: 1.0
+#        F: 1.0
+#        S: 0.0
+#        O: 4.0
+#    - Cl:
+#        Na: 6.0
+#        Cl: 0.0
+#        F: 0.0
+#        S: 0.0
+#        O: 0.0
+#    - F:
+#        Na: 6.0
+#        Cl: 0.0
+#        F: 0.0
+#        S: 0.0
+#        O: 0.0
+#    - S:
+#        Na: 0.0
+#        Cl: 0.0
+#        F: 0.0
+#        S: 0.0
+#        O: 4.0
+#    - O:
+#        Na: 3.0
+#        Cl: 0.0
+#        F: 0.0
+#        S: 1.0
+#        O: 0.0
+
+#MgSiO3_bridgmanite_66887:
+## Ross, N.L., Hazen, R.M. (1990) High-pressure crystal chemistry of Mg Si O3 perovskite.
+## Physics and Chemistry of Minerals 17:228 - 237.
+## Notes: silicate single perovskite, bridgmanite subgroup
+#    - Mg:
+#        Mg: 0.0
+#        Si: 0.0
+#        O: 12.0
+#    - Si:
+#        Mg: 0.0
+#        Si: 0.0
+#        O: 6.0
+#    - O:
+#        Mg: 2.0
+#        Si: 2.0
+#        O: 0.0
+#    - O:
+#        Mg: 3.0
+#        Si: 2.0
+#        O: 0.0
+#
+#NaNbO3_lueshite_28578:
+## Solov'ev, S.P. (Solovev, S.P.), Venevtsev, Yu.N., Zhdanov, G.S. (1961)
+## An X-ray study of phase transitions in Na Nb O3. Kristallografiya 6:218 - 224.
+#    - Na:
+#        Na: 0.0
+#        Nb: 0.0
+#        O: 12.0
+#    - Nb:
+#        Na: 0.0
+#        Nb: 0.0
+#        O: 6.0
+#    - O:
+#        Na: 4.0
+#        Nb: 2.0
+#        O: 0.0
+#    - O:
+#        Na: 4.0
+#        Nb: 2.0
+#        O: 0.0
+#    - O:
+#        Na: 4.0
+#        Nb: 2.0
+#        O: 0.0
+#
+#NaNbO3_isolueshite_192407:
+## Mitchell, Roger H., Burns, Peter C., Knight, Kevin S., Howard, Christopher J.,
+## Chakhmouradian, Anton R. (2014) Observations on the crystal structures of lueshite.
+## Physics and Chemistry of Minerals 41:393 - 401.
+#    - Na:
+#        Na: 0.0
+#        Nb: 0.0
+#        O: 12.0
+#    - Nb:
+#        Na: 0.0
+#        Nb: 0.0
+#        O: 6.0
+#    - O:
+#        Na: 4.0
+#        Nb: 2.0
+#        O: 0.0
+#
+#CaSnO3_lakargiite_59160:
+## Vallet Regi, M., Gonzalez Calbet, J.M., Alario-Franco, M.A., Vegas, A. (1986)
+## The A Sn O3 (A = Ca, Sr) perovskites. Acta Crystallographica, Section C:
+## Crystal Structure Communications 42:167 - 172.
+#    - Ca:
+#        Ca: 0.0
+#        Sn: 0.0
+#        O: 12.0
+#    - Sn:
+#        Ca: 0.0
+#        Sn: 0.0
+#        O: 6.0
+#    - O:
+#        Ca: 2.0
+#        Sn: 2.0
+#        O: 0.0
+#    - O:
+#        Ca: 3.0
+#        Sn: 2.0
+#        O: 0.0
+#
+#PbTiO3_macedonite_61168:
+## Nelmes, R.J., Kuhs, W.F. (1985) The crystal structure of tetragonal
+## Pb Ti O3 at room temperature and at 700 K. Solid State
+## Communications 54:721 - 723.
+#    - Pb:
+#        Pb: 0.0
+#        Ti: 0.0
+#        O: 12.0
+#    - Ti:
+#        Pb: 0.0
+#        Ti: 0.0
+#        O: 6.0
+#    - O:
+#        Pb: 4.0
+#        Ti: 2.0
+#        O: 0.0
+#    - O:
+#        Pb: 4.0
+#        Ti: 2.0
+#        O: 0.0
+
+
+
+
+
+
+
+
+
+
+
+

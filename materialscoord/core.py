@@ -148,8 +148,9 @@ class Benchmark(object):
                         if name == mat:
                             cns = self._popel(cns, an)
                 m._cns[name] = cns
-            nsites.append(len(cns))
+                nsites.append(len(cns))
         self.nsites = max(nsites)
+        print(self.nsites)
 
     def report(self):
         """
@@ -458,7 +459,7 @@ class NbFuncs(Benchmark):
 
         df = self.div()
 
-        df.loc['total'] = df.sum(axis=0)
+        df.loc['Total'] = df.sum(axis=0)
         df = df.round(self.nround)
 
         return df
@@ -520,7 +521,6 @@ class HumanInterpreter(HIBase):
 
     def compute(self, structure, n):
         for v in self._params.values():
-            print(v)
             if structure == v[-1]:
                 if len(v[:-1]) != len(v[-1]):
                     # means possibly reduced structure is used by human interpreter
