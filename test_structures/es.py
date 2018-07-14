@@ -18,3 +18,4 @@ for i in es:
     all.append(l)
 print(all)
 print([x[0] for x in es])
+
