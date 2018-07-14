@@ -4,7 +4,7 @@ from setuptools import setup
 setup(
     name='MaterialsCoord',
     version='1.0.0',
-    packages=['materialscoord', 'materialscoord.external_src'],
+    packages=['materialscoord'],
     url='https://github.com/aykol/MaterialsCoord',
     license='A modified BSD license',
     author='Muratahan Aykol',
