@@ -22,7 +22,7 @@ class Benchmark(object):
     :param uniqute_sites (bool): Only calculates CNs of symmetrically unique sites in structures. This
            is essential to get a cleaner output. ICSD cif files already use unique sites so either
            True/False will show the same sites. Most useful for MP cif files. Defaults to True.
-           nround (int): rounds CNs to given number of decimals. Defaults to 3. nround=0 means no rounding.
+    :param nround (int): rounds CNs to given number of decimals. Defaults to 3. nround=0 means no rounding.
     :param use_weights (bool): Whether or not to use CN method weighting scheme. Defaults to False.
     :param cation_anion (bool): Calculates only cation-anion interactions and interactions between
            atoms without oxidation states i.e. metals. Defaults to False.
