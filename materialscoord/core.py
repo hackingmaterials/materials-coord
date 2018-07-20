@@ -8,6 +8,7 @@ from collections import OrderedDict
 from pymatgen.core.structure import Structure
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 from pymatgen.analysis.local_env import NearNeighbors
+from pymatgen.analysis.bond_valence import BVAnalyzer
 
 module_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)))
 
@@ -39,7 +40,6 @@ class Benchmark(object):
 
         self.methods = methods
         self.structure_groups = structure_groups if isinstance(structure_groups, list) else [structure_groups]
-
         self.test_structures = OrderedDict()
         self.cations = OrderedDict()
         self.anions = OrderedDict()
@@ -88,9 +88,14 @@ class Benchmark(object):
             else:
                 p = self.custom
         str_files = glob.glob(p)
+
         for s in str_files:
             name = os.path.basename(s).split(".")[0]
             structure = Structure.from_file(s)
+
+            if group == "clusters":
+                oxi = {"Al": 3, "H": -1, "O": -2}
+                structure.add_oxidation_state_by_element(oxidation_states=oxi)
 
             cations = []
             anions = []
@@ -314,6 +319,11 @@ class NbFuncs(Benchmark):
         for i in df.index:
             find_structure = glob.glob(os.path.join(ts, "*", i + "*"))
             s = Structure.from_file(find_structure[0])
+
+            if "cluster" in i:
+                oxi = {"Al": 3, "H": -1, "O": -2}
+                s.add_oxidation_state_by_element(oxidation_states=oxi)
+
             structures.append(s)
 
         us = []
@@ -415,9 +425,12 @@ class NbFuncs(Benchmark):
         for algo, mats in df.items():
             matsum = {}
             for mat, coord in mats.items():
+                summing = []
                 for coords, li in coord.items():
                     sumli = sum(li)
-                    matsum[mat] = sumli
+                    summing.append(sumli)
+                    sum_els = sum(summing)
+                    matsum[mat] = sum_els
                 totsum[algo] = dict(matsum)
 
         return pd.DataFrame(totsum)

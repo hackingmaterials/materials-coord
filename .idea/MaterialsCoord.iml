@@ -4,5 +4,8 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="jdk" jdkName="Python 3.6 (codes) (1)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="pymatgen" />
+    <orderEntry type="module" module-name="codes" />
+    <orderEntry type="module" module-name="matminer" />
   </component>
 </module>
