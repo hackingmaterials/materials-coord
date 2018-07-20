@@ -94,7 +94,7 @@ class Benchmark(object):
             structure = Structure.from_file(s)
 
             if group == "clusters":
-                oxi = {"Al": 3, "H": -1, "O": -2}
+                oxi = {"Al": 3, "H": 1, "O": -2}
                 structure.add_oxidation_state_by_element(oxidation_states=oxi)
 
             cations = []
