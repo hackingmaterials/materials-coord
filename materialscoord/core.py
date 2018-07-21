@@ -137,6 +137,14 @@ class Benchmark(object):
                 for j in sites:
                     if isinstance(m, NearNeighbors):
                         tmpcn = m.get_cn_dict(structure, j, self.use_weights)
+                        if m.__class__.__name__ == "MinimumVIRENN":
+                            kdict = {}
+                            for k, v in tmpcn.items():
+                                k = ''.join(a for a in k if not a.isdigit())
+                                k = ''.join(b for b in k if b != "-")
+                                k = ''.join(c for c in k if c != "+")
+                                kdict[k] = v
+                            tmpcn = kdict
                     else:
                         tmpcn = m.compute(structure, j)
                         if tmpcn == "null":
@@ -174,7 +182,6 @@ class Benchmark(object):
                     if isinstance(ions, dict):
                         temp.append((mat, ions))
                 sc_dict[struc] = temp
-
                 for struc, ions in sc_dict.items():
                     l = len(ions)
                     if l < self.nsites:
