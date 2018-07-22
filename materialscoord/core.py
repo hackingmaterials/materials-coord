@@ -9,6 +9,7 @@ from pymatgen.core.structure import Structure
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 from pymatgen.analysis.local_env import NearNeighbors
 from pymatgen.analysis.bond_valence import BVAnalyzer
+import re
 
 module_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)))
 
@@ -139,10 +140,8 @@ class Benchmark(object):
                         tmpcn = m.get_cn_dict(structure, j, self.use_weights)
                         if m.__class__.__name__ == "MinimumVIRENN":
                             kdict = {}
-                            for k, v in tmpcn.items():
-                                k = ''.join(a for a in k if not a.isdigit())
-                                k = ''.join(b for b in k if b != "-")
-                                k = ''.join(c for c in k if c != "+")
+                            for k,v in tmpcn.items():
+                                k = re.sub('[^a-zA-Z]+', '', k)
                                 kdict[k] = v
                             tmpcn = kdict
                     else:
