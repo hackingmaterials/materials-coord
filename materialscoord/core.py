@@ -17,18 +17,18 @@ class Benchmark(object):
     """
     Class for performing CN benchmarks on a set of structures using the selected set of methods.
 
-    :param methods(list): CN methods from pymatgen.local_env.py
+    :param methods (list): CN methods from pymatgen.analysis.local_env
     :param structure_groups (str or list): name of test structure directory. Defaults to "elemental".
-           custom_set (str): full path to custom set of external structures to be loaded. Can be used
+    :param custom_set (str): full path to custom set of external structures to be loaded. Can be used
            to apply CN methods on user-specified structures.
-    :param uniqute_sites (bool): Only calculates CNs of symmetrically unique sites in structures. This
+    :param unique_sites (bool): Only calculates CNs of symmetrically unique sites in structures. This
            is essential to get a cleaner output. ICSD cif files already use unique sites so either
            True/False will show the same sites. Most useful for MP cif files. Defaults to True.
     :param nround (int): rounds CNs to given number of decimals. Defaults to 3. nround=0 means no rounding.
     :param use_weights (bool): Whether or not to use CN method weighting scheme. Defaults to False.
-    :param cation_anion (bool): Calculates only cation-anion interactions and interactions between
-           atoms without oxidation states i.e. metals. Defaults to False.
-    :param anion_cation (bool): Calculates only anion-cation interactions. Defaults to False.
+    :param cation_anion (bool): Considers only cations as central atoms for which CN is to be computed and
+           atoms without oxidation states (i.e., metals). Defaults to False.
+    :param anion_cation (bool): Considers only anions as central atoms. Defaults to False.
 
     TODO: if cation_anion and anion_cation are both True or both False... what happens? (haven't tested)
     TODO: right now, to calculate cation_anion + anion_cation interactions, use jupyter nb to sum
@@ -59,18 +59,18 @@ class Benchmark(object):
         self.cation_anion = cation_anion
         self.anion_cation = anion_cation
 
+        self.cns = {}
         for m in self.methods:
             assert isinstance(m, (NearNeighbors, HIBase))
-            m._cns = {}
-        print("Initialization successful.")
+            self.cns[m] = {}
 
     def _load_test_structures(self, group):
         """
         Loads cations, anions, and test_structure dictionaries from structure_groups.
-        Cation and anion dictionaries only work when oxidation states are present in cif files (ie, ICSD).
+        Cation and anion dictionaries only work when oxidation states are present in cif files (e.g., ICSD).
 
-        - cations dictionary includes cation elements and elements with '0' oxidation (metals) ie, Ca, Al
-        - anions dictionary includes anion elements ie O, F
+        - cations dictionary includes cation elements and elements with '0' oxidation states/metals (i.e., Ca, Al)
+        - anions dictionary includes anion elements (e.g., O, F)
         - test_structure dictionary includes structure from cif file
 
         Oxidation states are removed from elements.
@@ -119,7 +119,7 @@ class Benchmark(object):
     def benchmark(self):
         """
         Calculates CN for each structure site using NN method(s).
-        Dictionary of calculated CNs are stored in m._cns
+        Dictionary of calculated CNs are stored in self.cns[m]
 
         nsites (int) is used to determine the number of sites each structure has
         and uses the max number of sites as the number of columns in the framework.
@@ -148,7 +148,7 @@ class Benchmark(object):
                         if tmpcn == "null":
                             continue
                     if self.nround:
-                        self._roundcns(tmpcn, self.nround)
+                        tmpcn = self._roundcns(tmpcn, self.nround)
                     cns.append((structure[j].species_string, tmpcn))
                 if self.cation_anion:
                     for mat, cat in self.cations.items():
@@ -158,7 +158,7 @@ class Benchmark(object):
                     for mat, an in self.anions.items():
                         if name == mat:
                             cns = self._popel(cns, an)
-                m._cns[name] = cns
+                self.cns[m][name] = cns
                 nsites.append(len(cns))
         self.nsites = max(nsites)
 
@@ -174,9 +174,9 @@ class Benchmark(object):
             sc_dict = {}
             for site in range(self.nsites):
                 data[m.__class__.__name__ + str(site)] = {}
-            for struc in m._cns:
+            for struc in self.cns[m]:
                 temp = []
-                for mat, ions in m._cns[struc]:
+                for mat, ions in self.cns[m][struc]:
                     if isinstance(ions, dict):
                         temp.append((mat, ions))
                 sc_dict[struc] = temp
@@ -198,28 +198,30 @@ class Benchmark(object):
         :param ndigits (int): number of digits to round to
         :returns dict with rounded values
         """
-        for k,v in d.items():
+        dout = dict(d)
+        for k,v in dout.items():
             if not isinstance(v, list):
-                d[k]=round(v,ndigits)
+                dout[k]=round(v, ndigits)
+        return dout
 
     @staticmethod
-    def _popel(cns, ion):
+    def _popel(cns, ions):
         """
-        only use coordination of ion (cation to anion / anion to cation). All other interactions (ie cation-cation,
+        Only use coordination of ion (cation to anion / anion to cation). All other interactions (i.e., cation-cation,
         anion-anion) are deleted ('pop'ed). This is because we are interested in only interactions between
         atoms with opposite charges (unless all atoms have same charge).
 
         :param cns (list): list of tuples (site, {el: coord}).
                Ex: [('Ca', {'O': 8.0}), ('W', {'O': 4.0}), ('O', {'W': 1.0})] for CaWO4_scheelite_15586
-        :param ion (list): list of ions (cations/anions) in structure.
+        :param ions (list): list of ions (cations/anions) in structure.
                Ex: ['Ca', 'W'] are cations for CaWO4_scheelite_15586
         :returns cn dict with only cation-anion or anion-cation interactions.
                Ex: [('Ca', {u'O': 8.0}), ('W', {u'O': 4.0})] for cation-anion interactions of CaWO4_scheelite_15586
         """
-        cns = [i for i in cns if i[0] in ion]
+        cns = [i for i in cns if i[0] in ions]
         for tup in cns:
             for el in tup[1].keys():
-                if el in ion:
+                if el in ions:
                     tup[1].pop(el)
         return cns
 
@@ -493,7 +495,6 @@ class HIBase:
         :param params: (dict) of parameters to pass to compute method.
         """
         self._params = params if params else {}
-        self._cns = {}
 
     @abc.abstractmethod
     def compute(self, structure, n):
