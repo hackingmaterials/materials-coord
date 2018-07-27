@@ -1,1475 +1,5 @@
-# Human interpreted coordination numbers in structures:
-
-BaAl2O4_21080:
-# Do Dinh Chieu, Bertaut, C. (1965)  Parametres atomiques de Ba Al2 O4 et etudes des solutions solides Ba Fex Al2-x O4 et Ba Gax Al2-x O4 .
-# Bulletin de la Societe Francaise de Mineralogie et de Cristallographie 88:413 - 416.
-# notes: different from Nils -- [[Ba, 9], [Al, 4], [Al, 4], [O, 2], [O, 2], [O, 2], [O, 2]]
-    - Ba:
-        Ba: 0.0
-        Al: 0.0
-        O: 9.0
-    - Al:
-        Ba: 0.0
-        Al: 0.0
-        O: 4.0
-    - O:
-        Ba: 0.0
-        Al: 2.0
-        O: 0.0
-    - O:
-        Ba: 0.0
-        Al: 2.0
-        O: 0.0
-
-Be2SiO4_phenakite_64942:
-# Hazen, R.M., Au, A.Y. (1986) High-pressure crystal chemistry of phenakite (Be2 Si O4) and bertrandite (Be4 Si2 O7 (O H)2).
-# Physics and Chemistry of Minerals 13:69 - 78.
-# notes: composed of frameworks of beryllium and silicon tetrahedra.
-    - Be:
-        Be: 0.0
-        Si: 0.0
-        O: 4.0
-    - Be:
-        Be: 0.0
-        Si: 0.0
-        O: 4.0
-    - Si:
-        Be: 0.0
-        Si: 0.0
-        O: 4.0
-    - O:
-        Be: 2.0
-        Si: 1.0
-        O: 0.0
-    - O:
-        Be: 2.0
-        Si: 1.0
-        O: 0.0
-    - O:
-        Be: 2.0
-        Si: 1.0
-        O: 0.0
-    - O:
-        Be: 2.0
-        Si: 1.0
-        O: 0.0
-
-CaB2O4_34641:
-# Marezio, M., Plettinger, H.A., Zachariasen, W.H. (1963) Refinement of the calcium metaborate structure.
-# Acta Crystallographica (1,1948-23,1967) 16:390 - 392.
-# notes: fig 1 -- B coordinated with 3 O atoms, Ca coordinated with 8 O atoms.
-    - Ca:
-        Ca: 0.0
-        B: 0.0
-        O: 8.0
-    - B:
-        Ca: 0.0
-        B: 0.0
-        O: 3.0
-    - O:
-        Ca: 0.0
-        B: 1.0
-        O: 0.0
-    - O:
-        Ca: 0.0
-        B: 2.0
-        O: 0.0
-
-CaFe2O4_166080:
-# 'Merlini, M., Hanfland, M., Gemmi, M., Huotari, S., Simonelli, L., Strobel, P. (2010)
-# Fe(3+) spin transition in Ca Fe2 O4 at high pressure. American Mineralogist 95:200 - 203.
-    - Ca:
-        Ca: 0.0
-        Fe: 0.0
-        O: 8.0
-    - Fe:
-        Ca: 0.0
-        Fe: 0.0
-        O: 6.0
-    - Fe:
-        Ca: 0.0
-        Fe: 0.0
-        O: 6.0
-    - O:
-        Ca: 2.0
-        Fe: 3.0
-        O: 0.0
-    - O:
-        Ca: 2.0
-        Fe: 3.0
-        O: 0.0
-    - O:
-        Ca: 2.0
-        Fe: 3.0
-        O: 0.0
-    - O:
-        Ca: 2.0
-        Fe: 3.0
-        O: 0.0
-
-Fe2SiO4_olivine_4353:
-# Smyth, J.R. (1975) High temperature crystal chemistry of fayalite.
-# American Mineralogist 60:1092 - 1097.
-    - Fe:
-        Fe: 0.0
-        Si: 0.0
-        O: 6.0
-    - Fe:
-        Fe: 0.0
-        Si: 0.0
-        O: 6.0
-    - Si:
-        Fe: 0.0
-        Si: 0.0
-        O: 4.0
-    - O:
-        Fe: 3.0
-        Si: 1.0
-        O: 0.0
-    - O:
-        Fe: 3.0
-        Si: 1.0
-        O: 0.0
-    - O:
-        Fe: 3.0
-        Si: 1.0
-        O: 0.0
-
-K2NiF4_73450:
-# Yeh, S.K., Wu, S.Y., Lee, C.-S., Wang, Y. (1993)
-# Electron-density distribution in a crystal of Dipotassium tetrafluoronickelate, K2NiF4 .
-# Acta Crystallographica, Section B: Structural Science 49:806 - 811.
-    - K:
-        K: 0.0
-        Ni: 0.0
-        F: 9.0
-    - Ni:
-        K: 0.0
-        Ni: 0.0
-        F: 6.0
-    - F:
-        K: 4.0
-        Ni: 2.0
-        F: 0.0
-    - F:
-        K: 5.0
-        Ni: 1.0
-        F: 0.0
-
-K2SO4_beta_2827:
-# McGinnety, J.A. (1972)  Redetermination of the structures of potassium sulphate and potassium chromate:
-# the effekt of electrostatic crystal forces upon observed bond lengths .  Acta Crystallographica,
-# Section B: Structural Crystallography and Crystal Chemistry  28:2845 - 2852.
-
-    - K:
-        K: 0.0
-        S: 0.0
-        O: 11.0
-    - K:
-        K: 0.0
-        S: 0.0
-        O: 9.0
-    - S:
-        K: 0.0
-        S: 0.0
-        O: 4.0
-    - O:
-        K: 5.0
-        S: 1.0
-        O: 0.0
-    - O:
-        K: 5.0
-        S: 1.0
-        O: 0.0
-    - O:
-        K: 5.0
-        S: 1.0
-        O: 0.0
-
-MgAl2O4_spinel_31373:
-# Yamanaka, T., Takeuchi, Y. (1983)  Order-disorder transition in Mg Al2 O4 spinel at high temperatures up to 1700 degrees C .
-# Zeitschrift fuer Kristallographie (1979-2010) 165:65 - 78.
-    - Mg:
-        Mg: 0.0
-        Al: 0.0
-        O: 4.0
-    - Al:
-        Mg: 0.0
-        Al: 0.0
-        O: 6.0
-    - O:
-        Mg: 1.0
-        Al: 3.0
-        O: 0.0
-
-Na2SO4_thenardite_2895:
-# Nord, A.G. (1973) Refinement of the crystal structure of thenardite, Na2 S O4 (V).
-# Acta Chemica Scandinavica (1-27,1973-42,1988) 27:814 - 822.
-# notes: crystal structure may be described in terms of distorted NaO6 octahedra and nearly regular SO4 tetrahedra.
-    - Na:
-        Na: 0.0
-        S: 0.0
-        O: 6.0
-    - S:
-        Na: 0.0
-        S: 0.0
-        O: 4.0
-    - O:
-        Na: 3.0
-        S: 1.0
-        O: 0.0
-
-Pb3O4_22325:
-# Fayek, M.K., Leciejewicz, J. (1965) Neutron diffraction study of Pb3 O4.
-# Zeitschrift fuer Anorganische und Allgemeine Chemie (1950) (DE) 336:104 - 109.
-    - Pb:
-        Pb: 0.0
-        O: 6.0
-    - Pb:
-        Pb: 0.0
-        O: 3.0
-    - O:
-        Pb: 3.0
-        O: 0.0
-    - O:
-        Pb: 0.0
-        O: 3.0
-
-Sr2PbO4_16806:
-#Troemel, M. (1965) Zur Struktur der Verbindungen vom Sr2 Pb O4-Typ. Naturwissenschaften 52:492 - 493.
-# notes: article in a different language...
-#        different numbers from Nils -- [[Sr, 7], [Sr, 7], [Pb, 6], [O, 5], [O, 5], [O, 5], [O, 5]]
-    - Sr:
-        Sr: 0.0
-        Pb: 0.0
-        O: 7.0
-    - Pb:
-        Sr: 0.0
-        Pb: 0.0
-        O: 6.0
-    - O:
-        Sr: 3.0
-        Pb: 2.0
-        O: 0.0
-    - O:
-        Sr: 5.0
-        Pb: 1.0
-        O: 0.0
-
-Th3P4_25724:
-# Zumbusch, M. (1941) Ueber Strukturanalogie von Uran- und Thoriumphosphiden.
-# Zeitschrift fuer Anorganische und Allgemeine Chemie (1950) (DE) 245:402 - 408.
-    - Th:
-        Th: 0.0
-        P: 8.0
-    - P:
-        Th: 6.0
-        P: 0.0
-
-BaTiO3_67520:
-# Buttner, R.H., Maslen, E.N. (1992) Structural Parameters and Electron Difference density in BaTiO3.
-# Acta Crystallographica, Section B: Structural Science 48:764 - 769.
-    - Ba:
-        Ba: 0.0
-        Ti: 0.0
-        O: 12.0
-    - Ti:
-        Ba: 0.0
-        Ti: 0.0
-        O: 6.0
-    - O:
-        Ba: 4.0
-        Ti: 2.0
-        O: 0.0
-    - O:
-        Ba: 4.0
-        Ti: 2.0
-        O: 0.0
-
-CaCO3_aragonite_15194:
-# de Villiers, J.P.R. (1971) Crystal structures of aragonite, strontianite, and witherite.
-# American Mineralogist 56:758 - 766.
-    - Ca:
-        Ca: 0.0
-        C: 0.0
-        O: 9.0
-    - C:
-        Ca: 0.0
-        C: 0.0
-        O: 3.0
-    - O:
-        Ca: 3.0
-        C: 1.0
-        O: 0.0
-    - O:
-        Ca: 3.0
-        C: 1.0
-        O: 0.0
-
-CaCO3_calcite_18164:
-# Chessin, H., Hamilton, W.C., Post, B. (1965) Position and thermal parameters of oxygen atoms in calcite.
-# Acta Crystallographica (1,1948-23,1967) 18:689 - 693.
-    - Ca:
-        Ca: 0.0
-        C: 0.0
-        O: 6.0
-    - C:
-        Ca: 0.0
-        C: 0.0
-        O: 3.0
-    - O:
-        Ca: 2.0
-        C: 1.0
-        O: 0.0
-
-FeTiO3_ilmenite_9805:
-# Morosin, B., Baughman, R.J., Ginley, D.S., Butler, M.A. (1978)
-# The Influence of Crystal Structure on the Photoresponse of Iron-Titanium Oxide Electrodes .
-# Journal of Applied Crystallography 11:121 - 124.
-    - Ti:
-        Ti: 0.0
-        Fe: 0.0
-        O: 6.0
-    - Fe:
-        Ti: 0.0
-        Fe: 0.0
-        O: 6.0
-    - O:
-        Ti: 2.0
-        Fe: 2.0
-        O: 0.0
-
-AlAsO4_33254:
-# Goiffon, A., Bayle, G., Astier, R., Jumas, J.C., Maurin, M., Philippot, E. (1983)
-# Cristallichimie des phases Ga P O4, Al As O4 et Ga As O4. Etude comparee des structures de type quartz alpha.
-# Revue de Chimie Minerale 20:338 - 350.
-# notes: different from Nils -- [[Al, 4], [As, 4], [O, 2], [O, 2], [O, 2], [O, 2]]
-    - Al:
-        Al: 0.0
-        As: 0.0
-        O: 4.0
-    - As:
-        Al: 0.0
-        As: 0.0
-        O: 4.0
-    - O:
-        Al: 1.0
-        As: 1.0
-        O: 0.0
-    - O:
-        Al: 2.0
-        As: 1.0
-        O: 0.0
-
-#BaSO4_barite_200112:
-## Hill, R.J. (1977) A further refinement of the barite structure.
-## Canadian Mineralogist 15:522 - 526.
-#    - Ba:
-#        Ba: 0.0
-#        S: 0.0
-#        O: 12.0
-#    - S:
-#        Ba: 0.0
-#        S: 0.0
-#        O: 4.0
-#    - O:
-#        Ba: 3.0
-#        S: 1.0
-#        O: 0.0
-#    - O:
-#        Ba: 3.0
-#        S: 1.0
-#        O: 0.0
-#    - O:
-#        Ba: 3.0
-#        S: 1.0
-#        O: 0.0
-
-BAsO4_highcristobalite_26891:
-# Schulze, G.E.R. (1934) Die Kristallstruktur von B P O4 und B As O4.
-# Zeitschrift fuer Physikalische Chemie, Abteilung B: Chemie der Elementarprozesse, Aufbau der Materie  24:215 - 240.
-    - B:
-        B: 0.0
-        As: 0.0
-        O: 4.0
-    - As:
-        B: 0.0
-        As: 0.0
-        O: 4.0
-    - O:
-        B: 1.0
-        As: 1.0
-        O: 0.0
-
-BaZnF4_182604:
-# Posse, J.M., Friese, K., Grzechnik, A. (2011) Structural stability of Ba M F4 (M = Mg, Zn and Mn) at high pressures.
-# Journal of Physics: Condensed Matter 23:215401-1 - 215401-13.
-# notes: Nils got different results -- [[Ba, 9], [Zn, 6], [F, 4], [F, 4], [F, 4], [F, 3]]
-    - Ba:
-        Ba: 0.0
-        Zn: 0.0
-        F: 11.0
-    - Zn:
-        Ba: 0.0
-        Zn: 0.0
-        F: 6.0
-    - F:
-        Ba: 3.0
-        Zn: 1.0
-        F: 0.0
-    - F:
-        Ba: 3.0
-        Zn: 1.0
-        F: 0.0
-    - F:
-        Ba: 2.0
-        Zn: 2.0
-        F: 0.0
-    - F:
-        Ba: 3.0
-        Zn: 2.0
-        F: 0.0
-
-CaWO4_scheelite_15586:
-# Zalkin, A., Templeton, D.H. (1964) X-ray diffraction refinement of the calcium tungstate structure.
-# Journal of Chemical Physics 40:501 - 504.
-    - Ca:
-        Ca: 0.0
-        W: 0.0
-        O: 8.0
-    - W:
-        Ca: 0.0
-        W: 0.0
-        O: 4.0
-    - O:
-        Ca: 2.0
-        W: 1.0
-        O: 0.0
-
-CePO4_monazite_79746:
-# Ni, Y.-X., Hughes, J.M., Mariano, A.N. (1995) Crystal chemistry of the monazite and xenotime structures.
-# American Mineralogist 80:21 - 26.
-# notes: Nils got different CNs -- [Ce, 8], [P, 4], [O, 3], [O, 3], [O, 3], [O, 3]]
-    - Ce:
-        Ce: 0.0
-        P: 0.0
-        O: 10.0
-    - P:
-        Ce: 0.0
-        P: 0.0
-        O: 4.0
-    - O:
-        Ce: 2.0
-        P: 1.0
-        O: 0.0
-    - O:
-        Ce: 3.0
-        P: 1.0
-        O: 0.0
-    - O:
-        Ce: 2.0
-        P: 1.0
-        O: 0.0
-    - O:
-        Ce: 2.0
-        P: 1.0
-        O: 0.0
-
-CrVO4_27508:
-# Frazer, B.C., Brown, P.J. (1962)  Antiferromagnetic structure of Cr V O4 and the anhydrous sulfates of divalent Fe, Ni, and Co .
-# Physical Review, Section A (133,1964-188,1969) 125:1283 - 1291.
-    - V:
-        V: 0.0
-        Cr: 0.0
-        O: 4.0
-    - Cr:
-        V: 0.0
-        Cr: 0.0
-        O: 6.0
-    - O:
-        V: 1.0
-        Cr: 1.0
-        O: 0.0
-    - O:
-        V: 1.0
-        Cr: 2.0
-        O: 0.0
-
-FeWO4_wolframite_26811:
-# Cid-Dresdner, H., Escobar, C. (1968) The Crystal Structure of Ferberite, Fe W O4.
-# Zeitschrift fuer Kristallographie, Kristallgeometrie, Kristallphysik, Kristallchemie (-144,1977)  127:61 - 72.
-    - Fe:
-        Fe: 0.0
-        W: 0.0
-        O: 6.0
-    - W:
-        Fe: 0.0
-        W: 0.0
-        O: 6.0
-    - O:
-        Fe: 1.0
-        W: 2.0
-        O: 0.0
-    - O:
-        Fe: 2.0
-        W: 1.0
-        O: 0.0
-
-GaPO4_lowcristobalite_97550:
-# Achary, S.N., Jayakumar, O.D., Tyagi, A.K., Kulshreshtha, S.K. (2003)
-# Preparation, phase transition and thermal expansion studies on low-cristobalite type Al1-x Gax P O4 (x = 0.0, 0.20, 0.50, 0.80 and1.00) .
-# Journal of Solid State Chemistry 176:37 - 46.
-    - Ga:
-        Ga: 0.0
-        P: 0.0
-        O: 4.0
-    - P:
-        Ga: 0.0
-        P: 0.0
-        O: 4.0
-    - O:
-        Ga: 1.0
-        P: 1.0
-        O: 0.0
-    - O:
-        Ga: 1.0
-        P: 1.0
-        O: 0.0
-
-MgUO4_24725:
-# Zachariasen, W.H. (1954)  Crystal chemical studies of the 5f-series of elements. XXI. The crystal structure of magnesium orthouranate .
-# Acta Crystallographica (1,1948-23,1967) 7:788 - 791.
-    - Mg:
-        Mg: 0.0
-        U: 0.0
-        O: 6.0
-    - U:
-        Mg: 0.0
-        U: 0.0
-        O: 6.0
-    - O:
-        Mg: 2.0
-        U: 1.0
-        O: 0.0
-    - O:
-        Mg: 1.0
-        U: 2.0
-        O: 0.0
-
-MnMoO4_alpha_15615:
-# Abrahams, S.C., Reddy, J.M. (1965)  Crystal structure of the transition-metal molybdates. I. Para magnetic alpha Mn Mo O4 .
-# Journal of Chemical Physics 43:2533 - 2543.
-    - Mn:
-        Mn: 0.0
-        Mo: 0.0
-        O: 6.0
-    - Mn:
-        Mn: 0.0
-        Mo: 0.0
-        O: 6.0
-    - Mo:
-        Mn: 0.0
-        Mo: 0.0
-        O: 4.0
-    - Mo:
-        Mn: 0.0
-        Mo: 0.0
-        O: 4.0
-    - O:
-        Mn: 3.0
-        Mo: 1.0
-        O: 0.0
-    - O:
-        Mn: 1.0
-        Mo: 1.0
-        O: 0.0
-    - O:
-        Mn: 1.0
-        Mo: 1.0
-        O: 0.0
-    - O:
-        Mn: 2.0
-        Mo: 1.0
-        O: 0.0
-    - O:
-        Mn: 1.0
-        Mo: 1.0
-        O: 0.0
-
-SbNbO4_20344:
-# Ponomarev, V.I., Filipenko, O.S., Atovmyan, L.O., Rannev, N.V., Ivanov, S.A., Venevtsev, Yu.N. (1981)
-# Structure and lattice dynamics of Sb Nb O4 crystals at 300-1000 K. Kristallografiya 26:341 - 348.
-    - Nb:
-        Sb: 0.0
-        Nb: 0.0
-        O: 6.0
-    - Sb:
-        Sb: 0.0
-        Nb: 0.0
-        O: 5.0
-    - O:
-        Sb: 2.0
-        Nb: 1.0
-        O: 0.0
-    - O:
-        Sb: 1.0
-        Nb: 2.0
-        O: 0.0
-    - O:
-        Sb: 2.0
-        Nb: 1.0
-        O: 0.0
-    - O:
-        Sb: 0.0
-        Nb: 2.0
-        O: 0.0
-
-TlAlF4_202453:
-# Bulou, A., Nouet, J. (1987)
-# Structural phase transitions in ferroelastic Tl Al F4: DSC investigations and structures determinations by neutron powder profile refinement .
-# Journal of Physics C: Solid State Physics 20:2885 - 2900.
-    - Al:
-        Al: 0.0
-        Tl: 0.0
-        F: 6.0
-    - Tl:
-        Al: 0.0
-        Tl: 0.0
-        F: 8.0
-    - F:
-        Al: 2.0
-        Tl: 0.0
-        F: 0.0
-    - F:
-        Al: 1.0
-        Tl: 4.0
-        F: 0.0
-
-ZnSO4_71018:
-# Wildner, M., Giester, G. (1988)  Crystal structure refinements of synthetic chalcocyanite (Cu S O4) and zincosite (Zn S O4) .
-# Mineralogy and Petrology 39:201 - 209.
-    - Zn:
-        Zn: 0.0
-        S: 0.0
-        O: 6.0
-    - S:
-        Zn: 0.0
-        S: 0.0
-        O: 4.0
-    - O:
-        Zn: 2.0
-        S: 1.0
-        O: 0.0
-    - O:
-        Zn: 2.0
-        S: 1.0
-        O: 0.0
-    - O:
-        Zn: 1.0
-        S: 1.0
-        O: 0.0
-
-ZrSiO4_zircon_15759:
-# Robinson, K., Gibbs, G.V., Ribbe, P.H. (1971) The structure of zircon: A comparison with garnet.
-# American Mineralogist 56:782 - 789.
-    - Zr:
-        Zr: 0.0
-        Si: 0.0
-        O: 8.0
-    - Si:
-        Zr: 0.0
-        Si: 0.0
-        O: 4.0
-    - O:
-        Zr: 2.0
-        Si: 1.0
-        O: 0.0
-
-Al2O3_corundum_9770:
-# Finger, L.W., Hazen, R.M. (1978)
-# Crystal structure and compression of ruby to 46 kbar.
-# Journal of Applied Physics (Melville, NY, United States) 49:5823 - 5826.
-# notes: Aluminum has octahedral coordination with O. See Table III.
-    - Al:
-        Al: 0.0
-        O: 6.0
-    - O:
-        Al: 4.0
-        O: 0.0
-
-CaF2_fluorite_60559:
-# Cheetham, A.K., Fender, B.E.F., Cooper, M.J. (1971)
-# Defect structure of calcium fluoride containing excess anions: I. Bragg scattering.
-# Journal of Physics C: Solid State Physics 4:3107 - 3121.
-    - Ca:
-        Ca: 0.0
-        F: 8.0
-    - F:
-        Ca: 4.0
-        F: 0.0
-
-CsCl_53847:
-# Davey, W.P., Wick, F.G. (1921) Crystal structure of Cs Cl and Tl Cl.
-# Physical Review (1,1893-132,1963/141,1966-188,1969) 17:403 - 404.
-    - Cs:
-        Cs: 0.0
-        Cl: 8.0
-    - Cl:
-        Cs: 8.0
-        Cl: 0.0
-
-Cu5Zn8_gamma_brass_2092:
-# Brandon, J.K., Brizard, R.Y., Chieh, P.C., McMillan, R.K., Pearson, W.B. (1974)
-# New refinement of the gamma brass type structures Cu5 Zn8, Cu5 Cd8 and F E Zn10 .
-# Acta Crystallographica, Section B: Structural Crystallography and Crystal Chemistry  30:1412 - 1417.
-    - Zn:
-        Zn: 6.0
-        Cu: 6.0
-    - Zn:
-        Zn: 5.0
-        Cu: 6.0
-    - Cu:
-        Zn: 9.0
-        Cu: 3.0
-    - Cu:
-        Zn: 10.0
-        Cu: 3.0
-
-Fe3O4_spinel_26410:
-# Fleet, M.E. (1981) The Structure of Magnetite.
-# Acta Crystallographica, Section B: Structural Crystallography and Crystal Chemistry  37:917 - 920.
-    - Fe:
-        Fe: 0.0
-        O: 4.0
-    - Fe:
-        Fe: 0.0
-        O: 6.0
-    - O:
-        Fe: 4.0
-        O: 0.0
-
-NaCl_rocksalt_100633:
-# Finger, L.W., King, H. (1978)
-# A revised method of operation of the single-crystal diamond cell and refinement of the structure of Na Cl at 32 kbar .
-# American Mineralogist 63:337 - 342.
-    - Na:
-        Na: 0.0
-        Cl: 6.0
-    - Cl:
-        Na: 6.0
-        Cl: 0.0
-
-TiO2_anatase_9852:
-# Horn, M., Schwerdtfeger, C.F., Meagher, E.P. (1972) Refinement of the structure of anatase at several temperatures.
-# Zeitschrift fuer Kristallographie, Kristallgeometrie, Kristallphysik, Kristallchemie (-144,1977)  136:273 - 281.
-    - Ti:
-        Ti: 0.0
-        O: 6.0
-    - O:
-        Ti: 3.0
-        O: 0.0
-
-ZnS_wurtzite_67453:
-# Kisi, E.H., Elcombe, M.M. (1989)
-# U parameters for the wurtzite structure of Zn S and Zn O using powder neutron diffraction .
-# Acta Crystallographica, Section C: Crystal Structure Communications 45:1867 - 1870.
-    - Zn:
-        Zn: 0.0
-        S: 4.0
-    - S:
-        Zn: 4.0
-        S: 0.0
-
-ZnS_zincblende_651455:
-# Desgreniers, Serge, Beaulieu, Luc, Lepage, Ian (2000)
-# Pressure-induced structural changes in Zn S.
-# Physical Review, Serie 3. B - Condensed Matter (18,1978-) 61:8726 - 8733.
-    - Zn:
-        S: 4.0
-        Zn: 0.0
-    - S:
-        S: 0.0
-        Zn: 4.0
-
-NiAs_5245:
-# Ondrus, P., Veselovky, F., Gabasova, A., Hlousek, J., Srein, V., Vavrin, I.,
-# Skala, R., Sejkora, J., Drabek, M. (2003) Primary minerals of the Jachymov
-# ore district. Journal of the Czech Geological Society 48:19 - 147.
-    - Ni:
-        Ni: 0.0
-        As: 6.0
-    - As:
-        Ni: 6.0
-        As: 0.0
-
-As_16518:
-# Schiferl, D., Barrett, C.S. (1969) The crystal structure of arsenic at 4.2, 78 and 299 grad K.
-# Journal of Applied Crystallography 2:30 - 36.
-# notes: not as easy to see 6 coordination in crystalmaker with this cif file, looks like either 3 or 6-coordinated
-    - As:
-        As: 3.0
-
-C_diamond_52054:
-# Yamanaka, T., Morimoto, S. (1996)  Isotope effect on anharmonic thermal atomic vibration and k-refinemant of 12C and 13C diamond.
-# Acta Crystallographica, Section B: Structural Science 52:232 - 238.
-    - C:
-        C: 4.0
-
-C_graphite_76767:
-# Trucano, P., Chen, R. (1975) Structure of graphite by neutron diffraction.
-# Nature (London, United Kingdom) 258:136 - 137.
-    - C:
-        C: 3.0
-    - C:
-        C: 3.0
-
-Cu_52256:
-# Owen, E.A., Yates, E.L. (1933) Precision measurements of crystal parameters.
-# Philosophical Magazine, Serie 7(1926-46,1955) 15:472 - 488.
-# notes: no high quality data
-    - Cu:
-        Cu: 12.0
-
-Ga_12174:
-# Bosio, L. (1978) Crystal structures of Ga(II) and Ga(III).
-# Journal of Chemical Physics 68:1221 - 1223.
-# notes: no high quality data
-    - Ga:
-        Ga: 12.0
-
-Hg_104296:
-# Amand, R.S., Giessen, B.C. (1978) On the metastable system mercury-thallium.
-# Journal of the Less-Common Metals 58:161 - 172.
-    - Hg:
-        Hg: 6.0
-
-La_43573:
-# Hanak, J.J., Daane, A.H. (1961) High temperature allotropy and thermal expansion of the rare earth metals.
-# Journal of the Less-Common Metals 3:110 - 124.
-# notes: no high quality data
-    - La:
-        La: 12.0
-    - La:
-        La: 12.0
-
-Mg_52260:
-# Owen, E.A., Pickup, Llewelyn, Roberts, I.O. (1935) Lattice constants of five elements possessing hexagonal structure.
-# Zeitschrift fuer Kristallographie, Kristallgeometrie, Kristallphysik, Kristallchemie (-144,1977)  91:70 - 76.
-# notes: no high quality data
-    - Mg:
-        Mg: 12.0
-
-Mn_alpha_42743:
-# Oberteuffer, J.A., Ibers, J.A. (1970)  A refinement of the atomic and thermal parameters of alpha-manganese from a single crystal .
-# Acta Crystallographica, Section B: Structural Crystallography and Crystal Chemistry  26:1499 - 1504.
-    - Mn:
-        Mn: 16.0
-    - Mn:
-        Mn: 16.0
-    - Mn:
-        Mn: 13.0
-    - Mn:
-        Mn: 12.0
-
-Mn_beta_41775:
-# Shoemaker, C.B., Shoemaker, D.P., Hopkins, T.E., Yindepit, S. (1978)  Refinement of the structure of beta-manganese and of a related phase in the Mn-Ni-Si system .
-# Acta Crystallographica, Section B: Structural Crystallography and Crystal Chemistry  34:3573 - 3576.
-    - Mn:
-        Mn: 12.0
-    - Mn:
-        Mn: 12.0
-
-P_black_23836:
-# Brown, A., Rundqvist, S. (1965) Refinement of the crystal structure of black phosphorus.
-# Acta Crystallographica 19:684 - 685.
-    - P:
-        P: 3.0
-
-Se_gamma_23068:
-# Keller, R., Holzapfel, W.B., Schulz, H. (1977) Effect of pressure on the atom positions in Se and Te.
-# Physical Review, Serie 3. B - Solid State (1,1970-17,1977) 16:4404 - 4412.
-# notes: Murat had that Se was 2-coordinated
-    - Se:
-        Se: 3.0
-
-Sm_76031:
-# Daane, A.H., Rundle, R.E., Smith, H.G., Spedding, F.H. (1954)
-# The crystal structure of samarium. Acta Crystallographica 7:532 - 535.
-# notes: no high quality data
-    - Sm:
-        Sm: 12.0
-    - Sm:
-        Sm: 12.0
-
-Sn_106072:
-# Wolcyrz, M., Kubiak, R., Maciejewski, S. (1981)
-# X-ray investigation of thermal expansion and atomic thermal vibrations of tin, indium, and their alloys .
-# Physica Status Solidi B - Basic Solid State Physics 107:245 - 253.
-    - Sn:
-        Sn: 6.0
-
-U_alpha_16056:
-# Lander, G.H., Mueller, M.H. (1970) Neutron diffraction study of alpha-uranium at low temperatures.
-# Acta Crystallographica, Section B: Structural Crystallography and Crystal Chemistry  26:129 - 136.
-# notes: no high quality data, Murat had that it was only 12-coordinated, seems like could also be 4-coordinated
-    - U:
-        U:
-          - 4.0
-          - 12.0
-
-W_43667:
-# Parrish, W. (1960) Results of the I.U.Cr. precision lattice-parameter project.
-# Acta Crystallographica 13:838 - 850.
-# notes: no high quality data
-    - W:
-        W: 8.0
-
-MgCu2_laves_46007:
-# Ohba, T., Kitano, Y., Komura, Y. (1984) The charge-density study of the Laves phases, Mg Zn2 and Mg Cu2.
-# Acta Crystallographica, Section C: Crystal Structure Communications 40:1 - 5.
-    - Mg:
-        Mg: 4.0
-        Cu: 12.0
-    - Cu:
-        Mg: 6.0
-        Cu: 6.0
-
-MgNi2_laves_104838:
-# Komura, Y., Tokunaga, K. (1980) Structural studies of stacking variants in Mg-base Friauf- Laves phases.
-# Acta Crystallographica, Section B: Structural Crystallography and Crystal Chemistry  36:1548 - 1554.
-    - Mg:
-        Mg: 4.0
-        Ni: 12.0
-    - Mg:
-        Mg: 4.0
-        Ni: 12.0
-    - Ni:
-        Mg: 6.0
-        Ni: 6.0
-    - Ni:
-        Mg: 6.0
-        Ni: 6.0
-    - Ni:
-        Mg: 6.0
-        Ni: 6.0
-
-MgZn2_laves_46006:
-# Ohba, T., Kitano, Y., Komura, Y. (1984) The charge-density study of the Laves phases, Mg Zn2 and Mg Cu2.
-# Acta Crystallographica, Section C: Crystal Structure Communications 40:1 - 5.
-    - Mg:
-        Mg: 4.0
-        Zn: 12.0
-    - Zn:
-        Mg: 6.0
-        Zn: 6.0
-    - Zn:
-        Mg: 6.0
-        Zn: 6.0
-
-C3N_mp-1014297_computed:
-# mp user-submitted structure
-# for internal use
-    - C:
-        C: 2.0
-        N: 1.0
-    - N:
-        C: 3.0
-        N: 0.0
-
-Rb3Cr_mp-975045_computed:
-# mp user-submitted structure
-# for internal use
-    - Rb:
-        Rb: 8.0
-        Cr: 4.0
-    - Cr:
-        Rb: 12.0
-        Cr: 0.0
-
-Ca2MgSi2O7_melilite_50065:
-# Yang, H., Hazen, R.M., Downs, R.T., Finger, L.W. (1997)
-# Structural change associated with the incommensurate-normal phase transition in akermanite, Ca2 Mg Si2 O7, at high pressure .
-# Physics and Chemistry of Minerals 24:510 - 519.
-    - Ca:
-        Ca: 0.0
-        Mg: 0.0
-        Si: 0.0
-        O: 8.0
-    - Mg:
-        Ca: 0.0
-        Mg: 0.0
-        Si: 0.0
-        O: 4.0
-    - Si:
-        Ca: 0.0
-        Mg: 0.0
-        Si: 0.0
-        O: 4.0
-    - O:
-        Ca: 2.0
-        Mg: 0.0
-        Si: 2.0
-        O: 0.0
-    - O:
-        Ca: 3.0
-        Mg: 0.0
-        Si: 1.0
-        O: 0.0
-    - O:
-        Ca: 2.0
-        Mg: 1.0
-        Si: 1.0
-        O: 0.0
-
-Ca5V3O12F_apatite_172997:
-# Baikie, T., Mercier, P.H.J., Elcombe, M.M., Kim, J.Y., le Page, Y., Mitchell, L.D., White, T.J., Whitfield, P.S. (2007)
-# Triclinic apatites. Acta Crystallographica, Section B: Structural Science 63:251 - 256.
-    - Ca:
-        Ca: 0.0
-        V: 0.0
-        O: 9.0
-        F: 0.0
-    - Ca:
-        Ca: 0.0
-        V: 0.0
-        O: 6.0
-        F: 1.0
-    - V:
-        Ca: 0.0
-        V: 0.0
-        O: 4.0
-        F: 0.0
-    - O:
-        Ca: 3.0
-        V: 1.0
-        O: 0.0
-        F: 0.0
-    - O:
-        Ca: 3.0
-        V: 1.0
-        O: 0.0
-        F: 0.0
-    - O:
-        Ca: 3.0
-        V: 1.0
-        O: 0.0
-        F: 0.0
-    - F:
-        Ca: 3.0
-        V: 0.0
-        O: 0.0
-        F: 0.0
-
-CuSbPbS3_buornonite_182267:
-# Kharbish, S., Giester, G., Beran, A. (2010) Contribution to the crystal structures of tennantite and bournonite.
-# Neues Jahrbuch fuer Mineralogie. Abhandlungen (Band-Nr) (1950-) 187:159 - 166.
-# notes: before had as Pb - S was 6-coordinated
-    - Cu:
-        Cu: 0.0
-        Sb: 0.0
-        Pb: 0.0
-        S: 4.0
-    - Sb:
-        Cu: 0.0
-        Sb: 0.0
-        Pb: 0.0
-        S: 3.0
-    - Sb:
-        Cu: 0.0
-        Sb: 0.0
-        Pb: 0.0
-        S: 3.0
-    - Pb:
-        Cu: 0.0
-        Sb: 0.0
-        Pb: 0.0
-        S: 8.0
-    - Pb:
-        Cu: 0.0
-        Sb: 0.0
-        Pb: 0.0
-        S: 8.0
-    - S:
-        Cu: 2.0
-        Sb: 1.0
-        Pb: 1.0
-        S: 0.0
-    - S:
-        Cu: 2.0
-        Sb: 1.0
-        Pb: 2.0
-        S: 0.0
-    - S:
-        Cu: 1.0
-        Sb: 1.0
-        Pb: 1.0
-        S: 0.0
-    - S:
-        Cu: 1.0
-        Sb: 1.0
-        Pb: 0.0
-        S: 0.0
-
-Y3Al5O12_garnet_93634:
-# Rodic, D., Mitric, M., Tellgren, R., Rundlof, H. (2001)
-# The cation distribution and magnetic structure of Y3 Fe5-x Alx O12.
-# Journal of Magnetism and Magnetic Materials 232:1 - 8.
-    - Y:
-        Y: 0.0
-        Al: 0.0
-        O: 8.0
-    - Al:
-        Y: 0.0
-        Al: 0.0
-        O: 6.0
-    - Al:
-        Y: 0.0
-        Al: 0.0
-        O: 4.0
-    - O:
-        Y: 2.0
-        Al: 2.0
-        O: 0.0
-
-AlPO4_91671:
-# Klap, G.J., van Koningsveld, H., Graafsma, H., Schreurs, A.M.M. (2000)
-# Absolute configuration and domain structure of (Al P O4)-5 studied by single-crystal X-ray diffraction .
-# Microporous and Mesoporous Materials 38:403 - 412.
-    - Al:
-        Al: 0.0
-        P: 0.0
-        O: 4.0
-    - P:
-        Al: 0.0
-        P: 0.0
-        O: 4.0
-    - O:
-        Al: 1.0
-        P: 1.0
-        O: 0.0
-    - O:
-        Al: 1.0
-        P: 1.0
-        O: 0.0
-    - O:
-        Al: 1.0
-        P: 1.0
-        O: 0.0
-    - O:
-        Al: 1.0
-        P: 1.0
-        O: 0.0
-
-SiO2_413210:
-# Graetsch, H.A. (2003) Rietveld refinement of incommensurate low tridymite.
-# Zeitschrift fuer Kristallographie (1979-2010) 218:531 - 535.
-    - Si:
-        Si: 0.0
-        O: 4.0
-    - Si:
-        Si: 0.0
-        O: 4.0
-    - O:
-        Si: 2.0
-        O: 0.0
-    - O:
-        Si: 2.0
-        O: 0.0
-    - O:
-        Si: 2.0
-        O: 0.0
-    - O:
-        Si: 2.0
-        O: 0.0
-
-#SiO2_mp-639478_computed:
-#    - Si:
-#        Si: 0.0
-#        O: 4.0
-#    - O:
-#        Si: 2.0
-#        O: 0.0
-#    - O:
-#        Si: 2.0
-#        O: 0.0
-#    - O:
-#        Si: 2.0
-#        O: 0.0
-
-#SiO2_tridymite_40896:
-## Kihara, K., Matsumoto, T., Imamura, M. (1986)
-## High-order thermal-motion tensor analyses of tridymite.
-## Zeitschrift fuer Kristallographie (1979-2010) 177:39 - 52.
-#    - Si:
-#        Si: 0.0
-#        O: 4.0
-#    - O:
-#        Si: 2.0
-#        O: 0.0
-#    - O:
-#        Si: 2.0
-#        O: 0.0
-
-
-# ---------------- Perovskites ---------------------
-
-SrTiO3_perovskite_80871:
-# Notes: considered archetypal cubic perovskite
-    - Sr:
-        Sr: 0.0
-        Ti: 0.0
-        O: 12.0
-    - Ti:
-        Sr: 0.0
-        Ti: 0.0
-        O: 6.0
-    - O:
-        Sr: 4.0
-        Ti: 2.0
-        O: 0.0
-
-#Pb2CuO4H4Cl2_diaboleite_81589:
-## Cooper, M.A., Hawthorne, F.C. (1995)  Diaboleite, Pb2 Cu (O H)4 Cl2,
-## a defect perovskite structure with stereoactive lone-pair behavior of Pb(2+) .
-## Canadian Mineralogist 33:1125 - 1129.
-## Notes: B-site is partially vacant
-#    - Pb:
-#        Pb: 0.0
-#        Cu: 0.0
-#        O: 4.0
-#        H: 4.0
-#        Cl: 4.0
-#    - Cu:
-#        Pb: 0.0
-#        Cu: 0.0
-#        O: 4.0
-#        H: 4.0
-#        Cl: 2.0
-#    - O:
-#        Pb: 2.0
-#        Cu: 1.0
-#        O: 0.0
-#        H: 0.0
-#        Cl: 0.0
-#    - H:
-#        Pb: 2.0
-#        Cu: 1.0
-#        O: 0.0
-#        H: 0.0
-#        Cl: 0.0
-#    - Cl:
-#        Pb: 4.0
-#        Cu: 2.0
-#        O: 0.0
-#        H: 0.0
-#        Cl: 0.0
-#    - Cl:
-#        Pb: 4.0
-#        Cu: 0.0
-#        O: 0.0
-#        H: 0.0
-#        Cl: 0.0
-#
-#YF3_waimirite-Y_257563:
-## Atencio, Daniel, Bastos Neto, Artur C., Pereira, Vitor P., Ferron, Jose T.M.M., Hoshino,
-## M., Moriyama, T., Watanabe, Y., Miyawaki, R., Coutinho, Jose M.V., Andrade, Marcelo B.,
-## Domanik, Kenneth, Chukanov, Nikita V., Momma, K., Hirano, H., Tsunematsu, M. (2015)
-## Waimirite-(Y), orthorhombic YF3, a new mineral from the Pitinga mine, Presidente Figueiredo,
-## Amazonas, Brazil and from Jabal Tawlah, Saudi Arabia: description and crystal structure .
-## Mineralogical Magazine 79:767 - 780.
-## Notes: B-site is entirely vacant
-#    - Y:
-#        Y: 0.0
-#        F: 9.0
-#    - F:
-#        Y: 3.0
-#        F: 0.0
-#    - F:
-#        Y: 3.0
-#        F: 0.0
-
-#KMgF3_perovskite_40476:
-## Muradyan, L.A., Zavodnik, V.E., Makarova, I.P., Aleksandrov, K.S., Simonov, V.I. (1984)
-## Thermal vibrations of atoms in the structure of K Mg F3 at 293 and 123 K. Kristallografiya 29:392 - 394.
-## Notes: Mitchell, R.H. et at consider this to be a better archetypal cubic perovskite
-##        unlike SrTiO3, remains cubic from 3.6 K to its melting point
-##        structure is not affected by pressure up to 50 GPa
-#    - K:
-#        K: 0.0
-#        Mg: 0.0
-#        F: 12.0
-#    - Mg:
-#        K: 0.0
-#        Mg: 0.0
-#        F: 6.0
-#    - F:
-#        K: 4.0
-#        Mg: 2.0
-#        F: 0.0
-#
-#CaTiO3_perovskite_94568:
-## Yamanaka, T., Hirai, N., Komatsu, Y. (2002) Structure change of Ca1-x Srx Ti O3 perovskite
-## with composition and pressure. American Mineralogist 87:1183 - 1189.
-## Notes: octahedron tilting
-#    - Ca:
-#        Ca: 0.0
-#        Ti: 0.0
-#        O: 12.0
-#    - Ti:
-#        Ca: 0.0
-#        Ti: 0.0
-#        O: 6.0
-#    - O:
-#        Ca: 4.0
-#        Ti: 2.0
-#        O: 0.0
-#    - O:
-#        Ca: 4.0
-#        Ti: 2.0
-#        O: 0.0
-
-#Na6ClFS2O8_sulphohalite_26914:
-## Sakamoto, Y. (1968)  The size, atomic charges, and motion of the sulfate radical of symmetry
-## 4-3m in the crystal of sulfohalite, Na6 Cl F (S O4)2 .  Journal of Science of the Hiroshima
-## University, Series A: Mathematics, Physics, Chemistry  32:101 - 108.
-## Notes: ordered double antiperovskite, anti-elpasolite 3C polytype structure
-#    - Na:
-#        Na: 0.0
-#        Cl: 1.0
-#        F: 1.0
-#        S: 0.0
-#        O: 4.0
-#    - Cl:
-#        Na: 6.0
-#        Cl: 0.0
-#        F: 0.0
-#        S: 0.0
-#        O: 0.0
-#    - F:
-#        Na: 6.0
-#        Cl: 0.0
-#        F: 0.0
-#        S: 0.0
-#        O: 0.0
-#    - S:
-#        Na: 0.0
-#        Cl: 0.0
-#        F: 0.0
-#        S: 0.0
-#        O: 4.0
-#    - O:
-#        Na: 3.0
-#        Cl: 0.0
-#        F: 0.0
-#        S: 1.0
-#        O: 0.0
-
-#MgSiO3_bridgmanite_66887:
-## Ross, N.L., Hazen, R.M. (1990) High-pressure crystal chemistry of Mg Si O3 perovskite.
-## Physics and Chemistry of Minerals 17:228 - 237.
-## Notes: silicate single perovskite, bridgmanite subgroup
-#    - Mg:
-#        Mg: 0.0
-#        Si: 0.0
-#        O: 12.0
-#    - Si:
-#        Mg: 0.0
-#        Si: 0.0
-#        O: 6.0
-#    - O:
-#        Mg: 2.0
-#        Si: 2.0
-#        O: 0.0
-#    - O:
-#        Mg: 3.0
-#        Si: 2.0
-#        O: 0.0
-#
-#NaNbO3_lueshite_28578:
-## Solov'ev, S.P. (Solovev, S.P.), Venevtsev, Yu.N., Zhdanov, G.S. (1961)
-## An X-ray study of phase transitions in Na Nb O3. Kristallografiya 6:218 - 224.
-#    - Na:
-#        Na: 0.0
-#        Nb: 0.0
-#        O: 12.0
-#    - Nb:
-#        Na: 0.0
-#        Nb: 0.0
-#        O: 6.0
-#    - O:
-#        Na: 4.0
-#        Nb: 2.0
-#        O: 0.0
-#    - O:
-#        Na: 4.0
-#        Nb: 2.0
-#        O: 0.0
-#    - O:
-#        Na: 4.0
-#        Nb: 2.0
-#        O: 0.0
-#
-#NaNbO3_isolueshite_192407:
-## Mitchell, Roger H., Burns, Peter C., Knight, Kevin S., Howard, Christopher J.,
-## Chakhmouradian, Anton R. (2014) Observations on the crystal structures of lueshite.
-## Physics and Chemistry of Minerals 41:393 - 401.
-#    - Na:
-#        Na: 0.0
-#        Nb: 0.0
-#        O: 12.0
-#    - Nb:
-#        Na: 0.0
-#        Nb: 0.0
-#        O: 6.0
-#    - O:
-#        Na: 4.0
-#        Nb: 2.0
-#        O: 0.0
-#
-#CaSnO3_lakargiite_59160:
-## Vallet Regi, M., Gonzalez Calbet, J.M., Alario-Franco, M.A., Vegas, A. (1986)
-## The A Sn O3 (A = Ca, Sr) perovskites. Acta Crystallographica, Section C:
-## Crystal Structure Communications 42:167 - 172.
-#    - Ca:
-#        Ca: 0.0
-#        Sn: 0.0
-#        O: 12.0
-#    - Sn:
-#        Ca: 0.0
-#        Sn: 0.0
-#        O: 6.0
-#    - O:
-#        Ca: 2.0
-#        Sn: 2.0
-#        O: 0.0
-#    - O:
-#        Ca: 3.0
-#        Sn: 2.0
-#        O: 0.0
-#
-#PbTiO3_macedonite_61168:
-## Nelmes, R.J., Kuhs, W.F. (1985) The crystal structure of tetragonal
-## Pb Ti O3 at room temperature and at 700 K. Solid State
-## Communications 54:721 - 723.
-#    - Pb:
-#        Pb: 0.0
-#        Ti: 0.0
-#        O: 12.0
-#    - Ti:
-#        Pb: 0.0
-#        Ti: 0.0
-#        O: 6.0
-#    - O:
-#        Pb: 4.0
-#        Ti: 2.0
-#        O: 0.0
-#    - O:
-#        Pb: 4.0
-#        Ti: 2.0
-#        O: 0.0
-
 cluster_Al13H72O48:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 6.0
@@ -1787,7 +317,7 @@ cluster_Al13H72O48:
         O: 1.0
 
 cluster_Al26H90O78:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 6.0
@@ -2249,7 +779,7 @@ cluster_Al26H90O78:
         O: 1.0
 
 cluster_Al13H51O41:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 4.0
@@ -2500,7 +1030,7 @@ cluster_Al13H51O41:
         O: 1.0
 
 cluster_Al7H36O24:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 6.0
@@ -2662,7 +1192,7 @@ cluster_Al7H36O24:
         O: 1.0
 
 cluster_Al4H30O18:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 6.0
@@ -2788,7 +1318,7 @@ cluster_Al4H30O18:
         O: 1.0
 
 cluster_Al4H26O16:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 6.0
@@ -2900,7 +1430,7 @@ cluster_Al4H26O16:
         O: 1.0
 
 cluster_Al4H30O18:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 6.0
@@ -3026,7 +1556,7 @@ cluster_Al4H30O18:
         O: 1.0
 
 cluster_Al3H24O14:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 6.0
@@ -3126,7 +1656,7 @@ cluster_Al3H24O14:
         O: 1.0
 
 cluster_Al8H50O32:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 6.0
@@ -3342,7 +1872,7 @@ cluster_Al8H50O32:
         O: 1.0
 
 cluster_Al6H36O24:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 6.0
@@ -3502,7 +2032,7 @@ cluster_Al6H36O24:
         O: 1.0
 
 cluster_Al6H24O18:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 5.0
@@ -3620,7 +2150,7 @@ cluster_Al6H24O18:
         O: 1.0
 
 cluster_Al4H30O18:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 6.0
@@ -3746,7 +2276,7 @@ cluster_Al4H30O18:
         O: 1.0
 
 cluster_Al13H48O40:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 4.0
@@ -3988,7 +2518,7 @@ cluster_Al13H48O40:
         O: 1.0
 
 cluster_Al3H24O14:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 6.0
@@ -4088,7 +2618,7 @@ cluster_Al3H24O14:
         O: 1.0
 
 cluster_Al5H36O22:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 6.0
@@ -4240,7 +2770,7 @@ cluster_Al5H36O22:
         O: 1.0
 
 cluster_Al14H66O48:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 6.0
@@ -4548,7 +3078,7 @@ cluster_Al14H66O48:
         O: 1.0
 
 cluster_Al1H10O5:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 5.0
@@ -4589,7 +3119,7 @@ cluster_Al1H10O5:
         O: 1.0
 
 cluster_Al3H24O14:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 6.0
@@ -4689,7 +3219,7 @@ cluster_Al3H24O14:
         O: 1.0
 
 cluster_Al6H32O22:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 5.0
@@ -4835,7 +3365,7 @@ cluster_Al6H32O22:
         O: 1.0
 
 cluster_Al4H30O18:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 6.0
@@ -4961,7 +3491,7 @@ cluster_Al4H30O18:
         O: 1.0
 
 cluster_Al11H54O38:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 6.0
@@ -5209,7 +3739,7 @@ cluster_Al11H54O38:
         O: 1.0
 
 cluster_Al13H48O40:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 4.0
@@ -5451,7 +3981,7 @@ cluster_Al13H48O40:
         O: 1.0
 
 cluster_Al26H132O92:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 6.0
@@ -6047,7 +4577,7 @@ cluster_Al26H132O92:
         O: 1.0
 
 cluster_Al26H132O92:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 6.0
@@ -6643,7 +5173,7 @@ cluster_Al26H132O92:
         O: 1.0
 
 cluster_Al15H66O48:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 6.0
@@ -6953,7 +5483,7 @@ cluster_Al15H66O48:
         O: 1.0
 
 cluster_Al3H27O15:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 6.0
@@ -7062,7 +5592,7 @@ cluster_Al3H27O15:
         O: 1.0
 
 cluster_Al2H18O10:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 6.0
@@ -7136,30 +5666,18 @@ cluster_Al2H18O10:
         O: 1.0
 
 cluster_Al10H54O38:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 6.0
-    - Al:
-        O: 6.0
-    - Al:
-        O: 6.0
-    - Al:
-        O: 6.0
-    - Al:
-        O: 6.0
-    - Al:
-        O: 6.0
-    - Al:
-        O: 6.0
-    - Al:
-        O: 6.0
     - O:
         Al: 2.0
         H: 1.0
     - O:
         Al: 2.0
         H: 1.0
+    - Al:
+        O: 6.0
     - O:
         Al: 1.0
         H: 2.0
@@ -7184,6 +5702,10 @@ cluster_Al10H54O38:
     - O:
         Al: 2.0
         H: 1.0
+    - Al:
+        O: 6.0
+    - Al:
+        O: 6.0
     - O:
         Al: 1.0
         H: 2.0
@@ -7208,6 +5730,10 @@ cluster_Al10H54O38:
     - O:
         Al: 2.0
         H: 1.0
+    - Al:
+        O: 6.0
+    - Al:
+        O: 6.0
     - O:
         Al: 2.0
         H: 1.0
@@ -7288,6 +5814,10 @@ cluster_Al10H54O38:
         O: 1.0
     - H:
         O: 1.0
+    - Al:
+        O: 6.0
+    - Al:
+        O: 6.0
     - O:
         Al: 1.0
         H: 2.0
@@ -7382,7 +5912,7 @@ cluster_Al10H54O38:
         O: 1.0
 
 cluster_Al12H54O38:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 6.0
@@ -7632,7 +6162,7 @@ cluster_Al12H54O38:
         O: 1.0
 
 cluster_Al8H42O28:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 6.0
@@ -7820,7 +6350,7 @@ cluster_Al8H42O28:
         O: 1.0
 
 cluster_Al1H12O6:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 6.0
@@ -7868,7 +6398,7 @@ cluster_Al1H12O6:
         O: 1.0
 
 cluster_Al4H30O19:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - O:
         Al: 4.0
@@ -7996,7 +6526,7 @@ cluster_Al4H30O19:
         O: 1.0
 
 cluster_Al20H96O72:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 6.0
@@ -8448,7 +6978,7 @@ cluster_Al20H96O72:
         O: 1.0
 
 cluster_Al13H48O40:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 4.0
@@ -8690,7 +7220,7 @@ cluster_Al13H48O40:
         O: 1.0
 
 cluster_Al4H30O18:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 6.0
@@ -8816,7 +7346,7 @@ cluster_Al4H30O18:
         O: 1.0
 
 cluster_Al13H66O48:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 6.0
@@ -9122,7 +7652,7 @@ cluster_Al13H66O48:
         O: 1.0
 
 cluster_Al16H78O58:
-# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017).
+# Wills, L. A., Qu, X., Chang, I. Y., Mustard, T. J. L., Keszler, D. A., Persson, K. A., & Cheong, P. H. Y. (2017). 
 # Nature Communications, 8(May), 1–7. https://doi.org/10.1038/ncomms15852
     - Al:
         O: 6.0
@@ -9486,5 +8016,4 @@ cluster_Al16H78O58:
         O: 1.0
     - H:
         O: 1.0
-
 
