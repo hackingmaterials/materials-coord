@@ -67,11 +67,11 @@ CaB2O4_34641:
         B: 0.0
         O: 3.0
     - O:
-        Ca: 0.0
-        B: 1.0
+        Ca: 3.0
+        B: 2.0
         O: 0.0
     - O:
-        Ca: 0.0
+        Ca: 3.0
         B: 2.0
         O: 0.0
 
@@ -219,22 +219,6 @@ Na2SO4_thenardite_2895:
         S: 1.0
         O: 0.0
 
-Pb3O4_22325:
-# Fayek, M.K., Leciejewicz, J. (1965) Neutron diffraction study of Pb3 O4.
-# Zeitschrift fuer Anorganische und Allgemeine Chemie (1950) (DE) 336:104 - 109.
-    - Pb:
-        Pb: 0.0
-        O: 6.0
-    - Pb:
-        Pb: 0.0
-        O: 3.0
-    - O:
-        Pb: 3.0
-        O: 0.0
-    - O:
-        Pb: 0.0
-        O: 3.0
-
 Sr2PbO4_16806:
 #Troemel, M. (1965) Zur Struktur der Verbindungen vom Sr2 Pb O4-Typ. Naturwissenschaften 52:492 - 493.
 # notes: article in a different language...
@@ -252,7 +236,7 @@ Sr2PbO4_16806:
         Pb: 2.0
         O: 0.0
     - O:
-        Sr: 5.0
+        Sr: 4.0
         Pb: 1.0
         O: 0.0
 
@@ -357,7 +341,7 @@ AlAsO4_33254:
         As: 1.0
         O: 0.0
     - O:
-        Al: 2.0
+        Al: 1.0
         As: 1.0
         O: 0.0
 
@@ -453,7 +437,7 @@ CePO4_monazite_79746:
     - Ce:
         Ce: 0.0
         P: 0.0
-        O: 10.0
+        O: 9.0
     - P:
         Ce: 0.0
         P: 0.0
@@ -463,7 +447,7 @@ CePO4_monazite_79746:
         P: 1.0
         O: 0.0
     - O:
-        Ce: 3.0
+        Ce: 2.0
         P: 1.0
         O: 0.0
     - O:
@@ -606,7 +590,7 @@ SbNbO4_20344:
     - Sb:
         Sb: 0.0
         Nb: 0.0
-        O: 5.0
+        O: 6.0
     - O:
         Sb: 2.0
         Nb: 1.0
@@ -685,6 +669,7 @@ ZrSiO4_zircon_15759:
         Si: 1.0
         O: 0.0
 
+#----------------- Common Binaries ----------------
 Al2O3_corundum_9770:
 # Finger, L.W., Hazen, R.M. (1978)
 # Crystal structure and compression of ruby to 46 kbar.
@@ -735,7 +720,7 @@ Cu5Zn8_gamma_brass_2092:
         Zn: 10.0
         Cu: 3.0
 
-Fe3O4_spinel_26410:
+Fe3O4_inv_spinel_26410:
 # Fleet, M.E. (1981) The Structure of Magnetite.
 # Acta Crystallographica, Section B: Structural Crystallography and Crystal Chemistry  37:917 - 920.
     - Fe:
@@ -759,7 +744,34 @@ NaCl_rocksalt_100633:
         Na: 6.0
         Cl: 0.0
 
-TiO2_anatase_9852:
+NiAs_5245:
+# Ondrus, P., Veselovky, F., Gabasova, A., Hlousek, J., Srein, V., Vavrin, I.,
+# Skala, R., Sejkora, J., Drabek, M. (2003) Primary minerals of the Jachymov
+# ore district. Journal of the Czech Geological Society 48:19 - 147.
+    - Ni:
+        Ni: 0.0
+        As: 6.0
+    - As:
+        Ni: 6.0
+        As: 0.0
+
+Pb3O4_22325:
+# Fayek, M.K., Leciejewicz, J. (1965) Neutron diffraction study of Pb3 O4.
+# Zeitschrift fuer Anorganische und Allgemeine Chemie (1950) (DE) 336:104 - 109.
+    - Pb:
+        Pb: 0.0
+        O: 6.0
+    - Pb:
+        Pb: 0.0
+        O: 3.0
+    - O:
+        Pb: 3.0
+        O: 0.0
+    - O:
+        Pb: 3.0
+        O: 0.0
+
+TiO2_rutile_9852:
 # Horn, M., Schwerdtfeger, C.F., Meagher, E.P. (1972) Refinement of the structure of anatase at several temperatures.
 # Zeitschrift fuer Kristallographie, Kristallgeometrie, Kristallphysik, Kristallchemie (-144,1977)  136:273 - 281.
     - Ti:
@@ -768,6 +780,17 @@ TiO2_anatase_9852:
     - O:
         Ti: 3.0
         O: 0.0
+
+ZnS_sphalerite_651455:
+# Desgreniers, Serge, Beaulieu, Luc, Lepage, Ian (2000)
+# Pressure-induced structural changes in Zn S.
+# Physical Review, Serie 3. B - Condensed Matter (18,1978-) 61:8726 - 8733.
+    - Zn:
+        S: 4.0
+        Zn: 0.0
+    - S:
+        S: 0.0
+        Zn: 4.0
 
 ZnS_wurtzite_67453:
 # Kisi, E.H., Elcombe, M.M. (1989)
@@ -780,29 +803,9 @@ ZnS_wurtzite_67453:
         Zn: 4.0
         S: 0.0
 
-ZnS_zincblende_651455:
-# Desgreniers, Serge, Beaulieu, Luc, Lepage, Ian (2000)
-# Pressure-induced structural changes in Zn S.
-# Physical Review, Serie 3. B - Condensed Matter (18,1978-) 61:8726 - 8733.
-    - Zn:
-        S: 4.0
-        Zn: 0.0
-    - S:
-        S: 0.0
-        Zn: 4.0
+#---------------- Elemental Structures ---------------------
 
-NiAs_5245:
-# Ondrus, P., Veselovky, F., Gabasova, A., Hlousek, J., Srein, V., Vavrin, I.,
-# Skala, R., Sejkora, J., Drabek, M. (2003) Primary minerals of the Jachymov
-# ore district. Journal of the Czech Geological Society 48:19 - 147.
-    - Ni:
-        Ni: 0.0
-        As: 6.0
-    - As:
-        Ni: 6.0
-        As: 0.0
-
-As_16518:
+As_alpha_16518:
 # Schiferl, D., Barrett, C.S. (1969) The crystal structure of arsenic at 4.2, 78 and 299 grad K.
 # Journal of Applied Crystallography 2:30 - 36.
 # notes: not as easy to see 6 coordination in crystalmaker with this cif file, looks like either 3 or 6-coordinated
@@ -837,7 +840,7 @@ Ga_12174:
     - Ga:
         Ga: 12.0
 
-Hg_104296:
+Hg_alpha_104296:
 # Amand, R.S., Giessen, B.C. (1978) On the metastable system mercury-thallium.
 # Journal of the Less-Common Metals 58:161 - 172.
     - Hg:
@@ -885,12 +888,11 @@ P_black_23836:
     - P:
         P: 3.0
 
-Se_gamma_23068:
+Se_trigonal_23068:
 # Keller, R., Holzapfel, W.B., Schulz, H. (1977) Effect of pressure on the atom positions in Se and Te.
 # Physical Review, Serie 3. B - Solid State (1,1970-17,1977) 16:4404 - 4412.
-# notes: Murat had that Se was 2-coordinated
     - Se:
-        Se: 3.0
+        Se: 2.0
 
 Sm_76031:
 # Daane, A.H., Rundle, R.E., Smith, H.G., Spedding, F.H. (1954)
@@ -901,7 +903,7 @@ Sm_76031:
     - Sm:
         Sm: 12.0
 
-Sn_106072:
+Sn_beta_106072:
 # Wolcyrz, M., Kubiak, R., Maciejewski, S. (1981)
 # X-ray investigation of thermal expansion and atomic thermal vibrations of tin, indium, and their alloys .
 # Physica Status Solidi B - Basic Solid State Physics 107:245 - 253.
@@ -917,7 +919,7 @@ U_alpha_16056:
           - 4.0
           - 12.0
 
-W_43667:
+W_alpha_43667:
 # Parrish, W. (1960) Results of the I.U.Cr. precision lattice-parameter project.
 # Acta Crystallographica 13:838 - 850.
 # notes: no high quality data

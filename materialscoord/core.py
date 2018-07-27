@@ -77,7 +77,6 @@ class Benchmark(object):
 
         :param group (str): test structure directory name(s). Defaults to "elemental".
 
-        TODO: MinimumVIRENN() doesn't work with remove_oxidation_states?? Still returns elements with oxidation states
         TODO: Use predict_oxidation_states() for MP cif file without oxidation state labels?
         TODO: Otherwise, NPFuncs doesn't work with MP cif files.
         """
