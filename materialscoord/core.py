@@ -123,6 +123,10 @@ class Benchmark(object):
 
         nsites (int) is used to determine the number of sites each structure has
         and uses the max number of sites as the number of columns in the framework.
+
+        :returns cn benchmarks as pandas dataframe. Used in NBFuncs to calculate benchmark score.
+
+        TODO: Perhaps it would be better to report the tuple (site, {el: coord}). Or does it matter? Will think about this.
         """
         nsites = []
         for m in self.methods:
@@ -162,13 +166,6 @@ class Benchmark(object):
                 nsites.append(len(cns))
         self.nsites = max(nsites)
 
-    def report(self):
-        """
-        :returns cn benchmarks as pandas dataframe. This is the recommended method for pulling the CNs
-                 obtained by each method. Used in NBFuncs to calculate benchmark score.
-
-        TODO: Perhaps it would be better to report the tuple (site, {el: coord}). Or does it matter? Will think about this.
-        """
         data = {}
         for m in self.methods:
             sc_dict = {}
