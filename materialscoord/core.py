@@ -8,7 +8,6 @@ from collections import OrderedDict
 from pymatgen.core.structure import Structure
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 from pymatgen.analysis.local_env import NearNeighbors
-from pymatgen.analysis.bond_valence import BVAnalyzer
 import re
 
 module_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)))
@@ -36,7 +35,7 @@ class Benchmark(object):
     """
 
     def __init__(self, methods, structure_groups="elemental", custom_set=None,
-                 unique_sites=True, nround=3, use_weights=False,
+                 unique_sites=True, nround=3, use_weights=False, perturb=0,
                  cation_anion=False, anion_cation=False):
 
         self.methods = methods
@@ -56,6 +55,7 @@ class Benchmark(object):
         self.nsites = None
         self.nround = nround
         self.use_weights = use_weights
+        self.perturb = perturb
         self.cation_anion = cation_anion
         self.anion_cation = anion_cation
 
@@ -100,6 +100,7 @@ class Benchmark(object):
             cations = []
             anions = []
             for i in structure:
+                # i.perturb(self.perturb)
                 i = str(i).split(']', 1)[1]
                 if i.endswith('+'):
                     if '0' not in i: # metals
@@ -183,6 +184,7 @@ class Benchmark(object):
                         for emp_site in range(self.nsites - l):
                             ions.append(("null", {}))
                     for site in range(self.nsites):
+                        #tdata[m.__class__.__name__ + str(site)][struc] = (ions[site][0], ions[site][1])
                         data[m.__class__.__name__ + str(site)][struc] = ions[site][1]
         return pd.DataFrame(data=data)
 
@@ -233,7 +235,7 @@ class NbFuncs(Benchmark):
     def __init__(self, Benchmark):
 
         ### there's a better way to do this right?
-        self.df = Benchmark.report()
+        self.df = Benchmark.benchmark()
         self.methods = Benchmark.methods
         self.test_structures = Benchmark.test_structures
         self.cation_anion = Benchmark.cation_anion
