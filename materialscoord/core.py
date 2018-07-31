@@ -5,9 +5,12 @@ import glob
 import pandas as pd
 from collections import Counter
 from collections import OrderedDict
-from pymatgen.core.structure import Structure
+from pymatgen.core.structure import Structure, Molecule
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 from pymatgen.analysis.local_env import NearNeighbors
+from pymatgen.analysis.local_env import BrunnerNN_reciprocal, EconNN, JMolNN, \
+                                        MinimumDistanceNN, MinimumOKeeffeNN, MinimumVIRENN, \
+                                        VoronoiNN, VoronoiNN_modified, CrystalNN
 import re
 
 module_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)))
@@ -34,12 +37,13 @@ class Benchmark(object):
     TODO: test out custom_set, see Murat's documentation
     """
 
-    def __init__(self, methods, structure_groups="elemental", custom_set=None,
+    def __init__(self, structure_groups="elemental", custom_set=None,
                  unique_sites=True, nround=3, use_weights=False, perturb=0,
                  cation_anion=False, anion_cation=False):
-
-        self.methods = methods
+        self.methods = [BrunnerNN_reciprocal(), EconNN(), JMolNN(), MinimumDistanceNN(), MinimumOKeeffeNN(), MinimumVIRENN(),
+                        VoronoiNN(tol=0.5), CrystalNN(), HumanInterpreter()]
         self.structure_groups = structure_groups if isinstance(structure_groups, list) else [structure_groups]
+        self.perturb = perturb
         self.test_structures = OrderedDict()
         self.cations = OrderedDict()
         self.anions = OrderedDict()
@@ -55,7 +59,6 @@ class Benchmark(object):
         self.nsites = None
         self.nround = nround
         self.use_weights = use_weights
-        self.perturb = perturb
         self.cation_anion = cation_anion
         self.anion_cation = anion_cation
 
@@ -93,6 +96,10 @@ class Benchmark(object):
             name = os.path.basename(s).split(".")[0]
             structure = Structure.from_file(s)
 
+            if self.perturb:
+                structure = structure.copy()
+                structure.perturb(self.perturb)
+
             if group == "clusters":
                 oxi = {"Al": 3, "H": 1, "O": -2}
                 structure.add_oxidation_state_by_element(oxidation_states=oxi)
@@ -100,7 +107,6 @@ class Benchmark(object):
             cations = []
             anions = []
             for i in structure:
-                # i.perturb(self.perturb)
                 i = str(i).split(']', 1)[1]
                 if i.endswith('+'):
                     if '0' not in i: # metals
@@ -116,6 +122,7 @@ class Benchmark(object):
 
             structure.remove_oxidation_states()
             self.test_structures[name] = structure
+
 
     def benchmark(self):
         """

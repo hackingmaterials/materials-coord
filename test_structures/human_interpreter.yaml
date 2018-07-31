@@ -323,6 +323,21 @@ FeTiO3_ilmenite_9805:
         Fe: 2.0
         O: 0.0
 
+SrTiO3_perovskite_80871:
+# Notes: considered archetypal cubic perovskite
+    - Sr:
+        Sr: 0.0
+        Ti: 0.0
+        O: 12.0
+    - Ti:
+        Sr: 0.0
+        Ti: 0.0
+        O: 6.0
+    - O:
+        Sr: 4.0
+        Ti: 2.0
+        O: 0.0
+
 AlAsO4_33254:
 # Goiffon, A., Bayle, G., Astier, R., Jumas, J.C., Maurin, M., Philippot, E. (1983)
 # Cristallichimie des phases Ga P O4, Al As O4 et Ga As O4. Etude comparee des structures de type quartz alpha.
@@ -1214,21 +1229,6 @@ SiO2_413210:
 
 
 # ---------------- Perovskites ---------------------
-
-SrTiO3_perovskite_80871:
-# Notes: considered archetypal cubic perovskite
-    - Sr:
-        Sr: 0.0
-        Ti: 0.0
-        O: 12.0
-    - Ti:
-        Sr: 0.0
-        Ti: 0.0
-        O: 6.0
-    - O:
-        Sr: 4.0
-        Ti: 2.0
-        O: 0.0
 
 #Pb2CuO4H4Cl2_diaboleite_81589:
 ## Cooper, M.A., Hawthorne, F.C. (1995)  Diaboleite, Pb2 Cu (O H)4 Cl2,
