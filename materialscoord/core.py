@@ -19,7 +19,6 @@ class Benchmark(object):
     """
     Class for performing CN benchmarks on a set of structures using the selected set of methods.
 
-    :param methods (list): CN methods from pymatgen.analysis.local_env
     :param structure_groups (str or list): name of test structure directory. Defaults to "elemental".
     :param custom_set (str): full path to custom set of external structures to be loaded. Can be used
            to apply CN methods on user-specified structures.
@@ -32,6 +31,7 @@ class Benchmark(object):
            atoms without oxidation states (i.e., metals). Defaults to False.
     :param anion_cation (bool): Considers only anions as central atoms. Defaults to False.
 
+    TODO: make constructor more flexible by using a list of structures. Move the _load... function to a from_preset() class method so that a user conveniently can use/access our predefined structure test sets, but s/he has also the opportunity to set up any structure test set by her/his own.
     TODO: if cation_anion and anion_cation are both True or both False... what happens? (haven't tested)
     TODO: right now, to calculate cation_anion + anion_cation interactions, use jupyter nb to sum
     TODO: test out custom_set, see Murat's documentation
@@ -40,8 +40,6 @@ class Benchmark(object):
     def __init__(self, structure_groups="elemental", custom_set=None,
                  unique_sites=True, nround=3, use_weights=False, perturb=0,
                  cation_anion=False, anion_cation=False):
-        self.methods = [BrunnerNN_reciprocal(), EconNN(), JMolNN(), MinimumDistanceNN(), MinimumOKeeffeNN(), MinimumVIRENN(),
-                        VoronoiNN(tol=0.5), CrystalNN(), HumanInterpreter()]
         self.structure_groups = structure_groups if isinstance(structure_groups, list) else [structure_groups]
         self.perturb = perturb
         self.test_structures = OrderedDict()
@@ -61,11 +59,6 @@ class Benchmark(object):
         self.use_weights = use_weights
         self.cation_anion = cation_anion
         self.anion_cation = anion_cation
-
-        self.cns = {}
-        for m in self.methods:
-            assert isinstance(m, (NearNeighbors, HIBase))
-            self.cns[m] = {}
 
     def _load_test_structures(self, group):
         """
@@ -123,23 +116,33 @@ class Benchmark(object):
             structure.remove_oxidation_states()
             self.test_structures[name] = structure
 
+<<<<<<< HEAD
 
     def benchmark(self):
+=======
+    def benchmark(self, methods):
+>>>>>>> 12df27481dde2a228135e2378bd2d6ccc780dcc5
         """
         Calculates CN for each structure site using NN method(s).
-        Dictionary of calculated CNs are stored in self.cns[m]
 
         nsites (int) is used to determine the number of sites each structure has
         and uses the max number of sites as the number of columns in the framework.
+
+        :param methods (list): CN methods from pymatgen.analysis.local_env
 
         :returns cn benchmarks as pandas dataframe. Used in NBFuncs to calculate benchmark score.
 
         TODO: Perhaps it would be better to report the tuple (site, {el: coord}). Or does it matter? Will think about this.
         """
         nsites = []
-        for m in self.methods:
+        cns = {}
+        for m in methods:
+            assert isinstance(m, (NearNeighbors, HIBase))
+            cns[m] = {}
+
+        for m in methods:
             for name, structure in self.test_structures.items():
-                cns = []
+                cns[m][name] = []
                 if self.unique_sites:
                     es = SpacegroupAnalyzer(structure).get_symmetrized_structure().equivalent_sites
                     sites = [structure.index(x[0]) for x in es]
@@ -161,27 +164,26 @@ class Benchmark(object):
                             continue
                     if self.nround:
                         tmpcn = self._roundcns(tmpcn, self.nround)
-                    cns.append((structure[j].species_string, tmpcn))
+                    cns[m][name].append((structure[j].species_string, tmpcn))
                 if self.cation_anion:
                     for mat, cat in self.cations.items():
                         if (name == mat) and cat:
-                            cns = self._popel(cns, cat)
+                            cns[m][name] = self._popel(cns[m][name], cat)
                 elif self.anion_cation:
                     for mat, an in self.anions.items():
                         if name == mat:
-                            cns = self._popel(cns, an)
-                self.cns[m][name] = cns
-                nsites.append(len(cns))
+                            cns[m][name] = self._popel(cns[m][name], an)
+                nsites.append(len(cns[m][name]))
         self.nsites = max(nsites)
 
         data = {}
-        for m in self.methods:
+        for m in methods:
             sc_dict = {}
             for site in range(self.nsites):
                 data[m.__class__.__name__ + str(site)] = {}
-            for struc in self.cns[m]:
+            for struc in cns[m]:
                 temp = []
-                for mat, ions in self.cns[m][struc]:
+                for mat, ions in cns[m][struc]:
                     if isinstance(ions, dict):
                         temp.append((mat, ions))
                 sc_dict[struc] = temp
@@ -243,7 +245,6 @@ class NbFuncs(Benchmark):
 
         ### there's a better way to do this right?
         self.df = Benchmark.benchmark()
-        self.methods = Benchmark.methods
         self.test_structures = Benchmark.test_structures
         self.cation_anion = Benchmark.cation_anion
         self.anion_cation = Benchmark.anion_cation
@@ -395,7 +396,7 @@ class NbFuncs(Benchmark):
 
         return df
 
-    def merge(self):
+    def merge(self, methods):
         """
         Merges all of the lists into one for that particular structure and nn algo. For
         K2SO4_beta_79777, this list would contain 12 entries.
@@ -406,7 +407,7 @@ class NbFuncs(Benchmark):
         df = self.mult_equiv()
 
         merged = {}
-        for m in self.methods:
+        for m in methods:
             if m.__class__.__name__ != 'HumanInterpreter':
                 algo = df[[i for i in list(df.columns) if m.__class__.__name__ in i]]
                 extended = {}
@@ -448,7 +449,7 @@ class NbFuncs(Benchmark):
 
         return pd.DataFrame(totsum)
 
-    def div(self):
+    def div(self, methods):
         """
         Divides total by 'total cations/anions' to get final score.
 
@@ -457,7 +458,7 @@ class NbFuncs(Benchmark):
 
         df = pd.concat([self.total(), self.cif_stats()[self.cif_stats().columns[-1:]]], axis=1)
 
-        for m in self.methods:
+        for m in methods:
             if m.__class__.__name__ == "HumanInterpreter":
                 pass
             else:
