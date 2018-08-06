@@ -8,9 +8,6 @@ from collections import OrderedDict
 from pymatgen.core.structure import Structure, Molecule
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 from pymatgen.analysis.local_env import NearNeighbors
-from pymatgen.analysis.local_env import BrunnerNN_reciprocal, EconNN, JMolNN, \
-                                        MinimumDistanceNN, MinimumOKeeffeNN, MinimumVIRENN, \
-                                        VoronoiNN, VoronoiNN_modified, CrystalNN
 import re
 
 module_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)))
@@ -31,28 +28,22 @@ class Benchmark(object):
            atoms without oxidation states (i.e., metals). Defaults to False.
     :param anion_cation (bool): Considers only anions as central atoms. Defaults to False.
 
-    TODO: make constructor more flexible by using a list of structures. Move the _load... function to a from_preset() class method so that a user conveniently can use/access our predefined structure test sets, but s/he has also the opportunity to set up any structure test set by her/his own.
+    TODO: make constructor more flexible by using a list of structures.
+    TODO: Move the _load... function to a from_preset() class method so that a user
+    TODO: conveniently can use/access our predefined structure test sets, but s/he has also the
+    TODO: opportunity to set up any structure test set by her/his own.
+
     TODO: if cation_anion and anion_cation are both True or both False... what happens? (haven't tested)
     TODO: right now, to calculate cation_anion + anion_cation interactions, use jupyter nb to sum
     TODO: test out custom_set, see Murat's documentation
     """
 
-    def __init__(self, structure_groups="elemental", custom_set=None,
-                 unique_sites=True, nround=3, use_weights=False, perturb=0,
+    def __init__(self, cations, anions, test_structures,
+                 unique_sites=True, nround=3, use_weights=False,
                  cation_anion=False, anion_cation=False):
-        self.structure_groups = structure_groups if isinstance(structure_groups, list) else [structure_groups]
-        self.perturb = perturb
-        self.test_structures = OrderedDict()
-        self.cations = OrderedDict()
-        self.anions = OrderedDict()
-        if custom_set:
-            self.structure_groups = None
-            self.custom = custom_set
-            self._load_test_structures(None)
-        else:
-            for g in self.structure_groups:
-                self._load_test_structures(g)
-
+        self.test_structures = test_structures
+        self.cations = cations
+        self.anions = anions
         self.unique_sites = unique_sites
         self.nsites = None
         self.nround = nround
@@ -60,7 +51,8 @@ class Benchmark(object):
         self.cation_anion = cation_anion
         self.anion_cation = anion_cation
 
-    def _load_test_structures(self, group):
+    @classmethod
+    def from_preset(cls, preset_name):
         """
         Loads cations, anions, and test_structure dictionaries from structure_groups.
         Cation and anion dictionaries only work when oxidation states are present in cif files (e.g., ICSD).
@@ -76,52 +68,50 @@ class Benchmark(object):
         TODO: Use predict_oxidation_states() for MP cif file without oxidation state labels?
         TODO: Otherwise, NPFuncs doesn't work with MP cif files.
         """
-        if self.structure_groups:
-            p = os.path.join(module_dir, "..", "test_structures", group, "*")
-        else:
-            if os.path.isdir(self.custom):
-                p = os.path.join(self.custom, "*")
-            else:
-                p = self.custom
-        str_files = glob.glob(p)
+        str_files = []
+        preset_name = preset_name if isinstance(preset_name, list) else [preset_name]
+        for pn in preset_name:
+            p = os.path.join(module_dir, "..", "test_structures", pn, "*")
+            sf = glob.glob(p)
+            str_files.extend(sf)
 
+        cations = OrderedDict()
+        anions = OrderedDict()
+        test_structures = OrderedDict()
         for s in str_files:
             name = os.path.basename(s).split(".")[0]
             structure = Structure.from_file(s)
 
-            if self.perturb:
-                structure = structure.copy()
-                structure.perturb(self.perturb)
+            # if self.perturb:
+            #     structure = structure.copy()
+            #     structure.perturb(self.perturb)
 
-            if group == "clusters":
-                oxi = {"Al": 3, "H": 1, "O": -2}
-                structure.add_oxidation_state_by_element(oxidation_states=oxi)
+            # if preset_name == "clusters":
+            #     oxi = {"Al": 3, "H": 1, "O": -2}
+            #     structure.add_oxidation_state_by_element(oxidation_states=oxi)
 
-            cations = []
-            anions = []
+            cats = []
+            ans = []
             for i in structure:
                 i = str(i).split(']', 1)[1]
                 if i.endswith('+'):
-                    if '0' not in i: # metals
+                    if '0' not in i:  # metals
                         el = ''.join(x for x in str(i) if x.isalpha())
-                        if el not in cations:
-                            cations.append(el)
+                        if el not in cats:
+                            cats.append(el)
                 if str(i).endswith('-'):
                     el = ''.join(x for x in str(i) if x.isalpha())
-                    if el not in anions:
-                        anions.append(el)
-            self.cations[name] = cations
-            self.anions[name] = anions
+                    if el not in ans:
+                        ans.append(el)
+            cations[name] = cats
+            anions[name] = ans
 
             structure.remove_oxidation_states()
-            self.test_structures[name] = structure
+            test_structures[name] = structure
 
-<<<<<<< HEAD
+        return cls(cations, anions, test_structures)
 
-    def benchmark(self):
-=======
     def benchmark(self, methods):
->>>>>>> 12df27481dde2a228135e2378bd2d6ccc780dcc5
         """
         Calculates CN for each structure site using NN method(s).
 
@@ -134,12 +124,13 @@ class Benchmark(object):
 
         TODO: Perhaps it would be better to report the tuple (site, {el: coord}). Or does it matter? Will think about this.
         """
-        nsites = []
+
         cns = {}
         for m in methods:
             assert isinstance(m, (NearNeighbors, HIBase))
             cns[m] = {}
 
+        nsites = []
         for m in methods:
             for name, structure in self.test_structures.items():
                 cns[m][name] = []
@@ -233,47 +224,29 @@ class Benchmark(object):
                     tup[1].pop(el)
         return cns
 
-class NbFuncs(Benchmark):
-    """
-    Assigns a score for how each NN method performs on a specific structure and reports all scores in a pandas
-    dataframe. The score is calculated by taking the summation of the absolute value error in CN prediction
-    (CN_observed - CN_expected) multiplied by the degeneracy over the number cations for each structure. The
-    following functions are used to calculate the scores based on information from Benchmark.
-    """
-
-    def __init__(self, Benchmark):
-
-        ### there's a better way to do this right?
-        self.df = Benchmark.benchmark()
-        self.test_structures = Benchmark.test_structures
-        self.cation_anion = Benchmark.cation_anion
-        self.anion_cation = Benchmark.anion_cation
-        self.nround = Benchmark.nround
-        self.nsites = Benchmark.nsites
-
-    def sub_hi(self):
+    def score(self, methods):
         """
-        Element-wise subtraction of human interpreted cn from nn algo calculated nn = error
-        in nn algo-calculated cn (CN_observed - CN_expected). Ex: in CaF2, Ca is coordinated
-        to 8 F atoms. If nn-algo reports the coordination as 5, the error is 3 ({F: -3})
+        Assigns a score for how each NN method performs on a specific structure and reports all scores in a pandas
+        dataframe. The score is calculated by taking the summation of the absolute value error in CN prediction
+        (CN_observed - CN_expected) multiplied by the degeneracy over the number cations for each structure.
 
-        For structures with several acceptable human-interpreted cn values,
-        the nn algo-calculated cn closest to the human-interpreted cn is used.
-        Ex: Ga can either be 4-coordinated or 12-coordinated. If an nn algo reports
-        the coordination as being 13-coordinated, the error is 1 ({Ga: 1}).
-
-        :returns pandas dataframe of error in nn algo-calculated cn.
+        :returns pandas df of nn algo scores
         """
-        nohi = [i for i in list(self.df.columns) if 'HumanInterpreter' not in i]
-        hi = [i for i in list(self.df.columns) if 'HumanInterpreter' in i]
 
+        bm = self.benchmark(methods)
+        nohi = [i for i in list(bm.columns) if 'HumanInterpreter' not in i]
+        hi = [i for i in list(bm.columns) if 'HumanInterpreter' in i]
+
+        # Element-wise subtraction of human interpreted cn from nn algo calculated nn = error
+        # in nn algo-calculated cn (CN_observed - CN_expected). Ex: in CaF2, Ca is coordinated
+        # to 8 F atoms. If nn-algo reports the coordination as 5, the error is 3 ({F: -3})
         df = {}
         for i in range(len(nohi)):
             cndict = {}
             for j in range(self.nsites):
                 if str(j) in nohi[i]:
-                    site = self.df[nohi[i]]
-                    hisite = self.df[hi[j]]
+                    site = bm[nohi[i]]
+                    hisite = bm[hi[j]]
                     for k in range(len(site)):
                         coord = [z for z in hisite[k].values()]
                         if all(isinstance(z, float) for z in coord) or not coord:
@@ -281,6 +254,10 @@ class NbFuncs(Benchmark):
                             temp.subtract(hisite[k])
                             cndict[site.keys()[k]] = dict(temp)
                         else:
+                            # For structures with several acceptable human-interpreted cn values,
+                            # the nn algo-calculated cn closest to the human-interpreted cn is used.
+                            # Ex: Ga can either be 4-coordinated or 12-coordinated. If an nn algo reports
+                            # the coordination as being 13-coordinated, the error is 1 ({Ga: 1}).
                             t = list(site[k].values())[0]
                             lsub = []
                             dsub = {}
@@ -292,15 +269,8 @@ class NbFuncs(Benchmark):
                             cndict[site.keys()[k]] = dict(dsub)
                     df[nohi[i]] = dict(cndict)
 
-        return pd.DataFrame(df)
-
-    def abs_df(self):
-        """
-        :returns dataframe with abs value of errors of nn-algo
-                 calculated cn (|CN_observed - CN_expected|)
-        """
-        df = self.sub_hi()
-
+        # dataframe with abs value of errors of nn-algo
+        # calculated cn (|CN_observed - CN_expected|)
         for key, val in df.items():
             for i, j in val.items():
                 if j != {}:
@@ -310,25 +280,16 @@ class NbFuncs(Benchmark):
                 zip_absval = dict(zip(j.keys(), absval))
                 val[i] = zip_absval
             df[key] = val
-
-        return df
-
-    def cif_stats(self):
-        """
-        Determines total number of unique site ions (cations/anions) per site in a list.
-        Also sums number of unique site ions to get a total (int). Ex: K2SO4_beta_79777 has
-        2 unique K atoms and 1 unique S atom. The 'unique site cations' would report
-        something like [4,4,4] since there are 4 of each unique atom (4 of 1st unique K,
-        4 of 2nd unique K, and 4 of unique S). The 'total cations' would report 12 since
-        there is a total of 12 cations in a K2SO4_beta unit cell.
-
-        :returns 'unique site cations/anions' and 'total cations/anions' added to dataframe.
-        """
-
-        df = self.abs_df()
+        df = pd.DataFrame(df)
 
         ts = os.path.join(module_dir, "..", "test_structures")
 
+        # Determines total number of unique site ions (cations/anions) per site in a list.
+        # Also sums number of unique site ions to get a total (int). Ex: K2SO4_beta_79777 has
+        # 2 unique K atoms and 1 unique S atom. The 'unique site cations' would report
+        # something like [4,4,4] since there are 4 of each unique atom (4 of 1st unique K,
+        # 4 of 2nd unique K, and 4 of unique S). The 'total cations' would report 12 since
+        # there is a total of 12 cations in a K2SO4_beta unit cell.
         structures = []
         for i in df.index:
             find_structure = glob.glob(os.path.join(ts, "*", i + "*"))
@@ -364,26 +325,19 @@ class NbFuncs(Benchmark):
             df['unique site anions'] = us
             df['total anions'] = summed
 
-        return df
+        # 'unique site cations/anions' and 'total cation/anions' added to dataframe
+        df_cs = pd.DataFrame(df)
 
-    def mult_equiv(self):
-        """
-        Creates dictionaries of lists of errors multiplied by ion degeneracy.
-        In the K2SO4_beta_79777 example, the list would contain 4 * the error in
-        coordination calculated for each unique site, i.e. if the error in
-        calculating the coordination for S was 1, the list would be {O: [1, 1, 1, 1]}.
-
-        :returns dataframe of error multiplied by degeneracy.
-        """
-
-        df = self.cif_stats()
-
+        # Creates dictionaries of lists of errors multiplied by ion degeneracy.
+        # In the K2SO4_beta_79777 example, the list would contain 4 * the error in
+        # coordination calculated for each unique site, i.e. if the error in
+        # calculating the coordination for S was 1, the list would be {O: [1, 1, 1, 1]}.
         counter = 0
         for nn in df.keys()[:-2]:
             if self.cation_anion:
-                num_equiv = [[num for num in equiv] for equiv in df['unique site cations']]
+                num_equiv = [[num for num in equiv] for equiv in df_cs['unique site cations']]
             else:
-                num_equiv = [[num for num in equiv] for equiv in df['unique site anions']]
+                num_equiv = [[num for num in equiv] for equiv in df_cs['unique site anions']]
             other_counter = 0
             for j in df[nn]:
                 j = j.update((x, [y]*num_equiv[other_counter][counter]) for x, y in j.items())
@@ -394,18 +348,11 @@ class NbFuncs(Benchmark):
             if counter == self.nsites:
                 counter = 0
 
-        return df
+        # dataframe of error multiplied by degeneracy
+        df = pd.DataFrame(df)
 
-    def merge(self, methods):
-        """
-        Merges all of the lists into one for that particular structure and nn algo. For
-        K2SO4_beta_79777, this list would contain 12 entries.
-
-        :return dataframe of merged error*degeneracy lists.
-        """
-
-        df = self.mult_equiv()
-
+        # Merges all of the lists into one for that particular structure and nn algo. For
+        # K2SO4_beta_79777, this list would contain 12 entries.
         merged = {}
         for m in methods:
             if m.__class__.__name__ != 'HumanInterpreter':
@@ -424,17 +371,10 @@ class NbFuncs(Benchmark):
                     count += 1
                 merged[m.__class__.__name__] = dict(extended)
 
-        return pd.DataFrame(merged)
+        # dataframe of merged error*degeneracy lists
+        df = pd.DataFrame(merged)
 
-    def total(self):
-        """
-        sums lists from merge function.
-
-        :return: dataframe of summed error * degeneracy (ints).
-        """
-
-        df = self.merge()
-
+        # sums lists from merge function.
         totsum = {}
         for algo, mats in df.items():
             matsum = {}
@@ -447,16 +387,11 @@ class NbFuncs(Benchmark):
                     matsum[mat] = sum_els
                 totsum[algo] = dict(matsum)
 
-        return pd.DataFrame(totsum)
+        # dataframe of summed error * degeneracy (ints)
+        df = pd.DataFrame(totsum)
 
-    def div(self, methods):
-        """
-        Divides total by 'total cations/anions' to get final score.
-
-        :return: dataframe with each nn algo scored using equation mentioned in NBFuncs().
-        """
-
-        df = pd.concat([self.total(), self.cif_stats()[self.cif_stats().columns[-1:]]], axis=1)
+        # Divides total by 'total cations/anions' to get final score.
+        df = pd.concat([df, df_cs[df_cs.columns[-1:]]], axis=1)
 
         for m in methods:
             if m.__class__.__name__ == "HumanInterpreter":
@@ -474,18 +409,10 @@ class NbFuncs(Benchmark):
         else:
             df = df.drop('total anions', axis=1)
 
-        return df
-
-    def final(self):
-        """
-        Adds a row that totals the error for all structures for each nn algo.
-
-        :return: dataframe with each nn algo scored using equation mentioned in NBFuncs() + total score.
-        """
-
-        df = self.div()
-
+        # Adds a row that totals the error for all structures for each nn algo.
         df.loc['Total'] = df.sum(axis=0)
+
+        # dataframe with each nn algo scored using equation + total score
         df = df.round(self.nround)
 
         return df
