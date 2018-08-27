@@ -40,7 +40,7 @@ class Benchmark(object):
 
     def __init__(self, cations, anions, test_structures,
                  unique_sites=True, nround=3, use_weights=False,
-                 cation_anion=False, anion_cation=False):
+                 cation_anion=True, anion_cation=False):
         self.test_structures = test_structures
         self.cations = cations
         self.anions = anions
@@ -86,9 +86,9 @@ class Benchmark(object):
             #     structure = structure.copy()
             #     structure.perturb(self.perturb)
 
-            # if preset_name == "clusters":
-            #     oxi = {"Al": 3, "H": 1, "O": -2}
-            #     structure.add_oxidation_state_by_element(oxidation_states=oxi)
+            if preset_name == "clusters":
+                oxi = {"Al": 3, "H": 1, "O": -2}
+                structure.add_oxidation_state_by_element(oxidation_states=oxi)
 
             cats = []
             ans = []
@@ -411,6 +411,8 @@ class Benchmark(object):
 
         # Adds a row that totals the error for all structures for each nn algo.
         df.loc['Total'] = df.sum(axis=0)
+
+        #df.loc['Average'] = df.mean(axis=0)
 
         # dataframe with each nn algo scored using equation + total score
         df = df.round(self.nround)

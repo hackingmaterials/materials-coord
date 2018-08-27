@@ -1,9 +1,12 @@
 # Human interpreted coordination numbers in structures:
 
+#----------------------------------------------------------------------
+#              Ternary structures with A2BX4 stoichiometry
+#----------------------------------------------------------------------
+
 BaAl2O4_21080:
 # Do Dinh Chieu, Bertaut, C. (1965)  Parametres atomiques de Ba Al2 O4 et etudes des solutions solides Ba Fex Al2-x O4 et Ba Gax Al2-x O4 .
 # Bulletin de la Societe Francaise de Mineralogie et de Cristallographie 88:413 - 416.
-# notes: different from Nils -- [[Ba, 9], [Al, 4], [Al, 4], [O, 2], [O, 2], [O, 2], [O, 2]]
     - Ba:
         Ba: 0.0
         Al: 0.0
@@ -13,11 +16,11 @@ BaAl2O4_21080:
         Al: 0.0
         O: 4.0
     - O:
-        Ba: 0.0
+        Ba: 3.0
         Al: 2.0
         O: 0.0
     - O:
-        Ba: 0.0
+        Ba: 2.0
         Al: 2.0
         O: 0.0
 
@@ -240,15 +243,9 @@ Sr2PbO4_16806:
         Pb: 1.0
         O: 0.0
 
-Th3P4_25724:
-# Zumbusch, M. (1941) Ueber Strukturanalogie von Uran- und Thoriumphosphiden.
-# Zeitschrift fuer Anorganische und Allgemeine Chemie (1950) (DE) 245:402 - 408.
-    - Th:
-        Th: 0.0
-        P: 8.0
-    - P:
-        Th: 6.0
-        P: 0.0
+#----------------------------------------------------------------------
+#              Ternary structures with ABX3 stoichiometry
+#----------------------------------------------------------------------
 
 BaTiO3_67520:
 # Buttner, R.H., Maslen, E.N. (1992) Structural Parameters and Electron Difference density in BaTiO3.
@@ -356,7 +353,7 @@ AlAsO4_33254:
         As: 1.0
         O: 0.0
     - O:
-        Al: 1.0
+        Al: 2.0
         As: 1.0
         O: 0.0
 
@@ -383,6 +380,10 @@ AlAsO4_33254:
 #        Ba: 3.0
 #        S: 1.0
 #        O: 0.0
+
+#----------------------------------------------------------------------
+#              Ternary structures with ABX4 stoichiometry
+#----------------------------------------------------------------------
 
 BAsO4_highcristobalite_26891:
 # Schulze, G.E.R. (1934) Die Kristallstruktur von B P O4 und B As O4.
@@ -462,7 +463,7 @@ CePO4_monazite_79746:
         P: 1.0
         O: 0.0
     - O:
-        Ce: 2.0
+        Ce: 3.0
         P: 1.0
         O: 0.0
     - O:
@@ -619,7 +620,7 @@ SbNbO4_20344:
         Nb: 1.0
         O: 0.0
     - O:
-        Sb: 0.0
+        Sb: 1.0
         Nb: 2.0
         O: 0.0
 
@@ -684,7 +685,9 @@ ZrSiO4_zircon_15759:
         Si: 1.0
         O: 0.0
 
-#----------------- Common Binaries ----------------
+#----------------------------------------------------------------------
+#                          Binary Structures
+#----------------------------------------------------------------------
 Al2O3_corundum_9770:
 # Finger, L.W., Hazen, R.M. (1978)
 # Crystal structure and compression of ruby to 46 kbar.
@@ -740,10 +743,10 @@ Fe3O4_inv_spinel_26410:
 # Acta Crystallographica, Section B: Structural Crystallography and Crystal Chemistry  37:917 - 920.
     - Fe:
         Fe: 0.0
-        O: 4.0
+        O: 6.0
     - Fe:
         Fe: 0.0
-        O: 6.0
+        O: 4.0
     - O:
         Fe: 4.0
         O: 0.0
@@ -775,16 +778,26 @@ Pb3O4_22325:
 # Zeitschrift fuer Anorganische und Allgemeine Chemie (1950) (DE) 336:104 - 109.
     - Pb:
         Pb: 0.0
-        O: 6.0
+        O: 3.0
     - Pb:
         Pb: 0.0
-        O: 3.0
+        O: 6.0
     - O:
         Pb: 3.0
         O: 0.0
     - O:
         Pb: 3.0
         O: 0.0
+
+Th3P4_25724:
+# Zumbusch, M. (1941) Ueber Strukturanalogie von Uran- und Thoriumphosphiden.
+# Zeitschrift fuer Anorganische und Allgemeine Chemie (1950) (DE) 245:402 - 408.
+    - Th:
+        Th: 0.0
+        P: 8.0
+    - P:
+        Th: 6.0
+        P: 0.0
 
 TiO2_rutile_9852:
 # Horn, M., Schwerdtfeger, C.F., Meagher, E.P. (1972) Refinement of the structure of anatase at several temperatures.
@@ -818,7 +831,9 @@ ZnS_wurtzite_67453:
         Zn: 4.0
         S: 0.0
 
-#---------------- Elemental Structures ---------------------
+#----------------------------------------------------------------------
+#                           Elemental Structures
+#----------------------------------------------------------------------
 
 As_alpha_16518:
 # Schiferl, D., Barrett, C.S. (1969) The crystal structure of arsenic at 4.2, 78 and 299 grad K.
@@ -853,7 +868,9 @@ Ga_12174:
 # Journal of Chemical Physics 68:1221 - 1223.
 # notes: no high quality data
     - Ga:
-        Ga: 12.0
+        Ga:
+          - 4.0
+          - 12.0
 
 Hg_alpha_104296:
 # Amand, R.S., Giessen, B.C. (1978) On the metastable system mercury-thallium.
@@ -940,6 +957,10 @@ W_alpha_43667:
 # notes: no high quality data
     - W:
         W: 8.0
+
+#----------------------------------------------------------------------
+#              OTHER
+#----------------------------------------------------------------------
 
 MgCu2_laves_46007:
 # Ohba, T., Kitano, Y., Komura, Y. (1984) The charge-density study of the Laves phases, Mg Zn2 and Mg Cu2.
