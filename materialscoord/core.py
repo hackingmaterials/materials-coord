@@ -9,6 +9,7 @@ from pymatgen.core.structure import Structure, Molecule
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 from pymatgen.analysis.local_env import NearNeighbors
 import re
+from materialscoord.einstein_crystal_perturbation import perturb_einstein_crystal_style
 
 module_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)))
 
@@ -52,7 +53,7 @@ class Benchmark(object):
         self.anion_cation = anion_cation
 
     @classmethod
-    def from_preset(cls, preset_name):
+    def from_preset(cls, preset_name, perturb=False, perturb_sigma=None):
         """
         Loads cations, anions, and test_structure dictionaries from structure_groups.
         Cation and anion dictionaries only work when oxidation states are present in cif files (e.g., ICSD).
@@ -82,13 +83,17 @@ class Benchmark(object):
             name = os.path.basename(s).split(".")[0]
             structure = Structure.from_file(s)
 
-            # if self.perturb:
-            #     structure = structure.copy()
-            #     structure.perturb(self.perturb)
-
             if preset_name == "clusters":
                 oxi = {"Al": 3, "H": 1, "O": -2}
                 structure.add_oxidation_state_by_element(oxidation_states=oxi)
+
+            if perturb:
+                structure = structure.copy()
+                perturbed_sites = perturb_einstein_crystal_style(structure.sites, sqrt_kBT_over_kspring=perturb_sigma)
+                structure = Structure(structure.lattice,
+                                      [s.species_string for s in perturbed_sites],
+                                      [s.coords for s in perturbed_sites],
+                                      coords_are_cartesian=True)
 
             cats = []
             ans = []
@@ -165,7 +170,8 @@ class Benchmark(object):
                         if name == mat:
                             cns[m][name] = self._popel(cns[m][name], an)
                 nsites.append(len(cns[m][name]))
-        self.nsites = max(nsites)
+        #self.nsites = max(nsites)
+        self.nsites = 4
 
         data = {}
         for m in methods:
@@ -295,9 +301,9 @@ class Benchmark(object):
             find_structure = glob.glob(os.path.join(ts, "*", i + "*"))
             s = Structure.from_file(find_structure[0])
 
-            if "cluster" in i:
-                oxi = {"Al": 3, "H": -1, "O": -2}
-                s.add_oxidation_state_by_element(oxidation_states=oxi)
+            # if "cluster" in i:
+            #     oxi = {"Al": 3, "H": -1, "O": -2}
+            #     s.add_oxidation_state_by_element(oxidation_states=oxi)
 
             structures.append(s)
 
