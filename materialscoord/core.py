@@ -67,7 +67,7 @@ class Benchmark(object):
         :param group (str): test structure directory name(s). Defaults to "elemental".
 
         TODO: Use predict_oxidation_states() for MP cif file without oxidation state labels?
-        TODO: Otherwise, NPFuncs doesn't work with MP cif files.
+        TODO: Otherwise, score doesn't work with MP cif files.
         """
         str_files = []
         preset_name = preset_name if isinstance(preset_name, list) else [preset_name]
@@ -88,31 +88,46 @@ class Benchmark(object):
                 structure.add_oxidation_state_by_element(oxidation_states=oxi)
 
             if perturb:
-                structure = structure.copy()
                 perturbed_sites = perturb_einstein_crystal_style(structure.sites, sqrt_kBT_over_kspring=perturb_sigma)
-                structure = Structure(structure.lattice,
-                                      [s.species_string for s in perturbed_sites],
-                                      [s.coords for s in perturbed_sites],
-                                      coords_are_cartesian=True)
+                structure2 = Structure(structure.lattice,
+                                       [s.species_string for s in perturbed_sites],
+                                       [s.coords for s in perturbed_sites],
+                                       coords_are_cartesian=True)
 
             cats = []
             ans = []
-            for i in structure:
-                i = str(i).split(']', 1)[1]
-                if i.endswith('+'):
-                    if '0' not in i:  # metals
+            if not perturb:
+                for i in structure:
+                    i = str(i).split(']', 1)[1]
+                    if i.endswith('+'):
+                        if '0' not in i:  # metals
+                            el = ''.join(x for x in str(i) if x.isalpha())
+                            if el not in cats:
+                                cats.append(el)
+                    if str(i).endswith('-'):
                         el = ''.join(x for x in str(i) if x.isalpha())
-                        if el not in cats:
-                            cats.append(el)
-                if str(i).endswith('-'):
-                    el = ''.join(x for x in str(i) if x.isalpha())
-                    if el not in ans:
-                        ans.append(el)
+                        if el not in ans:
+                            ans.append(el)
+            else:
+                for i in structure2:
+                    i = str(i).split(']', 1)[1]
+                    if i.endswith('+'):
+                        if '0' not in i:  # metals
+                            el = ''.join(x for x in str(i) if x.isalpha())
+                            if el not in cats:
+                                cats.append(el)
+                    if str(i).endswith('-'):
+                        el = ''.join(x for x in str(i) if x.isalpha())
+                        if el not in ans:
+                            ans.append(el)
             cations[name] = cats
             anions[name] = ans
 
             structure.remove_oxidation_states()
-            test_structures[name] = structure
+            if not perturb:
+                test_structures[name] = structure
+            else:
+                test_structures[name] = structure2
 
         return cls(cations, anions, test_structures)
 
