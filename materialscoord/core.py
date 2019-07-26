@@ -83,10 +83,6 @@ class Benchmark(object):
             name = os.path.basename(s).split(".")[0]
             structure = Structure.from_file(s)
 
-            if preset_name == "clusters":
-                oxi = {"Al": 3, "H": 1, "O": -2}
-                structure.add_oxidation_state_by_element(oxidation_states=oxi)
-
             if perturb:
                 perturbed_sites = perturb_einstein_crystal_style(structure.sites, sqrt_kBT_over_kspring=perturb_sigma)
                 structure2 = Structure(structure.lattice,
@@ -240,7 +236,7 @@ class Benchmark(object):
         """
         cns = [i for i in cns if i[0] in ions]
         for tup in cns:
-            for el in tup[1].keys():
+            for el in list(tup[1]):
                 if el in ions:
                     tup[1].pop(el)
         return cns
