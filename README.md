@@ -1,150 +1,127 @@
-# MaterialsCoord
+# MaterialsCoord Benchmark
 
-MaterialsCoord provides an infrastructure for comparing coordination numbers produced by different
-approaches against a benchmark set of material structures.
+MaterialsCoord provides an infrastructure for comparing the performance of
+different crystal structure bonding algorithms against a benchmark set of
+materials.
 
-Atomic coordination numbers (CNs) are one of the most important descriptors for the local environments in condensed materials, but they
-have no universal definition. Therefore, researchers have come up with a wide range of algorithms, performance of which are often
-unknown outside the chemical domain they were particularly designed for. MaterialsCoord aims at providing the necessary infrastructure
-to host, interface, compare and benchmark different CN algorithms against a selected set of crystal structures. It further allows
-human interpretations of CN environments to be incorporated into benchmarking (in progress).
+Atomic coordination numbers (CNs) are an important descriptor for the local
+environment of condensed materials. A range of algorithms for calculating
+coordination numbers have been proposed, the performance of which are often
+unknown outside the chemical domain they were designed for. MaterialsCoord
+allows for the benchmarking of different CN algorithms against a set of crystal
+structures for which the bonding environments have been experimentally
+determined.
 
-[1. How do I benchmark Coordination Number algorithms with MaterialsCoord?](#how_do_i_benchmark_cn_algos)  
-[2. Which coordination number algorithms are currently available?](#cn_algos)    
-[3. How do I implement a new Coordination Number algorithm?](#how_do_i_implement_cn_algos)    
-[4. How can I use MaterialsCoord on my own structures?](#how_can_i_use_my_own_structures)  
-[5. What is the HumanInterpreter?](#humaninterpreter)  
-[6. Installation and requirements](#install)  
-
-<a name="how_do_i_benchmark_cn_algos"/>
-##How do I benchmark Coordination Number algorithms with MaterialsCoord?
+## Usage
 
 Simply put:
-* `Benchmark` class provides the necessary infrastructure to perform the comparison of CN algorithms. When being initialized, 
-it takes the group of test structures (or your own structures) and a list of `CNBase` methods (CN calculation methods) as arguments.
-* `Benchmark.benchmark()` performs the CN calculations on the selected test structures
-* `Benchmark.report()` provides different types of reports that summarizes the results of the benchmarking.
 
-For example, we can compare the Effective Coordination Number (ECoN) and O'Keeffe's Voronoi CN method using a set of unique elemental
-crystal structures:
+- The `materialscoord.Benchmark` class provides the primary interface.
+  It takes a set of structures that have been decorated with the
+  `"coordination"` site property (see the [Preparing crystal structures for benchmarking](#preparing-crystal-structures-for-benchmarking))
+  section).
+- The `Benchmark.from_structure_group()` method provides a convenience function
+  to initialize the benchmark from a list of pre-prepared structure groups.
+  More information on the available groups is provided in the
+  [Benchmarking structure sets](#benchmarking-structure-sets))
+  section.
+- `Benchmark.benchmark()` accepts a list of coordination algorithms and runs them
+  on the set of test structures.
+- `Benchmark.score()` accepts a list of coordination algorithms and compares
+  their performance against a human interpretation of crystal structure bonding.
+
+### Coordination number algorithms
+
+MaterialsCoord has been designed to interface with the `NearNeighbors` methods
+implemented in `pymatgen.analysis.local_env`. A number of methods exist,
+including:
+
+- [`CrystalNN`](https://pymatgen.org/pymatgen.analysis.local_env.html#pymatgen.analysis.local_env.CrystalNN)
+- [`VoronoiNN`](https://pymatgen.org/pymatgen.analysis.local_env.html#pymatgen.analysis.local_env.VoronoiNN)
+- [`BrunnerNN_reciprocal`](https://pymatgen.org/pymatgen.analysis.local_env.html#pymatgen.analysis.local_env.BrunnerNN_reciprocal)
+- [`MinimumDistanceNN`](https://pymatgen.org/pymatgen.analysis.local_env.html#pymatgen.analysis.local_env.MinimumDistanceNN)
+
+### Benchmarking structure sets
+
+The benchmark includes around 95 pre-prepared test structures for which the
+correct coordination has been determined by a human interpreter. We have taken
+the correct bonding interpretation from published papers detailing the crystal
+structure. The structures have been grouped into a number of material classes,
+including:
+
+- "elemental": Simple elemental materials, including diamond, graphite, Ga,
+  and α-As.
+- "common_binaries": Simple and more complex binary structures, including
+  rocksalt NaCl, rutile TiO<sub>2</sub>, and γ-brass.
+- "ABX3": ABX<sub>3</sub> structured ternary materials, including perovskite
+  SrTiO<sub>3</sub> and argonite CaCO<sub>3</sub>.
+- "ABX4": ABX<sub>4</sub> structured ternary materials, including zircon,
+  (ZrSiO<sub>4</sub>) and wolframite (FeWO<sub>4</sub>).
+- "A2BX4": A<sub>2</sub>BX<sub>4</sub> structured ternary materials, including
+  olivine Fe<sub>2</sub>SiO<sub>4</sub>.
+
+The full set of materials classes and crystal structures can be found
+in the [structures directory](https://github.com/hillarypan/MaterialsCoord/tree/master/materialscoord/structures).
+
+MaterialsCoord supports benchmarking on custom structures. See the
+[Preparing crystal structures for benchmarking](#preparing-crystal-structures-for-benchmarking))
+section for more details.
+
+### Running the Benchmark
+
+The MaterialsCoord benchmark should be run using the python API. For example,
+we can compare the Effective Coordination Number (ECoN) and O'Keeffe's Voronoi
+CN method on the "elemental" and "common_binaries" structure groups as follows:
 
 ```python
-from materialscoord.cn_methods import TestECoN, TestVoronoiCoordFinder
+from pymatgen.analysis.local_env import EconNN, VoronoiNN
 from materialscoord.core import Benchmark
-bm = Benchmark([TestECoN(), TestVoronoiCoordFinder()], "elemental")
-bm.benchmark()
-bm.report()
+
+nn_methods = [EconNN(), VoronoiNN()]
+
+bm = Benchmark.from_structure_group(["elemental", "common_binaries"])
+bm.score(nn_methods)
 ```
 
-Further details can be found in [examples](https://github.com/aykol/MaterialsCoord/tree/master/examples) provided in [benchmark_examples.ipynb](https://github.com/aykol/MaterialsCoord/blob/master/examples/benchmark_examples.ipynb).
+The `score` function will return the results as a [Pandas](https://pandas.pydata.org)
+`DataFrame` object. Further details can be found in the
+[example notebooks](https://github.com/hillarypan/MaterialsCoord/tree/master/examples).
 
-<a name="cn_algos"/>
-##Which coordination number algorithms are currently available?
-Currently, MaterialsCoord has the following coordination number algorithms implemented in `materialscoord.cn_methods`:
-- `TestVoronoiCoordFinder`: Weighted Voronoi CNs (O'Keeffe's method).
-- `TestECoN`: Effective Coordination Numbers, ECoN, (Hoppe's method).
-- `TestVoronoiCoordFinder_mod`: A modified version of `TestVoronoiCoordFinder`.
-- `TestVoronoiLegacy`: Basic Voronoi facet counting.
-- `TestBrunnerReciprocal`: Brunner's method of largest reciprocal gap in interactomic distances.
-- `TestBrunnerRelative`: Brunner's method of largest relative gap in interactomic distances.
-- `TestBrunnerReal`: Brunner's method of largest gap in interactomic distances.
-- `TestDelaunay`: David Mrdjenovich et al.'s Delaunay triangulation based algorithm (under development at LBNL).
+### Preparing crystal structures for benchmarking
 
-You can see the details of the available algorithms [here](https://github.com/aykol/MaterialsCoord/blob/master/materialscoord/cn_methods.py). New algorithms are welcome; simply submit a pull request on github.
+More details to be added soon.
 
-<a name="how_do_i_implement_cn_algos"/>
-##How do I implement a new Coordination Number algorithm?
+## How to cite MaterialsCoord
 
-This is fairly simple:
+*A research paper has been submitted. This section will be updated when the
+paper has been published online.*
 
-1. Define a new class that is subclassed from `materialscoord.core.CNBase`.
-2. The class must have a method named `compute` which takes a pymatgen Structure and site-index as input,
-and returns a dictionary of CNs for that site; e.g. `{'O': 4.4, 'F': 2.1}`.
+## Installation
 
-For example:
-```python
-class MyCoordinationNumberAlgorithm(CNBase):
-    """
-    My new algorithm
-    """
-    def compute(self, structure, n):
-        params = self._params
+MaterialsCoord can be installed from source using:
 
-        # ... here your algorithm finds CNs of site n.
-        # e.g. cns = my_algorithm(structure, n, **params)
-
-        return cns
+```bash
+git clone https://github.com/hillarypan/MaterialsCoord.git
+cd MaterialsCoord
+pip install .
 ```
 
-Any parameters the algorithm needs can be passed to the class when initializing using the params keyword as a dictionary. These can later
-be accessed from `compute` method as the `_params` attribute of the class.
+MaterialsCoord requires Python 3.6+.
 
-In method `compute` you can do whatever is necessary to interface the algorithm with MaterialsCoord. Options include:
-* Simplest: Implementing the entire algorithm within the `compute` method.
-* Recommended: Add the necessary "bulky" code to a relevant module in external_src package and import as you define
-  `compute`.
-* Not recommended: call or import a library/program outside of MaterialsCoord within the `compute` method.
-This is not recommended as external dependencies will restrict portability,
-but maybe unavoidable if the external algorithm is part of another python package,
-or is written in some other language such as Java. In that case `compute` can simply serve as a wrapper that calls
-and post processes the output of the external code.
+## What’s new?
 
-<a name="how_can_i_use_my_own_structures"/>
-##How can I use MaterialsCoord on my own structures?
-There are different ways of how one can do this.
-* Add a new "group" folder that includes your structures into the test_structures folder. Then you can initialize Benchmark with
-your `structure_groups = group_name` (i.e. the name of your folder). You can then call your new structure group any time you want.
-* If you don't want to permanently add the structures to MaterialsCoord but rather run CN methods on some external structures,
-you can use the `custom_set` argument of `Benchmark` to provide the path to a set of structure files. If `custom_set` is given,
-`Benchmark` will ignore any `structure_group` provided. 
+Track changes to MaterialsCoord through the
+[Changelog](https://github.com/hillarypan/MaterialsCoord/blob/master/CHANGELOG.rst).
 
-An example can be found in the [custom_tests](https://github.com/aykol/MaterialsCoord/blob/master/examples/custom_tests.ipynb) notebook.
+## Contributing
 
-Note that in any case, the structures provided can be of any type that pymatgen can automatically interpret (cif, POSCAR, etc.)
+MaterialsCoord is in early development but we still welcome your
+contributions. Please read our [contribution guidelines](https://github.com/hillarypan/MaterialsCoord/blob/master/CONTRIBUTING.rst)
+for more information. We maintain a list of all
+contributors [here](https://github.com/hillarypan/MaterialsCoord/blob/master/CONTRIBUTORS.rst).
 
-<a name="humaninterpreter"/>
-##What is the HumanInterpreter?
-`HumanInterpreter` is a special CN method that provides CNs from the "human" interpreted coordination environments stored in the
-human_interpreter.yaml file. It can be added as a CN method along with other CN methods. Currently only the `common_binaries` structure group
-has human interpreted CNs, but more will be added soon.
+## License
 
-If you interpret the CN environment in a structure and you want to add it to MaterialsCoord to compare against availble CN methods, you can basically add the CN numbers to the human_interpreter.yaml as a dictionary that matches
-the name of the structure file in `test_structures` or `custom_set` you provided (without the file extension, if it has any). For example:
-```yaml
-Fe3O4_spinel:
-    - Fe:
-        Fe: 0.0
-        O: 6.0
-    - Fe:
-        Fe: 0.0
-        O: 4.0
-    - O:
-        Fe: 4.0
-        O: 0.0
-```
-describes the CN environment in the spinel Fe3O4 spinel structure, where there are two different unique Fe sites, and one O site. Sites are given as a list. And for each site a dictionary
-of neighboring elements are provided. In this sub-dictionary of surroundings of a given site, we do not differentiate between sites and only list the total CN number for each chemical element (i.e. there is one Fe in each) opposite to the unique sites list (where we had two Fe sites).
-
-Since it is not always easy to interpret the exact coordination number, MaterialsCoord will accept a range. Let's assume hypothetically we aren't sure how many Fe neighbors the O site has,
-but we guess it's between 3.0 and 5.0, we can write:
-```yaml
-Fe3O4_spinel:
-    - Fe:
-        Fe: 0.0
-        O: 6.0
-    - Fe:
-        Fe: 0.0
-        O: 4.0
-    - O:
-        Fe:
-            - 3.0
-            - 5.0
-        O: 0.0
-```
-
-
-
-<a name="install"/>
-##Installation and requirements
-For now, cloning the repo and executing `pyhton setup.py develop` should work fine. MaterialsCoord requires a number of other pyhton packages installed, such as pymatgen. Successfully
-installing [pymatgen](http://pymatgen.org) with all of its dependencies, should also satisfy the dependencies of MaterialsCoord.
+MaterialsCoord is released under a modified BSD license;
+the full text can be found
+[here](https://github.com/hillarypan/MaterialsCoord/blob/master/LICENSE).
