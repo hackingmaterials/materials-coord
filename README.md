@@ -18,7 +18,7 @@ The basic API of MaterialsCoord can be summarized as:
 
 - `materialscoord.Benchmark` provides the primary interface.
   It takes a set of structures that have been decorated with the
-  `"coordination"` site property (see the [Preparing crystal structures for benchmarking](#preparing-crystal-structures-for-benchmarking))
+  `"coordination"` site property (see the [Preparing crystal structures for benchmarking](#preparing-crystal-structures-for-benchmarking)
   section).
 - The `Benchmark.from_structure_group()` method provides a convenience function
   to initialize the benchmark from a list of pre-prepared structure groups.
