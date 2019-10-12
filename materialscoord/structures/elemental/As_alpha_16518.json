@@ -1,0 +1,203 @@
+{
+    "@module": "pymatgen.util.provenance",
+    "@class": "StructureNL",
+    "charge": null,
+    "lattice": {
+        "matrix": [
+            [
+                3.7598,
+                0.0,
+                2.302213517717109e-16
+            ],
+            [
+                -1.879899999999999,
+                3.256082313148733,
+                2.302213517717109e-16
+            ],
+            [
+                0.0,
+                0.0,
+                10.5475
+            ]
+        ],
+        "a": 3.7598,
+        "b": 3.7598,
+        "c": 10.5475,
+        "alpha": 90.0,
+        "beta": 90.0,
+        "gamma": 119.99999999999999,
+        "volume": 129.12479731860074
+    },
+    "sites": [
+        {
+            "species": [
+                {
+                    "element": "As",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.77293
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                8.152479175
+            ],
+            "label": "As0+",
+            "properties": {
+                "coordination": {
+                    "As": 3.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "As",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.22707
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                2.395020825
+            ],
+            "label": "As0+",
+            "properties": {
+                "coordination": {
+                    "As": 3.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "As",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6666666666666666,
+                0.3333333333333333,
+                0.10626333333333332
+            ],
+            "xyz": [
+                1.8799000000000001,
+                1.0853607710495776,
+                1.1208125083333333
+            ],
+            "label": "As0+",
+            "properties": {
+                "coordination": {
+                    "As": 3.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "As",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6666666666666666,
+                0.3333333333333333,
+                0.5604033333333334
+            ],
+            "xyz": [
+                1.8799000000000001,
+                1.0853607710495776,
+                5.910854158333334
+            ],
+            "label": "As0+",
+            "properties": {
+                "coordination": {
+                    "As": 3.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "As",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.3333333333333333,
+                0.6666666666666666,
+                0.43959666666666664
+            ],
+            "xyz": [
+                6.661338147750939e-16,
+                2.1707215420991552,
+                4.636645841666666
+            ],
+            "label": "As0+",
+            "properties": {
+                "coordination": {
+                    "As": 3.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "As",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.3333333333333333,
+                0.6666666666666666,
+                0.8937366666666666
+            ],
+            "xyz": [
+                6.661338147750939e-16,
+                2.1707215420991552,
+                9.426687491666666
+            ],
+            "label": "As0+",
+            "properties": {
+                "coordination": {
+                    "As": 3.0
+                }
+            }
+        }
+    ],
+    "about": {
+        "authors": [
+            {
+                "name": "Alex Ganose",
+                "email": "aganose@lbl.gov"
+            }
+        ],
+        "projects": [],
+        "references": "@article{cif-reference-0,\n    author = \"Schiferl, D.\",\n    title = \"The crystal structure of arsenic at 4.2, 78 and 299 grad K\",\n    journal = \"Journal of Applied Crystallography\",\n    volume = \"2\",\n    year = \"1969\",\n    pages = \"30--36\"\n}\n",
+        "remarks": [
+            "Structure is part of MaterialsCoord test set"
+        ],
+        "history": [],
+        "created_at": {
+            "@module": "datetime",
+            "@class": "datetime",
+            "string": "2019-10-12 01:45:34.897853"
+        }
+    },
+    "@version": "2019.9.16"
+}

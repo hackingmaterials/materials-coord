@@ -1,0 +1,128 @@
+{
+    "@module": "pymatgen.util.provenance",
+    "@class": "StructureNL",
+    "charge": null,
+    "lattice": {
+        "matrix": [
+            [
+                4.052,
+                0.0,
+                2.4811344150725373e-16
+            ],
+            [
+                -2.025999999999999,
+                3.509134936134546,
+                2.4811344150725373e-16
+            ],
+            [
+                0.0,
+                0.0,
+                5.038
+            ]
+        ],
+        "a": 4.052,
+        "b": 4.052,
+        "c": 5.038,
+        "alpha": 90.0,
+        "beta": 90.0,
+        "gamma": 119.99999999999999,
+        "volume": 71.63539636701215
+    },
+    "sites": [
+        {
+            "species": [
+                {
+                    "element": "Se",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.2373,
+                0.0,
+                0.3333333333333333
+            ],
+            "xyz": [
+                0.9615395999999999,
+                0.0,
+                1.6793333333333333
+            ],
+            "label": "Se0+",
+            "properties": {
+                "coordination": {
+                    "Se": 2.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Se",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.7626999999999999,
+                0.7626999999999999,
+                0.0
+            ],
+            "xyz": [
+                1.5452302000000004,
+                2.676417215789818,
+                3.784722436751648e-16
+            ],
+            "label": "Se0+",
+            "properties": {
+                "coordination": {
+                    "Se": 2.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Se",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.2373,
+                0.6666666666666667
+            ],
+            "xyz": [
+                -0.48076979999999975,
+                0.8327177203447278,
+                3.358666666666667
+            ],
+            "label": "Se0+",
+            "properties": {
+                "coordination": {
+                    "Se": 2.0
+                }
+            }
+        }
+    ],
+    "about": {
+        "authors": [
+            {
+                "name": "Alex Ganose",
+                "email": "aganose@lbl.gov"
+            }
+        ],
+        "projects": [],
+        "references": "@article{cif-reference-0,\n    author = \"Keller, R.\",\n    title = \"Effect of pressure on the atom positions in Se and Te\",\n    journal = \"Physical Review, Serie 3. B - Solid State (1,1970-17,1977)\",\n    volume = \"16\",\n    year = \"1977\",\n    pages = \"4404--4412\"\n}\n",
+        "remarks": [
+            "Structure is part of MaterialsCoord test set"
+        ],
+        "history": [],
+        "created_at": {
+            "@module": "datetime",
+            "@class": "datetime",
+            "string": "2019-10-12 01:45:34.839956"
+        }
+    },
+    "@version": "2019.9.16"
+}

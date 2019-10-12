@@ -1,0 +1,1405 @@
+{
+    "@module": "pymatgen.util.provenance",
+    "@class": "StructureNL",
+    "charge": null,
+    "lattice": {
+        "matrix": [
+            [
+                8.878,
+                0.0,
+                5.436207141415101e-16
+            ],
+            [
+                -5.436207141415101e-16,
+                8.878,
+                5.436207141415101e-16
+            ],
+            [
+                0.0,
+                0.0,
+                8.878
+            ]
+        ],
+        "a": 8.878,
+        "b": 8.878,
+        "c": 8.878,
+        "alpha": 90.0,
+        "beta": 90.0,
+        "gamma": 90.0,
+        "volume": 699.754052152
+    },
+    "sites": [
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.8911,
+                0.8911,
+                0.1089
+            ],
+            "xyz": [
+                7.911185799999999,
+                7.9111858,
+                0.966814200000001
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 6.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.8911,
+                0.1089,
+                0.8911
+            ],
+            "xyz": [
+                7.9111858,
+                0.9668142,
+                7.911185800000001
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 6.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.1089,
+                0.8911,
+                0.8911
+            ],
+            "xyz": [
+                0.9668141999999995,
+                7.9111858,
+                7.911185800000001
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 6.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.1089,
+                0.1089,
+                0.1089
+            ],
+            "xyz": [
+                0.9668141999999998,
+                0.9668142,
+                0.9668142000000001
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 6.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.3911,
+                0.3911,
+                0.6089
+            ],
+            "xyz": [
+                3.4721858,
+                3.4721858,
+                5.4058142
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 6.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.3911,
+                0.6089,
+                0.3911
+            ],
+            "xyz": [
+                3.4721857999999997,
+                5.4058142,
+                3.4721858000000005
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 6.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6089,
+                0.3911,
+                0.3911
+            ],
+            "xyz": [
+                5.4058142,
+                3.4721858,
+                3.4721858000000005
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 6.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6089,
+                0.6089,
+                0.6089
+            ],
+            "xyz": [
+                5.4058142,
+                5.4058142,
+                5.405814200000001
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 6.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.9634,
+                0.6872,
+                0.3128
+            ],
+            "xyz": [
+                8.5530652,
+                6.100961600000001,
+                2.7770384000000012
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 5.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6872,
+                0.6872,
+                0.0366
+            ],
+            "xyz": [
+                6.100961600000001,
+                6.100961600000001,
+                0.32493480000000075
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 5.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6872,
+                0.9634,
+                0.3128
+            ],
+            "xyz": [
+                6.1009616,
+                8.5530652,
+                2.7770384000000012
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 5.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.9634,
+                0.3128,
+                0.6872
+            ],
+            "xyz": [
+                8.5530652,
+                2.7770384000000004,
+                6.1009616000000015
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 5.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6872,
+                0.3128,
+                0.9634
+            ],
+            "xyz": [
+                6.100961600000001,
+                2.7770384000000004,
+                8.5530652
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 5.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6872,
+                0.0366,
+                0.6872
+            ],
+            "xyz": [
+                6.100961600000001,
+                0.3249348,
+                6.100961600000001
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 5.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0366,
+                0.6872,
+                0.6872
+            ],
+            "xyz": [
+                0.32493479999999964,
+                6.100961600000001,
+                6.100961600000001
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 5.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.3128,
+                0.6872,
+                0.9634
+            ],
+            "xyz": [
+                2.7770384,
+                6.100961600000001,
+                8.5530652
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 5.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.3128,
+                0.9634,
+                0.6872
+            ],
+            "xyz": [
+                2.7770384,
+                8.5530652,
+                6.1009616000000015
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 5.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0366,
+                0.3128,
+                0.3128
+            ],
+            "xyz": [
+                0.32493479999999986,
+                2.7770384000000004,
+                2.7770384000000004
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 5.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.3128,
+                0.3128,
+                0.0366
+            ],
+            "xyz": [
+                2.7770384000000004,
+                2.7770384000000004,
+                0.32493480000000036
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 5.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.3128,
+                0.0366,
+                0.3128
+            ],
+            "xyz": [
+                2.7770384000000004,
+                0.3249348,
+                2.7770384000000004
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 5.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.4634,
+                0.18719999999999998,
+                0.8128
+            ],
+            "xyz": [
+                4.1140652,
+                1.6619616,
+                7.2160383999999995
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 5.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.18719999999999998,
+                0.18719999999999998,
+                0.5366
+            ],
+            "xyz": [
+                1.6619616,
+                1.6619616,
+                4.7639347999999995
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 5.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.18719999999999998,
+                0.4634,
+                0.8128
+            ],
+            "xyz": [
+                1.6619615999999997,
+                4.1140652,
+                7.2160383999999995
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 5.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.4634,
+                0.8128,
+                0.18719999999999998
+            ],
+            "xyz": [
+                4.1140652,
+                7.2160383999999995,
+                1.6619616000000006
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 5.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.18719999999999998,
+                0.8128,
+                0.4634
+            ],
+            "xyz": [
+                1.6619615999999995,
+                7.2160383999999995,
+                4.114065200000001
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 5.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.18719999999999998,
+                0.5366,
+                0.18719999999999998
+            ],
+            "xyz": [
+                1.6619615999999997,
+                4.7639347999999995,
+                1.6619616000000004
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 5.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5366,
+                0.18719999999999998,
+                0.18719999999999998
+            ],
+            "xyz": [
+                4.7639347999999995,
+                1.6619616,
+                1.6619616000000004
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 5.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.8128,
+                0.18719999999999998,
+                0.4634
+            ],
+            "xyz": [
+                7.2160383999999995,
+                1.6619616,
+                4.114065200000001
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 5.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.8128,
+                0.4634,
+                0.18719999999999998
+            ],
+            "xyz": [
+                7.2160383999999995,
+                4.1140652,
+                1.6619616000000006
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 5.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5366,
+                0.8128,
+                0.8128
+            ],
+            "xyz": [
+                4.7639347999999995,
+                7.2160383999999995,
+                7.2160384
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 5.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.8128,
+                0.8128,
+                0.5366
+            ],
+            "xyz": [
+                7.2160383999999995,
+                7.2160383999999995,
+                4.7639348
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 5.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.8128,
+                0.5366,
+                0.8128
+            ],
+            "xyz": [
+                7.2160383999999995,
+                4.7639347999999995,
+                7.2160384
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 5.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.172,
+                0.172,
+                0.8280000000000001
+            ],
+            "xyz": [
+                1.527016,
+                1.527016,
+                7.350984
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 9.0,
+                    "Cu": 3.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.172,
+                0.8280000000000001,
+                0.172
+            ],
+            "xyz": [
+                1.5270159999999995,
+                7.350984,
+                1.5270160000000004
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 9.0,
+                    "Cu": 3.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.8280000000000001,
+                0.172,
+                0.172
+            ],
+            "xyz": [
+                7.350984,
+                1.527016,
+                1.5270160000000004
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 9.0,
+                    "Cu": 3.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.8280000000000001,
+                0.8280000000000001,
+                0.8280000000000001
+            ],
+            "xyz": [
+                7.3509839999999995,
+                7.350984,
+                7.350984000000001
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 9.0,
+                    "Cu": 3.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6719999999999999,
+                0.6719999999999999,
+                0.328
+            ],
+            "xyz": [
+                5.966016,
+                5.966016,
+                2.9119840000000012
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 9.0,
+                    "Cu": 3.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6719999999999999,
+                0.328,
+                0.6719999999999999
+            ],
+            "xyz": [
+                5.966016,
+                2.9119840000000003,
+                5.966016000000001
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 9.0,
+                    "Cu": 3.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.328,
+                0.6719999999999999,
+                0.6719999999999999
+            ],
+            "xyz": [
+                2.911984,
+                5.966016,
+                5.966016000000001
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 9.0,
+                    "Cu": 3.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.328,
+                0.328,
+                0.328
+            ],
+            "xyz": [
+                2.9119840000000003,
+                2.9119840000000003,
+                2.911984000000001
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 9.0,
+                    "Cu": 3.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.3558
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                3.1587924000000003
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 10.0,
+                    "Cu": 3.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.6442,
+                0.0
+            ],
+            "xyz": [
+                -3.5020046404996083e-16,
+                5.7192076,
+                3.5020046404996083e-16
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 10.0,
+                    "Cu": 3.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6442,
+                0.0,
+                0.0
+            ],
+            "xyz": [
+                5.7192076,
+                0.0,
+                3.5020046404996083e-16
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 10.0,
+                    "Cu": 3.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.6442
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                5.7192076
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 10.0,
+                    "Cu": 3.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.3558,
+                0.0
+            ],
+            "xyz": [
+                -1.934202500915493e-16,
+                3.1587924000000003,
+                1.934202500915493e-16
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 10.0,
+                    "Cu": 3.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.3558,
+                0.0,
+                0.0
+            ],
+            "xyz": [
+                3.1587924000000003,
+                0.0,
+                1.934202500915493e-16
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 10.0,
+                    "Cu": 3.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.5,
+                0.8558
+            ],
+            "xyz": [
+                4.439,
+                4.439,
+                7.597792400000001
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 10.0,
+                    "Cu": 3.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.1442,
+                0.5
+            ],
+            "xyz": [
+                4.439,
+                1.2802076,
+                4.439
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 10.0,
+                    "Cu": 3.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.1442,
+                0.5,
+                0.5
+            ],
+            "xyz": [
+                1.2802075999999998,
+                4.439,
+                4.439
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 10.0,
+                    "Cu": 3.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.5,
+                0.1442
+            ],
+            "xyz": [
+                4.439,
+                4.439,
+                1.2802076000000004
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 10.0,
+                    "Cu": 3.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.8558,
+                0.5
+            ],
+            "xyz": [
+                4.438999999999999,
+                7.5977924,
+                4.439000000000001
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 10.0,
+                    "Cu": 3.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.8558,
+                0.5,
+                0.5
+            ],
+            "xyz": [
+                7.5977924,
+                4.439,
+                4.439000000000001
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Zn": 10.0,
+                    "Cu": 3.0
+                }
+            }
+        }
+    ],
+    "about": {
+        "authors": [
+            {
+                "name": "Alex Ganose",
+                "email": "aganose@lbl.gov"
+            }
+        ],
+        "projects": [],
+        "references": "@article{cif-reference-0,\n    author = \"Brandon, J.K.\",\n    title = \" New refinement of the gamma brass type structures Cu5 Zn8, Cu5 Cd8 and F E Zn10\",\n    journal = \"Acta Crystallographica, Section B: Structural Crystallography and Crystal Chemistry\",\n    volume = \"30\",\n    year = \"1974\",\n    pages = \"1412--1417\"\n}\n",
+        "remarks": [
+            "Structure is part of MaterialsCoord test set"
+        ],
+        "history": [],
+        "created_at": {
+            "@module": "datetime",
+            "@class": "datetime",
+            "string": "2019-10-12 01:45:35.328396"
+        }
+    },
+    "@version": "2019.9.16"
+}

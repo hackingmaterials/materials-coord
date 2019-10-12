@@ -1,0 +1,165 @@
+{
+    "@module": "pymatgen.util.provenance",
+    "@class": "StructureNL",
+    "charge": null,
+    "lattice": {
+        "matrix": [
+            [
+                2.854,
+                0.0,
+                1.747570982383273e-16
+            ],
+            [
+                -3.594338355497482e-16,
+                5.87,
+                3.594338355497482e-16
+            ],
+            [
+                0.0,
+                0.0,
+                4.955
+            ]
+        ],
+        "a": 2.854,
+        "b": 5.87,
+        "c": 4.955,
+        "alpha": 90.0,
+        "beta": 90.0,
+        "gamma": 90.0,
+        "volume": 83.0110159
+    },
+    "sites": [
+        {
+            "species": [
+                {
+                    "element": "U",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.1025,
+                0.25
+            ],
+            "xyz": [
+                -3.6841968143849185e-17,
+                0.601675,
+                1.23875
+            ],
+            "label": "U0+",
+            "properties": {
+                "coordination": {
+                    "U": [
+                        4.0,
+                        12.0
+                    ]
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "U",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.8975,
+                0.75
+            ],
+            "xyz": [
+                -3.22591867405899e-16,
+                5.268325,
+                3.7162500000000005
+            ],
+            "label": "U0+",
+            "properties": {
+                "coordination": {
+                    "U": [
+                        4.0,
+                        12.0
+                    ]
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "U",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.6025,
+                0.25
+            ],
+            "xyz": [
+                1.4269999999999998,
+                3.5366750000000002,
+                1.2387500000000002
+            ],
+            "label": "U0+",
+            "properties": {
+                "coordination": {
+                    "U": [
+                        4.0,
+                        12.0
+                    ]
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "U",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.3975,
+                0.75
+            ],
+            "xyz": [
+                1.4269999999999998,
+                2.3333250000000003,
+                3.7162500000000005
+            ],
+            "label": "U0+",
+            "properties": {
+                "coordination": {
+                    "U": [
+                        4.0,
+                        12.0
+                    ]
+                }
+            }
+        }
+    ],
+    "about": {
+        "authors": [
+            {
+                "name": "Alex Ganose",
+                "email": "aganose@lbl.gov"
+            }
+        ],
+        "projects": [],
+        "references": "@article{cif-reference-0,\n    author = \"Lander, G.H.\",\n    title = \"Neutron diffraction study of alpha-uranium at low temperatures\",\n    journal = \"Acta Crystallographica, Section B: Structural Crystallography and Crystal Chemistry\",\n    volume = \"26\",\n    year = \"1970\",\n    pages = \"129--136\"\n}\n",
+        "remarks": [
+            "Structure is part of MaterialsCoord test set"
+        ],
+        "history": [],
+        "created_at": {
+            "@module": "datetime",
+            "@class": "datetime",
+            "string": "2019-10-12 01:45:34.987077"
+        }
+    },
+    "@version": "2019.9.16"
+}

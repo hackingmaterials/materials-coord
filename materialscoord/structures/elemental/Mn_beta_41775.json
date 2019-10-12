@@ -1,0 +1,553 @@
+{
+    "@module": "pymatgen.util.provenance",
+    "@class": "StructureNL",
+    "charge": null,
+    "lattice": {
+        "matrix": [
+            [
+                6.315,
+                0.0,
+                3.866822268307768e-16
+            ],
+            [
+                -3.866822268307768e-16,
+                6.315,
+                3.866822268307768e-16
+            ],
+            [
+                0.0,
+                0.0,
+                6.315
+            ]
+        ],
+        "a": 6.315,
+        "b": 6.315,
+        "c": 6.315,
+        "alpha": 90.0,
+        "beta": 90.0,
+        "gamma": 90.0,
+        "volume": 251.83730587500006
+    },
+    "sites": [
+        {
+            "species": [
+                {
+                    "element": "Mn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.18639,
+                0.8136099999999999,
+                0.31361
+            ],
+            "xyz": [
+                1.17705285,
+                5.13794715,
+                1.9804471500000005
+            ],
+            "label": "Mn0+",
+            "properties": {
+                "coordination": {
+                    "Mn": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.31361,
+                0.18639,
+                0.8136099999999999
+            ],
+            "xyz": [
+                1.98044715,
+                1.1770528500000002,
+                5.13794715
+            ],
+            "label": "Mn0+",
+            "properties": {
+                "coordination": {
+                    "Mn": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.8136099999999999,
+                0.31361,
+                0.18639
+            ],
+            "xyz": [
+                5.13794715,
+                1.98044715,
+                1.1770528500000006
+            ],
+            "label": "Mn0+",
+            "properties": {
+                "coordination": {
+                    "Mn": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6863900000000001,
+                0.6863900000000001,
+                0.6863900000000001
+            ],
+            "xyz": [
+                4.334552850000001,
+                4.334552850000001,
+                4.3345528500000015
+            ],
+            "label": "Mn0+",
+            "properties": {
+                "coordination": {
+                    "Mn": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5636099999999999,
+                0.43639,
+                0.9363900000000001
+            ],
+            "xyz": [
+                3.5591971499999997,
+                2.7558028500000002,
+                5.913302850000001
+            ],
+            "label": "Mn0+",
+            "properties": {
+                "coordination": {
+                    "Mn": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.43639,
+                0.9363900000000001,
+                0.5636099999999999
+            ],
+            "xyz": [
+                2.75580285,
+                5.913302850000001,
+                3.55919715
+            ],
+            "label": "Mn0+",
+            "properties": {
+                "coordination": {
+                    "Mn": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.9363900000000001,
+                0.5636099999999999,
+                0.43639
+            ],
+            "xyz": [
+                5.913302850000001,
+                3.5591971499999997,
+                2.7558028500000007
+            ],
+            "label": "Mn0+",
+            "properties": {
+                "coordination": {
+                    "Mn": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.06361,
+                0.06361,
+                0.06361
+            ],
+            "xyz": [
+                0.40169715,
+                0.40169715,
+                0.40169715000000006
+            ],
+            "label": "Mn0+",
+            "properties": {
+                "coordination": {
+                    "Mn": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.79776,
+                0.95224,
+                0.375
+            ],
+            "xyz": [
+                5.0378544000000005,
+                6.0133956,
+                2.368125000000001
+            ],
+            "label": "Mn0+",
+            "properties": {
+                "coordination": {
+                    "Mn": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.70224,
+                0.04776,
+                0.875
+            ],
+            "xyz": [
+                4.4346456000000005,
+                0.3016044,
+                5.525625000000001
+            ],
+            "label": "Mn0+",
+            "properties": {
+                "coordination": {
+                    "Mn": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.20223999999999998,
+                0.45224,
+                0.125
+            ],
+            "xyz": [
+                1.2771455999999997,
+                2.8558956,
+                0.7893750000000003
+            ],
+            "label": "Mn0+",
+            "properties": {
+                "coordination": {
+                    "Mn": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.29776,
+                0.54776,
+                0.625
+            ],
+            "xyz": [
+                1.8803544,
+                3.4591044,
+                3.946875000000001
+            ],
+            "label": "Mn0+",
+            "properties": {
+                "coordination": {
+                    "Mn": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.95224,
+                0.375,
+                0.79776
+            ],
+            "xyz": [
+                6.0133956,
+                2.368125,
+                5.037854400000001
+            ],
+            "label": "Mn0+",
+            "properties": {
+                "coordination": {
+                    "Mn": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.04776,
+                0.875,
+                0.70224
+            ],
+            "xyz": [
+                0.30160439999999966,
+                5.525625000000001,
+                4.4346456000000005
+            ],
+            "label": "Mn0+",
+            "properties": {
+                "coordination": {
+                    "Mn": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.45224,
+                0.125,
+                0.20223999999999998
+            ],
+            "xyz": [
+                2.8558956,
+                0.789375,
+                1.2771456
+            ],
+            "label": "Mn0+",
+            "properties": {
+                "coordination": {
+                    "Mn": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.54776,
+                0.625,
+                0.29776
+            ],
+            "xyz": [
+                3.4591043999999997,
+                3.9468750000000004,
+                1.8803544000000008
+            ],
+            "label": "Mn0+",
+            "properties": {
+                "coordination": {
+                    "Mn": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.375,
+                0.79776,
+                0.95224
+            ],
+            "xyz": [
+                2.3681249999999996,
+                5.0378544000000005,
+                6.013395600000001
+            ],
+            "label": "Mn0+",
+            "properties": {
+                "coordination": {
+                    "Mn": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.875,
+                0.70224,
+                0.04776
+            ],
+            "xyz": [
+                5.525625000000001,
+                4.4346456000000005,
+                0.3016044000000006
+            ],
+            "label": "Mn0+",
+            "properties": {
+                "coordination": {
+                    "Mn": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.125,
+                0.20223999999999998,
+                0.45224
+            ],
+            "xyz": [
+                0.7893749999999999,
+                1.2771455999999999,
+                2.8558956
+            ],
+            "label": "Mn0+",
+            "properties": {
+                "coordination": {
+                    "Mn": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.625,
+                0.29776,
+                0.54776
+            ],
+            "xyz": [
+                3.9468750000000004,
+                1.8803544000000003,
+                3.4591044000000006
+            ],
+            "label": "Mn0+",
+            "properties": {
+                "coordination": {
+                    "Mn": 12.0
+                }
+            }
+        }
+    ],
+    "about": {
+        "authors": [
+            {
+                "name": "Alex Ganose",
+                "email": "aganose@lbl.gov"
+            }
+        ],
+        "projects": [],
+        "references": "@article{cif-reference-0,\n    author = \"Shoemaker, C.B.\",\n    title = \" Refinement of the structure of beta-manganese and of a related phase in the Mn-Ni-Si system\",\n    journal = \"Acta Crystallographica, Section B: Structural Crystallography and Crystal Chemistry\",\n    volume = \"34\",\n    year = \"1978\",\n    pages = \"3573--3576\"\n}\n",
+        "remarks": [
+            "Structure is part of MaterialsCoord test set"
+        ],
+        "history": [],
+        "created_at": {
+            "@module": "datetime",
+            "@class": "datetime",
+            "string": "2019-10-12 01:45:35.040304"
+        }
+    },
+    "@version": "2019.9.16"
+}

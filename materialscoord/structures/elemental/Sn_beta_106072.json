@@ -1,0 +1,153 @@
+{
+    "@module": "pymatgen.util.provenance",
+    "@class": "StructureNL",
+    "charge": null,
+    "lattice": {
+        "matrix": [
+            [
+                5.8308,
+                0.0,
+                3.5703352782341937e-16
+            ],
+            [
+                -3.5703352782341937e-16,
+                5.8308,
+                3.5703352782341937e-16
+            ],
+            [
+                0.0,
+                0.0,
+                3.181
+            ]
+        ],
+        "a": 5.8308,
+        "b": 5.8308,
+        "c": 3.181,
+        "alpha": 90.0,
+        "beta": 90.0,
+        "gamma": 90.0,
+        "volume": 108.14836530384001
+    },
+    "sites": [
+        {
+            "species": [
+                {
+                    "element": "Sn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.5,
+                0.25
+            ],
+            "xyz": [
+                -1.7851676391170969e-16,
+                2.9154,
+                0.7952500000000002
+            ],
+            "label": "Sn0+",
+            "properties": {
+                "coordination": {
+                    "Sn": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Sn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "label": "Sn0+",
+            "properties": {
+                "coordination": {
+                    "Sn": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Sn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.0,
+                0.75
+            ],
+            "xyz": [
+                2.9154,
+                0.0,
+                2.38575
+            ],
+            "label": "Sn0+",
+            "properties": {
+                "coordination": {
+                    "Sn": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Sn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.5,
+                0.5
+            ],
+            "xyz": [
+                2.9154,
+                2.9154,
+                1.5905000000000005
+            ],
+            "label": "Sn0+",
+            "properties": {
+                "coordination": {
+                    "Sn": 6.0
+                }
+            }
+        }
+    ],
+    "about": {
+        "authors": [
+            {
+                "name": "Alex Ganose",
+                "email": "aganose@lbl.gov"
+            }
+        ],
+        "projects": [],
+        "references": "@article{cif-reference-0,\n    author = \"Wolcyrz, M.\",\n    title = \" X-ray investigation of thermal expansion and atomic thermal vibrations of tin, indium, and their alloys\",\n    journal = \"Physica Status Solidi B - Basic Solid State Physics\",\n    volume = \"107\",\n    year = \"1981\",\n    pages = \"245--253\"\n}\n",
+        "remarks": [
+            "Structure is part of MaterialsCoord test set"
+        ],
+        "history": [],
+        "created_at": {
+            "@module": "datetime",
+            "@class": "datetime",
+            "string": "2019-10-12 01:45:35.004735"
+        }
+    },
+    "@version": "2019.9.16"
+}
