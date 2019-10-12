@@ -14,16 +14,16 @@ determined.
 
 ## Usage
 
-Simply put:
+The basic API of MaterialsCoord can be summarized as:
 
-- The `materialscoord.Benchmark` class provides the primary interface.
+- `materialscoord.Benchmark` provides the primary interface.
   It takes a set of structures that have been decorated with the
   `"coordination"` site property (see the [Preparing crystal structures for benchmarking](#preparing-crystal-structures-for-benchmarking))
   section).
 - The `Benchmark.from_structure_group()` method provides a convenience function
   to initialize the benchmark from a list of pre-prepared structure groups.
   More information on the available groups is provided in the
-  [Benchmarking structure sets](#benchmarking-structure-sets))
+  [Benchmarking structure sets](#benchmarking-structure-sets)
   section.
 - `Benchmark.benchmark()` accepts a list of coordination algorithms and runs them
   on the set of test structures.
@@ -33,8 +33,8 @@ Simply put:
 ### Coordination number algorithms
 
 MaterialsCoord has been designed to interface with the `NearNeighbors` methods
-implemented in `pymatgen.analysis.local_env`. A number of methods exist,
-including:
+implemented in [`pymatgen.analysis.local_env`](https://pymatgen.org/pymatgen.analysis.local_env.html#module-pymatgen.analysis.local_env).
+A number of methods exist, including:
 
 - [`CrystalNN`](https://pymatgen.org/pymatgen.analysis.local_env.html#pymatgen.analysis.local_env.CrystalNN)
 - [`VoronoiNN`](https://pymatgen.org/pymatgen.analysis.local_env.html#pymatgen.analysis.local_env.VoronoiNN)
@@ -44,34 +44,33 @@ including:
 ### Benchmarking structure sets
 
 The benchmark includes around 95 pre-prepared test structures for which the
-correct coordination has been determined by a human interpreter. We have taken
-the correct bonding interpretation from published papers detailing the crystal
-structure. The structures have been grouped into a number of material classes,
-including:
+correct coordination has been determined by a human interpreter (taken from the
+scientific literature). The structures have been grouped into a number of
+material classes, including:
 
-- "elemental": Simple elemental materials, including diamond, graphite, Ga,
+- `"elemental"`: Simple elemental materials, including diamond, graphite, Ga,
   and α-As.
-- "common_binaries": Simple and more complex binary structures, including
+- `"common_binaries"`: Simple and more complex binary structures, including
   rocksalt NaCl, rutile TiO<sub>2</sub>, and γ-brass.
-- "ABX3": ABX<sub>3</sub> structured ternary materials, including perovskite
+- `"ABX3"`: ABX<sub>3</sub> structured ternary materials, including perovskite
   SrTiO<sub>3</sub> and argonite CaCO<sub>3</sub>.
-- "ABX4": ABX<sub>4</sub> structured ternary materials, including zircon,
+- `"ABX4"`: ABX<sub>4</sub> structured ternary materials, including zircon,
   (ZrSiO<sub>4</sub>) and wolframite (FeWO<sub>4</sub>).
-- "A2BX4": A<sub>2</sub>BX<sub>4</sub> structured ternary materials, including
+- `"A2BX4"`: A<sub>2</sub>BX<sub>4</sub> structured ternary materials, including
   olivine Fe<sub>2</sub>SiO<sub>4</sub>.
 
 The full set of materials classes and crystal structures can be found
 in the [structures directory](https://github.com/hillarypan/MaterialsCoord/tree/master/materialscoord/structures).
 
 MaterialsCoord supports benchmarking on custom structures. See the
-[Preparing crystal structures for benchmarking](#preparing-crystal-structures-for-benchmarking))
+[Preparing crystal structures for benchmarking](#preparing-crystal-structures-for-benchmarking)
 section for more details.
 
 ### Running the Benchmark
 
 The MaterialsCoord benchmark should be run using the python API. For example,
 we can compare the Effective Coordination Number (ECoN) and O'Keeffe's Voronoi
-CN method on the "elemental" and "common_binaries" structure groups as follows:
+CN method on the `"elemental"` and `"common_binaries"` structure groups as follows:
 
 ```python
 from pymatgen.analysis.local_env import EconNN, VoronoiNN
