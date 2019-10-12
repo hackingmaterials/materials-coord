@@ -159,26 +159,26 @@ class Benchmark(object):
             structure.remove_oxidation_states()
 
     @classmethod
-    def from_preset(cls, materials_classes: Union[str, List[str]], **kwargs):
+    def from_structure_group(cls, structure_groups: Union[str, List[str]], **kwargs):
         """
         Initialises the benchmark from a list of test structure classes.
 
         Args:
 
-            materials_classes: One or more test structure classes. Options
+            structure_groups: One or more test structure groups. Options
                 include: "elemental", "common_binaries", "ABX3", "ABX4",
                 "A2BX4", "laves". See the "test_structures" folder for
                 the full list of options. Defaults to "elemental".
             **kwargs: Additional keyword arguments that will be passed
                 to the Benchmark constructor.
         """
-        if isinstance(materials_classes, str):
-            materials_classes = [materials_classes]
+        if isinstance(structure_groups, str):
+            structure_groups = [structure_groups]
 
         str_path = resource_filename("materialscoord", "structures")
 
         filenames = []
-        for materials_class in materials_classes:
+        for materials_class in structure_groups:
             path = os.path.join(str_path, materials_class, "*.json")
             filenames.extend(glob.glob(path))
 
