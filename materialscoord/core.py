@@ -70,6 +70,9 @@ class Benchmark(object):
         self.symprec = symprec
         self.use_weights = use_weights
 
+        # use this to cache benchmark results
+        self._benchmark: Dict[NearNeighbors, Dict[str, List]] = defaultdict(dict)
+
         for name, structure in structures.items():
             if "coordination" not in structure.site_properties:
                 raise AttributeError(
@@ -210,14 +213,14 @@ class Benchmark(object):
             See the docstring for `NearNeighbors.get_cn_dict` for the format of
             cn_dict.
         """
-        benchmark: Dict[NearNeighbors, Dict[str, List]] = defaultdict(dict)
-
         for method in methods:
             for name in self.structures:
-                benchmark[method][name] = self._benchmark_structure(name, method)
+                if method not in self._benchmark or name not in self._benchmark[method]:
+                    self._benchmark[method][name] = self._benchmark_structure(
+                        name, method)
 
         if not return_dataframe:
-            return benchmark
+            return self._benchmark
 
         df_data = defaultdict(dict)
 
@@ -227,7 +230,7 @@ class Benchmark(object):
                     column = method.__class__.__name__ + str(site_idx)
 
                     if site_idx < len(self.site_information[name]["unique_idxs"]):
-                        val = benchmark[method][name][site_idx]
+                        val = self._benchmark[method][name][site_idx]
                     else:
                         val = None
 
@@ -388,7 +391,6 @@ class Benchmark(object):
             score += site_score * site_degen
 
         if total == 0:
-            print(name)
-            return 0
+            return np.nan
 
         return score / total
