@@ -1,49 +1,60 @@
-import numpy as np
-from matplotlib import gridspec
-import matplotlib.pyplot as plt
+from typing import Dict, Optional
+from pandas import DataFrame
+
 import seaborn as sns
+import matplotlib.pyplot as plt
 
-def heatmap(df, inline=False, figsize=(20, 12), fontsize=16, labels=True):
 
-    #cmap = sns.cubehelix_palette(light=0.95, as_cmap=True)
-    cmap = "Viridis_r"
-    fig = plt.figure(figsize=figsize)
-    gs = gridspec.GridSpec(1, 1)
-    ax0 = plt.subplot(gs[0])
+def plot_benchmark_scores(scores: DataFrame,
+                          structure_mapping: Optional[Dict[str, str]] = None,
+                          nn_method_mapping: Optional[Dict[str, str]] = None,
+                          figsize=(17, 10)
+                          ) -> plt:
+    """
+    Plot MaterialsCoord benchmark scores.
 
-    if labels:
-        sns.heatmap(df, cmap=cmap, ax=ax0, cbar=True, vmax=10,
-                    cbar_kws=dict(use_gridspec=False, location="left"),
-                    annot=True, annot_kws={'size': fontsize - 2})
-    else:
-        sns.heatmap(df, cmap=cmap, ax=ax0, cbar=False)
+    Args:
+        scores: The scores dataframe from `Benchmark.scores`.
+        structure_mapping: A dictionary to remap the structure labels. I.e., to rename
+            "NaCl_rocksalt_100633" to "NaCl (rock-salt)", structure_mapping should be::
 
-    # Apply visual corrections and modifications.
-    #ax0.xaxis.tick_bottom()
-    ax0.yaxis.set_ticks_position('right')
-    ax0.set_xticklabels(ax0.xaxis.get_majorticklabels(), rotation=45, ha='right', fontsize=fontsize)
-    ax0.set_yticklabels(ax0.yaxis.get_majorticklabels(), fontsize=fontsize, rotation=0)
-    ax0.set_yticklabels(ax0.yaxis.get_majorticklabels(), rotation=0, fontsize=fontsize)
-    ax0.xaxis.set_ticks_position('none')
-    ax0.yaxis.set_ticks_position('none')
-    ax0.patch.set_visible(False)
+                {"NaCl_rocksalt_100633": "NaCl (rock-salt)"}
+        nn_method_mapping: A dictionary to remap the near neighbor labels. I.e., to rename
+            "BrunnerNN_reciprocal" to "BrunnerNN", nn_method_remapping should be::
 
-    for text in ax0.texts:
-        t = float(text.get_text())
-        if 0.95 <= t < 1:
-            text.set_text('<1')
-        elif -1 < t <= -0.95:
-            text.set_text('>-1')
-        elif t == 1:
-            text.set_text('1')
-        elif t == -1:
-            text.set_text('-1')
-        elif -0.05 < t < 0.05:
-            text.set_text('')
-        else:
-            text.set_text(round(t, 1))
+                {"BrunnerNN_reciprocal": "BrunnerNN"}
 
-    if inline:
-        plt.show()
-    else:
-        return ax0
+    Returns:
+        A matplotlib pyplot object.
+    """
+    structure_mapping = structure_mapping or {}
+    nn_method_mapping = nn_method_mapping or {}
+
+    structure_labels = []
+    for structure_label in scores.index:
+        structure_labels.append(structure_mapping.get(structure_label, structure_label))
+
+    nn_labels = []
+    for nn_label in scores.columns:
+        nn_labels.append(nn_method_mapping.get(nn_label, nn_label))
+
+    sns.set(font='Helvetica')
+    sns.set(font_scale=1.5)
+    sns.set_style({'axes.edgecolor': 'black', 'axes.linewidth': 1.3})
+
+    fig, ax = plt.subplots(figsize=figsize)
+    sns.heatmap(scores, annot=True, cmap="Blues", vmax=10)
+
+    ax.set_yticklabels(structure_labels)
+    ax.set_xticklabels(nn_labels, rotation=60)
+
+    # draw line above Total row and axis boundaries
+    for _, spine in ax.spines.items():
+        spine.set_visible(True)
+    ax.axhline(y=len(structure_labels)-1, color='k', linewidth=1.3)
+
+    cbar = ax.collections[0].colorbar
+    cbar.set_label('Benchmark score', labelpad=40, rotation=270)
+    cbar.outline.set(**{"edgecolor": 'k', "linewidth": 1.3})
+
+    return plt
