@@ -30,6 +30,9 @@ The basic API of MaterialsCoord can be summarized as:
 - `Benchmark.score()` accepts a list of coordination algorithms and compares
   their performance against a human interpretation of crystal structure bonding.
 
+A full introduction to using MaterialsCoord is provided in the
+[introduction notebook](https://github.com/hillarypan/MaterialsCoord/tree/master/examples/introduction-to-MaterialsCoord.ipynb).
+
 ### Coordination number algorithms
 
 MaterialsCoord has been designed to interface with the `NearNeighbors` methods
@@ -84,11 +87,24 @@ bm.score(nn_methods)
 
 The `score` function will return the results as a [Pandas](https://pandas.pydata.org)
 `DataFrame` object. Further details can be found in the
-[example notebooks](https://github.com/hillarypan/MaterialsCoord/tree/master/examples).
+[introduction notebook](https://github.com/hillarypan/MaterialsCoord/tree/master/examples).
 
 ### Preparing crystal structures for benchmarking
 
-More details to be added soon.
+MaterialsCoord uses pymatgen `Structure` objects to internally store the crystal
+structure data. The structures provided in the default structure groups contain
+an additional site property called `"coordination"`. This property contains
+information on the human interpreted coordination environment for each site.
+
+For example, if a site is bonded to two oxygen and three chlorine atoms, the
+coordination property should be a dictionary of ``{"O": 2, "Cl": 3}``. If
+multiple coordination numbers are deemed correct these should be provided as a
+list. For example, if the coordination to gallium could be 4 or 12 coordinate,
+the coordination property should a dictionary of ``{"Ga": [4, 12]}``.
+
+A full guide to preparing crystal structures for use in MaterialsCoord is in
+provided in the
+[benchmarking using custom structures notebook](https://github.com/hillarypan/MaterialsCoord/tree/master/examples/benchmarking-custom-structures.ipynb).
 
 ## How to cite MaterialsCoord
 
