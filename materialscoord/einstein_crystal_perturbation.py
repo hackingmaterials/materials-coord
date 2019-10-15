@@ -1,14 +1,10 @@
 # coding: utf-8
 
-from __future__ import division, unicode_literals
-
 from copy import deepcopy
 
 import numpy as np
 
 from pymatgen import Structure
-from pymatgen.core.lattice import Lattice
-from pymatgen.core.sites import Site, PeriodicSite
 
 
 def perturb_einstein_crystal(structure: Structure, sigma: float = 1.0):
@@ -39,5 +35,3 @@ def perturb_einstein_crystal(structure: Structure, sigma: float = 1.0):
         structure.translate_sites([i], displacement, frac_coords=False)
 
     return structure
-
-
