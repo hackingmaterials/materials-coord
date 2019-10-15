@@ -1,6 +1,4 @@
 import re
-import os
-import glob
 import warnings
 
 from pathlib import Path
@@ -20,13 +18,17 @@ from pymatgen.analysis.local_env import NearNeighbors
 
 from materialscoord.einstein_crystal_perturbation import perturb_einstein_crystal
 
-module_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)))
+_resource_dir = resource_filename("materialscoord", "structures")
 
 
 class Benchmark(object):
     """
     Class for performing coordination number benchmarks on a set of structures
     using different nearest neighbor methods.
+
+    Attributes:
+        all_structure_groups: A list of all the available structure groups that can
+            be used for benchmarking.
 
     Args:
         structures: A set of structures. Should be given as a dictionary of
@@ -58,6 +60,10 @@ class Benchmark(object):
         - Use predict_oxidation_states() for structures without oxidation
             states present? Otherwise, score doesn't work with MP cif files.
     """
+
+    all_structure_groups: List[str] = [
+        filename.stem for filename in Path(_resource_dir).iterdir() if filename.is_dir()
+    ]
 
     def __init__(
         self,
@@ -120,11 +126,13 @@ class Benchmark(object):
                     cation_degens.append(len(sites))
                     cation_idxs.append(i)
                     if sites[0].specie.oxi_state > 0:
-                        cations.add(sites[0].specie.element.name)
-                elif isinstance(sites[0].specie, Specie) and sites[0].specie.oxi_state < 0:
+                        cations.add(sites[0].specie.name)
+                elif (
+                    isinstance(sites[0].specie, Specie) and sites[0].specie.oxi_state < 0
+                ):
                     anion_degens.append(len(sites))
                     anion_idxs.append(i)
-                    anions.add(sites[0].specie.element.name)
+                    anions.add(sites[0].specie.name)
 
             all_degens = [len(x) for x in equiv_sites]
             total_all = sum(all_degens)
@@ -178,12 +186,9 @@ class Benchmark(object):
         if isinstance(structure_groups, str):
             structure_groups = [structure_groups]
 
-        str_path = resource_filename("materialscoord", "structures")
-
         filenames = []
-        for materials_class in structure_groups:
-            path = os.path.join(str_path, materials_class, "*.json")
-            filenames.extend(glob.glob(path))
+        for structure_group in structure_groups:
+            filenames.extend(Path(_resource_dir, structure_group).glob("*.json"))
 
         structures = {}
         for filename in filenames:
@@ -217,7 +222,8 @@ class Benchmark(object):
             for name in self.structures:
                 if method not in self._benchmark or name not in self._benchmark[method]:
                     self._benchmark[method][name] = self._benchmark_structure(
-                        name, method)
+                        name, method
+                    )
 
         if not return_dataframe:
             return self._benchmark
@@ -238,7 +244,12 @@ class Benchmark(object):
 
         return pd.DataFrame(data=df_data)
 
-    def score(self, methods: List[NearNeighbors], site_type: str = "all") -> pd.DataFrame:
+    def score(
+        self,
+        methods: List[NearNeighbors],
+        site_type: str = "all",
+        cation_anion: bool = False,
+    ) -> pd.DataFrame:
         r"""
         Assigns a score for each near neighbor method for each structure.
 
@@ -259,6 +270,10 @@ class Benchmark(object):
                 bonds will be considered and any cation to cation bonds will
                 be ignored. Note that cation and anion can only be used on
                 input structures that have oxidation states.
+            cation_anion: If True, the score will only include bonding to ions of opposing
+                charge. I.e., cation-cation or anion-anion bonding is ignored.
+                This option will only affect the scores for input structures that have
+                oxidation states.
 
         Returns:
             The scores as a Pandas DataFrame.
@@ -275,7 +290,10 @@ class Benchmark(object):
         for method in methods:
             for name in self.structures:
                 scores[method.__class__.__name__][name] = self._score_structure(
-                    name, results[method][name], site_type=site_type
+                    name,
+                    results[method][name],
+                    site_type=site_type,
+                    cation_anion=cation_anion,
                 )
 
         df = pd.DataFrame(data=scores)
@@ -312,7 +330,11 @@ class Benchmark(object):
         return results
 
     def _score_structure(
-        self, name: str, predictions: List[Dict[str, float]], site_type: str = "all"
+        self,
+        name: str,
+        predictions: List[Dict[str, float]],
+        site_type: str = "all",
+        cation_anion: bool = False,
     ) -> float:
         r"""
         Calculate the score based on a set of predictions.
@@ -333,10 +355,12 @@ class Benchmark(object):
             site_type: Which sites to include when calculating the score.
                 Options are "all", "cation", "anion". For example, if "cation"
                 is chosen, the scores will only reflect the coordination numbers
-                of the cation sites. In addition, only cation to anion
-                bonds will be considered and any cation to cation bonds will
-                be ignored. Note that cation and anion can only be used on
+                of the cation sites. Note that cation and anion can only be used on
                 input structures that have oxidation states.
+            cation_anion: If True, the score will only include bonding to ions of opposing
+                charge. I.e., cation-cation or anion-anion bonding is ignored.
+                This option will only affect the scores for input structures that have
+                oxidation states.
 
         Returns:
             The score for the structure as a float.
@@ -345,15 +369,8 @@ class Benchmark(object):
         idxs = self.site_information[name]["{}_idxs".format(site_type)]
         degens = self.site_information[name]["{}_degens".format(site_type)]
         total = self.site_information[name]["{}_total".format(site_type)]
-
-        if site_type != "all":
-            # only consider bonds to oppositely charged ions
-            # TODO: This seems wrong to me as it could make an algorithm appear
-            #  to be doing better than it actually is, but I'm this behaviour
-            #  to be consistent with the previous implementation -- AG
-            filter_elements = self.site_information[name]["{}s".format(site_type)]
-        else:
-            filter_elements = set()
+        cations = self.site_information[name]["cations"]
+        anions = self.site_information[name]["anions"]
 
         # as site_idx below is the index of the site in the unique sites NOT the
         # index in the overall structure, we first get actual coordinations
@@ -363,18 +380,25 @@ class Benchmark(object):
             for i in self.site_information[name]["unique_idxs"]
         ]
 
-        score = 0
-        for site_idx, site_degen in zip(idxs, degens):
-            prediction = predictions[site_idx]
-            coordination = coordinations[site_idx]
+        # similarly we want to know the site species types
+        elements = [
+            structure[i].specie.name for i in self.site_information[name]["unique_idxs"]
+        ]
 
+        score = 0
+        for site_idx, site_degen, site_element, prediction, coordination in zip(
+            idxs, degens, elements, predictions, coordinations
+        ):
             # create a list of possible bonding elements (these are the species
             # in both the known coordination dict and the predicted coordination
             # dict)
             elements = set(list(coordination.keys()) + list(prediction.keys()))
 
-            # exclude species that are of the opposite charge. See note above.
-            elements = elements.difference(filter_elements)
+            # exclude species that are of the opposite charge
+            if cation_anion and site_element in cations:
+                elements = elements.difference(cations)
+            elif cation_anion and site_element in anions:
+                elements = elements.difference(anions)
 
             site_score = 0
             for element in elements:
