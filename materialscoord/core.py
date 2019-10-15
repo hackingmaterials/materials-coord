@@ -1,5 +1,6 @@
 import re
 import warnings
+from copy import deepcopy
 
 from pathlib import Path
 from typing import List, Optional, Dict, Union
@@ -68,11 +69,12 @@ class Benchmark(object):
     def __init__(
         self,
         structures: Dict[str, Structure],
-        symprec: float = 0.01,
+        symprec: Optional[float] = 0.01,
         use_weights: bool = False,
         perturb_sigma: Optional[float] = None,
     ):
-        self.structures = structures
+        # make a deep copy to avoid modifying structures in place
+        self.structures = deepcopy(structures)
         self.symprec = symprec
         self.use_weights = use_weights
 
@@ -165,7 +167,7 @@ class Benchmark(object):
 
         # once we have calculated anion and cation type, remove oxidation
         # states from the structures. Not sure if this is a good idea but I'm
-        # just copying from the previous implementation
+        # just copying from the previous implementation.
         for structure in self.structures.values():
             structure.remove_oxidation_states()
 
@@ -188,6 +190,10 @@ class Benchmark(object):
 
         filenames = []
         for structure_group in structure_groups:
+            if structure_group not in Benchmark.all_structure_groups:
+                raise ValueError('"{}" is not a valid structure group'.format(
+                    structure_group))
+
             filenames.extend(Path(_resource_dir, structure_group).glob("*.json"))
 
         structures = {}
