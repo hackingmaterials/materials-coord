@@ -145,3 +145,22 @@ class BenchmarkTest(unittest.TestCase):
         expected_scores = {'EconNN': {'test_structure': 0.0, 'Total': 0.0},
                            'VoronoiNN': {'test_structure': 0.0, 'Total': 0.0}}
         self.assertEqual(scores.to_dict(), expected_scores)
+
+    def test_multiple_same_methods(self):
+        # test that if running the benchmark on multiple NN methods of the same class,
+        # that each NN method is named differently and appears in the benchmark and
+        # score results
+        bm = Benchmark(self.structures)
+        nn_methods = [VoronoiNN(), VoronoiNN(tol=0.5)]
+
+        results = bm.benchmark(nn_methods)
+        expected_results = {'VoronoiNN(0)0': {'test_structure': {'Cl': 6}},
+                            'VoronoiNN(0)1': {'test_structure': {'Na': 6}},
+                            'VoronoiNN(1)0': {'test_structure': {'Cl': 6}},
+                            'VoronoiNN(1)1': {'test_structure': {'Na': 6}}}
+        self.assertEqual(results.to_dict(), expected_results)
+
+        scores = bm.score(nn_methods)
+        expected_scores = {'VoronoiNN(0)': {'test_structure': 0.0, 'Total': 0.0},
+                           'VoronoiNN(1)': {'test_structure': 0.0, 'Total': 0.0}}
+        self.assertEqual(scores.to_dict(), expected_scores)
