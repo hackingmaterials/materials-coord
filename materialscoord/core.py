@@ -83,7 +83,7 @@ class Benchmark(object):
         symprec: Optional[float] = 0.01,
         use_weights: bool = False,
         perturb_sigma: Optional[float] = None,
-        remove_oxidation_states: bool = True
+        remove_oxidation_states: bool = True,
     ):
         # make a deep copy to avoid modifying structures in place
         self.structures = deepcopy(structures)
@@ -101,7 +101,9 @@ class Benchmark(object):
 
         if perturb_sigma:
             for name, structure in self.structures.items():
-                self.structures[name] = perturb_einstein_crystal(structure, perturb_sigma)
+                self.structures[name] = perturb_einstein_crystal(
+                    structure, perturb_sigma
+                )
 
         # precompute the symmetrized structures to save time during the benchmark. Also,
         # determine the total number of unique cations/anions each structure.
@@ -131,7 +133,10 @@ class Benchmark(object):
             anions = set()
             for i, sites in enumerate(equiv_sites):
                 # Specie check needed to see if site has an oxidation state at all.
-                if isinstance(sites[0].specie, Specie) and sites[0].specie.oxi_state >= 0:
+                if (
+                    isinstance(sites[0].specie, Specie)
+                    and sites[0].specie.oxi_state >= 0
+                ):
                     # based on previous implementation, neutral ions will be scored as
                     # cations, however, neutral to neutral bonding is allowed, hence
                     # don't add the element to the cations set as this will be used to
@@ -141,7 +146,8 @@ class Benchmark(object):
                     if sites[0].specie.oxi_state > 0:
                         cations.add(sites[0].specie.name)
                 elif (
-                    isinstance(sites[0].specie, Specie) and sites[0].specie.oxi_state < 0
+                    isinstance(sites[0].specie, Specie)
+                    and sites[0].specie.oxi_state < 0
                 ):
                     anion_degens.append(len(sites))
                     anion_idxs.append(i)
@@ -181,8 +187,9 @@ class Benchmark(object):
                 structure.remove_oxidation_states()
 
     @classmethod
-    def from_structure_group(cls, structure_groups: Union[str, List[str]], **kwargs
-                             ) -> "Benchmark":
+    def from_structure_group(
+        cls, structure_groups: Union[str, List[str]], **kwargs
+    ) -> "Benchmark":
         """
         Initialises the benchmark from a list of test structure classes.
 
@@ -201,8 +208,9 @@ class Benchmark(object):
         filenames = []
         for structure_group in structure_groups:
             if structure_group not in Benchmark.all_structure_groups:
-                raise ValueError('"{}" is not a valid structure group'.format(
-                    structure_group))
+                raise ValueError(
+                    '"{}" is not a valid structure group'.format(structure_group)
+                )
 
             filenames.extend(Path(_resource_dir, structure_group).glob("*.json"))
 
@@ -213,8 +221,9 @@ class Benchmark(object):
 
         return cls(structures, **kwargs)
 
-    def benchmark(self, methods: List[NearNeighbors], return_dataframe: bool = True
-                  ) -> Union[pd.DataFrame, Dict[NearNeighbors, Dict[str, List[CN_dict]]]]:
+    def benchmark(
+        self, methods: List[NearNeighbors], return_dataframe: bool = True
+    ) -> Union[pd.DataFrame, Dict[NearNeighbors, Dict[str, List[CN_dict]]]]:
         """
         Calculates the coordination numbers for all sites in all structures
         using each nearest neighbor method.
@@ -266,7 +275,7 @@ class Benchmark(object):
         methods: List[NearNeighbors],
         site_type: str = "all",
         cation_anion: bool = False,
-        return_raw_site_scores: bool = False
+        return_raw_site_scores: bool = False,
     ) -> pd.DataFrame:
         r"""
         Assigns a score for each near neighbor method for each structure.
@@ -321,7 +330,7 @@ class Benchmark(object):
                     results[method][name],
                     site_type=site_type,
                     cation_anion=cation_anion,
-                    return_raw_site_scores=return_raw_site_scores
+                    return_raw_site_scores=return_raw_site_scores,
                 )
 
         df = pd.DataFrame(data=scores)

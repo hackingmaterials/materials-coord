@@ -15,7 +15,7 @@ def plot_benchmark_scores(
     vmax: Optional[float] = None,
     vmin: Optional[float] = None,
     round_dp: Optional[int] = 1,
-    cbar_label: str = "Benchmark score"
+    cbar_label: str = "Benchmark score",
 ) -> plt:
     """
     Plot MaterialsCoord benchmark scores as a heatmap.
@@ -59,9 +59,15 @@ def plot_benchmark_scores(
     scores = scores.rename(columns=nn_method_mapping)
     scores = scores.rename(structure_mapping)
 
-    sns.set(font=["Helvetica", "Arial"], font_scale=1.5,
-            rc={"figure.figsize": figsize, "axes.edgecolor": "black",
-                "axes.linewidth": 1.3})
+    sns.set(
+        font=["Helvetica", "Arial"],
+        font_scale=1.5,
+        rc={
+            "figure.figsize": figsize,
+            "axes.edgecolor": "black",
+            "axes.linewidth": 1.3,
+        },
+    )
 
     # want the colorbar to have a fixed width regardless of the number of structures or
     # near neighbor methods
@@ -69,8 +75,16 @@ def plot_benchmark_scores(
     divider = make_axes_locatable(ax)
     cax = divider.append_axes("right", size=0.3, pad=0.5)
 
-    ax = sns.heatmap(scores, annot=True, cmap="Blues", vmax=vmax, vmin=vmin, fmt='g',
-                     ax=ax, cbar_ax=cax)
+    ax = sns.heatmap(
+        scores,
+        annot=True,
+        cmap="Blues",
+        vmax=vmax,
+        vmin=vmin,
+        fmt="g",
+        ax=ax,
+        cbar_ax=cax,
+    )
     ax.set_xticklabels(scores.columns, rotation=60)
 
     # draw line above Total row and axis boundaries

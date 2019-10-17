@@ -6,14 +6,13 @@ from pymatgen.analysis.local_env import EconNN, VoronoiNN
 
 
 class BenchmarkTest(unittest.TestCase):
-
     def setUp(self):
         # set up a test structure
         structure = Structure.from_spacegroup(
             225,
             [[5.7, 0, 0], [0, 5.7, 0], [0, 0, 5.7]],
             ["Na1+", "Cl1-"],
-            [[0, 0, 0], [0.5, 0, 0]]
+            [[0, 0, 0], [0.5, 0, 0]],
         )
         all_sites_coordination = [{"Cl": 6}] * 4 + [{"Na": 6}] * 4
         structure.add_site_property("coordination", all_sites_coordination)
@@ -50,11 +49,11 @@ class BenchmarkTest(unittest.TestCase):
         site_info = bm.site_information["test_structure"]
         self.assertEqual(tuple(site_info["unique_idxs"]), (0, 4))
         self.assertEqual(tuple(site_info["all_idxs"]), (0, 1))
-        self.assertEqual(tuple(site_info["cation_idxs"]), (0, ))
-        self.assertEqual(tuple(site_info["anion_idxs"]), (1, ))
+        self.assertEqual(tuple(site_info["cation_idxs"]), (0,))
+        self.assertEqual(tuple(site_info["anion_idxs"]), (1,))
         self.assertEqual(tuple(site_info["all_degens"]), (4, 4))
-        self.assertEqual(tuple(site_info["cation_degens"]), (4, ))
-        self.assertEqual(tuple(site_info["anion_degens"]), (4, ))
+        self.assertEqual(tuple(site_info["cation_degens"]), (4,))
+        self.assertEqual(tuple(site_info["anion_degens"]), (4,))
         self.assertEqual(site_info["all_total"], 8)
         self.assertEqual(site_info["cation_total"], 4)
         self.assertEqual(site_info["anion_total"], 4)
@@ -85,16 +84,18 @@ class BenchmarkTest(unittest.TestCase):
 
         # test dataframe output
         results = bm.benchmark(self.nn_methods)
-        expected_results = {'EconNN0': {'test_structure': {'Na': 12, 'Cl': 6}},
-                            'EconNN1': {'test_structure': {'Na': 6, 'Cl': 12}},
-                            'VoronoiNN0': {'test_structure': {'Cl': 6}},
-                            'VoronoiNN1': {'test_structure': {'Na': 6}}}
+        expected_results = {
+            "EconNN0": {"test_structure": {"Na": 12, "Cl": 6}},
+            "EconNN1": {"test_structure": {"Na": 6, "Cl": 12}},
+            "VoronoiNN0": {"test_structure": {"Cl": 6}},
+            "VoronoiNN1": {"test_structure": {"Na": 6}},
+        }
         self.assertEqual(results.to_dict(), expected_results)
 
         # test dict output
         results = bm.benchmark(self.nn_methods, return_dataframe=False)
-        econ_results = {'test_structure': [{'Na': 12, 'Cl': 6}, {'Na': 6, 'Cl': 12}]}
-        voronoi_results = {'test_structure': [{'Cl': 6}, {'Na': 6}]}
+        econ_results = {"test_structure": [{"Na": 12, "Cl": 6}, {"Na": 6, "Cl": 12}]}
+        voronoi_results = {"test_structure": [{"Cl": 6}, {"Na": 6}]}
         self.assertEqual(results[self.nn_methods[0]], econ_results)
         self.assertEqual(results[self.nn_methods[1]], voronoi_results)
 
@@ -102,22 +103,23 @@ class BenchmarkTest(unittest.TestCase):
         bm = Benchmark(self.structures, symprec=None)
         no_sym_results = bm.benchmark(self.nn_methods)
         expected_no_sym_results = {
-            'EconNN0': {'test_structure': {'Na': 12, 'Cl': 6}},
-            'EconNN1': {'test_structure': {'Cl': 6, 'Na': 12}},
-            'EconNN2': {'test_structure': {'Cl': 6, 'Na': 12}},
-            'EconNN3': {'test_structure': {'Cl': 6, 'Na': 12}},
-            'EconNN4': {'test_structure': {'Na': 6, 'Cl': 12}},
-            'EconNN5': {'test_structure': {'Na': 6, 'Cl': 12}},
-            'EconNN6': {'test_structure': {'Na': 6, 'Cl': 12}},
-            'EconNN7': {'test_structure': {'Na': 6, 'Cl': 12}},
-            'VoronoiNN0': {'test_structure': {'Cl': 6}},
-            'VoronoiNN1': {'test_structure': {'Cl': 6}},
-            'VoronoiNN2': {'test_structure': {'Cl': 6}},
-            'VoronoiNN3': {'test_structure': {'Cl': 6}},
-            'VoronoiNN4': {'test_structure': {'Na': 6}},
-            'VoronoiNN5': {'test_structure': {'Na': 6}},
-            'VoronoiNN6': {'test_structure': {'Na': 6}},
-            'VoronoiNN7': {'test_structure': {'Na': 6}}}
+            "EconNN0": {"test_structure": {"Na": 12, "Cl": 6}},
+            "EconNN1": {"test_structure": {"Cl": 6, "Na": 12}},
+            "EconNN2": {"test_structure": {"Cl": 6, "Na": 12}},
+            "EconNN3": {"test_structure": {"Cl": 6, "Na": 12}},
+            "EconNN4": {"test_structure": {"Na": 6, "Cl": 12}},
+            "EconNN5": {"test_structure": {"Na": 6, "Cl": 12}},
+            "EconNN6": {"test_structure": {"Na": 6, "Cl": 12}},
+            "EconNN7": {"test_structure": {"Na": 6, "Cl": 12}},
+            "VoronoiNN0": {"test_structure": {"Cl": 6}},
+            "VoronoiNN1": {"test_structure": {"Cl": 6}},
+            "VoronoiNN2": {"test_structure": {"Cl": 6}},
+            "VoronoiNN3": {"test_structure": {"Cl": 6}},
+            "VoronoiNN4": {"test_structure": {"Na": 6}},
+            "VoronoiNN5": {"test_structure": {"Na": 6}},
+            "VoronoiNN6": {"test_structure": {"Na": 6}},
+            "VoronoiNN7": {"test_structure": {"Na": 6}},
+        }
 
         self.assertEqual(no_sym_results.to_dict(), expected_no_sym_results)
 
@@ -125,8 +127,10 @@ class BenchmarkTest(unittest.TestCase):
         # test all scores
         bm = Benchmark(self.structures)
         scores = bm.score(self.nn_methods)
-        expected_scores = {'EconNN': {'test_structure': 12.0, 'Total': 12.0},
-                           'VoronoiNN': {'test_structure': 0.0, 'Total': 0.0}}
+        expected_scores = {
+            "EconNN": {"test_structure": 12.0, "Total": 12.0},
+            "VoronoiNN": {"test_structure": 0.0, "Total": 0.0},
+        }
         self.assertEqual(scores.to_dict(), expected_scores)
 
         # test cation scores
@@ -142,8 +146,10 @@ class BenchmarkTest(unittest.TestCase):
         # test cation-anion filtering
         bm = Benchmark(self.structures)
         scores = bm.score(self.nn_methods, cation_anion=True)
-        expected_scores = {'EconNN': {'test_structure': 0.0, 'Total': 0.0},
-                           'VoronoiNN': {'test_structure': 0.0, 'Total': 0.0}}
+        expected_scores = {
+            "EconNN": {"test_structure": 0.0, "Total": 0.0},
+            "VoronoiNN": {"test_structure": 0.0, "Total": 0.0},
+        }
         self.assertEqual(scores.to_dict(), expected_scores)
 
     def test_multiple_same_methods(self):
@@ -154,13 +160,17 @@ class BenchmarkTest(unittest.TestCase):
         nn_methods = [VoronoiNN(), VoronoiNN(tol=0.5)]
 
         results = bm.benchmark(nn_methods)
-        expected_results = {'VoronoiNN(0)0': {'test_structure': {'Cl': 6}},
-                            'VoronoiNN(0)1': {'test_structure': {'Na': 6}},
-                            'VoronoiNN(1)0': {'test_structure': {'Cl': 6}},
-                            'VoronoiNN(1)1': {'test_structure': {'Na': 6}}}
+        expected_results = {
+            "VoronoiNN(0)0": {"test_structure": {"Cl": 6}},
+            "VoronoiNN(0)1": {"test_structure": {"Na": 6}},
+            "VoronoiNN(1)0": {"test_structure": {"Cl": 6}},
+            "VoronoiNN(1)1": {"test_structure": {"Na": 6}},
+        }
         self.assertEqual(results.to_dict(), expected_results)
 
         scores = bm.score(nn_methods)
-        expected_scores = {'VoronoiNN(0)': {'test_structure': 0.0, 'Total': 0.0},
-                           'VoronoiNN(1)': {'test_structure': 0.0, 'Total': 0.0}}
+        expected_scores = {
+            "VoronoiNN(0)": {"test_structure": 0.0, "Total": 0.0},
+            "VoronoiNN(1)": {"test_structure": 0.0, "Total": 0.0},
+        }
         self.assertEqual(scores.to_dict(), expected_scores)
