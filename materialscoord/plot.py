@@ -4,6 +4,8 @@ from pandas import DataFrame
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+from mpl_toolkits.axes_grid1 import make_axes_locatable
+
 
 def plot_benchmark_scores(
     scores: DataFrame,
@@ -11,7 +13,9 @@ def plot_benchmark_scores(
     nn_method_mapping: Optional[Dict[str, str]] = None,
     figsize: Optional[Tuple[float, float]] = None,
     vmax: Optional[float] = None,
+    vmin: Optional[float] = None,
     round_dp: Optional[int] = 1,
+    cbar_label: str = "Benchmark score"
 ) -> plt:
     """
     Plot MaterialsCoord benchmark scores as a heatmap.
@@ -30,51 +34,52 @@ def plot_benchmark_scores(
             will be automatically estimated based on the number of structures and
             near neighbor methods.
         vmax: The maximum value used for scaling the colorbar of the heatmap.
+        vmin: The minimum value used for scaling the colorbar of the heatmap.
         round_dp: Number of places to round the results to. If None, no rounding will
             occur. Note that seaborn may automatically round the numbers anyway.
+        cbar_label: The y-axis label for the colorbar.
 
     Returns:
         A matplotlib pyplot object.
     """
-    if round_dp:
-        scores.round(round_dp)
+    if round_dp is not None:
+        scores = scores.round(round_dp)
 
     if not figsize:
         width = 4 + 1.5 * len(scores.columns)
         height = 2 + 0.45 * len(scores.index)
         figsize = (width, height)
 
-    if not vmax:
-        vmax = scores.iloc[:-1].values.max()
+    vmax = vmax if vmax is not None else scores.iloc[:-1].max().max()
+    vmin = vmin if vmin is not None else 0
 
     structure_mapping = structure_mapping or {}
     nn_method_mapping = nn_method_mapping or {}
 
-    structure_labels = []
-    for structure_label in scores.index:
-        structure_labels.append(structure_mapping.get(structure_label, structure_label))
+    scores = scores.rename(columns=nn_method_mapping)
+    scores = scores.rename(structure_mapping)
 
-    nn_labels = []
-    for nn_label in scores.columns:
-        nn_labels.append(nn_method_mapping.get(nn_label, nn_label))
+    sns.set(font=["Helvetica", "Arial"], font_scale=1.5,
+            rc={"figure.figsize": figsize, "axes.edgecolor": "black",
+                "axes.linewidth": 1.3})
 
-    sns.set(font="Helvetica")
-    sns.set(font_scale=1.5)
-    sns.set_style({"axes.edgecolor": "black", "axes.linewidth": 1.3})
+    # want the colorbar to have a fixed width regardless of the number of structures or
+    # near neighbor methods
+    ax = plt.gca()
+    divider = make_axes_locatable(ax)
+    cax = divider.append_axes("right", size=0.3, pad=0.5)
 
-    fig, ax = plt.subplots(figsize=figsize)
-    sns.heatmap(scores, annot=True, cmap="Blues", vmax=vmax)
-
-    ax.set_yticklabels(structure_labels)
-    ax.set_xticklabels(nn_labels, rotation=60)
+    ax = sns.heatmap(scores, annot=True, cmap="Blues", vmax=vmax, vmin=vmin, fmt='g',
+                     ax=ax, cbar_ax=cax)
+    ax.set_xticklabels(scores.columns, rotation=60)
 
     # draw line above Total row and axis boundaries
     for _, spine in ax.spines.items():
         spine.set_visible(True)
-    ax.axhline(y=len(structure_labels) - 1, color="k", linewidth=1.3)
+    ax.axhline(y=len(scores) - 1, color="k", linewidth=1.3)
 
     cbar = ax.collections[0].colorbar
-    cbar.set_label("Benchmark score", labelpad=40, rotation=270)
-    cbar.outline.set(**{"edgecolor": "k", "linewidth": 1.3})
+    cbar.set_label(cbar_label, labelpad=40, rotation=270)
+    cbar.outline.set(edgecolor="k", linewidth=1.3)
 
     return plt
