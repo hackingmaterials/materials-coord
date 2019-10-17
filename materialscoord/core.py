@@ -21,6 +21,8 @@ from materialscoord.einstein_crystal_perturbation import perturb_einstein_crysta
 
 _resource_dir = resource_filename("materialscoord", "structures")
 
+CN_dict = Dict[str, int]  # define coordination dictionary type
+
 
 class Benchmark(object):
     """
@@ -56,6 +58,15 @@ class Benchmark(object):
             with which the sites are tethered to their equilibrium position, and
             dr is the distance of the site under consideration from its
             equilibrium position.
+        remove_oxidation_states: Remove oxidation states from structures before
+            performing the benchmark. As oxidation states will not always be known,
+            any near neighbor methods that require oxidation states (i.e.,
+            MinimumVIRENN) should include a method to assign oxidation states
+            automatically. Setting this option to False allows testing whether the
+            automatic assignment of oxidation states will itself impact performance.
+            Furthermore, some methods, such as CrystalNN, have slightly different
+            behaviour if oxidation states are present. Again this option enables
+            testing this behaviour.
 
     TODO:
         - Use predict_oxidation_states() for structures without oxidation
@@ -72,6 +83,7 @@ class Benchmark(object):
         symprec: Optional[float] = 0.01,
         use_weights: bool = False,
         perturb_sigma: Optional[float] = None,
+        remove_oxidation_states: bool = True
     ):
         # make a deep copy to avoid modifying structures in place
         self.structures = deepcopy(structures)
@@ -84,16 +96,15 @@ class Benchmark(object):
         for name, structure in structures.items():
             if "coordination" not in structure.site_properties:
                 raise AttributeError(
-                    "{} structure does not have a 'coordination' site property"
+                    "{} structure does not have the 'coordination' site property"
                 )
 
         if perturb_sigma:
             for name, structure in self.structures.items():
                 self.structures[name] = perturb_einstein_crystal(structure, perturb_sigma)
 
-        # precompute the symmetrized structures to save time during the
-        # benchmark. Also, determine the total number of unique
-        # cations/anions each structure.
+        # precompute the symmetrized structures to save time during the benchmark. Also,
+        # determine the total number of unique cations/anions each structure.
         self.site_information = {}
         self.max_nsites = 0
 
@@ -165,14 +176,13 @@ class Benchmark(object):
         # useful to know if all structures have oxidation states when calculating scores
         self.all_structures_have_oxi = n_structures_with_oxi == len(structures)
 
-        # once we have calculated anion and cation type, remove oxidation
-        # states from the structures. Not sure if this is a good idea but I'm
-        # just copying from the previous implementation.
-        for structure in self.structures.values():
-            structure.remove_oxidation_states()
+        if remove_oxidation_states:
+            for structure in self.structures.values():
+                structure.remove_oxidation_states()
 
     @classmethod
-    def from_structure_group(cls, structure_groups: Union[str, List[str]], **kwargs):
+    def from_structure_group(cls, structure_groups: Union[str, List[str]], **kwargs
+                             ) -> "Benchmark":
         """
         Initialises the benchmark from a list of test structure classes.
 
@@ -203,7 +213,8 @@ class Benchmark(object):
 
         return cls(structures, **kwargs)
 
-    def benchmark(self, methods: List[NearNeighbors], return_dataframe: bool = True):
+    def benchmark(self, methods: List[NearNeighbors], return_dataframe: bool = True
+                  ) -> Union[pd.DataFrame, Dict[NearNeighbors, Dict[str, List[CN_dict]]]]:
         """
         Calculates the coordination numbers for all sites in all structures
         using each nearest neighbor method.
@@ -234,12 +245,12 @@ class Benchmark(object):
         if not return_dataframe:
             return self._benchmark
 
+        method_names = _get_method_names(methods)
         df_data = defaultdict(dict)
-
-        for method in methods:
+        for method_name, method in zip(method_names, methods):
             for name in self.structures:
                 for site_idx in range(self.max_nsites):
-                    column = method.__class__.__name__ + str(site_idx)
+                    column = method_name + str(site_idx)
 
                     if site_idx < len(self.site_information[name]["unique_idxs"]):
                         val = self._benchmark[method][name][site_idx]
@@ -255,6 +266,7 @@ class Benchmark(object):
         methods: List[NearNeighbors],
         site_type: str = "all",
         cation_anion: bool = False,
+        return_raw_site_scores: bool = False
     ) -> pd.DataFrame:
         r"""
         Assigns a score for each near neighbor method for each structure.
@@ -280,6 +292,14 @@ class Benchmark(object):
                 charge. I.e., cation-cation or anion-anion bonding is ignored.
                 This option will only affect the scores for input structures that have
                 oxidation states.
+            return_raw_site_scores: If true, the "raw site scores" are returned. The
+                raw scores are given as a list of CN^calc - CN^expected for each
+                inequivalent site. Note that the raw_site_score can sometimes be zero even
+                if the correct bonding is not not determined. This can arise when the
+                coordination numbers themselves are correct but the bonds themselves
+                aren't. For example, if the human interpreted bonding is
+                {"Cl": 2, "Br": 3} and the predicted bonding is {"Cl": 3, "Br": 2},
+                the raw score for that site will be 0.
 
         Returns:
             The scores as a Pandas DataFrame.
@@ -292,22 +312,26 @@ class Benchmark(object):
 
         results = self.benchmark(methods, return_dataframe=False)
 
+        method_names = _get_method_names(methods)
         scores: Dict[str, Dict[str, float]] = defaultdict(dict)
-        for method in methods:
+        for method_name, method in zip(method_names, methods):
             for name in self.structures:
-                scores[method.__class__.__name__][name] = self._score_structure(
+                scores[method_name][name] = self._score_structure(
                     name,
                     results[method][name],
                     site_type=site_type,
                     cation_anion=cation_anion,
+                    return_raw_site_scores=return_raw_site_scores
                 )
 
         df = pd.DataFrame(data=scores)
-        df.loc["Total"] = df.sum(axis=0)
+
+        if not return_raw_site_scores:
+            df.loc["Total"] = df.sum(axis=0)
 
         return df
 
-    def _benchmark_structure(self, name: str, nn: NearNeighbors):
+    def _benchmark_structure(self, name: str, nn: NearNeighbors) -> List[CN_dict]:
         """
         Run a near neighbor algorithm on a structure.
 
@@ -341,7 +365,8 @@ class Benchmark(object):
         predictions: List[Dict[str, float]],
         site_type: str = "all",
         cation_anion: bool = False,
-    ) -> float:
+        return_raw_site_scores: bool = False,
+    ) -> Union[float, List[float]]:
         r"""
         Calculate the score based on a set of predictions.
 
@@ -367,9 +392,20 @@ class Benchmark(object):
                 charge. I.e., cation-cation or anion-anion bonding is ignored.
                 This option will only affect the scores for input structures that have
                 oxidation states.
+            return_raw_site_scores: If true, the "raw site scores" are returned. The
+                raw scores are given as a list of CN^calc - CN^expected for each
+                inequivalent site. Note that the raw_site_score can sometimes be zero even
+                if the correct bonding is not not determined. This can arise when the
+                coordination numbers themselves are correct but the bonds themselves
+                aren't. For example, if the human interpreted bonding is
+                {"Cl": 2, "Br": 3} and the predicted bonding is {"Cl": 3, "Br": 2},
+                the raw score for that site will be 0.
 
         Returns:
-            The score for the structure as a float.
+            If ``return_raw_site_scores`` is ``False`` (the default), the score will be
+            the overall score for the structure as a float. If ``return_raw_site_scores``
+            is ``True``, the score will be a list of the raw site scores. See the
+            docstring for ``return_raw_site_scores`` for more details.
         """
         structure = self.structures[name]
         idxs = self.site_information[name]["{}_idxs".format(site_type)]
@@ -391,7 +427,11 @@ class Benchmark(object):
             structure[i].specie.name for i in self.site_information[name]["unique_idxs"]
         ]
 
-        score = 0
+        if return_raw_site_scores:
+            score = []
+        else:
+            score = 0
+
         for site_idx, site_degen, site_element, prediction, coordination in zip(
             idxs, degens, elements, predictions, coordinations
         ):
@@ -414,13 +454,55 @@ class Benchmark(object):
                 if isinstance(actual_val, list):
                     # there are multiple options for coordination, choose the
                     # value that results in the smallest score
-                    site_score += min([abs(pred_val - x) for x in actual_val])
+                    diffs = [pred_val - x for x in actual_val]
+                    min_idx = np.argmin(list(map(abs, diffs)))
+                    raw_site_score = diffs[min_idx]
                 else:
-                    site_score += abs(pred_val - actual_val)
+                    raw_site_score = pred_val - actual_val
 
-            score += site_score * site_degen
+                if return_raw_site_scores:
+                    site_score += raw_site_score
+                else:
+                    site_score += abs(raw_site_score)
+
+            if not return_raw_site_scores:
+                score += site_score * site_degen
+            else:
+                score.append(site_score)
+
+        if return_raw_site_scores:
+            return score
 
         if total == 0:
             return np.nan
 
         return score / total
+
+
+def _get_method_names(methods: List[NearNeighbors]) -> List[str]:
+    """
+    Get the names of near neighbor methods from a list of methods.
+
+    If multiple near neighbor methods of the same class are present in the list,
+    the names will be numbered to differentiate them.
+
+    Args:
+        methods: A list of near neighbor methods.
+
+    Returns:
+        A list of method names. If each near neighbor method is only present once,
+        the method names will just be the class names. However, if a method is present
+        more than once, the name will the class name + (the index)
+    """
+    str_names = [method.__class__.__name__ for method in methods]
+
+    if len(set(str_names)) == len(str_names):
+        return str_names
+
+    method_names_counter = defaultdict(int)
+    method_names = []
+    for name in str_names:
+        method_names.append("{}({})".format(name, method_names_counter[name]))
+        method_names_counter[name] += 1
+
+    return method_names
