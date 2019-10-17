@@ -1,15 +1,17 @@
 """"
 MaterialsCoord: NearNeighbor benchmarking.
 """
+from pathlib import Path
 from setuptools import setup, find_packages
+from materialscoord import __version__ as version
 
-
-with open('README.md', 'r') as file:
-    long_description = file.read()
+long_description = Path("README.md").read_text()
+reqs_raw = Path("requirements.txt").read_text()
+reqs_list = [r for r in reqs_raw.split("\n")]
 
 setup(
     name='materialscoord',
-    version='0.1.0',
+    version=version,
     url='https://github.com/hillarypan/MaterialsCoord',
     license='A modified BSD license',
     author='Hillary Pan',
@@ -32,11 +34,8 @@ setup(
     keywords='crystal-structure crystallography benchmark',
     test_suite='nose.collector',
     packages=find_packages(),
-    install_requires=['spglib', 'numpy', 'pymatgen>=2017.12.30',
-                      'monty', 'pandas'],
-    extras_require={'docs': ['sphinx', 'sphinx-argparse',
-                             'sphinx-autodoc-typehints', 'm2r'],
-                    'tests': ['nose', 'coverage', 'coveralls']},
+    install_requires=reqs_list,
+    extras_require={'tests': ['nose', 'coverage', 'coveralls']},
     package_data={'materialscoord': ["structures/*/*"]},
     data_files=['LICENSE'],
-    )
+)
