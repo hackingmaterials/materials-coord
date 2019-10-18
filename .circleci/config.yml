@@ -46,6 +46,7 @@ jobs:
             pip install --quiet -r requirements-optional.txt
       - run:
           command: |
+            . test_env/bin/activate
             pytest --cov=materialscoord --cov-report html:coverage_reports materialscoord
             if [ "$CI_PULL_REQUEST" == "" ]; then coveralls; fi
           no_output_timeout: 3600
