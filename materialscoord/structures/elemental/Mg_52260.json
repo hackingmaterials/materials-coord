@@ -1,0 +1,103 @@
+{
+    "@module": "pymatgen.util.provenance",
+    "@class": "StructureNL",
+    "charge": null,
+    "lattice": {
+        "matrix": [
+            [
+                3.2085,
+                0.0,
+                1.9646396275321414e-16
+            ],
+            [
+                -1.6042499999999993,
+                2.778642508042372,
+                1.9646396275321414e-16
+            ],
+            [
+                0.0,
+                0.0,
+                5.2106
+            ]
+        ],
+        "a": 3.2085,
+        "b": 3.2085,
+        "c": 5.2106,
+        "alpha": 90.0,
+        "beta": 90.0,
+        "gamma": 119.99999999999999,
+        "volume": 46.45392924224331
+    },
+    "sites": [
+        {
+            "species": [
+                {
+                    "element": "Mg",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.3333333333333333,
+                0.6666666666666667,
+                0.25
+            ],
+            "xyz": [
+                2.220446049250313e-16,
+                1.8524283386949147,
+                1.3026500000000003
+            ],
+            "label": "Mg0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mg",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6666666666666667,
+                0.3333333333333333,
+                0.75
+            ],
+            "xyz": [
+                1.6042500000000004,
+                0.9262141693474573,
+                3.9079500000000005
+            ],
+            "label": "Mg0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 12.0
+                }
+            }
+        }
+    ],
+    "about": {
+        "authors": [
+            {
+                "name": "Alex Ganose",
+                "email": "aganose@lbl.gov"
+            }
+        ],
+        "projects": [],
+        "references": "@article{cif-reference-0,\n    author = \"Owen, E.A.\",\n    title = \"Lattice constants of five elements possessing hexagonal structure\",\n    journal = \"Zeitschrift fuer Kristallographie, Kristallgeometrie, Kristallphysik, Kristallchemie (-144,1977)\",\n    volume = \"91\",\n    year = \"1935\",\n    pages = \"70--76\"\n}\n",
+        "remarks": [
+            "Structure is part of MaterialsCoord test set"
+        ],
+        "history": [],
+        "created_at": {
+            "@module": "datetime",
+            "@class": "datetime",
+            "string": "2019-10-12 01:45:34.904394"
+        }
+    },
+    "@version": "2019.9.16"
+}

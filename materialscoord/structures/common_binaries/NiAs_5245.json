@@ -1,0 +1,157 @@
+{
+    "@module": "pymatgen.util.provenance",
+    "@class": "StructureNL",
+    "charge": null,
+    "lattice": {
+        "matrix": [
+            [
+                3.6179,
+                0.0,
+                2.2153248273176048e-16
+            ],
+            [
+                -1.8089499999999992,
+                3.1331933083517214,
+                2.2153248273176048e-16
+            ],
+            [
+                0.0,
+                0.0,
+                5.036
+            ]
+        ],
+        "a": 3.6179,
+        "b": 3.6179,
+        "c": 5.036,
+        "alpha": 90.0,
+        "beta": 90.0,
+        "gamma": 119.99999999999999,
+        "volume": 57.08598123395875
+    },
+    "sites": [
+        {
+            "species": [
+                {
+                    "element": "Ni",
+                    "oxidation_state": 3.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.5
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                2.518
+            ],
+            "label": "Ni3+",
+            "properties": {
+                "coordination": {
+                    "Ni": 0.0,
+                    "As": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Ni",
+                    "oxidation_state": 3.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "label": "Ni3+",
+            "properties": {
+                "coordination": {
+                    "Ni": 0.0,
+                    "As": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "As",
+                    "oxidation_state": -3.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.3333333333333333,
+                0.6666666666666667,
+                0.25
+            ],
+            "xyz": [
+                4.440892098500626e-16,
+                2.088795538901148,
+                1.2590000000000001
+            ],
+            "label": "As3-",
+            "properties": {
+                "coordination": {
+                    "Ni": 6.0,
+                    "As": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "As",
+                    "oxidation_state": -3.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6666666666666667,
+                0.3333333333333333,
+                0.75
+            ],
+            "xyz": [
+                1.8089500000000007,
+                1.0443977694505737,
+                3.7769999999999997
+            ],
+            "label": "As3-",
+            "properties": {
+                "coordination": {
+                    "Ni": 6.0,
+                    "As": 0.0
+                }
+            }
+        }
+    ],
+    "about": {
+        "authors": [
+            {
+                "name": "Alex Ganose",
+                "email": "aganose@lbl.gov"
+            }
+        ],
+        "projects": [],
+        "references": "@article{cif-reference-0,\n    author = \"Ondrus, P.\",\n    title = \"Primary minerals of the Jachymov ore district\",\n    journal = \"Journal of the Czech Geological Society\",\n    volume = \"48\",\n    year = \"2003\",\n    pages = \"19--147\"\n}\n",
+        "remarks": [
+            "Structure is part of MaterialsCoord test set"
+        ],
+        "history": [],
+        "created_at": {
+            "@module": "datetime",
+            "@class": "datetime",
+            "string": "2019-10-12 01:45:35.524622"
+        }
+    },
+    "@version": "2019.9.16"
+}

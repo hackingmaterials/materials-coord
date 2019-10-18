@@ -1,0 +1,725 @@
+{
+    "@module": "pymatgen.util.provenance",
+    "@class": "StructureNL",
+    "charge": null,
+    "lattice": {
+        "matrix": [
+            [
+                7.8338,
+                0.0,
+                4.796819047580268e-16
+            ],
+            [
+                -4.796819047580268e-16,
+                7.8338,
+                4.796819047580268e-16
+            ],
+            [
+                0.0,
+                0.0,
+                5.0082
+            ]
+        ],
+        "a": 7.8338,
+        "b": 7.8338,
+        "c": 5.0082,
+        "alpha": 90.0,
+        "beta": 90.0,
+        "gamma": 90.0,
+        "volume": 307.34533326400805
+    },
+    "sites": [
+        {
+            "species": [
+                {
+                    "element": "Ca",
+                    "oxidation_state": 2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.33240000000000003,
+                0.16760000000000003,
+                0.5065
+            ],
+            "xyz": [
+                2.60395512,
+                1.3129448800000003,
+                2.5366533
+            ],
+            "label": "Ca2+",
+            "properties": {
+                "coordination": {
+                    "Ca": 0.0,
+                    "Mg": 0.0,
+                    "Si": 0.0,
+                    "O": 8.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Ca",
+                    "oxidation_state": 2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.1676,
+                0.6676,
+                0.49350000000000005
+            ],
+            "xyz": [
+                1.3129448799999999,
+                5.22984488,
+                2.471546700000001
+            ],
+            "label": "Ca2+",
+            "properties": {
+                "coordination": {
+                    "Ca": 0.0,
+                    "Mg": 0.0,
+                    "Si": 0.0,
+                    "O": 8.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Ca",
+                    "oxidation_state": 2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6676,
+                0.8324,
+                0.5065
+            ],
+            "xyz": [
+                5.22984488,
+                6.52085512,
+                2.5366533000000007
+            ],
+            "label": "Ca2+",
+            "properties": {
+                "coordination": {
+                    "Ca": 0.0,
+                    "Mg": 0.0,
+                    "Si": 0.0,
+                    "O": 8.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Ca",
+                    "oxidation_state": 2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.8324,
+                0.3324,
+                0.49350000000000005
+            ],
+            "xyz": [
+                6.52085512,
+                2.6039551199999997,
+                2.471546700000001
+            ],
+            "label": "Ca2+",
+            "properties": {
+                "coordination": {
+                    "Ca": 0.0,
+                    "Mg": 0.0,
+                    "Si": 0.0,
+                    "O": 8.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mg",
+                    "oxidation_state": 2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.5,
+                0.0
+            ],
+            "xyz": [
+                3.9168999999999996,
+                3.9169,
+                4.796819047580268e-16
+            ],
+            "label": "Mg2+",
+            "properties": {
+                "coordination": {
+                    "Ca": 0.0,
+                    "Mg": 0.0,
+                    "Si": 0.0,
+                    "O": 4.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mg",
+                    "oxidation_state": 2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "label": "Mg2+",
+            "properties": {
+                "coordination": {
+                    "Ca": 0.0,
+                    "Mg": 0.0,
+                    "Si": 0.0,
+                    "O": 4.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Si",
+                    "oxidation_state": 4.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.1396,
+                0.3604,
+                0.9358
+            ],
+            "xyz": [
+                1.0935984799999998,
+                2.8233015200000002,
+                4.68667356
+            ],
+            "label": "Si4+",
+            "properties": {
+                "coordination": {
+                    "Ca": 0.0,
+                    "Mg": 0.0,
+                    "Si": 0.0,
+                    "O": 4.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Si",
+                    "oxidation_state": 4.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.3604,
+                0.8604,
+                0.06420000000000003
+            ],
+            "xyz": [
+                2.82330152,
+                6.74020152,
+                0.3215264400000008
+            ],
+            "label": "Si4+",
+            "properties": {
+                "coordination": {
+                    "Ca": 0.0,
+                    "Mg": 0.0,
+                    "Si": 0.0,
+                    "O": 4.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Si",
+                    "oxidation_state": 4.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.8604,
+                0.6396,
+                0.9358
+            ],
+            "xyz": [
+                6.74020152,
+                5.01049848,
+                4.686673560000001
+            ],
+            "label": "Si4+",
+            "properties": {
+                "coordination": {
+                    "Ca": 0.0,
+                    "Mg": 0.0,
+                    "Si": 0.0,
+                    "O": 4.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Si",
+                    "oxidation_state": 4.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6396,
+                0.1396,
+                0.06420000000000003
+            ],
+            "xyz": [
+                5.01049848,
+                1.09359848,
+                0.3215264400000006
+            ],
+            "label": "Si4+",
+            "properties": {
+                "coordination": {
+                    "Ca": 0.0,
+                    "Mg": 0.0,
+                    "Si": 0.0,
+                    "O": 4.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.0,
+                0.1799
+            ],
+            "xyz": [
+                3.9169,
+                0.0,
+                0.9009751800000003
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ca": 2.0,
+                    "Mg": 0.0,
+                    "Si": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.5,
+                0.8201
+            ],
+            "xyz": [
+                -2.398409523790134e-16,
+                3.9169,
+                4.107224820000001
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ca": 2.0,
+                    "Mg": 0.0,
+                    "Si": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.1407,
+                0.3593,
+                0.2529
+            ],
+            "xyz": [
+                1.1022156599999997,
+                2.81468434,
+                1.2665737800000003
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ca": 3.0,
+                    "Mg": 0.0,
+                    "Si": 1.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.3593,
+                0.8593,
+                0.7471
+            ],
+            "xyz": [
+                2.8146843399999995,
+                6.7315843399999995,
+                3.7416262200000006
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ca": 3.0,
+                    "Mg": 0.0,
+                    "Si": 1.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.8593,
+                0.6407,
+                0.2529
+            ],
+            "xyz": [
+                6.7315843399999995,
+                5.019115660000001,
+                1.2665737800000008
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ca": 3.0,
+                    "Mg": 0.0,
+                    "Si": 1.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6407,
+                0.1407,
+                0.7471
+            ],
+            "xyz": [
+                5.019115660000001,
+                1.10221566,
+                3.7416262200000006
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ca": 3.0,
+                    "Mg": 0.0,
+                    "Si": 1.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.31379999999999997,
+                0.4202,
+                0.7856
+            ],
+            "xyz": [
+                2.45824644,
+                3.29176276,
+                3.9344419200000007
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ca": 2.0,
+                    "Mg": 1.0,
+                    "Si": 1.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.1862,
+                0.9202,
+                0.21440000000000003
+            ],
+            "xyz": [
+                1.4586535599999997,
+                7.20866276,
+                1.0737580800000006
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ca": 2.0,
+                    "Mg": 1.0,
+                    "Si": 1.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6862,
+                0.5798,
+                0.7856
+            ],
+            "xyz": [
+                5.37555356,
+                4.54203724,
+                3.9344419200000007
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ca": 2.0,
+                    "Mg": 1.0,
+                    "Si": 1.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.8138,
+                0.0798,
+                0.21440000000000003
+            ],
+            "xyz": [
+                6.37514644,
+                0.6251372399999999,
+                1.0737580800000006
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ca": 2.0,
+                    "Mg": 1.0,
+                    "Si": 1.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5798,
+                0.31379999999999997,
+                0.21440000000000003
+            ],
+            "xyz": [
+                4.54203724,
+                2.45824644,
+                1.0737580800000006
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ca": 2.0,
+                    "Mg": 1.0,
+                    "Si": 1.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.9202,
+                0.8138,
+                0.7856
+            ],
+            "xyz": [
+                7.20866276,
+                6.37514644,
+                3.934441920000001
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ca": 2.0,
+                    "Mg": 1.0,
+                    "Si": 1.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.4202,
+                0.6862,
+                0.21440000000000003
+            ],
+            "xyz": [
+                3.2917627599999997,
+                5.37555356,
+                1.0737580800000006
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ca": 2.0,
+                    "Mg": 1.0,
+                    "Si": 1.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0798,
+                0.1862,
+                0.7856
+            ],
+            "xyz": [
+                0.6251372399999998,
+                1.4586535600000001,
+                3.9344419200000003
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ca": 2.0,
+                    "Mg": 1.0,
+                    "Si": 1.0,
+                    "O": 0.0
+                }
+            }
+        }
+    ],
+    "about": {
+        "authors": [
+            {
+                "name": "Alex Ganose",
+                "email": "aganose@lbl.gov"
+            }
+        ],
+        "projects": [],
+        "references": "@article{cif-reference-0,\n    author = \"Yang, H.\",\n    title = \" Structural change associated with the incommensurate-normal phase transition in akermanite, Ca2 Mg Si2 O7, at high pressure\",\n    journal = \"Physics and Chemistry of Minerals\",\n    volume = \"24\",\n    year = \"1997\",\n    pages = \"510--519\"\n}\n",
+        "remarks": [
+            "Structure is part of MaterialsCoord test set"
+        ],
+        "history": [],
+        "created_at": {
+            "@module": "datetime",
+            "@class": "datetime",
+            "string": "2019-10-12 01:45:33.576278"
+        }
+    },
+    "@version": "2019.9.16"
+}

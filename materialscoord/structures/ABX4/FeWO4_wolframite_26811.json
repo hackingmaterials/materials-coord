@@ -1,0 +1,377 @@
+{
+    "@module": "pymatgen.util.provenance",
+    "@class": "StructureNL",
+    "charge": null,
+    "lattice": {
+        "matrix": [
+            [
+                4.749979091837188,
+                0.0,
+                -0.014093513031258739
+            ],
+            [
+                -3.50248984556143e-16,
+                5.72,
+                3.50248984556143e-16
+            ],
+            [
+                0.0,
+                0.0,
+                4.97
+            ]
+        ],
+        "a": 4.75,
+        "b": 5.72,
+        "c": 4.97,
+        "alpha": 90.0,
+        "beta": 90.17,
+        "gamma": 90.0,
+        "volume": 135.03430561438432
+    },
+    "sites": [
+        {
+            "species": [
+                {
+                    "element": "Fe",
+                    "oxidation_state": 2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.6785,
+                0.25
+            ],
+            "xyz": [
+                2.3749895459185937,
+                3.88102,
+                1.2354532434843708
+            ],
+            "label": "Fe2+",
+            "properties": {
+                "coordination": {
+                    "Fe": 0.0,
+                    "W": 0.0,
+                    "O": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Fe",
+                    "oxidation_state": 2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.3215,
+                0.75
+            ],
+            "xyz": [
+                2.374989545918594,
+                1.83898,
+                3.720453243484371
+            ],
+            "label": "Fe2+",
+            "properties": {
+                "coordination": {
+                    "Fe": 0.0,
+                    "W": 0.0,
+                    "O": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "W",
+                    "oxidation_state": 6.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.8192,
+                0.75
+            ],
+            "xyz": [
+                -2.8692396814839235e-16,
+                4.685824,
+                3.7275000000000005
+            ],
+            "label": "W6+",
+            "properties": {
+                "coordination": {
+                    "Fe": 0.0,
+                    "W": 0.0,
+                    "O": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "W",
+                    "oxidation_state": 6.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.1808,
+                0.25
+            ],
+            "xyz": [
+                -6.332501640775064e-17,
+                1.034176,
+                1.2425
+            ],
+            "label": "W6+",
+            "properties": {
+                "coordination": {
+                    "Fe": 0.0,
+                    "W": 0.0,
+                    "O": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.2158,
+                0.8932,
+                0.08329999999999993
+            ],
+            "xyz": [
+                1.025045488018465,
+                5.109103999999999,
+                0.4109596198878543
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Fe": 1.0,
+                    "W": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.7842,
+                0.8932,
+                0.41669999999999996
+            ],
+            "xyz": [
+                3.7249336038187226,
+                5.109103999999999,
+                2.0599468670808867
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Fe": 1.0,
+                    "W": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.7842,
+                0.1068,
+                0.9167
+            ],
+            "xyz": [
+                3.724933603818723,
+                0.610896,
+                4.544946867080887
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Fe": 1.0,
+                    "W": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.2158,
+                0.1068,
+                0.5833
+            ],
+            "xyz": [
+                1.0250454880184652,
+                0.610896,
+                2.8959596198878548
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Fe": 1.0,
+                    "W": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.2623,
+                0.615,
+                0.5912
+            ],
+            "xyz": [
+                1.245919515788894,
+                3.5178,
+                2.934567271531901
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Fe": 2.0,
+                    "W": 1.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.7377,
+                0.615,
+                0.9088
+            ],
+            "xyz": [
+                3.5040595760482938,
+                3.5178,
+                4.5063392154368405
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Fe": 2.0,
+                    "W": 1.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.7377,
+                0.385,
+                0.4088
+            ],
+            "xyz": [
+                3.5040595760482938,
+                2.2022,
+                2.0213392154368406
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Fe": 2.0,
+                    "W": 1.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.2623,
+                0.385,
+                0.0912
+            ],
+            "xyz": [
+                1.245919515788894,
+                2.2022,
+                0.44956727153190096
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Fe": 2.0,
+                    "W": 1.0,
+                    "O": 0.0
+                }
+            }
+        }
+    ],
+    "about": {
+        "authors": [
+            {
+                "name": "Alex Ganose",
+                "email": "aganose@lbl.gov"
+            }
+        ],
+        "projects": [],
+        "references": "@article{cif-reference-0,\n    author = \"Cid-Dresdner, H.\",\n    title = \"The Crystal Structure of Ferberite, Fe W O4\",\n    journal = \"Zeitschrift fuer Kristallographie, Kristallgeometrie, Kristallphysik, Kristallchemie (-144,1977)\",\n    volume = \"127\",\n    year = \"1968\",\n    pages = \"61--72\"\n}\n",
+        "remarks": [
+            "Structure is part of MaterialsCoord test set"
+        ],
+        "history": [],
+        "created_at": {
+            "@module": "datetime",
+            "@class": "datetime",
+            "string": "2019-10-12 01:45:35.208803"
+        }
+    },
+    "@version": "2019.9.16"
+}

@@ -1,0 +1,253 @@
+{
+    "@module": "pymatgen.util.provenance",
+    "@class": "StructureNL",
+    "charge": null,
+    "lattice": {
+        "matrix": [
+            [
+                3.3136,
+                0.0,
+                2.028994816827335e-16
+            ],
+            [
+                -6.415924580732983e-16,
+                10.478,
+                6.415924580732983e-16
+            ],
+            [
+                0.0,
+                0.0,
+                4.3763
+            ]
+        ],
+        "a": 3.3136,
+        "b": 10.478,
+        "c": 4.3763,
+        "alpha": 90.0,
+        "beta": 90.0,
+        "gamma": 90.0,
+        "volume": 151.94470187103997
+    },
+    "sites": [
+        {
+            "species": [
+                {
+                    "element": "P",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.39832,
+                0.58056
+            ],
+            "xyz": [
+                -2.555591078997562e-16,
+                4.17359696,
+                2.540704728
+            ],
+            "label": "P0+",
+            "properties": {
+                "coordination": {
+                    "P": 3.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "P",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.60168,
+                0.41944
+            ],
+            "xyz": [
+                -3.860333501735421e-16,
+                6.3044030399999995,
+                1.8355952720000002
+            ],
+            "label": "P0+",
+            "properties": {
+                "coordination": {
+                    "P": 3.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "P",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.10168,
+                0.08056
+            ],
+            "xyz": [
+                -6.523712113689298e-17,
+                1.06540304,
+                0.35255472800000004
+            ],
+            "label": "P0+",
+            "properties": {
+                "coordination": {
+                    "P": 3.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "P",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.89832,
+                0.91944
+            ],
+            "xyz": [
+                -5.763553369364053e-16,
+                9.41259696,
+                4.023745272000001
+            ],
+            "label": "P0+",
+            "properties": {
+                "coordination": {
+                    "P": 3.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "P",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.89832,
+                0.58056
+            ],
+            "xyz": [
+                1.6567999999999994,
+                9.41259696,
+                2.5407047280000006
+            ],
+            "label": "P0+",
+            "properties": {
+                "coordination": {
+                    "P": 3.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "P",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.10168,
+                0.41944
+            ],
+            "xyz": [
+                1.6568,
+                1.06540304,
+                1.835595272
+            ],
+            "label": "P0+",
+            "properties": {
+                "coordination": {
+                    "P": 3.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "P",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.60168,
+                0.08056
+            ],
+            "xyz": [
+                1.6567999999999996,
+                6.3044030399999995,
+                0.3525547280000005
+            ],
+            "label": "P0+",
+            "properties": {
+                "coordination": {
+                    "P": 3.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "P",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.39832,
+                0.91944
+            ],
+            "xyz": [
+                1.6567999999999998,
+                4.17359696,
+                4.023745272
+            ],
+            "label": "P0+",
+            "properties": {
+                "coordination": {
+                    "P": 3.0
+                }
+            }
+        }
+    ],
+    "about": {
+        "authors": [
+            {
+                "name": "Alex Ganose",
+                "email": "aganose@lbl.gov"
+            }
+        ],
+        "projects": [],
+        "references": "@article{cif-reference-0,\n    author = \"Brown, A.\",\n    title = \"Refinement of the crystal structure of black phosphorus\",\n    journal = \"Acta Crystallographica\",\n    volume = \"19\",\n    year = \"1965\",\n    pages = \"684--685\"\n}\n",
+        "remarks": [
+            "Structure is part of MaterialsCoord test set"
+        ],
+        "history": [],
+        "created_at": {
+            "@module": "datetime",
+            "@class": "datetime",
+            "string": "2019-10-12 01:45:34.846008"
+        }
+    },
+    "@version": "2019.9.16"
+}

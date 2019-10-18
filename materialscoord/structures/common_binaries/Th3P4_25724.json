@@ -1,0 +1,781 @@
+{
+    "@module": "pymatgen.util.provenance",
+    "@class": "StructureNL",
+    "charge": null,
+    "lattice": {
+        "matrix": [
+            [
+                8.6,
+                0.0,
+                5.265981236333618e-16
+            ],
+            [
+                -5.265981236333618e-16,
+                8.6,
+                5.265981236333618e-16
+            ],
+            [
+                0.0,
+                0.0,
+                8.6
+            ]
+        ],
+        "a": 8.6,
+        "b": 8.6,
+        "c": 8.6,
+        "alpha": 90.0,
+        "beta": 90.0,
+        "gamma": 90.0,
+        "volume": 636.0559999999999
+    },
+    "sites": [
+        {
+            "species": [
+                {
+                    "element": "Th",
+                    "oxidation_state": 4.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.25,
+                0.375,
+                0.0
+            ],
+            "xyz": [
+                2.15,
+                3.2249999999999996,
+                3.2912382727085115e-16
+            ],
+            "label": "Th4+",
+            "properties": {
+                "coordination": {
+                    "Th": 0.0,
+                    "P": 8.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Th",
+                    "oxidation_state": 4.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.75,
+                0.875,
+                0.5
+            ],
+            "xyz": [
+                6.449999999999998,
+                7.5249999999999995,
+                4.300000000000001
+            ],
+            "label": "Th4+",
+            "properties": {
+                "coordination": {
+                    "Th": 0.0,
+                    "P": 8.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Th",
+                    "oxidation_state": 4.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.75,
+                0.125,
+                0.0
+            ],
+            "xyz": [
+                6.449999999999999,
+                1.075,
+                4.607733581791917e-16
+            ],
+            "label": "Th4+",
+            "properties": {
+                "coordination": {
+                    "Th": 0.0,
+                    "P": 8.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Th",
+                    "oxidation_state": 4.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.25,
+                0.625,
+                0.5
+            ],
+            "xyz": [
+                2.1499999999999995,
+                5.375,
+                4.300000000000001
+            ],
+            "label": "Th4+",
+            "properties": {
+                "coordination": {
+                    "Th": 0.0,
+                    "P": 8.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Th",
+                    "oxidation_state": 4.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.25,
+                0.375
+            ],
+            "xyz": [
+                -1.3164953090834046e-16,
+                2.15,
+                3.2249999999999996
+            ],
+            "label": "Th4+",
+            "properties": {
+                "coordination": {
+                    "Th": 0.0,
+                    "P": 8.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Th",
+                    "oxidation_state": 4.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.75,
+                0.875
+            ],
+            "xyz": [
+                4.3,
+                6.449999999999999,
+                7.525
+            ],
+            "label": "Th4+",
+            "properties": {
+                "coordination": {
+                    "Th": 0.0,
+                    "P": 8.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Th",
+                    "oxidation_state": 4.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.75,
+                0.125
+            ],
+            "xyz": [
+                -3.949485927250214e-16,
+                6.449999999999999,
+                1.0750000000000004
+            ],
+            "label": "Th4+",
+            "properties": {
+                "coordination": {
+                    "Th": 0.0,
+                    "P": 8.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Th",
+                    "oxidation_state": 4.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.25,
+                0.625
+            ],
+            "xyz": [
+                4.3,
+                2.15,
+                5.375
+            ],
+            "label": "Th4+",
+            "properties": {
+                "coordination": {
+                    "Th": 0.0,
+                    "P": 8.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Th",
+                    "oxidation_state": 4.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.375,
+                0.0,
+                0.25
+            ],
+            "xyz": [
+                3.2249999999999996,
+                0.0,
+                2.15
+            ],
+            "label": "Th4+",
+            "properties": {
+                "coordination": {
+                    "Th": 0.0,
+                    "P": 8.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Th",
+                    "oxidation_state": 4.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.875,
+                0.5,
+                0.75
+            ],
+            "xyz": [
+                7.5249999999999995,
+                4.3,
+                6.45
+            ],
+            "label": "Th4+",
+            "properties": {
+                "coordination": {
+                    "Th": 0.0,
+                    "P": 8.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Th",
+                    "oxidation_state": 4.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.125,
+                0.0,
+                0.75
+            ],
+            "xyz": [
+                1.075,
+                0.0,
+                6.449999999999999
+            ],
+            "label": "Th4+",
+            "properties": {
+                "coordination": {
+                    "Th": 0.0,
+                    "P": 8.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Th",
+                    "oxidation_state": 4.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.625,
+                0.5,
+                0.25
+            ],
+            "xyz": [
+                5.375,
+                4.3,
+                2.1500000000000004
+            ],
+            "label": "Th4+",
+            "properties": {
+                "coordination": {
+                    "Th": 0.0,
+                    "P": 8.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "P",
+                    "oxidation_state": -3.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.16670000000000001,
+                0.6667,
+                0.8333
+            ],
+            "xyz": [
+                1.4336199999999997,
+                5.733619999999999,
+                7.16638
+            ],
+            "label": "P3-",
+            "properties": {
+                "coordination": {
+                    "Th": 6.0,
+                    "P": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "P",
+                    "oxidation_state": -3.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.8333,
+                0.16670000000000001,
+                0.6667
+            ],
+            "xyz": [
+                7.16638,
+                1.4336200000000001,
+                5.73362
+            ],
+            "label": "P3-",
+            "properties": {
+                "coordination": {
+                    "Th": 6.0,
+                    "P": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "P",
+                    "oxidation_state": -3.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6667,
+                0.8333,
+                0.16670000000000001
+            ],
+            "xyz": [
+                5.733619999999999,
+                7.16638,
+                1.433620000000001
+            ],
+            "label": "P3-",
+            "properties": {
+                "coordination": {
+                    "Th": 6.0,
+                    "P": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "P",
+                    "oxidation_state": -3.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.3333,
+                0.3333,
+                0.3333
+            ],
+            "xyz": [
+                2.86638,
+                2.86638,
+                2.8663800000000004
+            ],
+            "label": "P3-",
+            "properties": {
+                "coordination": {
+                    "Th": 6.0,
+                    "P": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "P",
+                    "oxidation_state": -3.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5833,
+                0.4167,
+                0.9167
+            ],
+            "xyz": [
+                5.01638,
+                3.58362,
+                7.8836200000000005
+            ],
+            "label": "P3-",
+            "properties": {
+                "coordination": {
+                    "Th": 6.0,
+                    "P": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "P",
+                    "oxidation_state": -3.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.4167,
+                0.9167,
+                0.5833
+            ],
+            "xyz": [
+                3.5836199999999994,
+                7.88362,
+                5.016380000000001
+            ],
+            "label": "P3-",
+            "properties": {
+                "coordination": {
+                    "Th": 6.0,
+                    "P": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "P",
+                    "oxidation_state": -3.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.9167,
+                0.5833,
+                0.4167
+            ],
+            "xyz": [
+                7.88362,
+                5.01638,
+                3.5836200000000007
+            ],
+            "label": "P3-",
+            "properties": {
+                "coordination": {
+                    "Th": 6.0,
+                    "P": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "P",
+                    "oxidation_state": -3.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0833,
+                0.0833,
+                0.0833
+            ],
+            "xyz": [
+                0.71638,
+                0.71638,
+                0.7163800000000001
+            ],
+            "label": "P3-",
+            "properties": {
+                "coordination": {
+                    "Th": 6.0,
+                    "P": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "P",
+                    "oxidation_state": -3.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6667,
+                0.16670000000000001,
+                0.3333
+            ],
+            "xyz": [
+                5.733619999999999,
+                1.4336200000000001,
+                2.8663800000000004
+            ],
+            "label": "P3-",
+            "properties": {
+                "coordination": {
+                    "Th": 6.0,
+                    "P": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "P",
+                    "oxidation_state": -3.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.3333,
+                0.6667,
+                0.16670000000000001
+            ],
+            "xyz": [
+                2.8663799999999995,
+                5.733619999999999,
+                1.4336200000000006
+            ],
+            "label": "P3-",
+            "properties": {
+                "coordination": {
+                    "Th": 6.0,
+                    "P": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "P",
+                    "oxidation_state": -3.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.16670000000000001,
+                0.3333,
+                0.6667
+            ],
+            "xyz": [
+                1.43362,
+                2.86638,
+                5.733619999999999
+            ],
+            "label": "P3-",
+            "properties": {
+                "coordination": {
+                    "Th": 6.0,
+                    "P": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "P",
+                    "oxidation_state": -3.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.8333,
+                0.8333,
+                0.8333
+            ],
+            "xyz": [
+                7.16638,
+                7.16638,
+                7.166380000000001
+            ],
+            "label": "P3-",
+            "properties": {
+                "coordination": {
+                    "Th": 6.0,
+                    "P": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "P",
+                    "oxidation_state": -3.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0833,
+                0.9167,
+                0.4167
+            ],
+            "xyz": [
+                0.7163799999999996,
+                7.88362,
+                3.5836200000000002
+            ],
+            "label": "P3-",
+            "properties": {
+                "coordination": {
+                    "Th": 6.0,
+                    "P": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "P",
+                    "oxidation_state": -3.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.9167,
+                0.4167,
+                0.0833
+            ],
+            "xyz": [
+                7.88362,
+                3.58362,
+                0.7163800000000007
+            ],
+            "label": "P3-",
+            "properties": {
+                "coordination": {
+                    "Th": 6.0,
+                    "P": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "P",
+                    "oxidation_state": -3.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.4167,
+                0.0833,
+                0.9167
+            ],
+            "xyz": [
+                3.58362,
+                0.71638,
+                7.88362
+            ],
+            "label": "P3-",
+            "properties": {
+                "coordination": {
+                    "Th": 6.0,
+                    "P": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "P",
+                    "oxidation_state": -3.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5833,
+                0.5833,
+                0.5833
+            ],
+            "xyz": [
+                5.01638,
+                5.01638,
+                5.016380000000001
+            ],
+            "label": "P3-",
+            "properties": {
+                "coordination": {
+                    "Th": 6.0,
+                    "P": 0.0
+                }
+            }
+        }
+    ],
+    "about": {
+        "authors": [
+            {
+                "name": "Alex Ganose",
+                "email": "aganose@lbl.gov"
+            }
+        ],
+        "projects": [],
+        "references": "@article{cif-reference-0,\n    author = \"Zumbusch, M.\",\n    title = \"Ueber Strukturanalogie von Uran- und Thoriumphosphiden\",\n    journal = \"Zeitschrift fuer Anorganische und Allgemeine Chemie (1950) (DE)\",\n    volume = \"245\",\n    year = \"1941\",\n    pages = \"402--408\"\n}\n",
+        "remarks": [
+            "Structure is part of MaterialsCoord test set"
+        ],
+        "history": [],
+        "created_at": {
+            "@module": "datetime",
+            "@class": "datetime",
+            "string": "2019-10-12 01:45:35.513949"
+        }
+    },
+    "@version": "2019.9.16"
+}

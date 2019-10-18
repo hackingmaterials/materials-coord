@@ -1,88 +1,176 @@
-from __future__ import division, unicode_literals
 import unittest
 
-from materialscoord.core import Benchmark, HumanInterpreter
-from pymatgen.analysis.local_env import MinimumDistanceNN, VoronoiNN, CrystalNN
+from materialscoord.core import Benchmark
+from pymatgen import Structure
+from pymatgen.analysis.local_env import EconNN, VoronoiNN
 
-class CoreTest(unittest.TestCase):
+
+class BenchmarkTest(unittest.TestCase):
+    def setUp(self):
+        # set up a test structure
+        structure = Structure.from_spacegroup(
+            225,
+            [[5.7, 0, 0], [0, 5.7, 0], [0, 0, 5.7]],
+            ["Na1+", "Cl1-"],
+            [[0, 0, 0], [0.5, 0, 0]],
+        )
+        all_sites_coordination = [{"Cl": 6}] * 4 + [{"Na": 6}] * 4
+        structure.add_site_property("coordination", all_sites_coordination)
+        self.structures = {"test_structure": structure}
+        self.nn_methods = [EconNN(), VoronoiNN()]
+
+    def test_from_structure_group(self):
+        # test catching bad structure groups
+        self.assertRaises(ValueError, Benchmark.from_structure_group, "invalid_group")
+
+        # test a single structure group
+        bm = Benchmark.from_structure_group("elemental")
+        self.assertEqual(len(bm.structures), 16)
+        self.assertTrue("Ga_12174" in bm.structures)
+
+        # test multiple structure groups
+        bm = Benchmark.from_structure_group(["elemental", "common_binaries"])
+        self.assertEqual(len(bm.structures), 27)
+        self.assertTrue("Ga_12174" in bm.structures)
+        self.assertTrue("ZnS_sphalerite_651455" in bm.structures)
+
+    def test_initialization(self):
+        # test basic initialization
+        bm = Benchmark(self.structures)
+        self.assertEqual(len(bm.structures), 1)
+        self.assertTrue("test_structure" in bm.structures)
+
+        # check other parameters initialized correctly
+        self.assertEqual(bm.max_nsites, 2)
+        self.assertTrue(bm.all_structures_have_oxi)
+
+        # check site information correct
+        self.assertEqual(len(bm.site_information), 1)
+        site_info = bm.site_information["test_structure"]
+        self.assertEqual(tuple(site_info["unique_idxs"]), (0, 4))
+        self.assertEqual(tuple(site_info["all_idxs"]), (0, 1))
+        self.assertEqual(tuple(site_info["cation_idxs"]), (0,))
+        self.assertEqual(tuple(site_info["anion_idxs"]), (1,))
+        self.assertEqual(tuple(site_info["all_degens"]), (4, 4))
+        self.assertEqual(tuple(site_info["cation_degens"]), (4,))
+        self.assertEqual(tuple(site_info["anion_degens"]), (4,))
+        self.assertEqual(site_info["all_total"], 8)
+        self.assertEqual(site_info["cation_total"], 4)
+        self.assertEqual(site_info["anion_total"], 4)
+        self.assertEqual(site_info["cations"], {"Na"})
+        self.assertEqual(site_info["anions"], {"Cl"})
+
+        # Now try testing without symmetry
+        bm = Benchmark(self.structures, symprec=None)
+        site_info = bm.site_information["test_structure"]
+
+        self.assertEqual(bm.max_nsites, 8)
+        self.assertEqual(len(bm.site_information), 1)
+        self.assertEqual(tuple(site_info["unique_idxs"]), (0, 1, 2, 3, 4, 5, 6, 7))
+        self.assertEqual(tuple(site_info["all_idxs"]), (0, 1, 2, 3, 4, 5, 6, 7))
+        self.assertEqual(tuple(site_info["cation_idxs"]), (0, 1, 2, 3))
+        self.assertEqual(tuple(site_info["anion_idxs"]), (4, 5, 6, 7))
+        self.assertEqual(tuple(site_info["all_degens"]), (1, 1, 1, 1, 1, 1, 1, 1))
+        self.assertEqual(tuple(site_info["cation_degens"]), (1, 1, 1, 1))
+        self.assertEqual(tuple(site_info["anion_degens"]), (1, 1, 1, 1))
+        self.assertEqual(site_info["all_total"], 8)
+        self.assertEqual(site_info["cation_total"], 4)
+        self.assertEqual(site_info["anion_total"], 4)
+        self.assertEqual(site_info["cations"], {"Na"})
+        self.assertEqual(site_info["anions"], {"Cl"})
 
     def test_benchmark(self):
-        #TODO: test custom_set
+        bm = Benchmark(self.structures)
 
-        bm = Benchmark()
+        # test dataframe output
+        results = bm.benchmark(self.nn_methods)
+        expected_results = {
+            "EconNN0": {"test_structure": {"Na": 12, "Cl": 6}},
+            "EconNN1": {"test_structure": {"Na": 6, "Cl": 12}},
+            "VoronoiNN0": {"test_structure": {"Cl": 6}},
+            "VoronoiNN1": {"test_structure": {"Na": 6}},
+        }
+        self.assertEqual(results.to_dict(), expected_results)
 
-        rd = {1: 1.0005, 2: 1.0006}
-        rd = bm._roundcns(rd, 3)
-        self.assertEqual(rd[1], 1)
-        self.assertEqual(rd[2], 1.001)
+        # test dict output
+        results = bm.benchmark(self.nn_methods, return_dataframe=False)
+        econ_results = {"test_structure": [{"Na": 12, "Cl": 6}, {"Na": 6, "Cl": 12}]}
+        voronoi_results = {"test_structure": [{"Cl": 6}, {"Na": 6}]}
+        self.assertEqual(results[self.nn_methods[0]], econ_results)
+        self.assertEqual(results[self.nn_methods[1]], voronoi_results)
 
-        cns = [('Ca', {'O': 8.0}), ('W', {'O': 4.0}), ('O', {'W': 1.0})]
-        ions = ['Ca', 'W']
-        exp_res = [('Ca', {u'O': 8.0}), ('W', {u'O': 4.0})]
-        res = bm._popel(cns, ions)
-        self.assertEqual(len(res), 2)
-        self.assertTrue(res[0][0] in [er[0] for er in exp_res])
-        self.assertTrue(res[1][0] in [er[0] for er in exp_res])
-        for r in res:
-            for er in exp_res:
-                if r[0] == er[0]:
-                    self.assertTrue(len(list(r[1].keys())), 1)
-                    k = list(r[1].keys())[0]
-                    ek = list(er[1].keys())[0]
-                    self.assertTrue(k == ek)
-                    self.assertTrue(r[1][k] == er[1][k])
+        # test no symmetry
+        bm = Benchmark(self.structures, symprec=None)
+        no_sym_results = bm.benchmark(self.nn_methods)
+        expected_no_sym_results = {
+            "EconNN0": {"test_structure": {"Na": 12, "Cl": 6}},
+            "EconNN1": {"test_structure": {"Cl": 6, "Na": 12}},
+            "EconNN2": {"test_structure": {"Cl": 6, "Na": 12}},
+            "EconNN3": {"test_structure": {"Cl": 6, "Na": 12}},
+            "EconNN4": {"test_structure": {"Na": 6, "Cl": 12}},
+            "EconNN5": {"test_structure": {"Na": 6, "Cl": 12}},
+            "EconNN6": {"test_structure": {"Na": 6, "Cl": 12}},
+            "EconNN7": {"test_structure": {"Na": 6, "Cl": 12}},
+            "VoronoiNN0": {"test_structure": {"Cl": 6}},
+            "VoronoiNN1": {"test_structure": {"Cl": 6}},
+            "VoronoiNN2": {"test_structure": {"Cl": 6}},
+            "VoronoiNN3": {"test_structure": {"Cl": 6}},
+            "VoronoiNN4": {"test_structure": {"Na": 6}},
+            "VoronoiNN5": {"test_structure": {"Na": 6}},
+            "VoronoiNN6": {"test_structure": {"Na": 6}},
+            "VoronoiNN7": {"test_structure": {"Na": 6}},
+        }
 
-        mdnn = MinimumDistanceNN()
-        vnn = VoronoiNN()
-        cnn = CrystalNN()
-        df = bm.benchmark((mdnn, vnn, cnn))
-        self.assertTrue(type(df.loc['As_alpha_16518']['CrystalNN0']), dict)
-        self.assertEqual(list(df.loc['As_alpha_16518']['CrystalNN0'].keys())[0], 'As')
-        self.assertEqual(df.loc['As_alpha_16518']['CrystalNN0']['As'], 3)
-        self.assertEqual(df.loc['C_diamond_52054']['CrystalNN0']['C'], 4)
-        self.assertEqual(df.loc['C_graphite_76767']['CrystalNN0']['C'], 3)
-        self.assertEqual(df.loc['C_graphite_76767']['CrystalNN1']['C'], 3)
-        self.assertEqual(df.loc['Cu_52256']['CrystalNN0']['Cu'], 12)
-        self.assertEqual(df.loc['Ga_12174']['CrystalNN0']['Ga'], 12)
-        self.assertEqual(df.loc['Hg_alpha_104296']['CrystalNN0']['Hg'], 6)
-        self.assertEqual(df.loc['La_43573']['CrystalNN0']['La'], 12)
-        self.assertEqual(df.loc['La_43573']['CrystalNN1']['La'], 12)
-        self.assertEqual(df.loc['Mg_52260']['CrystalNN0']['Mg'], 12)
-        self.assertEqual(df.loc['Mn_alpha_42743']['CrystalNN1']['Mn'], 16)
-        self.assertEqual(df.loc['Mn_alpha_42743']['CrystalNN2']['Mn'], 13)
-        self.assertEqual(df.loc['Mn_alpha_42743']['CrystalNN3']['Mn'], 12)
-        self.assertEqual(df.loc['Mn_beta_41775']['CrystalNN1']['Mn'], 12)
-        self.assertEqual(df.loc['P_black_23836']['CrystalNN0']['P'], 3)
-        self.assertEqual(df.loc['Se_trigonal_23068']['CrystalNN0']['Se'], 2)
-        self.assertEqual(df.loc['Sm_76031']['CrystalNN1']['Sm'], 12)
-        self.assertEqual(df.loc['Sn_beta_106072']['CrystalNN0']['Sn'], 6)
-        self.assertEqual(df.loc['U_alpha_16056']['CrystalNN0']['U'], 12)
-        self.assertEqual(df.loc['W_alpha_43667']['CrystalNN0']['W'], 8)
-        self.assertEqual(df.loc['As_alpha_16518']['MinimumDistanceNN0']['As'], 3)
-        self.assertEqual(df.loc['Mn_alpha_42743']['MinimumDistanceNN1']['Mn'], 10)
-        self.assertEqual(df.loc['Mn_alpha_42743']['MinimumDistanceNN2']['Mn'], 4)
-        self.assertEqual(df.loc['Mn_alpha_42743']['MinimumDistanceNN3']['Mn'], 4)
-        self.assertEqual(df.loc['Mn_beta_41775']['MinimumDistanceNN0']['Mn'], 6)
-        self.assertEqual(df.loc['Mn_beta_41775']['MinimumDistanceNN1']['Mn'], 12)
-        self.assertEqual(df.loc['P_black_23836']['MinimumDistanceNN0']['P'], 3)
-        self.assertEqual(df.loc['Se_trigonal_23068']['MinimumDistanceNN0']['Se'], 2)
-        self.assertEqual(df.loc['Sm_76031']['MinimumDistanceNN1']['Sm'], 12)
-        self.assertEqual(df.loc['U_alpha_16056']['MinimumDistanceNN0']['U'], 4)
-        self.assertEqual(df.loc['As_alpha_16518']['VoronoiNN0']['As'], 19)
-        self.assertEqual(df.loc['C_diamond_52054']['VoronoiNN0']['C'], 16)
-        self.assertEqual(df.loc['C_graphite_76767']['VoronoiNN0']['C'], 13)
-        self.assertEqual(df.loc['C_graphite_76767']['VoronoiNN1']['C'], 17)
-        self.assertEqual(df.loc['Hg_alpha_104296']['VoronoiNN0']['Hg'], 12)
-        self.assertEqual(df.loc['Mg_52260']['VoronoiNN0']['Mg'], 14)
-        self.assertEqual(df.loc['Mn_beta_41775']['VoronoiNN1']['Mn'], 14)
-        self.assertEqual(df.loc['P_black_23836']['VoronoiNN0']['P'], 15)
-        self.assertEqual(df.loc['Se_trigonal_23068']['VoronoiNN0']['Se'], 16)
-        self.assertEqual(df.loc['Sn_beta_106072']['VoronoiNN0']['Sn'], 18)
-        self.assertEqual(df.loc['W_alpha_43667']['VoronoiNN0']['W'], 14)
+        self.assertEqual(no_sym_results.to_dict(), expected_no_sym_results)
 
-    def test_human_interpreter(self):
-        hi = HumanInterpreter()
-        self.assertEqual(hi.compute(None, 0), "null")
+    def test_score(self):
+        # test all scores
+        bm = Benchmark(self.structures)
+        scores = bm.score(self.nn_methods)
+        expected_scores = {
+            "EconNN": {"test_structure": 12.0, "Total": 12.0},
+            "VoronoiNN": {"test_structure": 0.0, "Total": 0.0},
+        }
+        self.assertEqual(scores.to_dict(), expected_scores)
 
-if __name__ == "__main__":
-    unittest.main()
+        # test cation scores
+        bm = Benchmark(self.structures)
+        scores = bm.score(self.nn_methods, site_type="cation")
+        self.assertEqual(scores.to_dict(), expected_scores)
+
+        # test anion scores
+        bm = Benchmark(self.structures)
+        scores = bm.score(self.nn_methods, site_type="anion")
+        self.assertEqual(scores.to_dict(), expected_scores)
+
+        # test cation-anion filtering
+        bm = Benchmark(self.structures)
+        scores = bm.score(self.nn_methods, cation_anion=True)
+        expected_scores = {
+            "EconNN": {"test_structure": 0.0, "Total": 0.0},
+            "VoronoiNN": {"test_structure": 0.0, "Total": 0.0},
+        }
+        self.assertEqual(scores.to_dict(), expected_scores)
+
+    def test_multiple_same_methods(self):
+        # test that if running the benchmark on multiple NN methods of the same class,
+        # that each NN method is named differently and appears in the benchmark and
+        # score results
+        bm = Benchmark(self.structures)
+        nn_methods = [VoronoiNN(), VoronoiNN(tol=0.5)]
+
+        results = bm.benchmark(nn_methods)
+        expected_results = {
+            "VoronoiNN(0)0": {"test_structure": {"Cl": 6}},
+            "VoronoiNN(0)1": {"test_structure": {"Na": 6}},
+            "VoronoiNN(1)0": {"test_structure": {"Cl": 6}},
+            "VoronoiNN(1)1": {"test_structure": {"Na": 6}},
+        }
+        self.assertEqual(results.to_dict(), expected_results)
+
+        scores = bm.score(nn_methods)
+        expected_scores = {
+            "VoronoiNN(0)": {"test_structure": 0.0, "Total": 0.0},
+            "VoronoiNN(1)": {"test_structure": 0.0, "Total": 0.0},
+        }
+        self.assertEqual(scores.to_dict(), expected_scores)

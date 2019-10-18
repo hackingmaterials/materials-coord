@@ -1,0 +1,677 @@
+{
+    "@module": "pymatgen.util.provenance",
+    "@class": "StructureNL",
+    "charge": null,
+    "lattice": {
+        "matrix": [
+            [
+                4.824,
+                0.0,
+                2.953848079543416e-16
+            ],
+            [
+                -2.411999999999999,
+                4.177706547856133,
+                2.953848079543416e-16
+            ],
+            [
+                0.0,
+                0.0,
+                15.826
+            ]
+        ],
+        "a": 4.824,
+        "b": 4.824,
+        "c": 15.826,
+        "alpha": 90.0,
+        "beta": 90.0,
+        "gamma": 119.99999999999999,
+        "volume": 318.94543557841445
+    },
+    "sites": [
+        {
+            "species": [
+                {
+                    "element": "Mg",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.406
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                6.425356000000001
+            ],
+            "label": "Mg0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 4.0,
+                    "Ni": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mg",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.594
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                9.400644
+            ],
+            "label": "Mg0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 4.0,
+                    "Ni": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mg",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.906
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                14.338356000000001
+            ],
+            "label": "Mg0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 4.0,
+                    "Ni": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mg",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.094
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                1.487644
+            ],
+            "label": "Mg0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 4.0,
+                    "Ni": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mg",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.3333333333333333,
+                0.6666666666666667,
+                0.6558
+            ],
+            "xyz": [
+                4.440892098500626e-16,
+                2.785137698570755,
+                10.378690800000001
+            ],
+            "label": "Mg0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 4.0,
+                    "Ni": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mg",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6666666666666667,
+                0.3333333333333333,
+                0.34419999999999984
+            ],
+            "xyz": [
+                2.412000000000001,
+                1.3925688492853774,
+                5.447309199999998
+            ],
+            "label": "Mg0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 4.0,
+                    "Ni": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mg",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6666666666666667,
+                0.3333333333333333,
+                0.15580000000000005
+            ],
+            "xyz": [
+                2.412000000000001,
+                1.3925688492853774,
+                2.4656908000000013
+            ],
+            "label": "Mg0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 4.0,
+                    "Ni": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mg",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.3333333333333333,
+                0.6666666666666667,
+                0.8442
+            ],
+            "xyz": [
+                4.440892098500626e-16,
+                2.785137698570755,
+                13.3603092
+            ],
+            "label": "Mg0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 4.0,
+                    "Ni": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Ni",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.3333333333333333,
+                0.6666666666666667,
+                0.37485999999999997
+            ],
+            "xyz": [
+                4.440892098500626e-16,
+                2.785137698570755,
+                5.93253436
+            ],
+            "label": "Ni0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Ni": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Ni",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6666666666666667,
+                0.3333333333333333,
+                0.62514
+            ],
+            "xyz": [
+                2.412000000000001,
+                1.3925688492853774,
+                9.89346564
+            ],
+            "label": "Ni0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Ni": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Ni",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6666666666666667,
+                0.3333333333333333,
+                0.87486
+            ],
+            "xyz": [
+                2.412000000000001,
+                1.3925688492853774,
+                13.84553436
+            ],
+            "label": "Ni0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Ni": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Ni",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.3333333333333333,
+                0.6666666666666667,
+                0.12514
+            ],
+            "xyz": [
+                4.440892098500626e-16,
+                2.785137698570755,
+                1.9804656400000002
+            ],
+            "label": "Ni0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Ni": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Ni",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.5,
+                0.5
+            ],
+            "xyz": [
+                1.2060000000000004,
+                2.0888532739280663,
+                7.913
+            ],
+            "label": "Ni0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Ni": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Ni",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.0,
+                0.5
+            ],
+            "xyz": [
+                2.412,
+                0.0,
+                7.913
+            ],
+            "label": "Ni0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Ni": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Ni",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.5,
+                0.5
+            ],
+            "xyz": [
+                -1.2059999999999995,
+                2.0888532739280663,
+                7.913
+            ],
+            "label": "Ni0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Ni": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Ni",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.5,
+                0.0
+            ],
+            "xyz": [
+                1.2060000000000004,
+                2.0888532739280663,
+                2.953848079543416e-16
+            ],
+            "label": "Ni0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Ni": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Ni",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.0,
+                0.0
+            ],
+            "xyz": [
+                2.412,
+                0.0,
+                1.476924039771708e-16
+            ],
+            "label": "Ni0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Ni": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Ni",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.5,
+                0.0
+            ],
+            "xyz": [
+                -1.2059999999999995,
+                2.0888532739280663,
+                1.476924039771708e-16
+            ],
+            "label": "Ni0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Ni": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Ni",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.16429,
+                0.83571,
+                0.25
+            ],
+            "xyz": [
+                -1.2231975599999991,
+                3.4913511391088483,
+                3.9565000000000006
+            ],
+            "label": "Ni0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Ni": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Ni",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.16429,
+                0.32858,
+                0.25
+            ],
+            "xyz": [
+                2.220446049250313e-16,
+                1.372710817494568,
+                3.9565
+            ],
+            "label": "Ni0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Ni": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Ni",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.67142,
+                0.83571,
+                0.25
+            ],
+            "xyz": [
+                1.223197560000001,
+                3.4913511391088483,
+                3.9565000000000006
+            ],
+            "label": "Ni0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Ni": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Ni",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.83571,
+                0.16429,
+                0.75
+            ],
+            "xyz": [
+                3.63519756,
+                0.686355408747284,
+                11.8695
+            ],
+            "label": "Ni0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Ni": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Ni",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.83571,
+                0.67142,
+                0.75
+            ],
+            "xyz": [
+                2.412,
+                2.8049957303615645,
+                11.8695
+            ],
+            "label": "Ni0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Ni": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Ni",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.32858,
+                0.16429,
+                0.75
+            ],
+            "xyz": [
+                1.18880244,
+                0.686355408747284,
+                11.8695
+            ],
+            "label": "Ni0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Ni": 6.0
+                }
+            }
+        }
+    ],
+    "about": {
+        "authors": [
+            {
+                "name": "Alex Ganose",
+                "email": "aganose@lbl.gov"
+            }
+        ],
+        "projects": [],
+        "references": "@article{cif-reference-0,\n    author = \"Komura, Y.\",\n    title = \"Structural studies of stacking variants in Mg-base Friauf- Laves phases\",\n    journal = \"Acta Crystallographica, Section B: Structural Crystallography and Crystal Chemistry\",\n    volume = \"36\",\n    year = \"1980\",\n    pages = \"1548--1554\"\n}\n",
+        "remarks": [
+            "Structure is part of MaterialsCoord test set"
+        ],
+        "history": [],
+        "created_at": {
+            "@module": "datetime",
+            "@class": "datetime",
+            "string": "2019-10-12 01:45:34.741897"
+        }
+    },
+    "@version": "2019.9.16"
+}

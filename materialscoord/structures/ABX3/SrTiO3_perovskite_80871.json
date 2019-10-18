@@ -1,0 +1,188 @@
+{
+    "@module": "pymatgen.util.provenance",
+    "@class": "StructureNL",
+    "charge": null,
+    "lattice": {
+        "matrix": [
+            [
+                3.8996,
+                0.0,
+                2.3878163289775092e-16
+            ],
+            [
+                -2.3878163289775092e-16,
+                3.8996,
+                2.3878163289775092e-16
+            ],
+            [
+                0.0,
+                0.0,
+                3.8996
+            ]
+        ],
+        "a": 3.8996,
+        "b": 3.8996,
+        "c": 3.8996,
+        "alpha": 90.0,
+        "beta": 90.0,
+        "gamma": 90.0,
+        "volume": 59.300749871936
+    },
+    "sites": [
+        {
+            "species": [
+                {
+                    "element": "Sr",
+                    "oxidation_state": 2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "label": "Sr2+",
+            "properties": {
+                "coordination": {
+                    "Sr": 0.0,
+                    "Ti": 0.0,
+                    "O": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Ti",
+                    "oxidation_state": 4.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.5,
+                0.5
+            ],
+            "xyz": [
+                1.9497999999999998,
+                1.9498,
+                1.9498000000000002
+            ],
+            "label": "Ti4+",
+            "properties": {
+                "coordination": {
+                    "Sr": 0.0,
+                    "Ti": 0.0,
+                    "O": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.5,
+                0.0
+            ],
+            "xyz": [
+                1.9497999999999998,
+                1.9498,
+                2.3878163289775092e-16
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Sr": 4.0,
+                    "Ti": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.0,
+                0.5
+            ],
+            "xyz": [
+                1.9498,
+                0.0,
+                1.9498000000000002
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Sr": 4.0,
+                    "Ti": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.5,
+                0.5
+            ],
+            "xyz": [
+                -1.1939081644887546e-16,
+                1.9498,
+                1.9498000000000002
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Sr": 4.0,
+                    "Ti": 2.0,
+                    "O": 0.0
+                }
+            }
+        }
+    ],
+    "about": {
+        "authors": [
+            {
+                "name": "Alex Ganose",
+                "email": "aganose@lbl.gov"
+            }
+        ],
+        "projects": [],
+        "references": "@article{cif-reference-0,\n    author = \"Abramov, Yu.A.\",\n    title = \" The chemical bond and atomic displacements in Sr Ti O3 from x-ray diffraction analysis\",\n    journal = \"Acta Crystallographica, Section B: Structural Science\",\n    volume = \"51\",\n    year = \"1995\",\n    pages = \"942--951\"\n}\n",
+        "remarks": [
+            "Structure is part of MaterialsCoord test set"
+        ],
+        "history": [],
+        "created_at": {
+            "@module": "datetime",
+            "@class": "datetime",
+            "string": "2019-10-12 01:45:35.102733"
+        }
+    },
+    "@version": "2019.9.16"
+}

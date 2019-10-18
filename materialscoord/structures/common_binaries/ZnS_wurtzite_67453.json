@@ -1,0 +1,157 @@
+{
+    "@module": "pymatgen.util.provenance",
+    "@class": "StructureNL",
+    "charge": null,
+    "lattice": {
+        "matrix": [
+            [
+                3.8227,
+                0.0,
+                2.340728659550294e-16
+            ],
+            [
+                -1.9113499999999992,
+                3.3105553110467745,
+                2.340728659550294e-16
+            ],
+            [
+                0.0,
+                0.0,
+                6.2607
+            ]
+        ],
+        "a": 3.8227,
+        "b": 3.8227,
+        "c": 6.2607,
+        "alpha": 90.0,
+        "beta": 90.0,
+        "gamma": 119.99999999999999,
+        "volume": 79.23078495184231
+    },
+    "sites": [
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6666666666666667,
+                0.3333333333333333,
+                0.5
+            ],
+            "xyz": [
+                1.9113500000000008,
+                1.1035184370155915,
+                3.1303500000000004
+            ],
+            "label": "Zn2+",
+            "properties": {
+                "coordination": {
+                    "Zn": 0.0,
+                    "S": 4.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.3333333333333333,
+                0.6666666666666667,
+                0.0
+            ],
+            "xyz": [
+                4.440892098500626e-16,
+                2.2070368740311834,
+                2.340728659550294e-16
+            ],
+            "label": "Zn2+",
+            "properties": {
+                "coordination": {
+                    "Zn": 0.0,
+                    "S": 4.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "S",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6666666666666667,
+                0.3333333333333333,
+                0.8748
+            ],
+            "xyz": [
+                1.9113500000000008,
+                1.1035184370155915,
+                5.47686036
+            ],
+            "label": "S2-",
+            "properties": {
+                "coordination": {
+                    "Zn": 4.0,
+                    "S": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "S",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.3333333333333333,
+                0.6666666666666667,
+                0.3748
+            ],
+            "xyz": [
+                4.440892098500626e-16,
+                2.2070368740311834,
+                2.3465103600000004
+            ],
+            "label": "S2-",
+            "properties": {
+                "coordination": {
+                    "Zn": 4.0,
+                    "S": 0.0
+                }
+            }
+        }
+    ],
+    "about": {
+        "authors": [
+            {
+                "name": "Alex Ganose",
+                "email": "aganose@lbl.gov"
+            }
+        ],
+        "projects": [],
+        "references": "@article{cif-reference-0,\n    author = \"Kisi, E.H.\",\n    title = \" U parameters for the wurtzite structure of Zn S and Zn O using powder neutron diffraction\",\n    journal = \"Acta Crystallographica, Section C: Crystal Structure Communications\",\n    volume = \"45\",\n    year = \"1989\",\n    pages = \"1867--1870\"\n}\n",
+        "remarks": [
+            "Structure is part of MaterialsCoord test set"
+        ],
+        "history": [],
+        "created_at": {
+            "@module": "datetime",
+            "@class": "datetime",
+            "string": "2019-10-12 01:45:35.305760"
+        }
+    },
+    "@version": "2019.9.16"
+}

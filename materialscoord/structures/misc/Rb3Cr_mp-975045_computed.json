@@ -1,0 +1,153 @@
+{
+    "@module": "pymatgen.util.provenance",
+    "@class": "StructureNL",
+    "charge": null,
+    "lattice": {
+        "matrix": [
+            [
+                6.18283835,
+                0.0,
+                3.7858965974865015e-16
+            ],
+            [
+                -3.7858965974865015e-16,
+                6.18283835,
+                3.7858965974865015e-16
+            ],
+            [
+                0.0,
+                0.0,
+                6.18283835
+            ]
+        ],
+        "a": 6.18283835,
+        "b": 6.18283835,
+        "c": 6.18283835,
+        "alpha": 90.0,
+        "beta": 90.0,
+        "gamma": 90.0,
+        "volume": 236.354391581004
+    },
+    "sites": [
+        {
+            "species": [
+                {
+                    "element": "Rb",
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.499999,
+                0.499999
+            ],
+            "xyz": [
+                -1.8929445128466534e-16,
+                3.09141299216165,
+                3.09141299216165
+            ],
+            "label": "Rb",
+            "properties": {
+                "coordination": {
+                    "Rb": 8.0,
+                    "Cr": 4.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Rb",
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.499999,
+                0.0,
+                0.499999
+            ],
+            "xyz": [
+                3.09141299216165,
+                0.0,
+                3.09141299216165
+            ],
+            "label": "Rb",
+            "properties": {
+                "coordination": {
+                    "Rb": 8.0,
+                    "Cr": 4.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Rb",
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.499999,
+                0.499999,
+                0.0
+            ],
+            "xyz": [
+                3.09141299216165,
+                3.09141299216165,
+                3.7858890256933067e-16
+            ],
+            "label": "Rb",
+            "properties": {
+                "coordination": {
+                    "Rb": 8.0,
+                    "Cr": 4.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cr",
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "label": "Cr",
+            "properties": {
+                "coordination": {
+                    "Rb": 12.0,
+                    "Cr": 0.0
+                }
+            }
+        }
+    ],
+    "about": {
+        "authors": [
+            {
+                "name": "Alex Ganose",
+                "email": "aganose@lbl.gov"
+            }
+        ],
+        "projects": [],
+        "references": "@article{cif-reference-0\n}\n",
+        "remarks": [
+            "Structure is part of MaterialsCoord test set"
+        ],
+        "history": [],
+        "created_at": {
+            "@module": "datetime",
+            "@class": "datetime",
+            "string": "2019-10-12 01:45:33.319592"
+        }
+    },
+    "@version": "2019.9.16"
+}

@@ -1,0 +1,153 @@
+{
+    "@module": "pymatgen.util.provenance",
+    "@class": "StructureNL",
+    "charge": null,
+    "lattice": {
+        "matrix": [
+            [
+                3.77,
+                0.0,
+                2.3084592163927607e-16
+            ],
+            [
+                -1.8849999999999991,
+                3.2649157722673343,
+                2.3084592163927607e-16
+            ],
+            [
+                0.0,
+                0.0,
+                12.13
+            ]
+        ],
+        "a": 3.77,
+        "b": 3.77,
+        "c": 12.13,
+        "alpha": 90.0,
+        "beta": 90.0,
+        "gamma": 119.99999999999999,
+        "volume": 149.30492475736241
+    },
+    "sites": [
+        {
+            "species": [
+                {
+                    "element": "La",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.5
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                6.065
+            ],
+            "label": "La0+",
+            "properties": {
+                "coordination": {
+                    "La": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "La",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "label": "La0+",
+            "properties": {
+                "coordination": {
+                    "La": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "La",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.3333333333333333,
+                0.6666666666666667,
+                0.25
+            ],
+            "xyz": [
+                4.440892098500626e-16,
+                2.17661051484489,
+                3.0325000000000006
+            ],
+            "label": "La0+",
+            "properties": {
+                "coordination": {
+                    "La": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "La",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6666666666666667,
+                0.3333333333333333,
+                0.75
+            ],
+            "xyz": [
+                1.8850000000000007,
+                1.0883052574224448,
+                9.0975
+            ],
+            "label": "La0+",
+            "properties": {
+                "coordination": {
+                    "La": 12.0
+                }
+            }
+        }
+    ],
+    "about": {
+        "authors": [
+            {
+                "name": "Alex Ganose",
+                "email": "aganose@lbl.gov"
+            }
+        ],
+        "projects": [],
+        "references": "@article{cif-reference-0,\n    author = \"Hanak, J.J.\",\n    title = \"High temperature allotropy and thermal expansion of the rare earth metals\",\n    journal = \"Journal of the Less-Common Metals\",\n    volume = \"3\",\n    year = \"1961\",\n    pages = \"110--124\"\n}\n",
+        "remarks": [
+            "Structure is part of MaterialsCoord test set"
+        ],
+        "history": [],
+        "created_at": {
+            "@module": "datetime",
+            "@class": "datetime",
+            "string": "2019-10-12 01:45:34.884843"
+        }
+    },
+    "@version": "2019.9.16"
+}
