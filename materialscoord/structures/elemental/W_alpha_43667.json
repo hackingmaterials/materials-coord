@@ -1,0 +1,103 @@
+{
+    "@module": "pymatgen.util.provenance",
+    "@class": "StructureNL",
+    "charge": null,
+    "lattice": {
+        "matrix": [
+            [
+                3.16522,
+                0.0,
+                1.9381382707985928e-16
+            ],
+            [
+                -1.9381382707985928e-16,
+                3.16522,
+                1.9381382707985928e-16
+            ],
+            [
+                0.0,
+                0.0,
+                3.16522
+            ]
+        ],
+        "a": 3.16522,
+        "b": 3.16522,
+        "c": 3.16522,
+        "alpha": 90.0,
+        "beta": 90.0,
+        "gamma": 90.0,
+        "volume": 31.711128953068652
+    },
+    "sites": [
+        {
+            "species": [
+                {
+                    "element": "W",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "label": "W0+",
+            "properties": {
+                "coordination": {
+                    "W": 8.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "W",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.5,
+                0.5
+            ],
+            "xyz": [
+                1.58261,
+                1.58261,
+                1.5826100000000003
+            ],
+            "label": "W0+",
+            "properties": {
+                "coordination": {
+                    "W": 8.0
+                }
+            }
+        }
+    ],
+    "about": {
+        "authors": [
+            {
+                "name": "Alex Ganose",
+                "email": "aganose@lbl.gov"
+            }
+        ],
+        "projects": [],
+        "references": "@article{cif-reference-0,\n    author = \"Parrish, W.\",\n    title = \"Results of the I.U.Cr. precision lattice-parameter project.\",\n    journal = \"Acta Crystallographica\",\n    volume = \"13\",\n    year = \"1960\",\n    pages = \"838--850\"\n}\n",
+        "remarks": [
+            "Structure is part of MaterialsCoord test set"
+        ],
+        "history": [],
+        "created_at": {
+            "@module": "datetime",
+            "@class": "datetime",
+            "string": "2019-10-12 01:45:34.977515"
+        }
+    },
+    "@version": "2019.9.16"
+}

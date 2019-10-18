@@ -1,0 +1,105 @@
+{
+    "@module": "pymatgen.util.provenance",
+    "@class": "StructureNL",
+    "charge": null,
+    "lattice": {
+        "matrix": [
+            [
+                4.12,
+                0.0,
+                2.5227724062435474e-16
+            ],
+            [
+                -2.5227724062435474e-16,
+                4.12,
+                2.5227724062435474e-16
+            ],
+            [
+                0.0,
+                0.0,
+                4.12
+            ]
+        ],
+        "a": 4.12,
+        "b": 4.12,
+        "c": 4.12,
+        "alpha": 90.0,
+        "beta": 90.0,
+        "gamma": 90.0,
+        "volume": 69.934528
+    },
+    "sites": [
+        {
+            "species": [
+                {
+                    "element": "Cs",
+                    "oxidation_state": 1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "label": "Cs+",
+            "properties": {
+                "coordination": {
+                    "Cs": 0.0,
+                    "Cl": 8.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cl",
+                    "oxidation_state": -1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.5,
+                0.5
+            ],
+            "xyz": [
+                2.06,
+                2.06,
+                2.0600000000000005
+            ],
+            "label": "Cl-",
+            "properties": {
+                "coordination": {
+                    "Cs": 8.0,
+                    "Cl": 0.0
+                }
+            }
+        }
+    ],
+    "about": {
+        "authors": [
+            {
+                "name": "Alex Ganose",
+                "email": "aganose@lbl.gov"
+            }
+        ],
+        "projects": [],
+        "references": "@article{cif-reference-0,\n    author = \"Davey, W.P.\",\n    title = \"Crystal structure of Cs Cl and Tl Cl\",\n    journal = \"Physical Review (1,1893-132,1963/141,1966-188,1969)\",\n    volume = \"17\",\n    year = \"1921\",\n    pages = \"403--404\"\n}\n",
+        "remarks": [
+            "Structure is part of MaterialsCoord test set"
+        ],
+        "history": [],
+        "created_at": {
+            "@module": "datetime",
+            "@class": "datetime",
+            "string": "2019-10-12 01:45:35.558620"
+        }
+    },
+    "@version": "2019.9.16"
+}

@@ -1,0 +1,431 @@
+{
+    "@module": "pymatgen.util.provenance",
+    "@class": "StructureNL",
+    "charge": null,
+    "lattice": {
+        "matrix": [
+            [
+                4.013,
+                0.0,
+                2.4572538024891643e-16
+            ],
+            [
+                -2.4572538024891643e-16,
+                4.013,
+                2.4572538024891643e-16
+            ],
+            [
+                0.0,
+                0.0,
+                13.088
+            ]
+        ],
+        "a": 4.013,
+        "b": 4.013,
+        "c": 13.088,
+        "alpha": 90.0,
+        "beta": 90.0,
+        "gamma": 90.0,
+        "volume": 210.77136387199997
+    },
+    "sites": [
+        {
+            "species": [
+                {
+                    "element": "K",
+                    "oxidation_state": 1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.6462300000000001
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                8.45785824
+            ],
+            "label": "K+",
+            "properties": {
+                "coordination": {
+                    "K": 0.0,
+                    "Ni": 0.0,
+                    "F": 9.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "K",
+                    "oxidation_state": 1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.35377
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                4.630141759999999
+            ],
+            "label": "K+",
+            "properties": {
+                "coordination": {
+                    "K": 0.0,
+                    "Ni": 0.0,
+                    "F": 9.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "K",
+                    "oxidation_state": 1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.5,
+                0.14623000000000003
+            ],
+            "xyz": [
+                2.0065,
+                2.0065,
+                1.9138582400000004
+            ],
+            "label": "K+",
+            "properties": {
+                "coordination": {
+                    "K": 0.0,
+                    "Ni": 0.0,
+                    "F": 9.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "K",
+                    "oxidation_state": 1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.5,
+                0.8537699999999999
+            ],
+            "xyz": [
+                2.0065,
+                2.0065,
+                11.174141759999998
+            ],
+            "label": "K+",
+            "properties": {
+                "coordination": {
+                    "K": 0.0,
+                    "Ni": 0.0,
+                    "F": 9.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Ni",
+                    "oxidation_state": 2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "label": "Ni2+",
+            "properties": {
+                "coordination": {
+                    "K": 0.0,
+                    "Ni": 0.0,
+                    "F": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Ni",
+                    "oxidation_state": 2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.5,
+                0.5
+            ],
+            "xyz": [
+                2.0065,
+                2.0065,
+                6.544
+            ],
+            "label": "Ni2+",
+            "properties": {
+                "coordination": {
+                    "K": 0.0,
+                    "Ni": 0.0,
+                    "F": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "F",
+                    "oxidation_state": -1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.0,
+                0.0
+            ],
+            "xyz": [
+                2.0065,
+                0.0,
+                1.2286269012445821e-16
+            ],
+            "label": "F-",
+            "properties": {
+                "coordination": {
+                    "K": 4.0,
+                    "Ni": 2.0,
+                    "F": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "F",
+                    "oxidation_state": -1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.5,
+                0.0
+            ],
+            "xyz": [
+                -1.2286269012445821e-16,
+                2.0065,
+                1.2286269012445821e-16
+            ],
+            "label": "F-",
+            "properties": {
+                "coordination": {
+                    "K": 4.0,
+                    "Ni": 2.0,
+                    "F": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "F",
+                    "oxidation_state": -1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.5,
+                0.5
+            ],
+            "xyz": [
+                -1.2286269012445821e-16,
+                2.0065,
+                6.544
+            ],
+            "label": "F-",
+            "properties": {
+                "coordination": {
+                    "K": 4.0,
+                    "Ni": 2.0,
+                    "F": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "F",
+                    "oxidation_state": -1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.0,
+                0.5
+            ],
+            "xyz": [
+                2.0065,
+                0.0,
+                6.544
+            ],
+            "label": "F-",
+            "properties": {
+                "coordination": {
+                    "K": 4.0,
+                    "Ni": 2.0,
+                    "F": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "F",
+                    "oxidation_state": -1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.8466899999999999
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                11.081478719999998
+            ],
+            "label": "F-",
+            "properties": {
+                "coordination": {
+                    "K": 5.0,
+                    "Ni": 1.0,
+                    "F": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "F",
+                    "oxidation_state": -1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.15331
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                2.00652128
+            ],
+            "label": "F-",
+            "properties": {
+                "coordination": {
+                    "K": 5.0,
+                    "Ni": 1.0,
+                    "F": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "F",
+                    "oxidation_state": -1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.5,
+                0.34669
+            ],
+            "xyz": [
+                2.0065,
+                2.0065,
+                4.537478719999999
+            ],
+            "label": "F-",
+            "properties": {
+                "coordination": {
+                    "K": 5.0,
+                    "Ni": 1.0,
+                    "F": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "F",
+                    "oxidation_state": -1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.5,
+                0.6533100000000001
+            ],
+            "xyz": [
+                2.0065,
+                2.0065,
+                8.55052128
+            ],
+            "label": "F-",
+            "properties": {
+                "coordination": {
+                    "K": 5.0,
+                    "Ni": 1.0,
+                    "F": 0.0
+                }
+            }
+        }
+    ],
+    "about": {
+        "authors": [
+            {
+                "name": "Alex Ganose",
+                "email": "aganose@lbl.gov"
+            }
+        ],
+        "projects": [],
+        "references": "@article{cif-reference-0,\n    author = \"Yeh, S.K.\",\n    title = \" Electron-density distribution in a crystal of Dipotassium tetrafluoronickelate, K2NiF4\",\n    journal = \"Acta Crystallographica, Section B: Structural Science\",\n    volume = \"49\",\n    year = \"1993\",\n    pages = \"806--811\"\n}\n",
+        "remarks": [
+            "Structure is part of MaterialsCoord test set"
+        ],
+        "history": [],
+        "created_at": {
+            "@module": "datetime",
+            "@class": "datetime",
+            "string": "2019-10-12 01:45:33.438801"
+        }
+    },
+    "@version": "2019.9.16"
+}

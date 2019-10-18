@@ -1,0 +1,261 @@
+{
+    "@module": "pymatgen.util.provenance",
+    "@class": "StructureNL",
+    "charge": null,
+    "lattice": {
+        "matrix": [
+            [
+                5.409,
+                0.0,
+                3.3120572682940166e-16
+            ],
+            [
+                -3.3120572682940166e-16,
+                5.409,
+                3.3120572682940166e-16
+            ],
+            [
+                0.0,
+                0.0,
+                5.409
+            ]
+        ],
+        "a": 5.409,
+        "b": 5.409,
+        "c": 5.409,
+        "alpha": 90.0,
+        "beta": 90.0,
+        "gamma": 90.0,
+        "volume": 158.252632929
+    },
+    "sites": [
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.75,
+                0.75,
+                0.25
+            ],
+            "xyz": [
+                4.05675,
+                4.05675,
+                1.3522500000000004
+            ],
+            "label": "Zn2+",
+            "properties": {
+                "coordination": {
+                    "S": 4.0,
+                    "Zn": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.75,
+                0.25,
+                0.75
+            ],
+            "xyz": [
+                4.05675,
+                1.35225,
+                4.05675
+            ],
+            "label": "Zn2+",
+            "properties": {
+                "coordination": {
+                    "S": 4.0,
+                    "Zn": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.25,
+                0.75,
+                0.75
+            ],
+            "xyz": [
+                1.3522499999999997,
+                4.05675,
+                4.05675
+            ],
+            "label": "Zn2+",
+            "properties": {
+                "coordination": {
+                    "S": 4.0,
+                    "Zn": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.25,
+                0.25,
+                0.25
+            ],
+            "xyz": [
+                1.35225,
+                1.35225,
+                1.3522500000000002
+            ],
+            "label": "Zn2+",
+            "properties": {
+                "coordination": {
+                    "S": 4.0,
+                    "Zn": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "S",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "label": "S2-",
+            "properties": {
+                "coordination": {
+                    "S": 0.0,
+                    "Zn": 4.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "S",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.5,
+                0.5
+            ],
+            "xyz": [
+                -1.6560286341470083e-16,
+                2.7045,
+                2.7045
+            ],
+            "label": "S2-",
+            "properties": {
+                "coordination": {
+                    "S": 0.0,
+                    "Zn": 4.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "S",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.0,
+                0.5
+            ],
+            "xyz": [
+                2.7045,
+                0.0,
+                2.7045
+            ],
+            "label": "S2-",
+            "properties": {
+                "coordination": {
+                    "S": 0.0,
+                    "Zn": 4.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "S",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.5,
+                0.0
+            ],
+            "xyz": [
+                2.7045,
+                2.7045,
+                3.3120572682940166e-16
+            ],
+            "label": "S2-",
+            "properties": {
+                "coordination": {
+                    "S": 0.0,
+                    "Zn": 4.0
+                }
+            }
+        }
+    ],
+    "about": {
+        "authors": [
+            {
+                "name": "Alex Ganose",
+                "email": "aganose@lbl.gov"
+            }
+        ],
+        "projects": [],
+        "references": "@article{cif-reference-0,\n    author = \"Neuhaus, A.\",\n    title = \" Untersuchungen im Zweistoffsystem Zn S - Ga2 S3 bei Druecken bis 150 kbar und T = 800 Grad\",\n    journal = \"Neues Jahrbuch fuer Mineralogie. Abhandlungen (Band-Nr) (1950-)\",\n    volume = \"141\",\n    year = \"1981\",\n    pages = \"186--200\"\n}\n",
+        "remarks": [
+            "Structure is part of MaterialsCoord test set"
+        ],
+        "history": [],
+        "created_at": {
+            "@module": "datetime",
+            "@class": "datetime",
+            "string": "2019-10-12 01:45:35.545251"
+        }
+    },
+    "@version": "2019.9.16"
+}

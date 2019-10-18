@@ -1,0 +1,261 @@
+{
+    "@module": "pymatgen.util.provenance",
+    "@class": "StructureNL",
+    "charge": null,
+    "lattice": {
+        "matrix": [
+            [
+                5.4533,
+                0.0,
+                3.3391831948951304e-16
+            ],
+            [
+                -3.3391831948951304e-16,
+                5.4533,
+                3.3391831948951304e-16
+            ],
+            [
+                0.0,
+                0.0,
+                5.4533
+            ]
+        ],
+        "a": 5.4533,
+        "b": 5.4533,
+        "c": 5.4533,
+        "alpha": 90.0,
+        "beta": 90.0,
+        "gamma": 90.0,
+        "volume": 162.17285783743696
+    },
+    "sites": [
+        {
+            "species": [
+                {
+                    "element": "Na",
+                    "oxidation_state": 1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "label": "Na+",
+            "properties": {
+                "coordination": {
+                    "Na": 0.0,
+                    "Cl": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Na",
+                    "oxidation_state": 1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.5,
+                0.5
+            ],
+            "xyz": [
+                -1.6695915974475652e-16,
+                2.72665,
+                2.72665
+            ],
+            "label": "Na+",
+            "properties": {
+                "coordination": {
+                    "Na": 0.0,
+                    "Cl": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Na",
+                    "oxidation_state": 1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.0,
+                0.5
+            ],
+            "xyz": [
+                2.72665,
+                0.0,
+                2.72665
+            ],
+            "label": "Na+",
+            "properties": {
+                "coordination": {
+                    "Na": 0.0,
+                    "Cl": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Na",
+                    "oxidation_state": 1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.5,
+                0.0
+            ],
+            "xyz": [
+                2.72665,
+                2.72665,
+                3.3391831948951304e-16
+            ],
+            "label": "Na+",
+            "properties": {
+                "coordination": {
+                    "Na": 0.0,
+                    "Cl": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cl",
+                    "oxidation_state": -1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.5,
+                0.5
+            ],
+            "xyz": [
+                2.72665,
+                2.72665,
+                2.7266500000000002
+            ],
+            "label": "Cl-",
+            "properties": {
+                "coordination": {
+                    "Na": 6.0,
+                    "Cl": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cl",
+                    "oxidation_state": -1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.0,
+                0.0
+            ],
+            "xyz": [
+                2.72665,
+                0.0,
+                1.6695915974475652e-16
+            ],
+            "label": "Cl-",
+            "properties": {
+                "coordination": {
+                    "Na": 6.0,
+                    "Cl": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cl",
+                    "oxidation_state": -1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.5,
+                0.0
+            ],
+            "xyz": [
+                -1.6695915974475652e-16,
+                2.72665,
+                1.6695915974475652e-16
+            ],
+            "label": "Cl-",
+            "properties": {
+                "coordination": {
+                    "Na": 6.0,
+                    "Cl": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cl",
+                    "oxidation_state": -1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.5
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                2.72665
+            ],
+            "label": "Cl-",
+            "properties": {
+                "coordination": {
+                    "Na": 6.0,
+                    "Cl": 0.0
+                }
+            }
+        }
+    ],
+    "about": {
+        "authors": [
+            {
+                "name": "Alex Ganose",
+                "email": "aganose@lbl.gov"
+            }
+        ],
+        "projects": [],
+        "references": "@article{cif-reference-0,\n    author = \"Finger, L.W.\",\n    title = \" A revised method of operation of the single-crystal diamond cell and refinement of the structure of Na Cl at 32 kbar\",\n    journal = \"American Mineralogist\",\n    volume = \"63\",\n    year = \"1978\",\n    pages = \"337--342\"\n}\n",
+        "remarks": [
+            "Structure is part of MaterialsCoord test set"
+        ],
+        "history": [],
+        "created_at": {
+            "@module": "datetime",
+            "@class": "datetime",
+            "string": "2019-10-12 01:45:35.397437"
+        }
+    },
+    "@version": "2019.9.16"
+}

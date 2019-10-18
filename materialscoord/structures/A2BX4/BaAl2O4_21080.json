@@ -1,0 +1,431 @@
+{
+    "@module": "pymatgen.util.provenance",
+    "@class": "StructureNL",
+    "charge": null,
+    "lattice": {
+        "matrix": [
+            [
+                5.227,
+                0.0,
+                3.200614409571608e-16
+            ],
+            [
+                -2.613499999999999,
+                4.526714785581262,
+                3.200614409571608e-16
+            ],
+            [
+                0.0,
+                0.0,
+                8.802
+            ]
+        ],
+        "a": 5.227,
+        "b": 5.227,
+        "c": 8.802,
+        "alpha": 90.0,
+        "beta": 90.0,
+        "gamma": 119.99999999999999,
+        "volume": 208.26533829762113
+    },
+    "sites": [
+        {
+            "species": [
+                {
+                    "element": "Ba",
+                    "oxidation_state": 2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.25
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                2.2005
+            ],
+            "label": "Ba2+",
+            "properties": {
+                "coordination": {
+                    "Ba": 0.0,
+                    "Al": 0.0,
+                    "O": 9.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Ba",
+                    "oxidation_state": 2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.75
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                6.6015
+            ],
+            "label": "Ba2+",
+            "properties": {
+                "coordination": {
+                    "Ba": 0.0,
+                    "Al": 0.0,
+                    "O": 9.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Al",
+                    "oxidation_state": 3.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.3333333333333333,
+                0.6666666666666667,
+                0.449
+            ],
+            "xyz": [
+                4.440892098500626e-16,
+                3.0178098570541754,
+                3.9520980000000003
+            ],
+            "label": "Al3+",
+            "properties": {
+                "coordination": {
+                    "Ba": 0.0,
+                    "Al": 0.0,
+                    "O": 4.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Al",
+                    "oxidation_state": 3.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6666666666666667,
+                0.3333333333333333,
+                0.551
+            ],
+            "xyz": [
+                2.613500000000001,
+                1.5089049285270875,
+                4.849902
+            ],
+            "label": "Al3+",
+            "properties": {
+                "coordination": {
+                    "Ba": 0.0,
+                    "Al": 0.0,
+                    "O": 4.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Al",
+                    "oxidation_state": 3.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6666666666666667,
+                0.3333333333333333,
+                0.949
+            ],
+            "xyz": [
+                2.613500000000001,
+                1.5089049285270875,
+                8.353098
+            ],
+            "label": "Al3+",
+            "properties": {
+                "coordination": {
+                    "Ba": 0.0,
+                    "Al": 0.0,
+                    "O": 4.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Al",
+                    "oxidation_state": 3.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.3333333333333333,
+                0.6666666666666667,
+                0.051
+            ],
+            "xyz": [
+                4.440892098500626e-16,
+                3.0178098570541754,
+                0.4489020000000003
+            ],
+            "label": "Al3+",
+            "properties": {
+                "coordination": {
+                    "Ba": 0.0,
+                    "Al": 0.0,
+                    "O": 4.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.3333333333333333,
+                0.6666666666666667,
+                0.25
+            ],
+            "xyz": [
+                4.440892098500626e-16,
+                3.0178098570541754,
+                2.2005000000000003
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ba": 3.0,
+                    "Al": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6666666666666667,
+                0.3333333333333333,
+                0.75
+            ],
+            "xyz": [
+                2.613500000000001,
+                1.5089049285270875,
+                6.6015
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ba": 3.0,
+                    "Al": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.343,
+                0.343,
+                0.5
+            ],
+            "xyz": [
+                0.8964305000000006,
+                1.552663171454373,
+                4.401
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ba": 2.0,
+                    "Al": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.657,
+                0.0,
+                0.5
+            ],
+            "xyz": [
+                3.4341390000000005,
+                0.0,
+                4.401
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ba": 2.0,
+                    "Al": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.657,
+                0.5
+            ],
+            "xyz": [
+                -1.7170694999999994,
+                2.9740516141268896,
+                4.401
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ba": 2.0,
+                    "Al": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.657,
+                0.657,
+                0.0
+            ],
+            "xyz": [
+                1.7170695000000011,
+                2.9740516141268896,
+                4.205607334177093e-16
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ba": 2.0,
+                    "Al": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.343,
+                0.0,
+                0.0
+            ],
+            "xyz": [
+                1.7928610000000003,
+                0.0,
+                1.0978107424830616e-16
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ba": 2.0,
+                    "Al": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.343,
+                0.0
+            ],
+            "xyz": [
+                -0.8964304999999997,
+                1.552663171454373,
+                1.0978107424830616e-16
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ba": 2.0,
+                    "Al": 2.0,
+                    "O": 0.0
+                }
+            }
+        }
+    ],
+    "about": {
+        "authors": [
+            {
+                "name": "Alex Ganose",
+                "email": "aganose@lbl.gov"
+            }
+        ],
+        "projects": [],
+        "references": "@article{cif-reference-0,\n    author = \"Do Dinh Chieu\",\n    title = \" Parametres atomiques de Ba Al2 O4 et etudes des solutions solides Ba Fex Al2-x O4 et Ba Gax Al2-x O4\",\n    journal = \"Bulletin de la Societe Francaise de Mineralogie et de Cristallographie\",\n    volume = \"88\",\n    year = \"1965\",\n    pages = \"413--416\"\n}\n",
+        "remarks": [
+            "Structure is part of MaterialsCoord test set"
+        ],
+        "history": [],
+        "created_at": {
+            "@module": "datetime",
+            "@class": "datetime",
+            "string": "2019-10-12 01:45:33.523645"
+        }
+    },
+    "@version": "2019.9.16"
+}

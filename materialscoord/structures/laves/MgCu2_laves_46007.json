@@ -1,0 +1,677 @@
+{
+    "@module": "pymatgen.util.provenance",
+    "@class": "StructureNL",
+    "charge": null,
+    "lattice": {
+        "matrix": [
+            [
+                7.034,
+                0.0,
+                4.307082792601241e-16
+            ],
+            [
+                -4.307082792601241e-16,
+                7.034,
+                4.307082792601241e-16
+            ],
+            [
+                0.0,
+                0.0,
+                7.034
+            ]
+        ],
+        "a": 7.034,
+        "b": 7.034,
+        "c": 7.034,
+        "alpha": 90.0,
+        "beta": 90.0,
+        "gamma": 90.0,
+        "volume": 348.022315304
+    },
+    "sites": [
+        {
+            "species": [
+                {
+                    "element": "Mg",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.875,
+                0.875,
+                0.875
+            ],
+            "xyz": [
+                6.15475,
+                6.15475,
+                6.154750000000001
+            ],
+            "label": "Mg0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 4.0,
+                    "Cu": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mg",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.125,
+                0.125,
+                0.125
+            ],
+            "xyz": [
+                0.87925,
+                0.87925,
+                0.8792500000000001
+            ],
+            "label": "Mg0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 4.0,
+                    "Cu": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mg",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.875,
+                0.375,
+                0.375
+            ],
+            "xyz": [
+                6.15475,
+                2.63775,
+                2.6377500000000005
+            ],
+            "label": "Mg0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 4.0,
+                    "Cu": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mg",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.125,
+                0.625,
+                0.625
+            ],
+            "xyz": [
+                0.8792499999999998,
+                4.39625,
+                4.39625
+            ],
+            "label": "Mg0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 4.0,
+                    "Cu": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mg",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.375,
+                0.875,
+                0.375
+            ],
+            "xyz": [
+                2.6377499999999996,
+                6.15475,
+                2.6377500000000005
+            ],
+            "label": "Mg0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 4.0,
+                    "Cu": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mg",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.625,
+                0.125,
+                0.625
+            ],
+            "xyz": [
+                4.39625,
+                0.87925,
+                4.39625
+            ],
+            "label": "Mg0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 4.0,
+                    "Cu": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mg",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.375,
+                0.375,
+                0.875
+            ],
+            "xyz": [
+                2.63775,
+                2.63775,
+                6.15475
+            ],
+            "label": "Mg0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 4.0,
+                    "Cu": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mg",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.625,
+                0.625,
+                0.125
+            ],
+            "xyz": [
+                4.39625,
+                4.39625,
+                0.8792500000000005
+            ],
+            "label": "Mg0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 4.0,
+                    "Cu": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.25,
+                0.25
+            ],
+            "xyz": [
+                3.517,
+                1.7585,
+                1.7585000000000002
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.25,
+                0.5,
+                0.25
+            ],
+            "xyz": [
+                1.7584999999999997,
+                3.517,
+                1.7585000000000002
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.25,
+                0.25,
+                0.5
+            ],
+            "xyz": [
+                1.7585,
+                1.7585,
+                3.517
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.5,
+                0.5
+            ],
+            "xyz": [
+                3.517,
+                3.517,
+                3.5170000000000003
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.75,
+                0.75
+            ],
+            "xyz": [
+                3.5169999999999995,
+                5.2755,
+                5.275500000000001
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.75,
+                0.5,
+                0.75
+            ],
+            "xyz": [
+                5.2755,
+                3.517,
+                5.275500000000001
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.75,
+                0.75,
+                0.5
+            ],
+            "xyz": [
+                5.2755,
+                5.2755,
+                3.5170000000000003
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.25,
+                0.0,
+                0.75
+            ],
+            "xyz": [
+                1.7585,
+                0.0,
+                5.2755
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.25,
+                0.75,
+                0.0
+            ],
+            "xyz": [
+                1.7584999999999997,
+                5.2755,
+                4.307082792601241e-16
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.0,
+                0.0
+            ],
+            "xyz": [
+                3.517,
+                0.0,
+                2.1535413963006206e-16
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.75,
+                0.0,
+                0.25
+            ],
+            "xyz": [
+                5.2755,
+                0.0,
+                1.7585000000000002
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.75,
+                0.25,
+                0.0
+            ],
+            "xyz": [
+                5.2755,
+                1.7585,
+                4.307082792601241e-16
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.25,
+                0.75
+            ],
+            "xyz": [
+                -1.0767706981503103e-16,
+                1.7585,
+                5.2755
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.5,
+                0.0
+            ],
+            "xyz": [
+                -2.1535413963006206e-16,
+                3.517,
+                2.1535413963006206e-16
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.75,
+                0.25
+            ],
+            "xyz": [
+                -3.230312094450931e-16,
+                5.2755,
+                1.7585000000000002
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Cu": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Cu",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.5
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                3.517
+            ],
+            "label": "Cu0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Cu": 6.0
+                }
+            }
+        }
+    ],
+    "about": {
+        "authors": [
+            {
+                "name": "Alex Ganose",
+                "email": "aganose@lbl.gov"
+            }
+        ],
+        "projects": [],
+        "references": "@article{cif-reference-0,\n    author = \"Ohba, T.\",\n    title = \"The charge-density study of the Laves phases, Mg Zn2 and Mg Cu2\",\n    journal = \"Acta Crystallographica, Section C: Crystal Structure Communications\",\n    volume = \"40\",\n    year = \"1984\",\n    pages = \"1--5\"\n}\n",
+        "remarks": [
+            "Structure is part of MaterialsCoord test set"
+        ],
+        "history": [],
+        "created_at": {
+            "@module": "datetime",
+            "@class": "datetime",
+            "string": "2019-10-12 01:45:34.791277"
+        }
+    },
+    "@version": "2019.9.16"
+}

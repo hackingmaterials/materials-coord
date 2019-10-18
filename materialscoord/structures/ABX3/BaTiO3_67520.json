@@ -1,0 +1,188 @@
+{
+    "@module": "pymatgen.util.provenance",
+    "@class": "StructureNL",
+    "charge": null,
+    "lattice": {
+        "matrix": [
+            [
+                3.9998,
+                0.0,
+                2.4491711336147917e-16
+            ],
+            [
+                -2.4491711336147917e-16,
+                3.9998,
+                2.4491711336147917e-16
+            ],
+            [
+                0.0,
+                0.0,
+                4.018
+            ]
+        ],
+        "a": 3.9998,
+        "b": 3.9998,
+        "c": 4.018,
+        "alpha": 90.0,
+        "beta": 90.0,
+        "gamma": 90.0,
+        "volume": 64.28157136072
+    },
+    "sites": [
+        {
+            "species": [
+                {
+                    "element": "Ba",
+                    "oxidation_state": 2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "label": "Ba2+",
+            "properties": {
+                "coordination": {
+                    "Ba": 0.0,
+                    "Ti": 0.0,
+                    "O": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Ti",
+                    "oxidation_state": 4.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.5,
+                0.482
+            ],
+            "xyz": [
+                1.9998999999999998,
+                1.9999,
+                1.936676
+            ],
+            "label": "Ti4+",
+            "properties": {
+                "coordination": {
+                    "Ba": 0.0,
+                    "Ti": 0.0,
+                    "O": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.5,
+                0.016
+            ],
+            "xyz": [
+                1.9998999999999998,
+                1.9999,
+                0.06428800000000025
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ba": 4.0,
+                    "Ti": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.5,
+                0.515
+            ],
+            "xyz": [
+                -1.2245855668073959e-16,
+                1.9999,
+                2.06927
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ba": 4.0,
+                    "Ti": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.0,
+                0.515
+            ],
+            "xyz": [
+                1.9999,
+                0.0,
+                2.06927
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ba": 4.0,
+                    "Ti": 2.0,
+                    "O": 0.0
+                }
+            }
+        }
+    ],
+    "about": {
+        "authors": [
+            {
+                "name": "Alex Ganose",
+                "email": "aganose@lbl.gov"
+            }
+        ],
+        "projects": [],
+        "references": "@article{cif-reference-0,\n    author = \"Buttner, R.H.\",\n    title = \"Structural Parameters and Electron Difference density in BaTiO3\",\n    journal = \"Acta Crystallographica, Section B: Structural Science\",\n    volume = \"48\",\n    year = \"1992\",\n    pages = \"764--769\"\n}\n",
+        "remarks": [
+            "Structure is part of MaterialsCoord test set"
+        ],
+        "history": [],
+        "created_at": {
+            "@module": "datetime",
+            "@class": "datetime",
+            "string": "2019-10-12 01:45:35.086025"
+        }
+    },
+    "@version": "2019.9.16"
+}

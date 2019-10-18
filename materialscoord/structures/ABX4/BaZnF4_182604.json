@@ -1,0 +1,701 @@
+{
+    "@module": "pymatgen.util.provenance",
+    "@class": "StructureNL",
+    "charge": null,
+    "lattice": {
+        "matrix": [
+            [
+                4.197,
+                0.0,
+                2.5699213080107205e-16
+            ],
+            [
+                -8.811333719865206e-16,
+                14.39,
+                8.811333719865206e-16
+            ],
+            [
+                0.0,
+                0.0,
+                5.788
+            ]
+        ],
+        "a": 4.197,
+        "b": 14.39,
+        "c": 5.788,
+        "alpha": 90.0,
+        "beta": 90.0,
+        "gamma": 90.0,
+        "volume": 349.5652760400001
+    },
+    "sites": [
+        {
+            "species": [
+                {
+                    "element": "Ba",
+                    "oxidation_state": 2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.355,
+                0.03370000000000001
+            ],
+            "xyz": [
+                2.0984999999999996,
+                5.10845,
+                0.1950556000000005
+            ],
+            "label": "Ba2+",
+            "properties": {
+                "coordination": {
+                    "Ba": 0.0,
+                    "Zn": 0.0,
+                    "F": 11.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Ba",
+                    "oxidation_state": 2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.645,
+                0.5337000000000001
+            ],
+            "xyz": [
+                2.0984999999999996,
+                9.281550000000001,
+                3.0890556000000013
+            ],
+            "label": "Ba2+",
+            "properties": {
+                "coordination": {
+                    "Ba": 0.0,
+                    "Zn": 0.0,
+                    "F": 11.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Ba",
+                    "oxidation_state": 2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.855,
+                0.03370000000000001
+            ],
+            "xyz": [
+                -7.533690330484751e-16,
+                12.30345,
+                0.1950556000000008
+            ],
+            "label": "Ba2+",
+            "properties": {
+                "coordination": {
+                    "Ba": 0.0,
+                    "Zn": 0.0,
+                    "F": 11.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Ba",
+                    "oxidation_state": 2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.14500000000000002,
+                0.5337000000000001
+            ],
+            "xyz": [
+                -1.2776433893804552e-16,
+                2.0865500000000003,
+                3.0890556000000005
+            ],
+            "label": "Ba2+",
+            "properties": {
+                "coordination": {
+                    "Ba": 0.0,
+                    "Zn": 0.0,
+                    "F": 11.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.4127,
+                0.5
+            ],
+            "xyz": [
+                -3.6364374261883706e-16,
+                5.938753,
+                2.8940000000000006
+            ],
+            "label": "Zn2+",
+            "properties": {
+                "coordination": {
+                    "Ba": 0.0,
+                    "Zn": 0.0,
+                    "F": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.5872999999999999,
+                0.0
+            ],
+            "xyz": [
+                -5.174896293676835e-16,
+                8.451246999999999,
+                5.174896293676835e-16
+            ],
+            "label": "Zn2+",
+            "properties": {
+                "coordination": {
+                    "Ba": 0.0,
+                    "Zn": 0.0,
+                    "F": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.9127000000000001,
+                0.5
+            ],
+            "xyz": [
+                2.098499999999999,
+                13.133753000000002,
+                2.894000000000001
+            ],
+            "label": "Zn2+",
+            "properties": {
+                "coordination": {
+                    "Ba": 0.0,
+                    "Zn": 0.0,
+                    "F": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.08729999999999999,
+                0.0
+            ],
+            "xyz": [
+                2.0985,
+                1.256247,
+                2.0541900877495926e-16
+            ],
+            "label": "Zn2+",
+            "properties": {
+                "coordination": {
+                    "Ba": 0.0,
+                    "Zn": 0.0,
+                    "F": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "F",
+                    "oxidation_state": -1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.337,
+                0.774
+            ],
+            "xyz": [
+                -2.9694194635945745e-16,
+                4.849430000000001,
+                4.479912000000001
+            ],
+            "label": "F-",
+            "properties": {
+                "coordination": {
+                    "Ba": 3.0,
+                    "Zn": 1.0,
+                    "F": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "F",
+                    "oxidation_state": -1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.663,
+                0.274
+            ],
+            "xyz": [
+                -5.841914256270632e-16,
+                9.54057,
+                1.5859120000000009
+            ],
+            "label": "F-",
+            "properties": {
+                "coordination": {
+                    "Ba": 3.0,
+                    "Zn": 1.0,
+                    "F": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "F",
+                    "oxidation_state": -1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.837,
+                0.774
+            ],
+            "xyz": [
+                2.098499999999999,
+                12.04443,
+                4.4799120000000014
+            ],
+            "label": "F-",
+            "properties": {
+                "coordination": {
+                    "Ba": 3.0,
+                    "Zn": 1.0,
+                    "F": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "F",
+                    "oxidation_state": -1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.16299999999999998,
+                0.274
+            ],
+            "xyz": [
+                2.0985,
+                2.34557,
+                1.5859120000000004
+            ],
+            "label": "F-",
+            "properties": {
+                "coordination": {
+                    "Ba": 3.0,
+                    "Zn": 1.0,
+                    "F": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "F",
+                    "oxidation_state": -1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.311,
+                0.28900000000000003
+            ],
+            "xyz": [
+                -2.740324786878079e-16,
+                4.47529,
+                1.6727320000000006
+            ],
+            "label": "F-",
+            "properties": {
+                "coordination": {
+                    "Ba": 3.0,
+                    "Zn": 1.0,
+                    "F": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "F",
+                    "oxidation_state": -1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.6890000000000001,
+                0.789
+            ],
+            "xyz": [
+                -6.071008932987128e-16,
+                9.914710000000001,
+                4.566732000000001
+            ],
+            "label": "F-",
+            "properties": {
+                "coordination": {
+                    "Ba": 3.0,
+                    "Zn": 1.0,
+                    "F": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "F",
+                    "oxidation_state": -1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.8109999999999999,
+                0.28900000000000003
+            ],
+            "xyz": [
+                2.098499999999999,
+                11.67029,
+                1.6727320000000012
+            ],
+            "label": "F-",
+            "properties": {
+                "coordination": {
+                    "Ba": 3.0,
+                    "Zn": 1.0,
+                    "F": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "F",
+                    "oxidation_state": -1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.189,
+                0.789
+            ],
+            "xyz": [
+                2.0985,
+                2.71971,
+                4.566732
+            ],
+            "label": "F-",
+            "properties": {
+                "coordination": {
+                    "Ba": 3.0,
+                    "Zn": 1.0,
+                    "F": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "F",
+                    "oxidation_state": -1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.47,
+                0.182
+            ],
+            "xyz": [
+                -4.141326848336647e-16,
+                6.7633,
+                1.0534160000000004
+            ],
+            "label": "F-",
+            "properties": {
+                "coordination": {
+                    "Ba": 2.0,
+                    "Zn": 2.0,
+                    "F": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "F",
+                    "oxidation_state": -1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.53,
+                0.6819999999999999
+            ],
+            "xyz": [
+                -4.67000687152856e-16,
+                7.6267000000000005,
+                3.9474160000000005
+            ],
+            "label": "F-",
+            "properties": {
+                "coordination": {
+                    "Ba": 2.0,
+                    "Zn": 2.0,
+                    "F": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "F",
+                    "oxidation_state": -1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.97,
+                0.182
+            ],
+            "xyz": [
+                2.098499999999999,
+                13.9583,
+                1.0534160000000008
+            ],
+            "label": "F-",
+            "properties": {
+                "coordination": {
+                    "Ba": 2.0,
+                    "Zn": 2.0,
+                    "F": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "F",
+                    "oxidation_state": -1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.030000000000000027,
+                0.6819999999999999
+            ],
+            "xyz": [
+                2.0985,
+                0.4317000000000004,
+                3.947416
+            ],
+            "label": "F-",
+            "properties": {
+                "coordination": {
+                    "Ba": 2.0,
+                    "Zn": 2.0,
+                    "F": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "F",
+                    "oxidation_state": -1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.43,
+                0.49
+            ],
+            "xyz": [
+                2.0984999999999996,
+                6.1877,
+                2.8361200000000006
+            ],
+            "label": "F-",
+            "properties": {
+                "coordination": {
+                    "Ba": 3.0,
+                    "Zn": 2.0,
+                    "F": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "F",
+                    "oxidation_state": -1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.5700000000000001,
+                0.99
+            ],
+            "xyz": [
+                2.0984999999999996,
+                8.202300000000001,
+                5.730120000000001
+            ],
+            "label": "F-",
+            "properties": {
+                "coordination": {
+                    "Ba": 3.0,
+                    "Zn": 2.0,
+                    "F": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "F",
+                    "oxidation_state": -1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.9299999999999999,
+                0.49
+            ],
+            "xyz": [
+                -8.194540359474641e-16,
+                13.3827,
+                2.836120000000001
+            ],
+            "label": "F-",
+            "properties": {
+                "coordination": {
+                    "Ba": 3.0,
+                    "Zn": 2.0,
+                    "F": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "F",
+                    "oxidation_state": -1.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.07,
+                0.99
+            ],
+            "xyz": [
+                -6.167933603905646e-17,
+                1.0073,
+                5.73012
+            ],
+            "label": "F-",
+            "properties": {
+                "coordination": {
+                    "Ba": 3.0,
+                    "Zn": 2.0,
+                    "F": 0.0
+                }
+            }
+        }
+    ],
+    "about": {
+        "authors": [
+            {
+                "name": "Alex Ganose",
+                "email": "aganose@lbl.gov"
+            }
+        ],
+        "projects": [],
+        "references": "@article{cif-reference-0,\n    author = \"Posse, J.M.\",\n    title = \"Structural stability of Ba M F4 (M = Mg, Zn and Mn) at high pressures\",\n    journal = \"Journal of Physics: Condensed Matter\",\n    volume = \"23\",\n    year = \"2011\",\n    pages = \"215401-1--215401-13\"\n}\n",
+        "remarks": [
+            "Structure is part of MaterialsCoord test set"
+        ],
+        "history": [],
+        "created_at": {
+            "@module": "datetime",
+            "@class": "datetime",
+            "string": "2019-10-12 01:45:35.268040"
+        }
+    },
+    "@version": "2019.9.16"
+}

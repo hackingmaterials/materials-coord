@@ -1,0 +1,365 @@
+{
+    "@module": "pymatgen.util.provenance",
+    "@class": "StructureNL",
+    "charge": null,
+    "lattice": {
+        "matrix": [
+            [
+                5.223,
+                0.0,
+                3.198165115973313e-16
+            ],
+            [
+                -2.6114999999999986,
+                4.523250683966124,
+                3.198165115973313e-16
+            ],
+            [
+                0.0,
+                0.0,
+                8.566
+            ]
+        ],
+        "a": 5.223,
+        "b": 5.223,
+        "c": 8.566,
+        "alpha": 90.0,
+        "beta": 90.0,
+        "gamma": 119.99999999999999,
+        "volume": 202.3712216692935
+    },
+    "sites": [
+        {
+            "species": [
+                {
+                    "element": "Mg",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.3333333333333333,
+                0.6666666666666667,
+                0.43714
+            ],
+            "xyz": [
+                6.661338147750939e-16,
+                3.015500455977416,
+                3.7445412400000007
+            ],
+            "label": "Mg0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 4.0,
+                    "Zn": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mg",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6666666666666667,
+                0.3333333333333333,
+                0.56286
+            ],
+            "xyz": [
+                2.611500000000001,
+                1.5077502279887078,
+                4.8214587600000005
+            ],
+            "label": "Mg0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 4.0,
+                    "Zn": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mg",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6666666666666667,
+                0.3333333333333333,
+                0.93714
+            ],
+            "xyz": [
+                2.611500000000001,
+                1.5077502279887078,
+                8.02754124
+            ],
+            "label": "Mg0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 4.0,
+                    "Zn": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Mg",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.3333333333333333,
+                0.6666666666666667,
+                0.06286
+            ],
+            "xyz": [
+                6.661338147750939e-16,
+                3.015500455977416,
+                0.5384587600000004
+            ],
+            "label": "Mg0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 4.0,
+                    "Zn": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.5
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                4.283
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Zn": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Zn": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.83048,
+                0.16952,
+                0.25
+            ],
+            "xyz": [
+                3.8948955599999997,
+                0.7667814559459373,
+                2.1415000000000006
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Zn": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.83048,
+                0.66096,
+                0.25
+            ],
+            "xyz": [
+                2.6115000000000004,
+                2.989687772074249,
+                2.1415000000000006
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Zn": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.33904,
+                0.16952,
+                0.25
+            ],
+            "xyz": [
+                1.3281044400000002,
+                0.7667814559459373,
+                2.1415
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Zn": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.16952,
+                0.83048,
+                0.75
+            ],
+            "xyz": [
+                -1.2833955599999989,
+                3.7564692280201863,
+                6.4245
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Zn": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.16952,
+                0.33904,
+                0.75
+            ],
+            "xyz": [
+                4.440892098500626e-16,
+                1.5335629118918745,
+                6.4245
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Zn": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Zn",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.66096,
+                0.83048,
+                0.75
+            ],
+            "xyz": [
+                1.283395560000001,
+                3.7564692280201863,
+                6.424500000000001
+            ],
+            "label": "Zn0+",
+            "properties": {
+                "coordination": {
+                    "Mg": 6.0,
+                    "Zn": 6.0
+                }
+            }
+        }
+    ],
+    "about": {
+        "authors": [
+            {
+                "name": "Alex Ganose",
+                "email": "aganose@lbl.gov"
+            }
+        ],
+        "projects": [],
+        "references": "@article{cif-reference-0,\n    author = \"Ohba, T.\",\n    title = \"The charge-density study of the Laves phases, Mg Zn2 and Mg Cu2\",\n    journal = \"Acta Crystallographica, Section C: Crystal Structure Communications\",\n    volume = \"40\",\n    year = \"1984\",\n    pages = \"1--5\"\n}\n",
+        "remarks": [
+            "Structure is part of MaterialsCoord test set"
+        ],
+        "history": [],
+        "created_at": {
+            "@module": "datetime",
+            "@class": "datetime",
+            "string": "2019-10-12 01:45:34.726242"
+        }
+    },
+    "@version": "2019.9.16"
+}

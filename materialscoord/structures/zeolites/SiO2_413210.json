@@ -1,0 +1,677 @@
+{
+    "@module": "pymatgen.util.provenance",
+    "@class": "StructureNL",
+    "charge": null,
+    "lattice": {
+        "matrix": [
+            [
+                5.003979636598844,
+                0.0,
+                -0.13122608926620513
+            ],
+            [
+                -5.265368912934045e-16,
+                8.599,
+                5.265368912934045e-16
+            ],
+            [
+                0.0,
+                0.0,
+                8.2149
+            ]
+        ],
+        "a": 5.0057,
+        "b": 8.599,
+        "c": 8.2149,
+        "alpha": 90.0,
+        "beta": 91.5022,
+        "gamma": 90.0,
+        "volume": 353.4807467312676
+    },
+    "sites": [
+        {
+            "species": [
+                {
+                    "element": "Si",
+                    "oxidation_state": 4.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0764,
+                0.6914,
+                0.7108
+            ],
+            "xyz": [
+                0.3823040442361513,
+                5.9453486,
+                5.8291252467800625
+            ],
+            "label": "Si4+",
+            "properties": {
+                "coordination": {
+                    "Si": 0.0,
+                    "O": 4.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Si",
+                    "oxidation_state": 4.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0764,
+                0.3086,
+                0.2108
+            ],
+            "xyz": [
+                0.3823040442361515,
+                2.6536513999999998,
+                1.721675246780062
+            ],
+            "label": "Si4+",
+            "properties": {
+                "coordination": {
+                    "Si": 0.0,
+                    "O": 4.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Si",
+                    "oxidation_state": 4.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5764,
+                0.19140000000000001,
+                0.7108
+            ],
+            "xyz": [
+                2.8842938625355736,
+                1.6458486,
+                5.763512202146959
+            ],
+            "label": "Si4+",
+            "properties": {
+                "coordination": {
+                    "Si": 0.0,
+                    "O": 4.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Si",
+                    "oxidation_state": 4.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5764,
+                0.8086,
+                0.2108
+            ],
+            "xyz": [
+                2.884293862535573,
+                6.9531514,
+                1.6560622021469598
+            ],
+            "label": "Si4+",
+            "properties": {
+                "coordination": {
+                    "Si": 0.0,
+                    "O": 4.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Si",
+                    "oxidation_state": 4.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0768,
+                0.358,
+                0.8358
+            ],
+            "xyz": [
+                0.38430563609079105,
+                3.078442,
+                6.855935256344355
+            ],
+            "label": "Si4+",
+            "properties": {
+                "coordination": {
+                    "Si": 0.0,
+                    "O": 4.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Si",
+                    "oxidation_state": 4.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0768,
+                0.642,
+                0.3358
+            ],
+            "xyz": [
+                0.3843056360907909,
+                5.520558,
+                2.7484852563443556
+            ],
+            "label": "Si4+",
+            "properties": {
+                "coordination": {
+                    "Si": 0.0,
+                    "O": 4.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Si",
+                    "oxidation_state": 4.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5768,
+                0.858,
+                0.8358
+            ],
+            "xyz": [
+                2.8862954543902126,
+                7.377942,
+                6.790322211711253
+            ],
+            "label": "Si4+",
+            "properties": {
+                "coordination": {
+                    "Si": 0.0,
+                    "O": 4.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Si",
+                    "oxidation_state": 4.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5768,
+                0.1419999999999999,
+                0.3358
+            ],
+            "xyz": [
+                2.886295454390213,
+                1.2210579999999993,
+                2.6828722117112527
+            ],
+            "label": "Si4+",
+            "properties": {
+                "coordination": {
+                    "Si": 0.0,
+                    "O": 4.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.7866,
+                0.7484,
+                0.7546999999999999
+            ],
+            "xyz": [
+                3.93613038214865,
+                6.4354916,
+                6.096562588183203
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Si": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.7866,
+                0.2516,
+                0.2547
+            ],
+            "xyz": [
+                3.9361303821486504,
+                2.1635084,
+                1.9891125881832032
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Si": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.28659999999999997,
+                0.2484,
+                0.7546999999999999
+            ],
+            "xyz": [
+                1.4341405638492284,
+                2.1359916,
+                6.162175632816305
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Si": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.28659999999999997,
+                0.7516,
+                0.2547
+            ],
+            "xyz": [
+                1.4341405638492282,
+                6.4630084000000005,
+                2.054725632816306
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Si": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.144,
+                0.5351,
+                0.8008
+            ],
+            "xyz": [
+                0.7205730676702331,
+                4.601324900000001,
+                6.559595363145666
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Si": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.144,
+                0.4649,
+                0.3008
+            ],
+            "xyz": [
+                0.7205730676702332,
+                3.9976751,
+                2.452145363145667
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Si": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.644,
+                0.03510000000000002,
+                0.8008
+            ],
+            "xyz": [
+                3.222562885969656,
+                0.3018249000000002,
+                6.493982318512563
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Si": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.644,
+                0.9649,
+                0.3008
+            ],
+            "xyz": [
+                3.2225628859696553,
+                8.2971751,
+                2.3865323185125646
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Si": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.2861,
+                0.8206,
+                0.7639
+            ],
+            "xyz": [
+                1.431638574030929,
+                7.0563394,
+                6.23781832586094
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Si": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.2861,
+                0.1794,
+                0.2639
+            ],
+            "xyz": [
+                1.4316385740309294,
+                1.5426606,
+                2.130368325860939
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Si": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.7861,
+                0.3206,
+                0.7639
+            ],
+            "xyz": [
+                3.9336283923303514,
+                2.7568394,
+                6.1722052812278365
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Si": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.7861,
+                0.6794,
+                0.2639
+            ],
+            "xyz": [
+                3.933628392330351,
+                5.842160600000001,
+                2.0647552812278365
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Si": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.089,
+                0.6669,
+                0.524
+            ],
+            "xyz": [
+                0.4453541876572968,
+                5.7346731,
+                4.292928478055309
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Si": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.089,
+                0.3331,
+                0.024
+            ],
+            "xyz": [
+                0.44535418765729695,
+                2.8643269,
+                0.18547847805530793
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Si": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.589,
+                0.1669,
+                0.524
+            ],
+            "xyz": [
+                2.947344005956719,
+                1.4351730999999999,
+                4.227315433422206
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Si": 2.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.589,
+                0.8331,
+                0.024
+            ],
+            "xyz": [
+                2.9473440059567184,
+                7.1638269,
+                0.11986543342220564
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Si": 2.0,
+                    "O": 0.0
+                }
+            }
+        }
+    ],
+    "about": {
+        "authors": [
+            {
+                "name": "Alex Ganose",
+                "email": "aganose@lbl.gov"
+            }
+        ],
+        "projects": [],
+        "references": "@article{cif-reference-0,\n    author = \"Graetsch, H.A.\",\n    title = \"Rietveld refinement of incommensurate low tridymite\",\n    journal = \"Zeitschrift fuer Kristallographie (1979-2010)\",\n    volume = \"218\",\n    year = \"2003\",\n    pages = \"531--535\"\n}\n",
+        "remarks": [
+            "Structure is part of MaterialsCoord test set"
+        ],
+        "history": [],
+        "created_at": {
+            "@module": "datetime",
+            "@class": "datetime",
+            "string": "2019-10-12 01:45:34.832256"
+        }
+    },
+    "@version": "2019.9.16"
+}

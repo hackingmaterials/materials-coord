@@ -1,0 +1,278 @@
+{
+    "@module": "pymatgen.util.provenance",
+    "@class": "StructureNL",
+    "charge": null,
+    "lattice": {
+        "matrix": [
+            [
+                3.621,
+                0.0,
+                2.217223029856283e-16
+            ],
+            [
+                -1.810499999999999,
+                3.135877987103453,
+                2.217223029856283e-16
+            ],
+            [
+                0.0,
+                0.0,
+                26.25
+            ]
+        ],
+        "a": 3.621,
+        "b": 3.621,
+        "c": 26.25,
+        "alpha": 90.0,
+        "beta": 90.0,
+        "gamma": 119.99999999999999,
+        "volume": 298.06912252166705
+    },
+    "sites": [
+        {
+            "species": [
+                {
+                    "element": "Sm",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "label": "Sm0+",
+            "properties": {
+                "coordination": {
+                    "Sm": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Sm",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6666666666666666,
+                0.3333333333333333,
+                0.3333333333333333
+            ],
+            "xyz": [
+                1.8105,
+                1.0452926623678176,
+                8.75
+            ],
+            "label": "Sm0+",
+            "properties": {
+                "coordination": {
+                    "Sm": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Sm",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.3333333333333333,
+                0.6666666666666666,
+                0.6666666666666666
+            ],
+            "xyz": [
+                4.440892098500626e-16,
+                2.090585324735635,
+                17.5
+            ],
+            "label": "Sm0+",
+            "properties": {
+                "coordination": {
+                    "Sm": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Sm",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.7778
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                20.417250000000003
+            ],
+            "label": "Sm0+",
+            "properties": {
+                "coordination": {
+                    "Sm": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Sm",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.2222
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                5.83275
+            ],
+            "label": "Sm0+",
+            "properties": {
+                "coordination": {
+                    "Sm": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Sm",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6666666666666666,
+                0.3333333333333333,
+                0.1111333333333333
+            ],
+            "xyz": [
+                1.8105,
+                1.0452926623678176,
+                2.9172499999999992
+            ],
+            "label": "Sm0+",
+            "properties": {
+                "coordination": {
+                    "Sm": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Sm",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6666666666666666,
+                0.3333333333333333,
+                0.5555333333333333
+            ],
+            "xyz": [
+                1.8105,
+                1.0452926623678176,
+                14.582749999999999
+            ],
+            "label": "Sm0+",
+            "properties": {
+                "coordination": {
+                    "Sm": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Sm",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.3333333333333333,
+                0.6666666666666666,
+                0.4444666666666666
+            ],
+            "xyz": [
+                4.440892098500626e-16,
+                2.090585324735635,
+                11.66725
+            ],
+            "label": "Sm0+",
+            "properties": {
+                "coordination": {
+                    "Sm": 12.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Sm",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.3333333333333333,
+                0.6666666666666666,
+                0.8888666666666667
+            ],
+            "xyz": [
+                4.440892098500626e-16,
+                2.090585324735635,
+                23.33275
+            ],
+            "label": "Sm0+",
+            "properties": {
+                "coordination": {
+                    "Sm": 12.0
+                }
+            }
+        }
+    ],
+    "about": {
+        "authors": [
+            {
+                "name": "Alex Ganose",
+                "email": "aganose@lbl.gov"
+            }
+        ],
+        "projects": [],
+        "references": "@article{cif-reference-0,\n    author = \"Daane, A.H.\",\n    title = \"The crystal structure of samarium\",\n    journal = \"Acta Crystallographica\",\n    volume = \"7\",\n    year = \"1954\",\n    pages = \"532--535\"\n}\n",
+        "remarks": [
+            "Structure is part of MaterialsCoord test set"
+        ],
+        "history": [],
+        "created_at": {
+            "@module": "datetime",
+            "@class": "datetime",
+            "string": "2019-10-12 01:45:34.962073"
+        }
+    },
+    "@version": "2019.9.16"
+}

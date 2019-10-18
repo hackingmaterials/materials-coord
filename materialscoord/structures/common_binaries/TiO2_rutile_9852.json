@@ -1,0 +1,365 @@
+{
+    "@module": "pymatgen.util.provenance",
+    "@class": "StructureNL",
+    "charge": null,
+    "lattice": {
+        "matrix": [
+            [
+                3.7842,
+                0.0,
+                2.317154208666707e-16
+            ],
+            [
+                -2.317154208666707e-16,
+                3.7842,
+                2.317154208666707e-16
+            ],
+            [
+                0.0,
+                0.0,
+                9.5146
+            ]
+        ],
+        "a": 3.7842,
+        "b": 3.7842,
+        "c": 9.5146,
+        "alpha": 90.0,
+        "beta": 90.0,
+        "gamma": 90.0,
+        "volume": 136.25068605674397
+    },
+    "sites": [
+        {
+            "species": [
+                {
+                    "element": "Ti",
+                    "oxidation_state": 4.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.5,
+                0.25
+            ],
+            "xyz": [
+                -1.1585771043333534e-16,
+                1.8921,
+                2.37865
+            ],
+            "label": "Ti4+",
+            "properties": {
+                "coordination": {
+                    "Ti": 0.0,
+                    "O": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Ti",
+                    "oxidation_state": 4.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "label": "Ti4+",
+            "properties": {
+                "coordination": {
+                    "Ti": 0.0,
+                    "O": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Ti",
+                    "oxidation_state": 4.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.0,
+                0.75
+            ],
+            "xyz": [
+                1.8921,
+                0.0,
+                7.135949999999999
+            ],
+            "label": "Ti4+",
+            "properties": {
+                "coordination": {
+                    "Ti": 0.0,
+                    "O": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Ti",
+                    "oxidation_state": 4.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.5,
+                0.5
+            ],
+            "xyz": [
+                1.8920999999999997,
+                1.8921,
+                4.7573
+            ],
+            "label": "Ti4+",
+            "properties": {
+                "coordination": {
+                    "Ti": 0.0,
+                    "O": 6.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.5,
+                0.4581
+            ],
+            "xyz": [
+                -1.1585771043333534e-16,
+                1.8921,
+                4.35863826
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ti": 3.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.7919
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                7.53461174
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ti": 3.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.5,
+                0.04189999999999999
+            ],
+            "xyz": [
+                -1.1585771043333534e-16,
+                1.8921,
+                0.39866174000000004
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ti": 3.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.2081
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                1.97998826
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ti": 3.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.0,
+                0.9581
+            ],
+            "xyz": [
+                1.8921,
+                0.0,
+                9.11593826
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ti": 3.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.5,
+                0.2919
+            ],
+            "xyz": [
+                1.8920999999999997,
+                1.8921,
+                2.7773117400000005
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ti": 3.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.0,
+                0.5419
+            ],
+            "xyz": [
+                1.8921,
+                0.0,
+                5.15596174
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ti": 3.0,
+                    "O": 0.0
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "O",
+                    "oxidation_state": -2.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.5,
+                0.5,
+                0.7081
+            ],
+            "xyz": [
+                1.8920999999999997,
+                1.8921,
+                6.73728826
+            ],
+            "label": "O2-",
+            "properties": {
+                "coordination": {
+                    "Ti": 3.0,
+                    "O": 0.0
+                }
+            }
+        }
+    ],
+    "about": {
+        "authors": [
+            {
+                "name": "Alex Ganose",
+                "email": "aganose@lbl.gov"
+            }
+        ],
+        "projects": [],
+        "references": "@article{cif-reference-0,\n    author = \"Horn, M.\",\n    title = \"Refinement of the structure of anatase at several temperatures\",\n    journal = \"Zeitschrift fuer Kristallographie, Kristallgeometrie, Kristallphysik, Kristallchemie (-144,1977)\",\n    volume = \"136\",\n    year = \"1972\",\n    pages = \"273--281\"\n}\n",
+        "remarks": [
+            "Structure is part of MaterialsCoord test set"
+        ],
+        "history": [],
+        "created_at": {
+            "@module": "datetime",
+            "@class": "datetime",
+            "string": "2019-10-12 01:45:35.344417"
+        }
+    },
+    "@version": "2019.9.16"
+}

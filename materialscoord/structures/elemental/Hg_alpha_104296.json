@@ -1,0 +1,137 @@
+{
+    "@module": "pymatgen.util.provenance",
+    "@class": "StructureNL",
+    "charge": null,
+    "lattice": {
+        "matrix": [
+            [
+                3.458,
+                0.0,
+                2.1174143157257738e-16
+            ],
+            [
+                -1.7289999999999994,
+                2.9947158462865895,
+                2.1174143157257738e-16
+            ],
+            [
+                0.0,
+                0.0,
+                6.684
+            ]
+        ],
+        "a": 3.458,
+        "b": 3.458,
+        "c": 6.684,
+        "alpha": 90.0,
+        "beta": 90.0,
+        "gamma": 119.99999999999999,
+        "volume": 69.21768191793214
+    },
+    "sites": [
+        {
+            "species": [
+                {
+                    "element": "Hg",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "xyz": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "label": "Hg0+",
+            "properties": {
+                "coordination": {
+                    "Hg": [
+                        6.0,
+                        12.0
+                    ]
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Hg",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.6666666666666666,
+                0.3333333333333333,
+                0.3333333333333333
+            ],
+            "xyz": [
+                1.7290000000000003,
+                0.9982386154288632,
+                2.2279999999999998
+            ],
+            "label": "Hg0+",
+            "properties": {
+                "coordination": {
+                    "Hg": [
+                        6.0,
+                        12.0
+                    ]
+                }
+            }
+        },
+        {
+            "species": [
+                {
+                    "element": "Hg",
+                    "oxidation_state": 0.0,
+                    "occu": 1.0
+                }
+            ],
+            "abc": [
+                0.3333333333333333,
+                0.6666666666666666,
+                0.6666666666666666
+            ],
+            "xyz": [
+                4.440892098500626e-16,
+                1.9964772308577263,
+                4.4559999999999995
+            ],
+            "label": "Hg0+",
+            "properties": {
+                "coordination": {
+                    "Hg": [
+                        6.0,
+                        12.0
+                    ]
+                }
+            }
+        }
+    ],
+    "about": {
+        "authors": [
+            {
+                "name": "Alex Ganose",
+                "email": "aganose@lbl.gov"
+            }
+        ],
+        "projects": [],
+        "references": "@article{cif-reference-0,\n    author = \"Amand, R.S.\",\n    title = \"On the metastable system mercury-thallium\",\n    journal = \"Journal of the Less-Common Metals\",\n    volume = \"58\",\n    year = \"1978\",\n    pages = \"161--172\"\n}\n",
+        "remarks": [
+            "Structure is part of MaterialsCoord test set"
+        ],
+        "history": [],
+        "created_at": {
+            "@module": "datetime",
+            "@class": "datetime",
+            "string": "2019-10-12 01:45:34.943950"
+        }
+    },
+    "@version": "2019.9.16"
+}
