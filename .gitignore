@@ -92,3 +92,4 @@ ENV/
 .idea*
 .editorconfig
 .DS_store
+.mypy
