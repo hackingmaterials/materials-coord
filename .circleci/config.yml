@@ -1,0 +1,65 @@
+version: 2
+jobs:
+  pmglint:
+    working_directory: ~/materialscoord
+    docker:
+      - image: circleci/python:3.7.2
+        environment:
+          CODACY_PROJECT_TOKEN: "64f0113ac2114aa49738ce8349071ed5"
+    steps:
+      - checkout
+      - run:
+          command: |
+            pip install --quiet pycodestyle flake8 mypy pydocstyle pylint
+            echo "Checks will be performed in the order of pycodestyle -> flake8 -> mypy -> pydocstyle "
+            echo "It is highly recommended that you use the pre-commit hook provided in pymatgen."
+            echo "Simply copy pre-commit to .git/hooks to check before pushing your code."
+            echo "pycodestyle checks..."
+            pycodestyle materialscoord
+            echo "--- Done ---"
+            echo "flake8 checks..."
+            flake8 --count --show-source --statistics materialscoord
+            # exit-zero treats all errors as warnings.
+            flake8 --count --exit-zero --max-complexity=20 --statistics materialscoord
+            echo "--- Done ---"
+            echo "mypy checks..."
+            mypy materialscoord
+            echo "--- Done ---"
+            echo "pydocstyle checks"
+            pydocstyle --count materialscoord
+            echo "--- Done ---"
+            echo "pylint checks..."
+            pylint --exit-zero materialscoord
+            echo "--- Done ---"
+  py3test:
+    working_directory: ~/materialscoord
+    docker:
+      - image: circleci/python:3.7.2
+    steps:
+      - checkout
+      - run:
+          command: |
+            python3 -m venv test_env
+            . test_env/bin/activate
+            pip install --quiet --upgrade pip
+            pip install --quiet -r requirements.txt
+            pip install --quiet -r requirements-optional.txt
+      - run:
+          command: |
+            pytest --cov=materialscoord --cov-report html:coverage_reports materialscoord
+            if [ "$CI_PULL_REQUEST" == "" ]; then coveralls; fi
+          no_output_timeout: 3600
+      - store_artifacts:
+          path: coverage_reports/
+          destination: tr1
+      - store_test_results:
+          path: coverage_reports/
+      - store_test_results:
+          path: test-results
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - py3test
+      - pmglint
