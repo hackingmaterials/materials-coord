@@ -10,19 +10,16 @@
 status=0
 files=$(git diff --diff-filter=d --cached --name-only | grep -E 'materialscoord.*\.(py)$' | sed '/test_/d')
 files=`echo $files | tr '\n' ' '`
-echo "Check code styles for $files"
-pycodestyle materialscoord $files
+pycodestyle materialscoord $files 2> /dev/null
 if [ $? -ne 0 ]; then
   echo "Bad code style detected by pycodestyle. Fix before commit."
   exit 1
 fi
-echo "Flake8 for $files"
 flake8 materialscoord $files
 if [ $? -ne 0 ]; then
   echo "Bad code style detected by flake8. Fix before commit."
   exit 1
 fi
-echo "Check doc styles for $files"
 pydocstyle --match='(?!test_).*\.py' materialscoord $files
 if [ $? -ne 0 ]; then
   echo "Bad doc style detected. Fix before commit."
