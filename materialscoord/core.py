@@ -367,7 +367,7 @@ class Benchmark(object):
 
             # remove oxidation states from the element label if they are present
             # sum the coordinations for the same elements but different oxi states
-            tmp_cn_dict = defaultdict(int)
+            tmp_cn_dict: Dict[str, float] = defaultdict(int)
             for k, v in cn_dict.items():
                 tmp_cn_dict[_el_re.sub("", k)] += v
             cn_dict = dict(tmp_cn_dict)
