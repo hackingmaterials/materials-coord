@@ -22,6 +22,8 @@ from pymatgen.analysis.local_env import NearNeighbors
 from materialscoord.einstein_crystal_perturbation import perturb_einstein_crystal
 
 _resource_dir = resource_filename("materialscoord", "structures")
+_vire_re = re.compile("[^a-zA-Z]+")
+_el_re = re.compile(r"[\d+-.]*")
 
 CN_dict = Dict[str, float]  # define coordination dictionary type
 
@@ -361,14 +363,16 @@ class Benchmark(object):
             cn_dict = nn.get_cn_dict(self.structures[name], i, self.use_weights)
 
             if nn.__class__.__name__ == "MinimumVIRENN":
-                tmp_cn_dict = {}
-                for k, v in cn_dict.items():
-                    k = re.sub("[^a-zA-Z]+", "", k)
-                    tmp_cn_dict[k] = v
-                cn_dict = tmp_cn_dict
+                cn_dict = {_vire_re.sub("", k): v for k, v in cn_dict.items()}
+
+            # remove oxidation states from the element label if they are present
+            # sum the coordinations for the same elements but different oxi states
+            tmp_cn_dict = defaultdict(int)
+            for k, v in cn_dict.items():
+                tmp_cn_dict[_el_re.sub("", k)] += v
+            cn_dict = dict(tmp_cn_dict)
 
             results.append(cn_dict)
-
         return results
 
     def _score_structure(
