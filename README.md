@@ -1,5 +1,10 @@
 # MaterialsCoord Benchmark
 
+  <a href="https://www.codacy.com/app/utf/materials-coord"><img alt="Codacy Grade" src="https://img.shields.io/codacy/grade/b38246f8d3f0477a8fd971426eebe3ae.svg"> </a>
+  <a href="https://www.codacy.com/app/utf/materials-coord"><img alt="Codacy Coverage" src="https://img.shields.io/codacy/coverage/b38246f8d3f0477a8fd971426eebe3ae.svg?colorB=brightgreen"> </a>
+<a href="https://circleci.com/gh/hackingmaterials/materials-coord"><img alt="CircleCI" src="https://img.shields.io/circleci/project/github/hackingmaterials/materials-coord/master.svg"> </a>
+
+
 MaterialsCoord provides an infrastructure for comparing the performance of
 different crystal structure bonding algorithms against a benchmark set of
 materials.
