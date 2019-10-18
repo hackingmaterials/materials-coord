@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  pmglint:
+  lint:
     working_directory: ~/materialscoord
     docker:
       - image: circleci/python:3.7.2
@@ -68,4 +68,4 @@ workflows:
   build_and_test:
     jobs:
       - py3test
-      - pmglint
+      - lint
