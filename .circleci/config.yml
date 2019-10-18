@@ -10,6 +10,8 @@ jobs:
       - checkout
       - run:
           command: |
+            python3 -m venv test_env
+            . test_env/bin/activate
             pip install --quiet pycodestyle flake8 mypy pydocstyle pylint
             echo "Checks will be performed in the order of pycodestyle -> flake8 -> mypy -> pydocstyle "
             echo "It is highly recommended that you use the pre-commit hook provided in pymatgen."
@@ -44,6 +46,7 @@ jobs:
             pip install --quiet --upgrade pip
             pip install --quiet -r requirements.txt
             pip install --quiet -r requirements-optional.txt
+            pip install -e .
       - run:
           command: |
             . test_env/bin/activate
