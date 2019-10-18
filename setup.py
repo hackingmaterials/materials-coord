@@ -12,7 +12,7 @@ reqs_list = [r for r in reqs_raw.split("\n")]
 setup(
     name='materialscoord',
     version=version,
-    url='https://github.com/hillarypan/MaterialsCoord',
+    url='https://github.com/hackingmaterials/MaterialsCoord',
     license='A modified BSD license',
     author='Hillary Pan',
     author_email='hp393@cornell.edu',

@@ -40,7 +40,7 @@ Contributing code modifications or additions through Github
 We use github to host code, to track issues and feature requests,
 as well as accept pull requests. We maintain a list of all
 contributors `here
-<https://github.com/hillarypan/MaterialsCoord/blob/master/CONTRIBUTORS.rst>`__.
+<https://github.com/hackingmaterials/MaterialsCoord/blob/master/CONTRIBUTORS.rst>`__.
 
 Pull requests are the best way to propose changes to the codebase.
 Follow the `Github flow

@@ -31,7 +31,7 @@ The basic API of MaterialsCoord can be summarized as:
   their performance against a human interpretation of crystal structure bonding.
 
 A full introduction to using MaterialsCoord is provided in the
-[introduction notebook](https://github.com/hillarypan/MaterialsCoord/tree/master/examples/introduction-to-MaterialsCoord.ipynb).
+[introduction notebook](https://github.com/hackingmaterials/MaterialsCoord/tree/master/examples/introduction-to-MaterialsCoord.ipynb).
 
 ### Coordination number algorithms
 
@@ -63,7 +63,7 @@ material classes, including:
   olivine Fe<sub>2</sub>SiO<sub>4</sub>.
 
 The full set of materials classes and crystal structures can be found
-in the [structures directory](https://github.com/hillarypan/MaterialsCoord/tree/master/materialscoord/structures).
+in the [structures directory](https://github.com/hackingmaterials/MaterialsCoord/tree/master/materialscoord/structures).
 
 MaterialsCoord supports benchmarking on custom structures. See the
 [Preparing crystal structures for benchmarking](#preparing-crystal-structures-for-benchmarking)
@@ -87,7 +87,7 @@ bm.score(nn_methods)
 
 The `score` function will return the results as a [Pandas](https://pandas.pydata.org)
 `DataFrame` object. Further details can be found in the
-[introduction notebook](https://github.com/hillarypan/MaterialsCoord/tree/master/examples).
+[introduction notebook](https://github.com/hackingmaterials/MaterialsCoord/tree/master/examples).
 
 ### Preparing crystal structures for benchmarking
 
@@ -104,7 +104,7 @@ the coordination property should a dictionary of ``{"Ga": [4, 12]}``.
 
 A full guide to preparing crystal structures for use in MaterialsCoord is in
 provided in the
-[benchmarking using custom structures notebook](https://github.com/hillarypan/MaterialsCoord/tree/master/examples/benchmarking-custom-structures.ipynb).
+[benchmarking using custom structures notebook](https://github.com/hackingmaterials/MaterialsCoord/tree/master/examples/benchmarking-custom-structures.ipynb).
 
 ## How to cite MaterialsCoord
 
@@ -116,7 +116,7 @@ paper has been published online.*
 MaterialsCoord can be installed from source using:
 
 ```bash
-git clone https://github.com/hillarypan/MaterialsCoord.git
+git clone https://github.com/hackingmaterials/MaterialsCoord.git
 cd MaterialsCoord
 pip install .
 ```
@@ -126,17 +126,17 @@ MaterialsCoord requires Python 3.6+.
 ## What’s new?
 
 Track changes to MaterialsCoord through the
-[Changelog](https://github.com/hillarypan/MaterialsCoord/blob/master/CHANGELOG.rst).
+[Changelog](https://github.com/hackingmaterials/MaterialsCoord/blob/master/CHANGELOG.rst).
 
 ## Contributing
 
 MaterialsCoord is in early development but we still welcome your
-contributions. Please read our [contribution guidelines](https://github.com/hillarypan/MaterialsCoord/blob/master/CONTRIBUTING.rst)
+contributions. Please read our [contribution guidelines](https://github.com/hackingmaterials/MaterialsCoord/blob/master/CONTRIBUTING.rst)
 for more information. We maintain a list of all
-contributors [here](https://github.com/hillarypan/MaterialsCoord/blob/master/CONTRIBUTORS.rst).
+contributors [here](https://github.com/hackingmaterials/MaterialsCoord/blob/master/CONTRIBUTORS.rst).
 
 ## License
 
 MaterialsCoord is released under a modified BSD license;
 the full text can be found
-[here](https://github.com/hillarypan/MaterialsCoord/blob/master/LICENSE).
+[here](https://github.com/hackingmaterials/MaterialsCoord/blob/master/LICENSE).
