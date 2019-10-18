@@ -4,8 +4,6 @@ jobs:
     working_directory: ~/materialscoord
     docker:
       - image: circleci/python:3.7.2
-        environment:
-          CODACY_PROJECT_TOKEN: "64f0113ac2114aa49738ce8349071ed5"
     steps:
       - checkout
       - run:
@@ -38,6 +36,8 @@ jobs:
     working_directory: ~/materialscoord
     docker:
       - image: circleci/python:3.7.2
+        environment:
+          CODACY_PROJECT_TOKEN: "64f0113ac2114aa49738ce8349071ed5"
     steps:
       - checkout
       - run:
