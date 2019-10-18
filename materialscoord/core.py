@@ -5,7 +5,7 @@ import warnings
 from copy import deepcopy
 
 from pathlib import Path
-from typing import List, Optional, Dict, Union
+from typing import List, Optional, Dict, Union, Any
 
 import numpy as np
 import pandas as pd
@@ -23,7 +23,7 @@ from materialscoord.einstein_crystal_perturbation import perturb_einstein_crysta
 
 _resource_dir = resource_filename("materialscoord", "structures")
 
-CN_dict = Dict[str, int]  # define coordination dictionary type
+CN_dict = Dict[str, float]  # define coordination dictionary type
 
 
 class Benchmark(object):
@@ -109,7 +109,7 @@ class Benchmark(object):
 
         # precompute the symmetrized structures to save time during the benchmark. Also,
         # determine the total number of unique cations/anions each structure.
-        self.site_information = {}
+        self.site_information: Dict[str, Dict[str, Any]] = {}
         self.max_nsites = 0
 
         n_structures_with_oxi = 0
@@ -207,7 +207,7 @@ class Benchmark(object):
         if isinstance(structure_groups, str):
             structure_groups = [structure_groups]
 
-        filenames = []
+        filenames: List[Path] = []
         for structure_group in structure_groups:
             if structure_group not in Benchmark.all_structure_groups:
                 raise ValueError(
@@ -219,7 +219,7 @@ class Benchmark(object):
         structures = {}
         for filename in filenames:
             name = Path(filename).stem
-            structures[name] = Structure.from_file(filename)
+            structures[name] = Structure.from_file(str(filename))
 
         return cls(structures, **kwargs)
 
@@ -257,7 +257,7 @@ class Benchmark(object):
             return self._benchmark
 
         method_names = _get_method_names(methods)
-        df_data = defaultdict(dict)
+        df_data: Dict[str, Dict[str, float]] = defaultdict(dict)
         for method_name, method in zip(method_names, methods):
             for name in self.structures:
                 for site_idx in range(self.max_nsites):
@@ -324,7 +324,7 @@ class Benchmark(object):
         results = self.benchmark(methods, return_dataframe=False)
 
         method_names = _get_method_names(methods)
-        scores: Dict[str, Dict[str, float]] = defaultdict(dict)
+        scores: Dict[str, Dict[str, Union[float, List[float]]]] = defaultdict(dict)
         for method_name, method in zip(method_names, methods):
             for name in self.structures:
                 scores[method_name][name] = self._score_structure(
@@ -435,17 +435,17 @@ class Benchmark(object):
         ]
 
         # similarly we want to know the site species types
-        elements = [
+        all_elements = [
             structure[i].specie.name for i in self.site_information[name]["unique_idxs"]
         ]
 
         if return_raw_site_scores:
-            score = []
+            score: Union[float, List[float]] = []
         else:
             score = 0
 
         for site_idx, site_degen, site_element, prediction, coordination in zip(
-            idxs, degens, elements, predictions, coordinations
+            idxs, degens, all_elements, predictions, coordinations
         ):
             # create a list of possible bonding elements (these are the species
             # in both the known coordination dict and the predicted coordination
@@ -511,7 +511,7 @@ def _get_method_names(methods: List[NearNeighbors]) -> List[str]:
     if len(set(str_names)) == len(str_names):
         return str_names
 
-    method_names_counter = defaultdict(int)
+    method_names_counter: Dict[str, int] = defaultdict(int)
     method_names = []
     for name in str_names:
         method_names.append("{}({})".format(name, method_names_counter[name]))

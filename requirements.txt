@@ -3,3 +3,5 @@ numpy
 pymatgen>=2017.12.30
 monty
 pandas
+seaborn
+matplotlib

@@ -12,7 +12,8 @@ jobs:
           command: |
             python3 -m venv test_env
             . test_env/bin/activate
-            pip install --quiet pycodestyle flake8 mypy pydocstyle pylint
+            pip install --quiet -r requirements.txt
+            pip install --quiet -r requirements-optional.txt
             echo "Checks will be performed in the order of pycodestyle -> flake8 -> mypy -> pydocstyle "
             echo "It is highly recommended that you use the pre-commit hook provided in materialscoord."
             echo "Simply copy pre-commit to .git/hooks to check before pushing your code."
