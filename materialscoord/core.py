@@ -442,7 +442,7 @@ class Benchmark(object):
         if return_raw_site_scores:
             score: Union[float, List[float]] = []
         else:
-            score = 0
+            score = 0.
 
         for site_idx, site_degen, site_element, prediction, coordination in zip(
             idxs, degens, all_elements, predictions, coordinations
@@ -480,7 +480,7 @@ class Benchmark(object):
             if not return_raw_site_scores:
                 score += site_score * site_degen
             else:
-                score.append(site_score)
+                score.append(site_score)  # type: ignore
 
         if return_raw_site_scores:
             return score
