@@ -32,10 +32,9 @@ setup(
         'Operating System :: OS Independent',
         ],
     keywords='crystal-structure crystallography benchmark',
-    test_suite='nose.collector',
     packages=find_packages(),
     install_requires=reqs_list,
-    extras_require={'tests': ['nose', 'coverage', 'coveralls']},
+    extras_require={'tests': ['tests', 'coverage', 'coveralls']},
     package_data={'materialscoord': ["structures/*/*"]},
     data_files=['LICENSE'],
 )
