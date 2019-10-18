@@ -14,7 +14,7 @@ jobs:
             . test_env/bin/activate
             pip install --quiet pycodestyle flake8 mypy pydocstyle pylint
             echo "Checks will be performed in the order of pycodestyle -> flake8 -> mypy -> pydocstyle "
-            echo "It is highly recommended that you use the pre-commit hook provided in pymatgen."
+            echo "It is highly recommended that you use the pre-commit hook provided in materialscoord."
             echo "Simply copy pre-commit to .git/hooks to check before pushing your code."
             echo "pycodestyle checks..."
             pycodestyle materialscoord
@@ -50,8 +50,9 @@ jobs:
       - run:
           command: |
             . test_env/bin/activate
-            pytest --cov=materialscoord --cov-report html:coverage_reports materialscoord
-            if [ "$CI_PULL_REQUEST" == "" ]; then coveralls; fi
+            coverage run setup.py test
+            coverage xml
+            python-codacy-coverage -r coverage.xml
           no_output_timeout: 3600
       - store_artifacts:
           path: coverage_reports/

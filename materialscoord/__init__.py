@@ -1,3 +1,5 @@
+"""MaterialsCoord package for benchmarking crystal structure bonding algorithms."""
+
 __version__ = "0.1.0"
 
 structure_mapping = {

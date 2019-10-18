@@ -1,4 +1,4 @@
-# coding: utf-8
+"""Functions for perturbing structures according to the Einstein crystal test rig."""
 
 from copy import deepcopy
 
@@ -11,8 +11,8 @@ def perturb_einstein_crystal(structure: Structure, sigma: float = 1.0):
     """
     Perturb structure according to the Einstein crystal model.
 
-    Each site is perturbed so that the distribution around the equilibrium position yields
-    a normal distribution for each Cartesian component.
+    Each site is perturbed so that the distribution around the equilibrium position
+    yields a normal distribution for each Cartesian component.
 
     The perturbation complies thus with the expectation for an Einstein crystal,
     in which the potential is given by V(dr) = 1/2 * kspring * (dr)^2.

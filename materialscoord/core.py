@@ -1,3 +1,5 @@
+"""This module contains the primary benchmarking class in MaterialsCoord."""
+
 import re
 import warnings
 from copy import deepcopy
@@ -297,15 +299,15 @@ class Benchmark(object):
                 bonds will be considered and any cation to cation bonds will
                 be ignored. Note that cation and anion can only be used on
                 input structures that have oxidation states.
-            cation_anion: If True, the score will only include bonding to ions of opposing
-                charge. I.e., cation-cation or anion-anion bonding is ignored.
+            cation_anion: If True, the score will only include bonding to ions of
+                opposing charge. I.e., cation-cation or anion-anion bonding is ignored.
                 This option will only affect the scores for input structures that have
                 oxidation states.
             return_raw_site_scores: If true, the "raw site scores" are returned. The
                 raw scores are given as a list of CN^calc - CN^expected for each
-                inequivalent site. Note that the raw_site_score can sometimes be zero even
-                if the correct bonding is not not determined. This can arise when the
-                coordination numbers themselves are correct but the bonds themselves
+                inequivalent site. Note that the raw_site_score can sometimes be zero
+                even if the correct bonding is not not determined. This can arise when
+                the coordination numbers themselves are correct but the bonds themselves
                 aren't. For example, if the human interpreted bonding is
                 {"Cl": 2, "Br": 3} and the predicted bonding is {"Cl": 3, "Br": 2},
                 the raw score for that site will be 0.
@@ -397,24 +399,25 @@ class Benchmark(object):
                 is chosen, the scores will only reflect the coordination numbers
                 of the cation sites. Note that cation and anion can only be used on
                 input structures that have oxidation states.
-            cation_anion: If True, the score will only include bonding to ions of opposing
-                charge. I.e., cation-cation or anion-anion bonding is ignored.
+            cation_anion: If True, the score will only include bonding to ions of
+                opposing charge. I.e., cation-cation or anion-anion bonding is ignored.
                 This option will only affect the scores for input structures that have
                 oxidation states.
             return_raw_site_scores: If true, the "raw site scores" are returned. The
                 raw scores are given as a list of CN^calc - CN^expected for each
-                inequivalent site. Note that the raw_site_score can sometimes be zero even
-                if the correct bonding is not not determined. This can arise when the
-                coordination numbers themselves are correct but the bonds themselves
+                inequivalent site. Note that the raw_site_score can sometimes be zero
+                even if the correct bonding is not not determined. This can arise when
+                the coordination numbers themselves are correct but the bonds themselves
                 aren't. For example, if the human interpreted bonding is
                 {"Cl": 2, "Br": 3} and the predicted bonding is {"Cl": 3, "Br": 2},
                 the raw score for that site will be 0.
 
         Returns:
             If ``return_raw_site_scores`` is ``False`` (the default), the score will be
-            the overall score for the structure as a float. If ``return_raw_site_scores``
-            is ``True``, the score will be a list of the raw site scores. See the
-            docstring for ``return_raw_site_scores`` for more details.
+            the overall score for the structure as a float.
+            If ``return_raw_site_scores`` is ``True``, the score will be a list of the
+            raw site scores. See the docstring for ``return_raw_site_scores`` for more
+            details.
         """
         structure = self.structures[name]
         idxs = self.site_information[name]["{}_idxs".format(site_type)]

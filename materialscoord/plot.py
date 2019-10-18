@@ -1,3 +1,5 @@
+"""Define materialscoord plotting functions."""
+
 from typing import Dict, Optional, Tuple
 from pandas import DataFrame
 
@@ -26,8 +28,9 @@ def plot_benchmark_scores(
             "NaCl_rocksalt_100633" to "NaCl (rock-salt)", structure_mapping should be::
 
                 {"NaCl_rocksalt_100633": "NaCl (rock-salt)"}
-        nn_method_mapping: A dictionary to remap the near neighbor labels. I.e., to rename
-            "BrunnerNN_reciprocal" to "BrunnerNN", nn_method_remapping should be::
+        nn_method_mapping: A dictionary to remap the near neighbor labels. I.e., to
+            rename "BrunnerNN_reciprocal" to "BrunnerNN", nn_method_remapping should
+            be::
 
                 {"BrunnerNN_reciprocal": "BrunnerNN"}
         figsize: The figure size as a tuple of (width, height). If not provided this
