@@ -98,7 +98,8 @@ class Benchmark(object):
         for name, structure in structures.items():
             if "coordination" not in structure.site_properties:
                 raise AttributeError(
-                    "{} structure does not have the 'coordination' site property"
+                    "{} structure does not have the 'coordination' site "
+                    "property".format(name)
                 )
 
         if perturb_sigma:
@@ -373,7 +374,7 @@ class Benchmark(object):
     def _score_structure(
         self,
         name: str,
-        predictions: List[Dict[str, float]],
+        all_predictions: List[Dict[str, float]],
         site_type: str = "all",
         cation_anion: bool = False,
         return_raw_site_scores: bool = False,
@@ -390,7 +391,7 @@ class Benchmark(object):
 
         Args:
             name: A structure name.
-            predictions: The coordination predictions for each unique site in
+            all_predictions: The coordination predictions for each unique site in
                 the structure. Formatted as a list of coordination dictionaries.
                 See the docstring for `NearNeighbors.get_cn_dict` for the format
                 of the dictionaries.
@@ -420,6 +421,9 @@ class Benchmark(object):
             details.
         """
         structure = self.structures[name]
+
+        # idxs are the indexes of the sites we are interested in IN the list of unique
+        # sites. I.e., not in the list of ALL structural sites
         idxs = self.site_information[name]["{}_idxs".format(site_type)]
         degens = self.site_information[name]["{}_degens".format(site_type)]
         total = self.site_information[name]["{}_total".format(site_type)]
@@ -428,40 +432,45 @@ class Benchmark(object):
 
         # as site_idx below is the index of the site in the unique sites NOT the
         # index in the overall structure, we first get actual coordinations
-        # of the unique sites.
+        # of the unique sites and then get the index of the sites were are interested in
         coordinations = [
             structure[i].properties["coordination"]
-            for i in self.site_information[name]["unique_idxs"]
+            for i in self.site_information[name]["unique_idxs"][idxs]
         ]
 
         # similarly we want to know the site species types
-        all_elements = [
-            structure[i].specie.name for i in self.site_information[name]["unique_idxs"]
+        elements = [
+            structure[i].specie.name
+            for i in self.site_information[name]["unique_idxs"][idxs]
         ]
+
+        # finally, as the predictions are already provided only for each unique site
+        # select the predictions we are interested in
+        predictions = [all_predictions[i] for i in idxs]
 
         if return_raw_site_scores:
             score: Union[float, List[float]] = []
         else:
-            score = 0.
+            score = 0.0
 
-        for site_idx, site_degen, site_element, prediction, coordination in zip(
-            idxs, degens, all_elements, predictions, coordinations
+        for site_degen, site_element, prediction, coordination in zip(
+            degens, elements, predictions, coordinations
         ):
             # create a list of possible bonding elements (these are the species
             # in both the known coordination dict and the predicted coordination
             # dict)
-            elements = set(list(coordination.keys()) + list(prediction.keys()))
+            bond_elements = set(list(coordination.keys()) + list(prediction.keys()))
 
             # exclude species that are of the opposite charge
             if cation_anion and site_element in cations:
-                elements = elements.difference(cations)
+                bond_elements = bond_elements.difference(cations)
             elif cation_anion and site_element in anions:
-                elements = elements.difference(anions)
+                bond_elements = bond_elements.difference(anions)
 
             site_score = 0
-            for element in elements:
-                pred_val = prediction.get(element, 0)
-                actual_val = coordination.get(element, 0)
+            for bond_element in bond_elements:
+                pred_val = prediction.get(bond_element, 0)
+                actual_val = coordination.get(bond_element, 0)
 
                 if isinstance(actual_val, list):
                     # there are multiple options for coordination, choose the
