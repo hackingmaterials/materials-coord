@@ -21,7 +21,6 @@ class BenchmarkTest(unittest.TestCase):
             [[0, 0, 0], [0.5, 0, 0]],
         )
         all_sites_coordination = [{"Cl": 6}] * 4 + [{"Na": 8, "Cl": [6, 8]}] * 4
-        # "EconNN7": {"test_structure": {"Na": 6, "Cl": 12}},
         structure.add_site_property("coordination", all_sites_coordination)
         self.structures = {"test_structure": structure}
         self.nn_methods = [MinimumVIRENN(), EconNN()]
