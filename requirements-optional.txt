@@ -1,7 +1,7 @@
 coverage==4.5.4
 codacy-coverage
 pycodestyle==2.5.0
-mypy==0.740
+mypy==0.750
 pydocstyle==4.0.1
 flake8==3.7.9
 pylint==2.4.4
