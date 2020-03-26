@@ -439,13 +439,13 @@ class Benchmark(object):
         # of the unique sites and then get the index of the sites were are interested in
         coordinations = [
             structure[i].properties["coordination"]
-            for i in self.site_information[name]["unique_idxs"][idxs]
+            for i in np.array(self.site_information[name]["unique_idxs"])[idxs]
         ]
 
         # similarly we want to know the site species types
         elements = [
             structure[i].specie.name
-            for i in self.site_information[name]["unique_idxs"][idxs]
+            for i in np.array(self.site_information[name]["unique_idxs"])[idxs]
         ]
 
         # finally, as the predictions are already provided only for each unique site
