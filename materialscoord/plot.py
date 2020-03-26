@@ -69,6 +69,7 @@ def plot_benchmark_scores(
             "figure.figsize": figsize,
             "axes.edgecolor": "black",
             "axes.linewidth": 1.3,
+            'pdf.fonttype': 42,
         },
     )
 
