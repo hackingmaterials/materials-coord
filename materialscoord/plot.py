@@ -1,7 +1,7 @@
 """Define materialscoord plotting functions."""
 
 from typing import Dict, Optional, Tuple
-from pandas import DataFrame
+from pandas import DataFrame, concat
 
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -61,6 +61,10 @@ def plot_benchmark_scores(
 
     scores = scores.rename(columns=nn_method_mapping)
     scores = scores.rename(structure_mapping)
+
+    # sort structures alphabetically
+    total = scores.index == "Total"
+    scores = concat([scores[~total].sort_index(), scores[total]])
 
     sns.set(
         font=["Helvetica", "Arial"],
