@@ -10,7 +10,7 @@ from typing import List, Optional, Dict, Union, Any
 import numpy as np
 import pandas as pd
 
-from collections import defaultdict
+from collections import defaultdict, Counter
 
 from pkg_resources import resource_filename
 
@@ -33,10 +33,6 @@ class Benchmark(object):
     Class for performing coordination number benchmarks on a set of structures
     using different nearest neighbor methods.
 
-    Attributes:
-        all_structure_groups: A list of all the available structure groups that can
-            be used for benchmarking.
-
     Args:
         structures: A set of structures. Should be given as a dictionary of
             ``{"name": Structure}``. The structures should be decorated
@@ -51,8 +47,6 @@ class Benchmark(object):
         symprec: If not None, the benchmark will use symmetry to reduce
             the number of sites for which the coordinate number is calculated.
             symprec is the symmetry precision in Angstrom.
-        use_weights: Whether or not to use the coordination number
-            method weighting scheme. Defaults to False.
         perturb_sigma: If not None, this will enable the
             Einstein crystal test rig mode. Each site will be displaced
             according a normal distribution with the width equal to
@@ -71,10 +65,11 @@ class Benchmark(object):
             Furthermore, some methods, such as CrystalNN, have slightly different
             behaviour if oxidation states are present. Again this option enables
             testing this behaviour.
-
-    TODO:
-        - Use predict_oxidation_states() for structures without oxidation
-            states present? Otherwise, score doesn't work with MP cif files.
+        reciprocal_coordination: Several near neighbor methods are not reciprocal. I.e.,
+            if site A is bonded to site B, it is not guaranteed that site B is bonded
+            to site A. Enabling this option ensures that coordination is reciprocal by
+            evaluating the coordination of all sites and including all bonds. This
+            behaviour is the same as that provided by NearNeighbor.get_bonded_structure.
     """
 
     all_structure_groups: List[str] = [
@@ -85,14 +80,14 @@ class Benchmark(object):
         self,
         structures: Dict[str, Structure],
         symprec: Optional[float] = 0.01,
-        use_weights: bool = False,
         perturb_sigma: Optional[float] = None,
         remove_oxidation_states: bool = True,
+        reciprocal_coordination: bool = True,
     ):
         # make a deep copy to avoid modifying structures in place
         self.structures = deepcopy(structures)
         self.symprec = symprec
-        self.use_weights = use_weights
+        self.reciprocal_coordination = reciprocal_coordination
 
         # use this to cache benchmark results
         self._benchmark: Dict[NearNeighbors, Dict[str, List]] = defaultdict(dict)
@@ -359,8 +354,15 @@ class Benchmark(object):
             dictionaries.
         """
         results = []
+        if self.reciprocal_coordination:
+            bonded_structure = nn.get_bonded_structure(self.structures[name])
+
         for i in self.site_information[name]["unique_idxs"]:
-            cn_dict = nn.get_cn_dict(self.structures[name], i, self.use_weights)
+            if self.reciprocal_coordination:
+                connected_sites = bonded_structure.get_connected_sites(i)
+                cn_dict = _connected_sites_to_cn_dict(connected_sites)
+            else:
+                cn_dict = nn.get_cn_dict(self.structures[name], i)
 
             if nn.__class__.__name__ == "MinimumVIRENN":
                 cn_dict = {_vire_re.sub("", k): v for k, v in cn_dict.items()}
@@ -531,3 +533,8 @@ def _get_method_names(methods: List[NearNeighbors]) -> List[str]:
         method_names_counter[name] += 1
 
     return method_names
+
+
+def _connected_sites_to_cn_dict(connected_sites):
+    counts = Counter([x.site.specie.name for x in connected_sites])
+    return dict(counts)
