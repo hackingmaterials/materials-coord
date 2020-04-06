@@ -108,7 +108,7 @@ class BenchmarkTest(unittest.TestCase):
         # test dataframe output
         results = bm.benchmark(self.nn_methods)
         expected_results = {
-            "EconNN0": {"test_structure": {"Cl": 6 }},
+            "EconNN0": {"test_structure": {"Cl": 6}},
             "EconNN1": {"test_structure": {"Na": 6}},
             "MinimumVIRENN0": {"test_structure": {"Cl": 6}},
             "MinimumVIRENN1": {"test_structure": {"Na": 6}},
