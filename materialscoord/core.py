@@ -14,7 +14,7 @@ from collections import defaultdict, Counter
 
 from pkg_resources import resource_filename
 
-from pymatgen import Specie
+from pymatgen.core.periodic_table import Specie
 from pymatgen.core.structure import Structure
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 from pymatgen.analysis.local_env import NearNeighbors

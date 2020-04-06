@@ -4,7 +4,7 @@ from copy import deepcopy
 
 import numpy as np
 
-from pymatgen import Structure
+from pymatgen.core.structure import Structure
 
 
 def perturb_einstein_crystal(structure: Structure, sigma: float = 1.0):

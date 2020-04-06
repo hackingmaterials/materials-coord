@@ -4,7 +4,7 @@ from copy import deepcopy
 import numpy as np
 
 from materialscoord.core import Benchmark
-from pymatgen import Structure
+from pymatgen.core.structure import Structure
 from pymatgen.analysis.local_env import MinimumVIRENN, EconNN, VoronoiNN
 
 

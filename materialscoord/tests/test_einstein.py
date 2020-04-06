@@ -3,7 +3,7 @@ import unittest
 import numpy as np
 
 from materialscoord.einstein_crystal_perturbation import perturb_einstein_crystal
-from pymatgen import Structure
+from pymatgen.core.structure import Structure
 
 
 class EinsteinTest(unittest.TestCase):
