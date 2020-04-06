@@ -1,6 +1,6 @@
 spglib==1.14.1.post0
 numpy==1.18.2
-pymatgen==2020.3.13
+pymatgen==2020.4.2
 monty==3.0.2
 pandas==1.0.3
 seaborn==0.10.0

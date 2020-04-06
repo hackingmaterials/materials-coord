@@ -108,8 +108,8 @@ class BenchmarkTest(unittest.TestCase):
         # test dataframe output
         results = bm.benchmark(self.nn_methods)
         expected_results = {
-            "EconNN0": {"test_structure": {"Cl": 6, "Na": 12}},
-            "EconNN1": {"test_structure": {"Cl": 12, "Na": 6}},
+            "EconNN0": {"test_structure": {"Cl": 6 }},
+            "EconNN1": {"test_structure": {"Na": 6}},
             "MinimumVIRENN0": {"test_structure": {"Cl": 6}},
             "MinimumVIRENN1": {"test_structure": {"Na": 6}},
         }
@@ -118,7 +118,7 @@ class BenchmarkTest(unittest.TestCase):
         # test dict output
         results = bm.benchmark(self.nn_methods, return_dataframe=False)
         vire_results = {"test_structure": [{"Cl": 6}, {"Na": 6}]}
-        econ_results = {"test_structure": [{"Na": 12, "Cl": 6}, {"Na": 6, "Cl": 12}]}
+        econ_results = {"test_structure": [{"Cl": 6}, {"Na": 6}]}
         self.assertEqual(results[self.nn_methods[0]], vire_results)
         self.assertEqual(results[self.nn_methods[1]], econ_results)
 
@@ -126,14 +126,14 @@ class BenchmarkTest(unittest.TestCase):
         bm = Benchmark(self.structures, symprec=None)
         no_sym_results = bm.benchmark(self.nn_methods)
         expected_no_sym_results = {
-            "EconNN0": {"test_structure": {"Cl": 6, "Na": 12}},
-            "EconNN1": {"test_structure": {"Cl": 6, "Na": 12}},
-            "EconNN2": {"test_structure": {"Cl": 6, "Na": 12}},
-            "EconNN3": {"test_structure": {"Cl": 6, "Na": 12}},
-            "EconNN4": {"test_structure": {"Cl": 12, "Na": 6}},
-            "EconNN5": {"test_structure": {"Cl": 12, "Na": 6}},
-            "EconNN6": {"test_structure": {"Cl": 12, "Na": 6}},
-            "EconNN7": {"test_structure": {"Cl": 12, "Na": 6}},
+            "EconNN0": {"test_structure": {"Cl": 6}},
+            "EconNN1": {"test_structure": {"Cl": 6}},
+            "EconNN2": {"test_structure": {"Cl": 6}},
+            "EconNN3": {"test_structure": {"Cl": 6}},
+            "EconNN4": {"test_structure": {"Na": 6}},
+            "EconNN5": {"test_structure": {"Na": 6}},
+            "EconNN6": {"test_structure": {"Na": 6}},
+            "EconNN7": {"test_structure": {"Na": 6}},
             "MinimumVIRENN0": {"test_structure": {"Cl": 6}},
             "MinimumVIRENN1": {"test_structure": {"Cl": 6}},
             "MinimumVIRENN2": {"test_structure": {"Cl": 6}},
@@ -151,7 +151,7 @@ class BenchmarkTest(unittest.TestCase):
         bm = Benchmark(self.structures)
         scores = bm.score(self.nn_methods)
         expected_scores = {
-            "EconNN": {"test_structure": 9.0, "Total": 9.0},
+            "EconNN": {"test_structure": 4.0, "Total": 4.0},
             "MinimumVIRENN": {"test_structure": 4.0, "Total": 4.0},
         }
         self.assertEqual(scores.to_dict(), expected_scores)
@@ -159,7 +159,7 @@ class BenchmarkTest(unittest.TestCase):
         # test cation scores
         scores = bm.score(self.nn_methods, site_type="cation")
         expected_scores = {
-            "EconNN": {"Total": 12.0, "test_structure": 12.0},
+            "EconNN": {"Total": 0.0, "test_structure": 0.0},
             "MinimumVIRENN": {"Total": 0.0, "test_structure": 0.0},
         }
         self.assertEqual(scores.to_dict(), expected_scores)
@@ -167,7 +167,7 @@ class BenchmarkTest(unittest.TestCase):
         # test anion scores
         scores = bm.score(self.nn_methods, site_type="anion")
         expected_scores = {
-            "EconNN": {"Total": 6.0, "test_structure": 6.0},
+            "EconNN": {"Total": 8.0, "test_structure": 8.0},
             "MinimumVIRENN": {"Total": 8.0, "test_structure": 8.0},
         }
         self.assertEqual(scores.to_dict(), expected_scores)
@@ -200,7 +200,7 @@ class BenchmarkTest(unittest.TestCase):
         scores = bm.score(self.nn_methods, return_raw_site_scores=True)
         expected_scores = {
             "MinimumVIRENN": {"test_structure": [0, -8]},
-            "EconNN": {"test_structure": [12, 2]},
+            "EconNN": {"test_structure": [0, -8]},
         }
         self.assertEqual(scores.to_dict(), expected_scores)
 
