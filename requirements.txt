@@ -4,4 +4,4 @@ pymatgen==2020.7.10
 monty==3.0.4
 pandas==1.0.5
 seaborn==0.10.1
-matplotlib==3.2.2
+matplotlib==3.3.0
