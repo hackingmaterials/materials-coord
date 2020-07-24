@@ -1,4 +1,4 @@
-coverage==5.2
+coverage==5.2.1
 codacy-coverage
 pycodestyle==2.6.0
 mypy==0.782
