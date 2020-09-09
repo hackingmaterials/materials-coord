@@ -64,4 +64,20 @@ structure_mapping = {
     "MgAl2O4_spinel_31373": "MgAl$_2$O$_4$",
     "Na2SO4_thenardite_2895": "Na$_2$SO$_4$ (thenardite)",
     "Sr2PbO4_16806": "Sr$_2$PbO$_4$",
+    # intermetallic mapping
+    "AgMgSb_259186": "AgMgSb",
+    "AlB2_606058": "AlB$_2$",
+    "CaCu5_619215": "CaCu$_5$",
+    "CaIn2_58686": "CaIn$_2$",
+    "CeAl2Ga2_606460": "CeAl$_2$Ga$_2$",
+    "KHg2_104303": "KHg$_2$",
+    "MgCu2_46007": "MgCu$_2$",
+    "MgZn2_46006": "MgZn$_2$",
+    "Mn5Si3_166772": "Mn$_5$Si$_3$",
+    "MnCu2Al_607010": "MnCu$_2$Al",
+    "Mo2FeB2_5431": "Mo$_2$FeB$_2$",
+    "Th2Zn17_653256": "Th$_2$Zn$_{17}$",
+    "ThMn12_104986": "ThMn$_{12}$",
+    "TiNiSi_18188": "TiNiSi",
+    "ZrNiAl_152131": "ZrNiAl"
 }
