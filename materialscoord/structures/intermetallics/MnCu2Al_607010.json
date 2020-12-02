@@ -1,481 +1,493 @@
 {
-   "@module":"pymatgen.util.provenance",
-   "@class":"StructureNL",
-   "charge":null,
-   "lattice":{
-      "matrix":[
-         [
-            5.949,
-            0.0,
-            3.642711904063802e-16
-         ],
-         [
-            -3.642711904063802e-16,
-            5.949,
-            3.642711904063802e-16
-         ],
-         [
-            0.0,
-            0.0,
-            5.949
-         ]
+  "@module": "pymatgen.util.provenance",
+  "@class": "StructureNL",
+  "charge": null,
+  "lattice": {
+    "matrix": [
+      [
+        5.949,
+        0.0,
+        3.642711904063802e-16
       ],
-      "a":5.949,
-      "b":5.949,
-      "c":5.949,
-      "alpha":90.0,
-      "beta":90.0,
-      "gamma":90.0,
-      "volume":210.53868534899996
-   },
-   "sites":[
-      {
-         "species":[
-            {
-               "element":"Mn",
-               "oxidation_state":0.0,
-               "occu":1.0
-            }
-         ],
-         "abc":[
-            0.5,
-            0.5,
-            0.5
-         ],
-         "xyz":[
-            2.9745,
-            2.9745,
-            2.9745000000000004
-         ],
-         "label":"Mn0+",
-         "properties":{
-            "coordination":{
-               "Cu":8,
-               "Al":6
-            }
-         }
-      },
-      {
-         "species":[
-            {
-               "element":"Mn",
-               "oxidation_state":0.0,
-               "occu":1.0
-            }
-         ],
-         "abc":[
-            0.5,
-            0.0,
-            0.0
-         ],
-         "xyz":[
-            2.9745,
-            0.0,
-            1.821355952031901e-16
-         ],
-         "label":"Mn0+",
-         "properties":{
-            "coordination":{
-               "Cu":8,
-               "Al":6
-            }
-         }
-      },
-      {
-         "species":[
-            {
-               "element":"Mn",
-               "oxidation_state":0.0,
-               "occu":1.0
-            }
-         ],
-         "abc":[
-            0.0,
-            0.5,
-            0.0
-         ],
-         "xyz":[
-            -1.821355952031901e-16,
-            2.9745,
-            1.821355952031901e-16
-         ],
-         "label":"Mn0+",
-         "properties":{
-            "coordination":{
-               "Cu":8,
-               "Al":6
-            }
-         }
-      },
-      {
-         "species":[
-            {
-               "element":"Mn",
-               "oxidation_state":0.0,
-               "occu":1.0
-            }
-         ],
-         "abc":[
-            0.0,
-            0.0,
-            0.5
-         ],
-         "xyz":[
-            0.0,
-            0.0,
-            2.9745
-         ],
-         "label":"Mn0+",
-         "properties":{
-            "coordination":{
-               "Cu":8,
-               "Al":6
-            }
-         }
-      },
-      {
-         "species":[
-            {
-               "element":"Al",
-               "oxidation_state":0.0,
-               "occu":1.0
-            }
-         ],
-         "abc":[
-            0.0,
-            0.0,
-            0.0
-         ],
-         "xyz":[
-            0.0,
-            0.0,
-            0.0
-         ],
-         "label":"Al0+",
-         "properties":{
-            "coordination":{
-               "Cu":8,
-               "Mn":6
-            }
-         }
-      },
-      {
-         "species":[
-            {
-               "element":"Al",
-               "oxidation_state":0.0,
-               "occu":1.0
-            }
-         ],
-         "abc":[
-            0.0,
-            0.5,
-            0.5
-         ],
-         "xyz":[
-            -1.821355952031901e-16,
-            2.9745,
-            2.9745
-         ],
-         "label":"Al0+",
-         "properties":{
-            "coordination":{
-               "Cu":8,
-               "Mn":6
-            }
-         }
-      },
-      {
-         "species":[
-            {
-               "element":"Al",
-               "oxidation_state":0.0,
-               "occu":1.0
-            }
-         ],
-         "abc":[
-            0.5,
-            0.0,
-            0.5
-         ],
-         "xyz":[
-            2.9745,
-            0.0,
-            2.9745
-         ],
-         "label":"Al0+",
-         "properties":{
-            "coordination":{
-               "Cu":8,
-               "Mn":6
-            }
-         }
-      },
-      {
-         "species":[
-            {
-               "element":"Al",
-               "oxidation_state":0.0,
-               "occu":1.0
-            }
-         ],
-         "abc":[
-            0.5,
-            0.5,
-            0.0
-         ],
-         "xyz":[
-            2.9745,
-            2.9745,
-            3.642711904063802e-16
-         ],
-         "label":"Al0+",
-         "properties":{
-            "coordination":{
-               "Cu":8,
-               "Mn":6
-            }
-         }
-      },
-      {
-         "species":[
-            {
-               "element":"Cu",
-               "oxidation_state":0.0,
-               "occu":1.0
-            }
-         ],
-         "abc":[
-            0.25,
-            0.25,
-            0.75
-         ],
-         "xyz":[
-            1.48725,
-            1.48725,
-            4.46175
-         ],
-         "label":"Cu0+",
-         "properties":{
-            "coordination":{
-               "Al":4,
-               "Mn":4,
-               "Cu":6
-            }
-         }
-      },
-      {
-         "species":[
-            {
-               "element":"Cu",
-               "oxidation_state":0.0,
-               "occu":1.0
-            }
-         ],
-         "abc":[
-            0.25,
-            0.75,
-            0.25
-         ],
-         "xyz":[
-            1.4872499999999997,
-            4.46175,
-            1.4872500000000004
-         ],
-         "label":"Cu0+",
-         "properties":{
-            "coordination":{
-               "Al":4,
-               "Mn":4,
-               "Cu":6
-            }
-         }
-      },
-      {
-         "species":[
-            {
-               "element":"Cu",
-               "oxidation_state":0.0,
-               "occu":1.0
-            }
-         ],
-         "abc":[
-            0.75,
-            0.25,
-            0.25
-         ],
-         "xyz":[
-            4.46175,
-            1.48725,
-            1.4872500000000004
-         ],
-         "label":"Cu0+",
-         "properties":{
-            "coordination":{
-               "Al":4,
-               "Mn":4,
-               "Cu":6
-            }
-         }
-      },
-      {
-         "species":[
-            {
-               "element":"Cu",
-               "oxidation_state":0.0,
-               "occu":1.0
-            }
-         ],
-         "abc":[
-            0.75,
-            0.75,
-            0.75
-         ],
-         "xyz":[
-            4.46175,
-            4.46175,
-            4.461750000000001
-         ],
-         "label":"Cu0+",
-         "properties":{
-            "coordination":{
-               "Al":4,
-               "Mn":4,
-               "Cu":6
-            }
-         }
-      },
-      {
-         "species":[
-            {
-               "element":"Cu",
-               "oxidation_state":0.0,
-               "occu":1.0
-            }
-         ],
-         "abc":[
-            0.75,
-            0.75,
-            0.25
-         ],
-         "xyz":[
-            4.46175,
-            4.46175,
-            1.4872500000000004
-         ],
-         "label":"Cu0+",
-         "properties":{
-            "coordination":{
-               "Al":4,
-               "Mn":4,
-               "Cu":6
-            }
-         }
-      },
-      {
-         "species":[
-            {
-               "element":"Cu",
-               "oxidation_state":0.0,
-               "occu":1.0
-            }
-         ],
-         "abc":[
-            0.75,
-            0.25,
-            0.75
-         ],
-         "xyz":[
-            4.46175,
-            1.48725,
-            4.46175
-         ],
-         "label":"Cu0+",
-         "properties":{
-            "coordination":{
-               "Al":4,
-               "Mn":4,
-               "Cu":6
-            }
-         }
-      },
-      {
-         "species":[
-            {
-               "element":"Cu",
-               "oxidation_state":0.0,
-               "occu":1.0
-            }
-         ],
-         "abc":[
-            0.25,
-            0.75,
-            0.75
-         ],
-         "xyz":[
-            1.4872499999999997,
-            4.46175,
-            4.46175
-         ],
-         "label":"Cu0+",
-         "properties":{
-            "coordination":{
-               "Al":4,
-               "Mn":4,
-               "Cu":6
-            }
-         }
-      },
-      {
-         "species":[
-            {
-               "element":"Cu",
-               "oxidation_state":0.0,
-               "occu":1.0
-            }
-         ],
-         "abc":[
-            0.25,
-            0.25,
-            0.25
-         ],
-         "xyz":[
-            1.48725,
-            1.48725,
-            1.4872500000000002
-         ],
-         "label":"Cu0+",
-         "properties":{
-            "coordination":{
-               "Al":4,
-               "Mn":4,
-               "Cu":6
-            }
-         }
+      [
+        -3.642711904063802e-16,
+        5.949,
+        3.642711904063802e-16
+      ],
+      [
+        0.0,
+        0.0,
+        5.949
+      ]
+    ],
+    "a": 5.949,
+    "b": 5.949,
+    "c": 5.949,
+    "alpha": 90.0,
+    "beta": 90.0,
+    "gamma": 90.0,
+    "volume": 210.53868534899996
+  },
+  "sites": [
+    {
+      "species": [
+        {
+          "element": "Mn",
+          "oxidation_state": 0.0,
+          "occu": 1.0
+        }
+      ],
+      "abc": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "xyz": [
+        2.9745,
+        2.9745,
+        2.9745000000000004
+      ],
+      "label": "Mn0+",
+      "properties": {
+        "coordination": {
+          "Cu": 8,
+          "Al": [
+            0,
+            6
+          ]
+        }
       }
-   ],
-   "about":{
-      "authors":[
-         {
-            "name":"Hillary Pan",
-            "email":"hp393@cornell.edu"
-         }
+    },
+    {
+      "species": [
+        {
+          "element": "Mn",
+          "oxidation_state": 0.0,
+          "occu": 1.0
+        }
       ],
-      "projects":[
-
+      "abc": [
+        0.5,
+        0.0,
+        0.0
       ],
-      "references":"@article{MnCu2Al,\n    Author = {Oxley, D.P. and Tebble, R.S. and Williams, K.C.},\n    Title = {Heusler Alloys},\n    Journal = {J. Appl. Phys.},\n    Volume = {34},\n    Number = {4},\n    Pages = {1362--1364},\n    Year = {1963},\n    doi = {10.1063/1.1729511},\n    url = {https://doi.org/10.1063/1.1729511}}",
-      "remarks":[
-         "Structure is part of the MaterialsCoord test set"
+      "xyz": [
+        2.9745,
+        0.0,
+        1.821355952031901e-16
       ],
-      "history":[
-
-      ],
-      "created_at":{
-         "@module":"datetime",
-         "@class":"datetime",
-         "string":"2020-08-22 00:35:02.947774"
+      "label": "Mn0+",
+      "properties": {
+        "coordination": {
+          "Cu": 8,
+          "Al": [
+            0,
+            6
+          ]
+        }
       }
-   },
-   "@version":"2020.7.18"
+    },
+    {
+      "species": [
+        {
+          "element": "Mn",
+          "oxidation_state": 0.0,
+          "occu": 1.0
+        }
+      ],
+      "abc": [
+        0.0,
+        0.5,
+        0.0
+      ],
+      "xyz": [
+        -1.821355952031901e-16,
+        2.9745,
+        1.821355952031901e-16
+      ],
+      "label": "Mn0+",
+      "properties": {
+        "coordination": {
+          "Cu": 8,
+          "Al": [
+            0,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "species": [
+        {
+          "element": "Mn",
+          "oxidation_state": 0.0,
+          "occu": 1.0
+        }
+      ],
+      "abc": [
+        0.0,
+        0.0,
+        0.5
+      ],
+      "xyz": [
+        0.0,
+        0.0,
+        2.9745
+      ],
+      "label": "Mn0+",
+      "properties": {
+        "coordination": {
+          "Cu": 8,
+          "Al": [
+            0,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "species": [
+        {
+          "element": "Al",
+          "oxidation_state": 0.0,
+          "occu": 1.0
+        }
+      ],
+      "abc": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "xyz": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "label": "Al0+",
+      "properties": {
+        "coordination": {
+          "Cu": 8,
+          "Mn": [
+            0,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "species": [
+        {
+          "element": "Al",
+          "oxidation_state": 0.0,
+          "occu": 1.0
+        }
+      ],
+      "abc": [
+        0.0,
+        0.5,
+        0.5
+      ],
+      "xyz": [
+        -1.821355952031901e-16,
+        2.9745,
+        2.9745
+      ],
+      "label": "Al0+",
+      "properties": {
+        "coordination": {
+          "Cu": 8,
+          "Mn": [
+            0,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "species": [
+        {
+          "element": "Al",
+          "oxidation_state": 0.0,
+          "occu": 1.0
+        }
+      ],
+      "abc": [
+        0.5,
+        0.0,
+        0.5
+      ],
+      "xyz": [
+        2.9745,
+        0.0,
+        2.9745
+      ],
+      "label": "Al0+",
+      "properties": {
+        "coordination": {
+          "Cu": 8,
+          "Mn": [
+            0,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "species": [
+        {
+          "element": "Al",
+          "oxidation_state": 0.0,
+          "occu": 1.0
+        }
+      ],
+      "abc": [
+        0.5,
+        0.5,
+        0.0
+      ],
+      "xyz": [
+        2.9745,
+        2.9745,
+        3.642711904063802e-16
+      ],
+      "label": "Al0+",
+      "properties": {
+        "coordination": {
+          "Cu": 8,
+          "Mn": [
+            0,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "species": [
+        {
+          "element": "Cu",
+          "oxidation_state": 0.0,
+          "occu": 1.0
+        }
+      ],
+      "abc": [
+        0.25,
+        0.25,
+        0.75
+      ],
+      "xyz": [
+        1.48725,
+        1.48725,
+        4.46175
+      ],
+      "label": "Cu0+",
+      "properties": {
+        "coordination": {
+          "Mn": 4,
+          "Al": 4
+        }
+      }
+    },
+    {
+      "species": [
+        {
+          "element": "Cu",
+          "oxidation_state": 0.0,
+          "occu": 1.0
+        }
+      ],
+      "abc": [
+        0.25,
+        0.75,
+        0.25
+      ],
+      "xyz": [
+        1.4872499999999997,
+        4.46175,
+        1.4872500000000004
+      ],
+      "label": "Cu0+",
+      "properties": {
+        "coordination": {
+          "Mn": 4,
+          "Al": 4
+        }
+      }
+    },
+    {
+      "species": [
+        {
+          "element": "Cu",
+          "oxidation_state": 0.0,
+          "occu": 1.0
+        }
+      ],
+      "abc": [
+        0.75,
+        0.25,
+        0.25
+      ],
+      "xyz": [
+        4.46175,
+        1.48725,
+        1.4872500000000004
+      ],
+      "label": "Cu0+",
+      "properties": {
+        "coordination": {
+          "Mn": 4,
+          "Al": 4
+        }
+      }
+    },
+    {
+      "species": [
+        {
+          "element": "Cu",
+          "oxidation_state": 0.0,
+          "occu": 1.0
+        }
+      ],
+      "abc": [
+        0.75,
+        0.75,
+        0.75
+      ],
+      "xyz": [
+        4.46175,
+        4.46175,
+        4.461750000000001
+      ],
+      "label": "Cu0+",
+      "properties": {
+        "coordination": {
+          "Mn": 4,
+          "Al": 4
+        }
+      }
+    },
+    {
+      "species": [
+        {
+          "element": "Cu",
+          "oxidation_state": 0.0,
+          "occu": 1.0
+        }
+      ],
+      "abc": [
+        0.75,
+        0.75,
+        0.25
+      ],
+      "xyz": [
+        4.46175,
+        4.46175,
+        1.4872500000000004
+      ],
+      "label": "Cu0+",
+      "properties": {
+        "coordination": {
+          "Mn": 4,
+          "Al": 4
+        }
+      }
+    },
+    {
+      "species": [
+        {
+          "element": "Cu",
+          "oxidation_state": 0.0,
+          "occu": 1.0
+        }
+      ],
+      "abc": [
+        0.75,
+        0.25,
+        0.75
+      ],
+      "xyz": [
+        4.46175,
+        1.48725,
+        4.46175
+      ],
+      "label": "Cu0+",
+      "properties": {
+        "coordination": {
+          "Mn": 4,
+          "Al": 4
+        }
+      }
+    },
+    {
+      "species": [
+        {
+          "element": "Cu",
+          "oxidation_state": 0.0,
+          "occu": 1.0
+        }
+      ],
+      "abc": [
+        0.25,
+        0.75,
+        0.75
+      ],
+      "xyz": [
+        1.4872499999999997,
+        4.46175,
+        4.46175
+      ],
+      "label": "Cu0+",
+      "properties": {
+        "coordination": {
+          "Mn": 4,
+          "Al": 4
+        }
+      }
+    },
+    {
+      "species": [
+        {
+          "element": "Cu",
+          "oxidation_state": 0.0,
+          "occu": 1.0
+        }
+      ],
+      "abc": [
+        0.25,
+        0.25,
+        0.25
+      ],
+      "xyz": [
+        1.48725,
+        1.48725,
+        1.4872500000000002
+      ],
+      "label": "Cu0+",
+      "properties": {
+        "coordination": {
+          "Mn": 4,
+          "Al": 4
+        }
+      }
+    }
+  ],
+  "about": {
+    "authors": [
+      {
+        "name": "Hillary Pan",
+        "email": "hp393@cornell.edu"
+      }
+    ],
+    "projects": [],
+    "references": "@article{MnCu2Al,\n    Author = {Oxley, D.P. and Tebble, R.S. and Williams, K.C.},\n    Title = {Heusler Alloys},\n    Journal = {J. Appl. Phys.},\n    Volume = {34},\n    Number = {4},\n    Pages = {1362--1364},\n    Year = {1963},\n    doi = {10.1063/1.1729511},\n    url = {https://doi.org/10.1063/1.1729511}}",
+    "remarks": [
+      "Structure is part of the MaterialsCoord test set"
+    ],
+    "history": [],
+    "created_at": {
+      "@module": "datetime",
+      "@class": "datetime",
+      "string": "2020-08-22 00:35:02.947774"
+    }
+  },
+  "@version": "2020.8.13"
 }
