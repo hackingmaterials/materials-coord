@@ -2,6 +2,6 @@ spglib==1.16.0
 numpy==1.19.4
 pymatgen==2020.8.13
 monty==4.0.2
-pandas==1.1.5
+pandas==1.2.0
 seaborn==0.11.0
 matplotlib==3.3.3
