@@ -7,7 +7,7 @@ from materialscoord import __version__ as version
 
 long_description = Path("README.md").read_text()
 reqs_raw = Path("requirements.txt").read_text()
-reqs_list = [r for r in reqs_raw.split("\n")]
+reqs_list = [r.split("==")[0] for r in reqs_raw.split("\n")]
 
 setup(
     name='materialscoord',
