@@ -23,8 +23,8 @@ jobs:
             # exit-zero treats all errors as warnings.
             flake8 --count --exit-zero --max-complexity=20 --statistics materialscoord
             echo "--- Done ---"
-            echo "mypy checks..."
-            mypy materialscoord
+#            echo "mypy checks..."
+#            mypy materialscoord
             echo "--- Done ---"
             echo "pydocstyle checks"
             pydocstyle --count materialscoord
