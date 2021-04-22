@@ -14,7 +14,6 @@ from collections import defaultdict, Counter
 
 from pkg_resources import resource_filename
 
-from pymatgen.core.periodic_table import Specie
 from pymatgen.core.structure import Structure
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 from pymatgen.analysis.local_env import NearNeighbors
@@ -134,7 +133,7 @@ class Benchmark(object):
             for i, sites in enumerate(equiv_sites):
                 # Specie check needed to see if site has an oxidation state at all.
                 if (
-                    isinstance(sites[0].specie, Specie)
+                    hasattr(sites[0].specie, "oxi_state")
                     and sites[0].specie.oxi_state >= 0
                 ):
                     # based on previous implementation, neutral ions will be scored as
@@ -146,7 +145,7 @@ class Benchmark(object):
                     if sites[0].specie.oxi_state > 0:
                         cations.add(sites[0].specie.name)
                 elif (
-                    isinstance(sites[0].specie, Specie)
+                    hasattr(sites[0].specie, "oxi_state")
                     and sites[0].specie.oxi_state < 0
                 ):
                     anion_degens.append(len(sites))
