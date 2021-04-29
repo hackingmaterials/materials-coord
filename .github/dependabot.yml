@@ -1,0 +1,36 @@
+version: 2
+updates:
+- package-ecosystem: pip
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "13:00"
+  open-pull-requests-limit: 10
+  allow:
+  - dependency-type: direct
+  - dependency-type: indirect
+  ignore:
+  - dependency-name: pymatgen
+    versions:
+    - 2020.12.31
+    - 2021.2.14
+    - 2021.2.16
+    - 2021.2.8.1
+    - 2021.3.3
+    - 2021.3.4
+    - 2022.0.3
+    - 2022.0.4
+    - 2022.0.5
+  - dependency-name: pycodestyle
+    versions:
+    - 2.7.0
+  - dependency-name: flake8
+    versions:
+    - 3.9.0
+  - dependency-name: numpy
+    versions:
+    - 1.20.0
+    - 1.20.1
+  - dependency-name: mypy
+    versions:
+    - "0.800"
