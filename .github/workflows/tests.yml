@@ -1,0 +1,41 @@
+name: Run tests
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2.3.4
+
+    - uses: actions/setup-python@v2.2.2
+      with:
+        python-version: 3.7
+
+    - uses: actions/cache@v2
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/setup.py') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+
+    - name: Install dependencies
+      run: |
+        pip install --quiet --upgrade pip
+        pip install --quiet -r requirements.txt
+        pip install --quiet -r requirements-optional.txt
+        pip install -e .
+
+    - name: Test
+      run: |
+        coverage run setup.py test
+        coverage xml
+        python-codacy-coverage -r coverage.xml
