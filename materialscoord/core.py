@@ -23,7 +23,7 @@ _el_re = re.compile(r"[\d+-.]*")
 CN_dict = Dict[str, float]  # define coordination dictionary type
 
 
-class Benchmark(object):
+class Benchmark:
     """
     Class for performing coordination number benchmarks on a set of structures
     using different nearest neighbor methods.
@@ -203,9 +203,7 @@ class Benchmark(object):
         filenames: List[Path] = []
         for structure_group in structure_groups:
             if structure_group not in Benchmark.all_structure_groups:
-                raise ValueError(
-                    '"{}" is not a valid structure group'.format(structure_group)
-                )
+                raise ValueError(f'"{structure_group}" is not a valid structure group')
 
             filenames.extend(Path(_resource_dir, structure_group).glob("*.json"))
 
@@ -425,9 +423,9 @@ class Benchmark(object):
 
         # idxs are the indexes of the sites we are interested in IN the list of unique
         # sites. I.e., not in the list of ALL structural sites
-        idxs = self.site_information[name]["{}_idxs".format(site_type)]
-        degens = self.site_information[name]["{}_degens".format(site_type)]
-        total = self.site_information[name]["{}_total".format(site_type)]
+        idxs = self.site_information[name][f"{site_type}_idxs"]
+        degens = self.site_information[name][f"{site_type}_degens"]
+        total = self.site_information[name][f"{site_type}_total"]
         cations = self.site_information[name]["cations"]
         anions = self.site_information[name]["anions"]
 
@@ -524,7 +522,7 @@ def _get_method_names(methods: List[NearNeighbors]) -> List[str]:
     method_names_counter: Dict[str, int] = defaultdict(int)
     method_names = []
     for name in str_names:
-        method_names.append("{}({})".format(name, method_names_counter[name]))
+        method_names.append(f"{name}({method_names_counter[name]})")
         method_names_counter[name] += 1
 
     return method_names
