@@ -92,4 +92,3 @@ ENV/
 .idea*
 .DS_store
 .mypy*
-

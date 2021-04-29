@@ -2,21 +2,17 @@
 
 import re
 import warnings
+from collections import Counter, defaultdict
 from copy import deepcopy
-
 from pathlib import Path
-from typing import List, Optional, Dict, Union, Any
+from typing import Any, Dict, List, Optional, Union
 
 import numpy as np
 import pandas as pd
-
-from collections import defaultdict, Counter
-
 from pkg_resources import resource_filename
-
+from pymatgen.analysis.local_env import NearNeighbors
 from pymatgen.core.structure import Structure
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
-from pymatgen.analysis.local_env import NearNeighbors
 
 from materialscoord.einstein_crystal_perturbation import perturb_einstein_crystal
 

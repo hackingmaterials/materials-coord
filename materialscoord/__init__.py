@@ -79,5 +79,5 @@ structure_mapping = {
     "Th2Zn17_653256": "Th$_2$Zn$_{17}$",
     "ThMn12_104986": "ThMn$_{12}$",
     "TiNiSi_18188": "TiNiSi",
-    "ZrNiAl_152131": "ZrNiAl"
+    "ZrNiAl_152131": "ZrNiAl",
 }

@@ -2,10 +2,10 @@ import unittest
 from copy import deepcopy
 
 import numpy as np
+from pymatgen.analysis.local_env import EconNN, MinimumVIRENN, VoronoiNN
+from pymatgen.core.structure import Structure
 
 from materialscoord.core import Benchmark
-from pymatgen.core.structure import Structure
-from pymatgen.analysis.local_env import MinimumVIRENN, EconNN, VoronoiNN
 
 
 class BenchmarkTest(unittest.TestCase):

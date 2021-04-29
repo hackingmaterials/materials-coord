@@ -668,6 +668,7 @@ notes:
   - "Not pyroxenes because discussed in another volume"
 hillary notes:
   - "Found BiPO4 in ICSD"
+  - structures:
       monazite:
         "altname":
         "formula": BiPO4
@@ -716,4 +717,3 @@ hillary notes:
         "equivalent sites": [['O', 'O', 'O', 'O', 'O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['O', 'O', 'O', 'O'], ['S', 'S', 'S', 'S'], ['Ba', 'Ba', 'Ba', 'Ba']]
         "ICSD": 200112
         "reference": [['Hill, R.J.'], ['1977'], ['A further refinement of the barite structure.'], ['Canadian Mineralogist 15:522 - 526']]
-

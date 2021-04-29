@@ -1,4 +1,5 @@
 import unittest
+
 from pandas import DataFrame
 
 from materialscoord.plot import plot_benchmark_scores

@@ -1,12 +1,11 @@
 """Define materialscoord plotting functions."""
 
 from typing import Dict, Optional, Tuple
-from pandas import DataFrame, concat
 
-import seaborn as sns
 import matplotlib.pyplot as plt
-
+import seaborn as sns
 from mpl_toolkits.axes_grid1 import make_axes_locatable
+from pandas import DataFrame, concat
 
 
 def plot_benchmark_scores(
@@ -73,7 +72,7 @@ def plot_benchmark_scores(
             "figure.figsize": figsize,
             "axes.edgecolor": "black",
             "axes.linewidth": 1.3,
-            'pdf.fonttype': 42,
+            "pdf.fonttype": 42,
         },
     )
 
