@@ -1,8 +1,6 @@
 # MaterialsCoord Benchmark
 
-  <a href="https://www.codacy.com/app/utf/materials-coord"><img alt="Codacy Grade" src="https://img.shields.io/codacy/grade/b38246f8d3f0477a8fd971426eebe3ae.svg"> </a>
-  <a href="https://www.codacy.com/app/utf/materials-coord"><img alt="Codacy Coverage" src="https://img.shields.io/codacy/coverage/b38246f8d3f0477a8fd971426eebe3ae.svg?colorB=brightgreen"> </a>
-<a href="https://circleci.com/gh/hackingmaterials/materials-coord"><img alt="CircleCI" src="https://img.shields.io/circleci/project/github/hackingmaterials/materials-coord/master.svg"> </a>
+[![Run tests](https://github.com/hackingmaterials/materials-coord/actions/workflows/tests.yml/badge.svg)](https://github.com/hackingmaterials/materials-coord/actions/workflows/tests.yml)
 
 
 MaterialsCoord provides an infrastructure for comparing the performance of
