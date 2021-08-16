@@ -1,4 +1,4 @@
-spglib==1.16.1
+spglib==1.16.2
 numpy==1.21.1
 pymatgen==2022.0.11
 monty==2021.7.8
