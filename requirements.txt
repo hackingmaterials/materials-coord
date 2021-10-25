@@ -1,5 +1,5 @@
 spglib==1.16.2
-numpy==1.21.2
+numpy==1.21.3
 pymatgen==2022.0.16
 monty==2021.8.17
 pandas==1.3.4
